@@ -21,6 +21,8 @@ tracker/               activities.qmd, critical-path.qmd (two mermaid blocks + c
 devlog/                index.qmd (listing) and posts/YYYY-MM-DD-slug/index.qmd, one per work session
 context-bank/          course, deadlines, project-requirements, team, conventions
 styles.css, favicon.svg
+.claude/skills/        project skills (my-chart-style, from the week 2 class folder); settings.local.json stays untracked
+practice/week-NN/      class exercises with their data, scripts and figs; not rendered, not part of the tracker
 docs/                  rendered output, committed (GitHub Pages serves it)
 ```
 
@@ -33,6 +35,7 @@ docs/                  rendered output, committed (GitHub Pages serves it)
 
 ## Making changes
 
+- Class exercises live under `practice/week-NN/`, read data with `file.path("practice", "week-NN", "data", ...)` and save figures to that week's `figs/`; ggplot2 code follows `/my-chart-style`.
 - Facts go in the CSVs, not in prose. A status change is a CSV edit, a render, a commit that includes `docs/`, and a push.
 - Statuses: activities use Not started / In progress / Done / Blocked / Dropped; dated items and weeks use Upcoming / In progress / Submitted / Graded / Done / Missed / Dropped. `R/helpers.R` maps these to colours; do not invent new ones without adding them there.
 - Every work session ends with a new dev log post (`devlog/posts/YYYY-MM-DD-slug/index.qmd`, front matter: title, description, author, date, categories) and updated activity statuses. Keep the post to what was asked, what was built, how it was verified, what is next.

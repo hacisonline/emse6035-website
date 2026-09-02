@@ -9,5 +9,7 @@
 .env
 .env.*
 .DS_Store
-/.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*/*.original
 CLAUDE.local.md
