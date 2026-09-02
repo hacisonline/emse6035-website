@@ -8,6 +8,11 @@ description: House conventions for making polished ggplot2 charts in R — cowpl
 Follow these conventions whenever writing ggplot2 code. The goal is a clean,
 report-ready chart every time, without restating the style.
 
+> **Modified from the original.** Base version by John Paul Helveston, EMSE 6035
+> class 2, CC-BY-SA 4.0; the untouched copy is `SKILL.md.original` (gitignored).
+> Local changes, made 2026-09-02 in the class exercise, are the house palette in
+> "Colors" and the new "Honest aggregates" section. Everything else is his.
+
 ## Standard setup
 
 ```r
@@ -78,8 +83,10 @@ When a legend is genuinely needed, place it inside the panel
 
 - Define a named `plotColors` vector at the top of the script and apply with
   `scale_color_manual()` / `scale_fill_manual()`.
-- A reliable palette: green `#8FC977FF`, blue `#80C5DCFF`, yellow `#E8BF4DFF`,
-  orange `#E37D39FF`, red `#980000FF`, gray `grey70`.
+- **House palette (local change).** Focal series is deep teal `#1B6B7A`. Second
+  series, when there is one, is amber `#C8791A`. Context and de-emphasised marks
+  are `grey75`. Do not use red for an ordinary series: red is reserved for a mark
+  the chart is actively warning about.
 - Use grays (`grey60`–`grey80`) to de-emphasize context categories and a
   saturated color for the focal series.
 
@@ -101,6 +108,25 @@ Every polished chart gets full `labs()`: `x`, `y`, `title`, and where relevant
 
 Set factor levels explicitly before plotting to control stack / legend / facet
 order, e.g. `fct_relevel()` / `fct_reorder()` in a `mutate()`.
+
+## Honest aggregates (local addition)
+
+Any chart of a rate, share, mean or other aggregate must let the reader see what
+each mark is computed from. This is not decoration; it is the difference between a
+chart that is right and one that merely looks right.
+
+- **Show the denominator.** Print `n` beside or inside every mark, or facet by it.
+  A share with no visible `n` is not shippable.
+- **Grey the thin marks.** Declare a threshold as a variable at the top of the
+  script (`min_n <- 300`, chosen for the data and stated in the subtitle). Marks
+  below it are drawn in `grey75` and are not ranked, described or named in the
+  title. They stay on the chart; they are never quietly dropped.
+- **Say what was excluded, in the caption.** Missing values, cancelled rows and
+  anything filtered out get one clause each, with counts.
+- **Never let a category vanish.** If a group loses every row to a filter, detect
+  it and name it in the caption. Silence looks identical to "it was fine".
+- **The title may only claim what the visible marks support.** If the top mark is
+  below `min_n`, the title describes the measure instead of naming a winner.
 
 ## Saving
 
