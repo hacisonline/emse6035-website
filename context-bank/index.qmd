@@ -1,0 +1,18 @@
+---
+title: "Context bank"
+subtitle: "The course facts the team needs at hand, kept where an agent can read them"
+---
+
+The context bank is the standing knowledge behind the tracker: what the course is, when everything is due, what each deliverable must contain and how it is scored, who is on the team and who owns which account, and the conventions the professor grades on. It exists so that nobody (person or agent) has to re-derive these facts from the syllabus every time, and so that a fresh Claude Code session in this repo can read `CLAUDE.md`, then these pages, and be useful within a minute.
+
+| Page | What it holds | Source of truth |
+|---|---|---|
+| [Course](course.qmd) | What EMSE 6035 is, grading weights, toolchain | Syllabus and course site |
+| [Deadlines](deadlines.qmd) | The full semester calendar, every dated item | `schedule.csv` on the course site, mirrored in `data/deadlines.csv` |
+| [Project requirements](project-requirements.qmd) | The seven deliverables, their sections and rubric points | The project pages and rubric CSVs |
+| [Team](team.qmd) | Roster, roles, account ownership, contribution log | The team |
+| [Conventions](conventions.qmd) | How this repo and site are maintained; the R and Quarto habits the course enforces | The professor's notes plus team decisions |
+
+## What does not belong here
+
+This site is public because GitHub Pages needs a public repo. So: no grades or feedback, no email addresses, netIDs or phone numbers, no credentials of any kind (Supabase keys and shinyapps tokens live in a `.Renviron` on one teammate's machine and nowhere else), and nothing about anyone's work outside the course. If a fact fails that test it stays in a private place and this site links to nothing.

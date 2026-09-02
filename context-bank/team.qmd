@@ -1,0 +1,58 @@
+---
+title: "Team"
+subtitle: "Roster, roles, account ownership and the contribution log"
+---
+
+This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential. Fill in the blanks as the team forms (deadline: the first two weeks, so by Wed, Sep 9).
+
+## Roster
+
+| Role | Name | Notes |
+|---|---|---|
+| Member (tracker maintainer) | Harshit Chhajed | Built this site during the week 2 exercise |
+| Member | | |
+| Member | | |
+| Member (optional) | | |
+
+## Topic
+
+**Status: not chosen.** Candidates are being scouted against the [seven selection criteria](project-requirements.qmd#selecting-a-topic-all-seven-must-hold). When the decision is made, record it here with a one-line rationale and the date, and open the proposal activities (A05 to A09) on the [activities](../tracker/activities.qmd) page.
+
+## Attributes and levels (living table)
+
+This table feeds the proposal, the survey plan and every later deliverable. Start with more attributes than you need; cutting back later is easy.
+
+| Attribute | Type (continuous or discrete) | Levels | Unit | Competitor benchmarks | Research question it informs |
+|---|---|---|---|---|---|
+| Price | continuous | | | | |
+| | | | | | |
+
+## Who owns what
+
+| Thing | Owner | Notes |
+|---|---|---|
+| Team GitHub repo | TBD | Every deliverable is pushed here; one submitter per deliverable |
+| shinyapps.io account (survey hosting) | TBD | One teammate's account |
+| Supabase project (survey responses) | TBD | Keys live in that person's `.Renviron`, never in any repo |
+| Submitter, proposal | TBD | |
+| Submitter, survey plan | TBD | |
+| Submitter, pilot survey | TBD | |
+| Submitter, pilot analysis | TBD | |
+| Submitter, final survey | TBD | |
+| Submitter, final report | TBD | |
+| Submitter, presentation | TBD | |
+
+## Meetings with the professor
+
+| When | Purpose | How to sign up | Outcome |
+|---|---|---|---|
+| Week of Sep 16 | Proposal workshop (remote, replaces the week 4 lecture) | Calendar link posted for week 4 | |
+| Week of Oct 7 | Survey plan meeting | Slack `#project` | |
+
+## Contribution log
+
+Feeds the Attribution section of every deliverable. One line per meaningful contribution; the course is explicit that unequal contributions do not earn equal grades.
+
+| Date | Member | Contribution |
+|---|---|---|
+| 2026-09-02 | Harshit | Set up the tracker site, the activity list and the context bank |

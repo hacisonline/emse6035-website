@@ -1,0 +1,44 @@
+---
+title: "Week by week"
+subtitle: "The semester as sixteen rows: what class covered, what was due, what the project needed that week, and how it went"
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+weeks <- read_data("weeks.csv")
+this_week <- semester_week()
+```
+
+The current week is `r this_week`. Weeks are Wednesday to Wednesday because class meets on Wednesdays; homework is due at 11:59 pm the night before the next class week starts (a Monday, except HW12 and HW13 which are due on Sundays). The `status` and `progress_note` columns in `data/weeks.csv` are the team's own record: set the status when a week closes and write one honest line about what got done.
+
+## Progress so far
+
+```{r}
+n_done <- sum(status_slug(weeks$status) == "done")
+pct <- round(100 * n_done / nrow(weeks))
+cat(sprintf("%d of %d weeks closed (%d percent of the semester).", n_done, nrow(weeks), pct))
+```
+
+<div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: `r pct`%"></div></div>
+
+## The table
+
+```{r}
+weeks |>
+  transmute(
+    Wk = ifelse(week == this_week, paste0("<strong>", week, "</strong>"), as.character(week)),
+    Class = fmt_date(date),
+    Topic = class_topic,
+    Quiz = replace_na(quiz, ""),
+    `Homework due` = replace_na(homework_due, ""),
+    `Project due` = replace_na(project_due, ""),
+    `Project focus` = project_focus,
+    Status = pill(status),
+    Note = replace_na(progress_note, "")
+  ) |>
+  nice_table(align = "rllllllcl")
+```
+
+## Reading the cadence
+
+Quizzes fall in weeks 3, 5, 7, 9, 11 and 13 and each covers only the material since the previous one; the lowest of six is dropped. Project deliverables land roughly every two to three weeks from week 3 onward, and the heaviest stretch is weeks 9 to 13, when the pilot analysis, final survey and final report overlap with HW8 to HW12 and three quizzes. Week 14 is Thanksgiving with no class but the final survey in the field, so the final analysis cannot start until the data lands; that is the tightest link in the [critical path](critical-path.qmd).

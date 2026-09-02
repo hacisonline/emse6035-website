@@ -1,0 +1,13 @@
+/.quarto/
+/_site/
+/_freeze/
+.Rproj.user/
+*.Rproj
+.Rhistory
+.RData
+.Renviron
+.env
+.env.*
+.DS_Store
+/.claude/
+CLAUDE.local.md

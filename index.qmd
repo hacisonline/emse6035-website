@@ -1,0 +1,138 @@
+---
+title: "Team Project Tracker"
+subtitle: "EMSE 6035 · Marketing Analytics for Design Decisions · GWU · Fall 2026"
+toc: false
+---
+
+```{r}
+#| label: setup
+source(file.path("R", "helpers.R"))
+deadlines  <- read_data("deadlines.csv")
+activities <- read_data("activities.csv")
+weeks      <- read_data("weeks.csv")
+
+next_project <- deadlines |>
+  filter(kind == "project", date >= today) |>
+  arrange(date) |>
+  slice(1)
+
+deliv <- deliverables(deadlines)
+n_deliv_done <- sum(status_slug(deliv$state) == "done")
+
+acts_done  <- sum(status_slug(activities$status) == "done")
+acts_total <- nrow(activities)
+pct_done   <- round(100 * acts_done / acts_total)
+
+open_crit <- activities |>
+  filter(critical, status_slug(status) != "done") |>
+  arrange(due) |>
+  slice_head(n = 6)
+
+upcoming <- deadlines |>
+  filter(date >= today) |>
+  arrange(date) |>
+  slice_head(n = 8)
+```
+
+One page that knows where the team project stands: what is due next, which activities are on the critical path, how each week went, and a dev log of every work session. Everything on this site is generated from three CSV files in `data/`; edit those, re-render, push.
+
+::: {.status-strip}
+::: {.status-card}
+<div class="label">Rendered</div>
+<div class="value">`r fmt_date(today, "%b %e")`</div>
+<div class="sub">`r format(today, "%A, %Y")`</div>
+:::
+::: {.status-card}
+<div class="label">Semester week</div>
+<div class="value">`r semester_week()` of 16</div>
+<div class="sub">`r if (semester_week() < 16) paste(as.integer(semester_end - today), "days to the end") else "final week"`</div>
+:::
+::: {.status-card}
+<div class="label">Next project deliverable</div>
+<div class="value">`r if (nrow(next_project)) fmt_date(next_project$date) else "none"`</div>
+<div class="sub">`r if (nrow(next_project)) paste0(next_project$item, ", ", when_label(next_project$date)) else "all deliverables past"`</div>
+:::
+::: {.status-card}
+<div class="label">Deliverables submitted</div>
+<div class="value">`r n_deliv_done` of `r nrow(deliv)`</div>
+<div class="sub">45 percent of the course grade</div>
+:::
+::: {.status-card}
+<div class="label">Activities done</div>
+<div class="value">`r acts_done` of `r acts_total`</div>
+<div class="sub">`r pct_done` percent of the activity list</div>
+:::
+:::
+
+<div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: `r pct_done`%"></div></div>
+
+## Next up
+
+Every dated item in the next stretch, from the course calendar. Project deliverables are the ones this site exists for; homework and quizzes are shown because they compete for the same weeks.
+
+```{r}
+upcoming |>
+  transmute(
+    When  = paste0(fmt_date(date), " <small class='text-muted'>(", when_label(date), ")</small>"),
+    Kind  = kind_pill(kind),
+    Item  = item,
+    Where = replace_na(where, ""),
+    State = pill(state)
+  ) |>
+  nice_table(align = "llllc")
+```
+
+## Deliverable pipeline
+
+Seven deliverables, all submitted by pushing to the team's GitHub repo by 11:59 pm on the tracked date (the course overview table shows a date one day later for most of them; the earlier date is the one tracked here).
+
+```{r}
+deliv |>
+  transmute(
+    `#` = n,
+    Deliverable = str_remove(item, " \\(.*\\)$"),
+    Due = fmt_date(date, "%a %b %e"),
+    When = when_label(date),
+    `Weight (%)` = weight_pct,
+    State = pill(state),
+    Notes = replace_na(notes, "")
+  ) |>
+  nice_table(align = "rlllccl")
+```
+
+## On the critical path right now
+
+The next open activities that sit on the [critical path](tracker/critical-path.qmd). If one of these slips, the deliverable behind it slips.
+
+```{r}
+open_crit |>
+  transmute(
+    ID = id,
+    Phase = phase,
+    Activity = activity,
+    Owner = owner,
+    Due = paste0(fmt_date(due), " <small class='text-muted'>(", when_label(due), ")</small>"),
+    Status = pill(status)
+  ) |>
+  nice_table(align = "llllll")
+```
+
+## This week
+
+```{r}
+#| results: asis
+wk <- weeks |> filter(week == semester_week())
+if (nrow(wk) == 1) {
+  cat(sprintf(
+    "**Week %d (class on %s): %s.** %s Project focus: %s. %s\n",
+    wk$week, fmt_date(wk$date), wk$class_topic,
+    ifelse(is.na(wk$quiz) | wk$quiz == "", "", paste0("Quiz: ", wk$quiz, ". ")),
+    wk$project_focus,
+    ifelse(is.na(wk$progress_note) | wk$progress_note == "", "", paste0("Progress note: ", wk$progress_note, "."))
+  ))
+} else {
+  cat("Outside the semester calendar.\n")
+}
+```
+
+See the full [week-by-week table](tracker/progress.qmd), the [activity list](tracker/activities.qmd), and the [dev log](devlog/index.qmd) for what happened in each work session.

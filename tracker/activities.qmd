@@ -1,0 +1,77 @@
+---
+title: "Activities"
+subtitle: "Every task between now and the final presentation, by phase"
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+activities <- read_data("activities.csv") |>
+  mutate(phase = factor(phase, levels = c(
+    "Setup", "Proposal", "Survey plan", "Pilot survey", "Pilot analysis",
+    "Final survey", "Final analysis", "Presentation", "Ongoing"
+  )))
+```
+
+The activity list lives in `data/activities.csv`. Each row has an `id`, a `phase`, an `owner`, a `start` and `due` date, the ids it `depends_on`, whether it sits on the `critical` path, and a `status` (Not started, In progress, Done, Blocked, Dropped). To change anything, edit the CSV, re-render, and push; the tables below and the home page dashboard update themselves.
+
+## Summary by phase
+
+```{r}
+activities |>
+  group_by(Phase = phase) |>
+  summarise(
+    Activities = n(),
+    Done = sum(status_slug(status) == "done"),
+    `In progress` = sum(status_slug(status) == "active"),
+    `Not started` = sum(status_slug(status) == "todo"),
+    `First due` = fmt_date(min(due)),
+    `Last due` = fmt_date(max(due)),
+    .groups = "drop"
+  ) |>
+  nice_table(align = "lrrrrll")
+```
+
+## Overdue or due within 14 days
+
+```{r}
+soon <- activities |>
+  filter(status_slug(status) != "done", days_until(due) <= 14) |>
+  arrange(due)
+if (nrow(soon) == 0) {
+  cat("Nothing open is due in the next two weeks.")
+} else {
+  soon |>
+    transmute(
+      ID = id, Phase = phase, Activity = activity, Owner = owner,
+      Due = paste0(fmt_date(due), " <small class='text-muted'>(", when_label(due), ")</small>"),
+      Status = pill(status)
+    ) |>
+    nice_table(align = "llllll")
+}
+```
+
+## Full list
+
+```{r}
+#| results: asis
+for (ph in levels(activities$phase)) {
+  block <- activities |> filter(phase == ph) |> arrange(due, id)
+  if (nrow(block) == 0) next
+  cat("\n\n### ", ph, "\n\n", sep = "")
+  tbl <- block |>
+    transmute(
+      ID = id,
+      Activity = activity,
+      Owner = owner,
+      Start = fmt_date(start),
+      Due = fmt_date(due),
+      `Depends on` = replace_na(depends_on, ""),
+      Critical = ifelse(critical, "yes", ""),
+      Status = pill(status),
+      Deliverable = replace_na(deliverable, ""),
+      Notes = replace_na(notes, "")
+    ) |>
+    nice_table(align = "lllllllcll")
+  cat(as.character(tbl))
+}
+```

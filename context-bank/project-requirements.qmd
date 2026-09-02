@@ -1,0 +1,66 @@
+---
+title: "Project requirements"
+subtitle: "The seven deliverables: what each must contain and how it is scored"
+---
+
+## The project
+
+Teams of 3 to 4 develop quantitative models of consumer choice to inform design decisions for a novel product, technology or policy, in three phases: proposal; pilot survey and analysis; final survey and analysis. The professor wants the result to be portfolio-worthy. Every deliverable is submitted by pushing to the team's GitHub repo by 11:59 pm on the due date, one submitter per deliverable.
+
+## Selecting a topic (all seven must hold)
+
+| Criterion | Meaning |
+|---|---|
+| Innovative or emerging | A new product or technology whose attributes may be competitive but whose market adoption is still uncertain |
+| Well-defined | The course models design decisions; there is no time for conceptual design |
+| Identified target market | A market exists, competitors are known, the competing attributes can be identified, and representative potential customers can be surveyed |
+| Prior to mass commercialization | Only recently or not yet introduced to the mass market |
+| Moderate scope and complexity | Not a commodity like sugar; not a vehicle |
+| Expertise | Reliable access to experts if specialized knowledge is needed |
+| Decision variables | Several non-trivial design decisions the models will inform |
+
+The default respondent pool is paid U.S. Prolific participants, so a product U.S. consumers can evaluate is much easier to field. Policy projects are allowed with an alternative structure (problem, policy options, target population, policy attributes).
+
+## Rules common to every written deliverable
+
+Clear, concise, logically structured writing; proof-read with `spelling::spell_check_files("file.qmd")`; every figure, table and equation referenced in the text; a YAML title and all teammates' names in `author`; the template's explanatory text deleted; an Attribution section (or "All members contributed equally"). Team members who do not contribute meaningfully do not receive the same grade.
+
+## The deliverables
+
+| # | Deliverable | Due | Weight (%) | Rubric points | Template |
+|---|---|---|---:|---:|---|
+| 1 | Project Proposal | Sep 20 | 5 | 55 | `proposal.qmd` |
+| 2 | Survey Plan | Sep 29 | 5 | 35 | `survey_plan.qmd` |
+| 3 | Pilot Survey | Oct 13 | 5 | 35 | surveydown conjoint buttons template |
+| 4 | Pilot Analysis | Nov 1 | 5 | 35 | `report.qmd`, `clean-data.R`, `modeling.R`, `power-analysis.R` |
+| 5 | Final Survey | Nov 15 | 5 | 35 | surveydown conjoint buttons template |
+| 6 | Final Analysis Report | Dec 6 | 15 | 40 | `report.qmd`, `clean_data.R`, `modeling.R`, `analysis.R` |
+| 7 | Final Presentation | Dec 8 | 5 | 35 | Any slide tool |
+
+### 1. Proposal (55 points)
+
+Sections, each its own heading: Abstract (what product, what attributes set it apart, what research questions); Introduction (description, background, a picture or diagram); Market Opportunity with Identify Your Customer, Identify Competitors, Identify Market Size; Product Attributes (2 to 4 key attributes, described, quantified, with level ranges, labelled on the diagram and summarised in a table); Research Questions (2 to 3 central design decisions and how they relate to the attributes); Other Questions (at least three outstanding questions and how they will be answered); Attribution. Rubric: Organization and Formatting 5, Abstract 5, Introduction 5, Market Opportunity 10, Product Attributes 10, Research Questions 10, Questions 5, Writing Quality 5. Feedback comes in the week 4 workshop; some teams are asked to narrow scope.
+
+### 2. Survey Plan (35 points)
+
+Target population (ideal, fallback, exact eligibility question text; default Prolific U.S. general population; other channels if any); attributes and levels for the choice questions (the exact choice question text and a table of attributes, levels, units); survey content (welcome text, consent text restricting to 18 and older and including "I have read and understand the above information", education material for each attribute, critical respondent information questions, other questions, all as exact text); Attribution. Rubric: Organization and Formatting 5, Target Population 10, Attributes and Levels 10, Survey Content 10.
+
+### 3. Pilot Survey (35 points)
+
+Built in surveydown from the conjoint buttons template: `code/1_make_choice_questions.R` generates `data/choice_questions.csv` with `cbc_design`; `survey.qmd` holds welcome, consent, eligibility screening, education, randomised conjoint questions and other questions; `app.R` runs the Shiny app. Supabase stores the data; the survey is deployed on shinyapps.io from one teammate's account. Classmates take it in week 9 and leave anonymous feedback. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10 (randomised questions render live without error), Deployment 10.
+
+### 4. Pilot Analysis (35 points)
+
+Download with `sd_get_data()`, save raw data, clean to long format in `clean-data.R`, estimate preliminary models in `modeling.R`, run a power analysis in `power-analysis.R`. Report sections: Abstract; Introduction; Survey Design (eligibility, respondent information, education, attributes and levels justified, alternatives per question and questions per respondent, no-choice meaning, an example choice question); Pilot Data Analysis with Sample Description, Data Cleaning, Modeling (utility model in LaTeX, coefficient table with standard errors, coefficient figures with uncertainty), Power Analysis; Changes to Final Survey; Attribution; Appendix (full survey). Rubric: Organization and Formatting 5, Pilot Analysis 10, Report Contents 15, Appendix 5.
+
+### 5. Final Survey (35 points)
+
+The pilot survey with the changes from the pilot analysis, redeployed, all referenced files on the web, plus the eligibility text the professor needs to pre-screen Prolific respondents. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10, Deployment 10.
+
+### 6. Final Analysis Report (40 points, 15 percent of the grade)
+
+A fully reproducible HTML report written as narrative paragraphs. Minimum analysis: `clean_data.R` to long format; `modeling.R` with a simple logit on all attributes, a mixed logit with random parameters and at least one sub-group comparison; `analysis.R` with WTP for every attribute (mean and 95 percent CI, plotted on a common scale), at least one market simulation against competitors with a plot, and sensitivity of market share to price and to other attributes with plots including at least one tornado plot. Sections: Abstract; Introduction; Survey Design; Data Analysis (sample description table, cleaning, modeling with the utility model in LaTeX and a coefficient table); Results; Final Recommendations and Conclusions; Limitations; Attribution; Appendix. Rubric: Organization and Formatting 5, Data Analysis 15, Report Contents 15, Appendix 5.
+
+### 7. Final Presentation (35 points)
+
+Ten minutes maximum, every member presents at least one slide, slides numbered, title slide with project title, names and date. Content: product introduction, survey overview with an example choice question and a sample-stats slide, main findings with a utility model slide and polished WTP, market simulation and sensitivity charts, a table of simulation attributes, and recommendations. Present live in class on Dec 9 or publish a video and DM the link to the professor on Slack. Rubric: Slide Design 10, Content 15, Communication 10.

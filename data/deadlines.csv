@@ -1,0 +1,43 @@
+date,item,kind,weight_pct,where,state,notes
+2026-08-26,"Class 1: Getting Started (orientation, intro to conjoint, R and Positron, project intros)",class,,Tompkins 201,Done,
+2026-08-31,"HW1: Agentic Workflows and GitHub",homework,2.5,"madd-[netID] repo, hw1/",Submitted,"Due 11:59 pm"
+2026-09-02,"Class 2: Agentic Workflows (GitHub, Claude Code in Positron, modes, skills)",class,,Tompkins 201,Done,
+2026-09-07,"HW2: Data Wrangling",homework,2.5,"madd-[netID] repo, hw2/",Upcoming,"Due 11:59 pm"
+2026-09-09,"Quiz 1 (weeks 1 to 2)",quiz,,"In class, start of class, paper",Upcoming,"Six quizzes, lowest dropped"
+2026-09-09,"Class 3: Data Wrangling (tidyverse); decision variables vs attributes",class,,Tompkins 201,Upcoming,"Team and topic should be settled by now"
+2026-09-16,"Week 4: no lecture, Project Proposal Workshop (remote team meetings with the professor)",class,,Remote (sign-up link),Upcoming,"Sign up via the calendar link in Slack"
+2026-09-20,"Project Proposal",project,5,"Team GitHub repo",Upcoming,"Overview table says Sep 21; the earlier date is tracked. Rubric 55 pts"
+2026-09-21,"HW3: Quarto and Plotting",homework,2.5,"madd-[netID] repo, hw3/",Upcoming,"First .qmd homework"
+2026-09-23,"Quiz 2 (week 3)",quiz,,In class,Upcoming,
+2026-09-23,"Class 5: Quarto and Plotting; project scope (attribute levels, target population, competitors)",class,,Tompkins 201,Upcoming,
+2026-09-28,"HW4: Intro to surveydown",homework,2.5,"madd-[netID] repo, hw4/",Upcoming,
+2026-09-29,"Survey Plan",project,5,"Team GitHub repo",Upcoming,"Overview says Sep 30. Rubric 35 pts"
+2026-09-30,"Class 6: Intro to surveydown; make the survey plan",class,,Tompkins 201,Upcoming,"Sign up for a survey-plan meeting slot via #project"
+2026-10-05,"HW5: Conjoint Questions",homework,2.5,"madd-[netID] repo, hw5/",Upcoming,
+2026-10-07,"Quiz 3 (week 5)",quiz,,In class,Upcoming,
+2026-10-07,"Class 7: Conjoint Questions (cbc_design, labeled vs unlabeled, surveydown)",class,,Tompkins 201,Upcoming,
+2026-10-12,"HW6: Utility Models",homework,2.5,"madd-[netID] repo, hw6/",Upcoming,
+2026-10-13,"Pilot Survey",project,5,"Team GitHub repo + live on shinyapps.io",Upcoming,"Overview says Oct 14. Rubric 35 pts"
+2026-10-14,"Class 8: Utility Models; finish pilot survey",class,,Tompkins 201,Upcoming,
+2026-10-19,"HW7: Optimization and MLE",homework,2.5,"madd-[netID] repo, hw7/",Upcoming,
+2026-10-21,"Quiz 4 (week 8)",quiz,,In class,Upcoming,
+2026-10-21,"Class 9: Optimization and MLE; everyone takes everyone else's pilot survey",class,,Tompkins 201,Upcoming,"Part of HW8"
+2026-10-26,"HW8: Uncertainty (plus classmates' pilot surveys and feedback sheet)",homework,2.5,"madd-[netID] repo, hw8/",Upcoming,
+2026-10-28,"Class 10: Uncertainty; pivoting; cleaning pilot data; estimating pilot models",class,,Tompkins 201,Upcoming,
+2026-11-01,"Pilot Analysis",project,5,"Team GitHub repo",Upcoming,"Overview says Nov 2. Rubric 35 pts"
+2026-11-02,"HW9: DOE and Power Analysis",homework,2.5,"madd-[netID] repo, hw9/",Upcoming,
+2026-11-04,"Quiz 5 (week 9)",quiz,,In class,Upcoming,
+2026-11-04,"Class 11: DOE and Power Analysis; refine attributes and levels, sample size",class,,Tompkins 201,Upcoming,
+2026-11-09,"HW10: WTP and Simulation",homework,2.5,"madd-[netID] repo, hw10/",Upcoming,
+2026-11-11,"Class 12: WTP and Simulation; finalize final survey",class,,Tompkins 201,Upcoming,
+2026-11-15,"Final Survey",project,5,"Team GitHub repo + live on shinyapps.io",Upcoming,"Overview says Nov 16. Eligibility text goes with the submission (Prolific pre-screening). Rubric 35 pts"
+2026-11-16,"HW11: Heterogeneity",homework,2.5,"madd-[netID] repo, hw11/",Upcoming,
+2026-11-18,"Quiz 6 (week 12), the last one",quiz,,In class,Upcoming,
+2026-11-18,"Class 13: Heterogeneity (mixed logit, sub-group models)",class,,Tompkins 201,Upcoming,
+2026-11-22,"HW12: Sensitivity Analysis",homework,2.5,"madd-[netID] repo, hw12/",Upcoming,"Due Sunday, not Monday"
+2026-11-25,"Week 14: Thanksgiving, no class; final survey fielding on Prolific",class,,,Upcoming,
+2026-11-29,"HW13: Exam Prep, Auditing an AI-Generated Analysis",homework,2.5,"madd-[netID] repo, hw13/",Upcoming,"Due Sunday, not Monday"
+2026-12-02,"Final Exam (first 45 min, closed book, on paper), then what goes in the final report and how to give a talk",exam,10,In class,Upcoming,
+2026-12-06,"Final Analysis Report",project,15,"Team GitHub repo",Upcoming,"Overview says Dec 7. Rubric 40 pts"
+2026-12-08,"Final Presentation (slides in the repo; live Dec 9 or video link by Slack DM)",project,5,"Team GitHub repo",Upcoming,"Overview says Dec 9. 10 minutes, everyone presents. Rubric 35 pts"
+2026-12-09,"Class 16: Final Presentations, in-class showcase with Q and A",class,,Tompkins 201,Upcoming,

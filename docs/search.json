@@ -1,0 +1,476 @@
+[
+  {
+    "objectID": "tracker/progress.html",
+    "href": "tracker/progress.html",
+    "title": "Week by week",
+    "section": "",
+    "text": "The current week is 2. Weeks are Wednesday to Wednesday because class meets on Wednesdays; homework is due at 11:59 pm the night before the next class week starts (a Monday, except HW12 and HW13 which are due on Sundays). The status and progress_note columns in data/weeks.csv are the team’s own record: set the status when a week closes and write one honest line about what got done."
+  },
+  {
+    "objectID": "tracker/progress.html#progress-so-far",
+    "href": "tracker/progress.html#progress-so-far",
+    "title": "Week by week",
+    "section": "Progress so far",
+    "text": "Progress so far\n\n\n1 of 16 weeks closed (6 percent of the semester)."
+  },
+  {
+    "objectID": "tracker/progress.html#the-table",
+    "href": "tracker/progress.html#the-table",
+    "title": "Week by week",
+    "section": "The table",
+    "text": "The table\n\n\n\n \n  \n    Wk \n    Class \n    Topic \n    Quiz \n    Homework due \n    Project due \n    Project focus \n    Status \n    Note \n  \n \n\n  \n    1 \n    Wed Aug 26 \n    Getting Started: orientation, intro to conjoint, R and Positron, project intros \n     \n    HW1 (Mon Aug 31) \n     \n    Meet the project list; start thinking about teams \n    Done \n    HW1 submitted on time \n  \n  \n    2 \n    Wed Sep 2 \n    Agentic Workflows: GitHub, Claude Code in Positron, modes, skills, working safely \n     \n    HW2 (Mon Sep 7) \n     \n    Team formation open; scout topics against the selection criteria \n    In progress \n    In-class agentic exercise: this tracker site was built and published \n  \n  \n    3 \n    Wed Sep 9 \n    Data Wrangling (tidyverse); decision variables vs attributes \n    Quiz 1 (wks 1-2) \n    none (finish proposals) \n    Proposal (Sun Sep 20) \n    Team and topic settled; proposal drafting \n    Upcoming \n     \n  \n  \n    4 \n    Wed Sep 16 \n    No lecture: Proposal Workshop, remote team meetings with the professor \n     \n    HW3 (Mon Sep 21) \n    Survey Plan (Tue Sep 29) \n    Proposal feedback; narrow scope if asked \n    Upcoming \n     \n  \n  \n    5 \n    Wed Sep 23 \n    Quarto and Plotting; project scope: attribute levels, target population, competitors \n    Quiz 2 (wk 3) \n    HW4 (Mon Sep 28) \n     \n    Survey plan: target population, eligibility, choice question text \n    Upcoming \n     \n  \n  \n    6 \n    Wed Sep 30 \n    Intro to surveydown; make the survey plan \n     \n    HW5 (Mon Oct 5) \n    Pilot Survey (Tue Oct 13) \n    Start building the survey from the surveydown template \n    Upcoming \n     \n  \n  \n    7 \n    Wed Oct 7 \n    Conjoint Questions: cbc_design, labeled vs unlabeled, surveydown \n    Quiz 3 (wk 5) \n    HW6 (Mon Oct 12) \n     \n    Design file (choice_questions.csv); Supabase; deploy to shinyapps.io \n    Upcoming \n     \n  \n  \n    8 \n    Wed Oct 14 \n    Utility Models; finish pilot survey \n     \n    HW7 (Mon Oct 19) \n     \n    Pilot survey live \n    Upcoming \n     \n  \n  \n    9 \n    Wed Oct 21 \n    Optimization and MLE; everyone takes everyone else's pilot survey \n    Quiz 4 (wk 8) \n    HW8 (Mon Oct 26) \n    Pilot Analysis (Sun Nov 1) \n    Collect classmate responses and feedback \n    Upcoming \n     \n  \n  \n    10 \n    Wed Oct 28 \n    Uncertainty; pivoting; cleaning pilot data; estimating pilot models \n     \n    HW9 (Mon Nov 2) \n     \n    Clean pilot data, preliminary models, power analysis, report \n    Upcoming \n     \n  \n  \n    11 \n    Wed Nov 4 \n    DOE and Power Analysis; refine attributes and levels, sample size \n    Quiz 5 (wk 9) \n    HW10 (Mon Nov 9) \n    Final Survey (Sun Nov 15) \n    Apply pilot lessons to the final survey \n    Upcoming \n     \n  \n  \n    12 \n    Wed Nov 11 \n    WTP and Simulation; finalize final survey \n     \n    HW11 (Mon Nov 16) \n     \n    Final survey deployed; eligibility text ready for Prolific \n    Upcoming \n     \n  \n  \n    13 \n    Wed Nov 18 \n    Heterogeneity: mixed logit and sub-group models \n    Quiz 6 (wk 12) \n    HW12 (Sun Nov 22) \n    Final Analysis Report (Sun Dec 6) \n    Fielding prep; analysis code scaffolded from the pilot \n    Upcoming \n     \n  \n  \n    14 \n    Wed Nov 25 \n    Thanksgiving, no class; final survey fielding \n     \n    HW13 (Sun Nov 29) \n     \n    Data collection on Prolific; start cleaning as data lands \n    Upcoming \n     \n  \n  \n    15 \n    Wed Dec 2 \n    Final Exam (45 min), exam solutions, what goes in the final report, how to give a talk \n    Exam \n     \n     \n    Final report: logit, mixed logit, sub-groups, WTP, simulation, sensitivity \n    Upcoming \n     \n  \n  \n    16 \n    Wed Dec 9 \n    Final Presentations: in-class showcase with Q and A \n     \n     \n    Final Presentation (Tue Dec 8) \n    Slides, rehearsal, present \n    Upcoming"
+  },
+  {
+    "objectID": "tracker/progress.html#reading-the-cadence",
+    "href": "tracker/progress.html#reading-the-cadence",
+    "title": "Week by week",
+    "section": "Reading the cadence",
+    "text": "Reading the cadence\nQuizzes fall in weeks 3, 5, 7, 9, 11 and 13 and each covers only the material since the previous one; the lowest of six is dropped. Project deliverables land roughly every two to three weeks from week 3 onward, and the heaviest stretch is weeks 9 to 13, when the pilot analysis, final survey and final report overlap with HW8 to HW12 and three quizzes. Week 14 is Thanksgiving with no class but the final survey in the field, so the final analysis cannot start until the data lands; that is the tightest link in the critical path."
+  },
+  {
+    "objectID": "tracker/activities.html",
+    "href": "tracker/activities.html",
+    "title": "Activities",
+    "section": "",
+    "text": "The activity list lives in data/activities.csv. Each row has an id, a phase, an owner, a start and due date, the ids it depends_on, whether it sits on the critical path, and a status (Not started, In progress, Done, Blocked, Dropped). To change anything, edit the CSV, re-render, and push; the tables below and the home page dashboard update themselves."
+  },
+  {
+    "objectID": "tracker/activities.html#summary-by-phase",
+    "href": "tracker/activities.html#summary-by-phase",
+    "title": "Activities",
+    "section": "Summary by phase",
+    "text": "Summary by phase\n\n\n\n \n  \n    Phase \n    Activities \n    Done \n    In progress \n    Not started \n    First due \n    Last due \n  \n \n\n  \n    Setup \n    4 \n    0 \n    1 \n    3 \n    Wed Sep 9 \n    Wed Sep 30 \n  \n  \n    Proposal \n    6 \n    0 \n    0 \n    6 \n    Tue Sep 15 \n    Sun Sep 20 \n  \n  \n    Survey plan \n    4 \n    0 \n    0 \n    4 \n    Fri Sep 25 \n    Tue Sep 29 \n  \n  \n    Pilot survey \n    6 \n    0 \n    0 \n    6 \n    Tue Oct 6 \n    Tue Oct 13 \n  \n  \n    Pilot analysis \n    6 \n    0 \n    0 \n    6 \n    Sun Oct 25 \n    Sun Nov 1 \n  \n  \n    Final survey \n    4 \n    0 \n    0 \n    4 \n    Sun Nov 8 \n    Sun Nov 29 \n  \n  \n    Final analysis \n    5 \n    0 \n    0 \n    5 \n    Tue Dec 1 \n    Sun Dec 6 \n  \n  \n    Presentation \n    3 \n    0 \n    0 \n    3 \n    Mon Dec 7 \n    Wed Dec 9 \n  \n  \n    Ongoing \n    2 \n    0 \n    1 \n    1 \n    Wed Dec 9 \n    Wed Dec 9"
+  },
+  {
+    "objectID": "tracker/activities.html#overdue-or-due-within-14-days",
+    "href": "tracker/activities.html#overdue-or-due-within-14-days",
+    "title": "Activities",
+    "section": "Overdue or due within 14 days",
+    "text": "Overdue or due within 14 days\n\n\n\n \n  \n    ID \n    Phase \n    Activity \n    Owner \n    Due \n    Status \n  \n \n\n  \n    A01 \n    Setup \n    Form the team (3 to 4 members) on the team-formation sheet \n    Team \n    Wed Sep 9 (in 7 days) \n    In progress \n  \n  \n    A02 \n    Setup \n    Pick the project topic against the seven selection criteria \n    Team \n    Wed Sep 9 (in 7 days) \n    Not started \n  \n  \n    A03 \n    Setup \n    Create the shared team GitHub repo and agree the folder layout \n    Team \n    Fri Sep 11 (in 9 days) \n    Not started \n  \n  \n    A05 \n    Proposal \n    Market opportunity research: customer, competitors, market size with references \n    Team \n    Tue Sep 15 (in 13 days) \n    Not started \n  \n  \n    A06 \n    Proposal \n    Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges) \n    Team \n    Tue Sep 15 (in 13 days) \n    Not started \n  \n  \n    A07 \n    Proposal \n    Write 2 to 3 research questions tied to the attributes \n    Team \n    Wed Sep 16 (in 14 days) \n    Not started"
+  },
+  {
+    "objectID": "tracker/activities.html#full-list",
+    "href": "tracker/activities.html#full-list",
+    "title": "Activities",
+    "section": "Full list",
+    "text": "Full list\n\nSetup\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA01\n\n\nForm the team (3 to 4 members) on the team-formation sheet\n\n\nTeam\n\n\nWed Aug 26\n\n\nWed Sep 9\n\n\n\n\nyes\n\n\nIn progress\n\n\n\n\nMust be settled within the first two weeks\n\n\n\n\nA02\n\n\nPick the project topic against the seven selection criteria\n\n\nTeam\n\n\nWed Aug 26\n\n\nWed Sep 9\n\n\nA01\n\n\nyes\n\n\nNot started\n\n\n\n\nEmerging, well-defined, identified market, pre-mass-market, moderate scope, expertise available, several decision variables\n\n\n\n\nA03\n\n\nCreate the shared team GitHub repo and agree the folder layout\n\n\nTeam\n\n\nWed Sep 9\n\n\nFri Sep 11\n\n\nA01\n\n\nyes\n\n\nNot started\n\n\n\n\nOne submitter per deliverable; every deliverable is pushed here\n\n\n\n\nA04\n\n\nDecide who owns the shinyapps.io account and the Supabase project\n\n\nTeam\n\n\nWed Sep 9\n\n\nWed Sep 30\n\n\nA01\n\n\n\n\nNot started\n\n\n\n\nKeys stay in .Renviron on that person’s machine, never in any repo\n\n\n\n\n\n\nProposal\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA05\n\n\nMarket opportunity research: customer, competitors, market size with references\n\n\nTeam\n\n\nWed Sep 9\n\n\nTue Sep 15\n\n\nA02\n\n\nyes\n\n\nNot started\n\n\nProposal\n\n\nRubric: Market Opportunity 10 pts\n\n\n\n\nA06\n\n\nDraft the attributes and levels table (2 to 4 key attributes, metrics, ranges)\n\n\nTeam\n\n\nWed Sep 9\n\n\nTue Sep 15\n\n\nA02\n\n\nyes\n\n\nNot started\n\n\nProposal\n\n\nRubric: Product Attributes 10 pts; label them on the product diagram\n\n\n\n\nA07\n\n\nWrite 2 to 3 research questions tied to the attributes\n\n\nTeam\n\n\nSat Sep 12\n\n\nWed Sep 16\n\n\nA06\n\n\nyes\n\n\nNot started\n\n\nProposal\n\n\nRubric: Research Questions 10 pts\n\n\n\n\nA08\n\n\nWrite proposal.qmd from the template (Abstract, Introduction with picture, Market Opportunity, Product Attributes, Research Questions, Other Questions, Attribution)\n\n\nTeam\n\n\nMon Sep 14\n\n\nFri Sep 18\n\n\nA05;A06;A07\n\n\nyes\n\n\nNot started\n\n\nProposal\n\n\nRender clean; spell_check_files(); all names in YAML author\n\n\n\n\nA10\n\n\nProposal workshop meeting with the professor (remote, week 4)\n\n\nTeam\n\n\nMon Sep 14\n\n\nFri Sep 18\n\n\nA09\n\n\nyes\n\n\nNot started\n\n\n\n\nSign up via the calendar link; expect a request to narrow scope\n\n\n\n\nA09\n\n\nSubmit the proposal (render, commit, push to the team repo)\n\n\nSubmitter\n\n\nFri Sep 18\n\n\nSun Sep 20\n\n\nA08\n\n\nyes\n\n\nNot started\n\n\nProposal\n\n\nDue 11:59 pm Sun Sep 20 (tracked date)\n\n\n\n\n\n\nSurvey plan\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA11\n\n\nTarget population, fallback, and exact eligibility question text\n\n\nTeam\n\n\nMon Sep 21\n\n\nFri Sep 25\n\n\nA10\n\n\nyes\n\n\nNot started\n\n\nSurvey Plan\n\n\nDefault: paid U.S. Prolific respondents\n\n\n\n\nA12\n\n\nChoice question text and the final attributes and levels table with units\n\n\nTeam\n\n\nMon Sep 21\n\n\nSat Sep 26\n\n\nA10\n\n\nyes\n\n\nNot started\n\n\nSurvey Plan\n\n\nRubric: Attributes and Levels 10 pts\n\n\n\n\nA13\n\n\nSurvey content: welcome, consent (18+, ‘I have read and understand’), education, critical respondent info, other questions\n\n\nTeam\n\n\nWed Sep 23\n\n\nMon Sep 28\n\n\nA11;A12\n\n\nyes\n\n\nNot started\n\n\nSurvey Plan\n\n\nExact question text, not descriptions\n\n\n\n\nA14\n\n\nSubmit the survey plan\n\n\nSubmitter\n\n\nMon Sep 28\n\n\nTue Sep 29\n\n\nA13\n\n\nyes\n\n\nNot started\n\n\nSurvey Plan\n\n\nDue Tue Sep 29\n\n\n\n\n\n\nPilot survey\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA15\n\n\nGenerate the design file with cbc_design (code/1_make_choice_questions.R)\n\n\nTeam\n\n\nThu Oct 1\n\n\nTue Oct 6\n\n\nA14\n\n\nyes\n\n\nNot started\n\n\nPilot Survey\n\n\nRandomized choice sets must work from data/choice_questions.csv\n\n\n\n\nA20\n\n\nSign up for the survey-plan meeting slot with the professor (Slack #project)\n\n\nTeam\n\n\nWed Sep 30\n\n\nWed Oct 7\n\n\nA14\n\n\n\n\nNot started\n\n\n\n\n\n\n\n\nA16\n\n\nBuild survey.qmd from the surveydown conjoint buttons template; reuse the plan text\n\n\nTeam\n\n\nThu Oct 1\n\n\nFri Oct 9\n\n\nA14\n\n\nyes\n\n\nNot started\n\n\nPilot Survey\n\n\nReplace every placeholder; render often; run app.R locally\n\n\n\n\nA17\n\n\nConnect Supabase and confirm responses are stored\n\n\nOwner of accounts\n\n\nTue Oct 6\n\n\nSat Oct 10\n\n\nA04;A16\n\n\nyes\n\n\nNot started\n\n\nPilot Survey\n\n\n\n\n\n\nA18\n\n\nDeploy to shinyapps.io and test end to end\n\n\nOwner of accounts\n\n\nFri Oct 9\n\n\nMon Oct 12\n\n\nA17\n\n\nyes\n\n\nNot started\n\n\nPilot Survey\n\n\nRubric: deployment 10 pts\n\n\n\n\nA19\n\n\nSubmit the pilot survey (push the folder; survey live)\n\n\nSubmitter\n\n\nMon Oct 12\n\n\nTue Oct 13\n\n\nA18\n\n\nyes\n\n\nNot started\n\n\nPilot Survey\n\n\nDue Tue Oct 13\n\n\n\n\n\n\nPilot analysis\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA22\n\n\nDownload pilot data with sd_get_data(); clean-data.R to long format\n\n\nTeam\n\n\nThu Oct 22\n\n\nSun Oct 25\n\n\nA21\n\n\nyes\n\n\nNot started\n\n\nPilot Analysis\n\n\nSave raw data in data/; save the cleaned CSV\n\n\n\n\nA21\n\n\nTake every other team’s pilot survey and fill the feedback sheet (part of HW8)\n\n\nEveryone\n\n\nWed Oct 21\n\n\nMon Oct 26\n\n\nA19\n\n\nyes\n\n\nNot started\n\n\n\n\nTheir responses to ours land in the same window\n\n\n\n\nA23\n\n\nmodeling.R: preliminary models; coefficient table and figures with uncertainty\n\n\nTeam\n\n\nSat Oct 24\n\n\nWed Oct 28\n\n\nA22\n\n\nyes\n\n\nNot started\n\n\nPilot Analysis\n\n\nWrite the utility model in LaTeX in the report\n\n\n\n\nA24\n\n\npower-analysis.R: standard errors vs sample size; pick the final sample size\n\n\nTeam\n\n\nMon Oct 26\n\n\nThu Oct 29\n\n\nA23\n\n\nyes\n\n\nNot started\n\n\nPilot Analysis\n\n\n\n\n\n\nA25\n\n\nreport.qmd: abstract, intro, survey design, sample, cleaning, modeling, power, changes to final survey, appendix\n\n\nTeam\n\n\nTue Oct 27\n\n\nSat Oct 31\n\n\nA23;A24\n\n\nyes\n\n\nNot started\n\n\nPilot Analysis\n\n\nRubric: Report Contents 15 pts\n\n\n\n\nA26\n\n\nSubmit the pilot analysis\n\n\nSubmitter\n\n\nSat Oct 31\n\n\nSun Nov 1\n\n\nA25\n\n\nyes\n\n\nNot started\n\n\nPilot Analysis\n\n\nDue Sun Nov 1\n\n\n\n\n\n\nFinal survey\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA27\n\n\nApply pilot changes (attributes, levels, question text, sample size)\n\n\nTeam\n\n\nMon Nov 2\n\n\nSun Nov 8\n\n\nA26\n\n\nyes\n\n\nNot started\n\n\nFinal Survey\n\n\n\n\n\n\nA28\n\n\nRedeploy the final survey; all referenced files on the web; end-to-end test\n\n\nOwner of accounts\n\n\nSun Nov 8\n\n\nFri Nov 13\n\n\nA27\n\n\nyes\n\n\nNot started\n\n\nFinal Survey\n\n\n\n\n\n\nA29\n\n\nWrite the Prolific eligibility text and submit the final survey\n\n\nSubmitter\n\n\nFri Nov 13\n\n\nSun Nov 15\n\n\nA28\n\n\nyes\n\n\nNot started\n\n\nFinal Survey\n\n\nDue Sun Nov 15\n\n\n\n\nA30\n\n\nFielding on Prolific (arranged through the professor)\n\n\nProfessor + team\n\n\nMon Nov 23\n\n\nSun Nov 29\n\n\nA29\n\n\nyes\n\n\nNot started\n\n\n\n\nThanksgiving week; start cleaning as data lands\n\n\n\n\n\n\nFinal analysis\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA31\n\n\nclean_data.R on the final data; sample description table\n\n\nTeam\n\n\nFri Nov 27\n\n\nTue Dec 1\n\n\nA30\n\n\nyes\n\n\nNot started\n\n\nFinal Analysis Report\n\n\n\n\n\n\nA32\n\n\nmodeling.R: simple logit, mixed logit with random parameters, at least one sub-group comparison\n\n\nTeam\n\n\nSun Nov 29\n\n\nThu Dec 3\n\n\nA31\n\n\nyes\n\n\nNot started\n\n\nFinal Analysis Report\n\n\n\n\n\n\nA33\n\n\nanalysis.R: WTP with 95% CIs, market simulation vs competitors, price and attribute sensitivity with a tornado plot\n\n\nTeam\n\n\nTue Dec 1\n\n\nFri Dec 4\n\n\nA32\n\n\nyes\n\n\nNot started\n\n\nFinal Analysis Report\n\n\n\n\n\n\nA34\n\n\nreport.qmd as narrative paragraphs: results, recommendations, limitations, attribution, appendix\n\n\nTeam\n\n\nWed Dec 2\n\n\nSat Dec 5\n\n\nA33\n\n\nyes\n\n\nNot started\n\n\nFinal Analysis Report\n\n\nFully reproducible HTML; rubric 40 pts\n\n\n\n\nA35\n\n\nSubmit the final analysis report\n\n\nSubmitter\n\n\nSat Dec 5\n\n\nSun Dec 6\n\n\nA34\n\n\nyes\n\n\nNot started\n\n\nFinal Analysis Report\n\n\nDue Sun Dec 6\n\n\n\n\n\n\nPresentation\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA36\n\n\nBuild the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations\n\n\nTeam\n\n\nThu Dec 3\n\n\nMon Dec 7\n\n\nA33\n\n\nyes\n\n\nNot started\n\n\nFinal Presentation\n\n\nNumbered slides; title slide with names and date; not bullet-heavy\n\n\n\n\nA37\n\n\nRehearse to 10 minutes with every member presenting at least one slide\n\n\nTeam\n\n\nSun Dec 6\n\n\nTue Dec 8\n\n\nA36\n\n\nyes\n\n\nNot started\n\n\nFinal Presentation\n\n\n\n\n\n\nA38\n\n\nSubmit slides to the repo (due Dec 8) and present live in class Dec 9 or DM a video link\n\n\nSubmitter\n\n\nTue Dec 8\n\n\nWed Dec 9\n\n\nA37\n\n\nyes\n\n\nNot started\n\n\nFinal Presentation\n\n\n\n\n\n\n\n\nOngoing\n\n\n\n\nID\n\n\nActivity\n\n\nOwner\n\n\nStart\n\n\nDue\n\n\nDepends on\n\n\nCritical\n\n\nStatus\n\n\nDeliverable\n\n\nNotes\n\n\n\n\n\n\nA39\n\n\nKeep this tracker current: update activities.csv, write a dev log entry after each work session, re-render, push\n\n\nEveryone\n\n\nWed Sep 2\n\n\nWed Dec 9\n\n\n\n\n\n\nIn progress\n\n\n\n\nquarto render, then commit docs/ with the source\n\n\n\n\nA40\n\n\nLog each member’s contributions for the Attribution section of every deliverable\n\n\nEveryone\n\n\nWed Sep 9\n\n\nWed Dec 9\n\n\nA01\n\n\n\n\nNot started\n\n\n\n\nUnequal contributions do not get equal grades"
+  },
+  {
+    "objectID": "devlog/posts/2026-09-02-kickoff/index.html",
+    "href": "devlog/posts/2026-09-02-kickoff/index.html",
+    "title": "Kickoff: the tracker site exists",
+    "section": "",
+    "text": "Class 2 was the agentic workflows session: open a folder in Positron, run an agent in it, build a Quarto website, switch the output folder to docs, push, and publish it with GitHub Pages. The brief for this one was a team project tracker for the semester: activities, a critical path, week-by-week progress, dev logs, and a context bank that knows the course deadlines."
+  },
+  {
+    "objectID": "devlog/posts/2026-09-02-kickoff/index.html#what-was-asked",
+    "href": "devlog/posts/2026-09-02-kickoff/index.html#what-was-asked",
+    "title": "Kickoff: the tracker site exists",
+    "section": "",
+    "text": "Class 2 was the agentic workflows session: open a folder in Positron, run an agent in it, build a Quarto website, switch the output folder to docs, push, and publish it with GitHub Pages. The brief for this one was a team project tracker for the semester: activities, a critical path, week-by-week progress, dev logs, and a context bank that knows the course deadlines."
+  },
+  {
+    "objectID": "devlog/posts/2026-09-02-kickoff/index.html#what-was-built",
+    "href": "devlog/posts/2026-09-02-kickoff/index.html#what-was-built",
+    "title": "Kickoff: the tracker site exists",
+    "section": "What was built",
+    "text": "What was built\nA Quarto website with output-dir: docs and execute-dir: project. Three CSVs in data/ hold the facts: deadlines.csv (every dated item on the course calendar), weeks.csv (the sixteen class weeks with the project focus and a progress note for each), and activities.csv (forty activities from team formation to the final presentation, each with an owner, start, due, dependencies, a critical-path flag and a status). R code in R/helpers.R reads them and every page is a table or a summary computed from them, so the home page dashboard, the activity list, the float calculation on the critical path and the week table all update from a CSV edit and a re-render. The context bank pages hold the course facts that are safe to publish: grading weights, the deliverable requirements and rubric points, the toolchain and the conventions the professor grades on."
+  },
+  {
+    "objectID": "devlog/posts/2026-09-02-kickoff/index.html#how-it-was-verified",
+    "href": "devlog/posts/2026-09-02-kickoff/index.html#how-it-was-verified",
+    "title": "Kickoff: the tracker site exists",
+    "section": "How it was verified",
+    "text": "How it was verified\nThe site was rendered end to end with Quarto and R before the first commit, and the dates were checked line by line against the course schedule the professor publishes (the tracked date for each project deliverable is the earlier of the two dates the course materials show). The activity count on the home page matches nrow(activities), and the critical-path table lists a successor for every activity that has one."
+  },
+  {
+    "objectID": "devlog/posts/2026-09-02-kickoff/index.html#what-is-next",
+    "href": "devlog/posts/2026-09-02-kickoff/index.html#what-is-next",
+    "title": "Kickoff: the tracker site exists",
+    "section": "What is next",
+    "text": "What is next\nForm the team by Sep 9, pick a topic against the seven selection criteria, then fill in the team page and start the proposal activities (A05 to A09). Each work session from here gets its own entry."
+  },
+  {
+    "objectID": "context-bank/team.html",
+    "href": "context-bank/team.html",
+    "title": "Team",
+    "section": "",
+    "text": "This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential. Fill in the blanks as the team forms (deadline: the first two weeks, so by Wed, Sep 9).",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/team.html#roster",
+    "href": "context-bank/team.html#roster",
+    "title": "Team",
+    "section": "Roster",
+    "text": "Roster\n\n\n\n\n\n\n\n\nRole\nName\nNotes\n\n\n\n\nMember (tracker maintainer)\nHarshit Chhajed\nBuilt this site during the week 2 exercise\n\n\nMember\n\n\n\n\nMember\n\n\n\n\nMember (optional)",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/team.html#topic",
+    "href": "context-bank/team.html#topic",
+    "title": "Team",
+    "section": "Topic",
+    "text": "Topic\nStatus: not chosen. Candidates are being scouted against the seven selection criteria. When the decision is made, record it here with a one-line rationale and the date, and open the proposal activities (A05 to A09) on the activities page.",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/team.html#attributes-and-levels-living-table",
+    "href": "context-bank/team.html#attributes-and-levels-living-table",
+    "title": "Team",
+    "section": "Attributes and levels (living table)",
+    "text": "Attributes and levels (living table)\nThis table feeds the proposal, the survey plan and every later deliverable. Start with more attributes than you need; cutting back later is easy.\n\n\n\n\n\n\n\n\n\n\n\nAttribute\nType (continuous or discrete)\nLevels\nUnit\nCompetitor benchmarks\nResearch question it informs\n\n\n\n\nPrice\ncontinuous",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/team.html#who-owns-what",
+    "href": "context-bank/team.html#who-owns-what",
+    "title": "Team",
+    "section": "Who owns what",
+    "text": "Who owns what\n\n\n\n\n\n\n\n\nThing\nOwner\nNotes\n\n\n\n\nTeam GitHub repo\nTBD\nEvery deliverable is pushed here; one submitter per deliverable\n\n\nshinyapps.io account (survey hosting)\nTBD\nOne teammate’s account\n\n\nSupabase project (survey responses)\nTBD\nKeys live in that person’s .Renviron, never in any repo\n\n\nSubmitter, proposal\nTBD\n\n\n\nSubmitter, survey plan\nTBD\n\n\n\nSubmitter, pilot survey\nTBD\n\n\n\nSubmitter, pilot analysis\nTBD\n\n\n\nSubmitter, final survey\nTBD\n\n\n\nSubmitter, final report\nTBD\n\n\n\nSubmitter, presentation\nTBD",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/team.html#meetings-with-the-professor",
+    "href": "context-bank/team.html#meetings-with-the-professor",
+    "title": "Team",
+    "section": "Meetings with the professor",
+    "text": "Meetings with the professor\n\n\n\n\n\n\n\n\n\nWhen\nPurpose\nHow to sign up\nOutcome\n\n\n\n\nWeek of Sep 16\nProposal workshop (remote, replaces the week 4 lecture)\nCalendar link posted for week 4\n\n\n\nWeek of Oct 7\nSurvey plan meeting\nSlack #project",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/team.html#contribution-log",
+    "href": "context-bank/team.html#contribution-log",
+    "title": "Team",
+    "section": "Contribution log",
+    "text": "Contribution log\nFeeds the Attribution section of every deliverable. One line per meaningful contribution; the course is explicit that unequal contributions do not earn equal grades.\n\n\n\n\n\n\n\n\nDate\nMember\nContribution\n\n\n\n\n2026-09-02\nHarshit\nSet up the tracker site, the activity list and the context bank",
+    "crumbs": [
+      "Context bank",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "context-bank/index.html",
+    "href": "context-bank/index.html",
+    "title": "Context bank",
+    "section": "",
+    "text": "The context bank is the standing knowledge behind the tracker: what the course is, when everything is due, what each deliverable must contain and how it is scored, who is on the team and who owns which account, and the conventions the professor grades on. It exists so that nobody (person or agent) has to re-derive these facts from the syllabus every time, and so that a fresh Claude Code session in this repo can read CLAUDE.md, then these pages, and be useful within a minute.",
+    "crumbs": [
+      "Context bank"
+    ]
+  },
+  {
+    "objectID": "context-bank/index.html#what-does-not-belong-here",
+    "href": "context-bank/index.html#what-does-not-belong-here",
+    "title": "Context bank",
+    "section": "What does not belong here",
+    "text": "What does not belong here\nThis site is public because GitHub Pages needs a public repo. So: no grades or feedback, no email addresses, netIDs or phone numbers, no credentials of any kind (Supabase keys and shinyapps tokens live in a .Renviron on one teammate’s machine and nowhere else), and nothing about anyone’s work outside the course. If a fact fails that test it stays in a private place and this site links to nothing.",
+    "crumbs": [
+      "Context bank"
+    ]
+  },
+  {
+    "objectID": "context-bank/course.html",
+    "href": "context-bank/course.html",
+    "title": "The course",
+    "section": "",
+    "text": "EMSE 6035 teaches how to use choice-based conjoint surveys and discrete choice models to inform design decisions for a new product, technology or policy. Class meets Wednesdays in Tompkins 201, in person, attendance taken. Nearly all the work is done in R with an AI agent alongside, and the course is explicit that the agent’s output has to be verified by the student: the final exam opens with an AI-written conjoint analysis that has to be audited. The semester project (45 percent) runs the whole term in teams of 3 to 4 and ends with a reproducible HTML report and a ten-minute presentation.",
+    "crumbs": [
+      "Context bank",
+      "The course"
+    ]
+  },
+  {
+    "objectID": "context-bank/course.html#in-one-paragraph",
+    "href": "context-bank/course.html#in-one-paragraph",
+    "title": "The course",
+    "section": "",
+    "text": "EMSE 6035 teaches how to use choice-based conjoint surveys and discrete choice models to inform design decisions for a new product, technology or policy. Class meets Wednesdays in Tompkins 201, in person, attendance taken. Nearly all the work is done in R with an AI agent alongside, and the course is explicit that the agent’s output has to be verified by the student: the final exam opens with an AI-written conjoint analysis that has to be audited. The semester project (45 percent) runs the whole term in teams of 3 to 4 and ends with a reproducible HTML report and a ten-minute presentation.",
+    "crumbs": [
+      "Context bank",
+      "The course"
+    ]
+  },
+  {
+    "objectID": "context-bank/course.html#grade-composition",
+    "href": "context-bank/course.html#grade-composition",
+    "title": "The course",
+    "section": "Grade composition",
+    "text": "Grade composition\n\n\n\nItem\nWeight (%)\n\n\n\n\nParticipation and attendance\n5\n\n\nHomework (13, lowest dropped, 2.5 each)\n30\n\n\nQuizzes (6, lowest dropped)\n10\n\n\nFinal exam (Dec 2, closed book, on paper)\n10\n\n\nProject proposal\n5\n\n\nSurvey plan\n5\n\n\nPilot survey\n5\n\n\nPilot analysis\n5\n\n\nFinal survey\n5\n\n\nFinal analysis report\n15\n\n\nFinal presentation\n5\n\n\n\nHomework is graded on a check system (check-plus 110, check 100, check-minus 50) and “is not submitted until you’ve pushed it”. Quizzes are ten minutes at the very start of class, low stakes by design, no make-ups without an excused absence.",
+    "crumbs": [
+      "Context bank",
+      "The course"
+    ]
+  },
+  {
+    "objectID": "context-bank/course.html#toolchain",
+    "href": "context-bank/course.html#toolchain",
+    "title": "The course",
+    "section": "Toolchain",
+    "text": "Toolchain\n\n\n\n\n\n\n\nTool\nRole\n\n\n\n\nR 4.x\nAll analysis\n\n\nPositron\nThe IDE: R, Quarto and Claude Code together. Open folders, not files\n\n\nQuarto\nLiterate documents; every report and this site\n\n\nCourse packages\ntidyverse, cbcTools, logitr, surveydown, kableExtra, cowplot, ggrepel, janitor, viridis, fastDummies, knitr, rmarkdown, plus a few from GitHub\n\n\nGitHub\nEvery submission: the per-student madd-&lt;netID&gt; repo for homework, the team repo for project deliverables\n\n\nGitHub Desktop or the terminal\nCommit and push; the course teaches Desktop, the command line is fine\n\n\nClaude Code\nThe agent, run from the Positron terminal in the project folder\n\n\nsurveydown, Supabase, shinyapps.io\nBuilding, storing and hosting the survey from week 6 onward\n\n\nProlific\nPaid U.S. respondents for the final survey, arranged through the professor\n\n\nSlack\nCourse communication; #project for team matters",
+    "crumbs": [
+      "Context bank",
+      "The course"
+    ]
+  },
+  {
+    "objectID": "context-bank/course.html#the-loop-the-course-runs-on",
+    "href": "context-bank/course.html#the-loop-the-course-runs-on",
+    "title": "The course",
+    "section": "The loop the course runs on",
+    "text": "The loop the course runs on\nPrompt, read the diff, verify, commit and push. The agent almost never makes a syntax mistake, so a wrong answer arrives looking exactly like a right one; running is not the same as right. The three habits the course teaches for working safely: ask for code rather than results, run sanity checks the agent cannot fake (row counts, duplicates, spot checks against the source, NA handling, totals that make sense), and use fake data with the same columns when the real data cannot be shared.",
+    "crumbs": [
+      "Context bank",
+      "The course"
+    ]
+  },
+  {
+    "objectID": "context-bank/conventions.html",
+    "href": "context-bank/conventions.html",
+    "title": "Conventions",
+    "section": "",
+    "text": "The site is a Quarto website whose content comes from three CSVs. The loop for any update is the same loop the course teaches: edit, render, read the diff, verify, commit, push.\n\n\n\n\n\n\n\n\nTo change\nEdit\nThen\n\n\n\n\nA deadline’s state or a note\ndata/deadlines.csv\nrender, push\n\n\nAn activity’s status, owner or dates\ndata/activities.csv\nrender, push\n\n\nHow a week went\ndata/weeks.csv (status, progress_note)\nrender, push\n\n\nThe roster, topic, account owners, contributions\ncontext-bank/team.qmd\nrender, push\n\n\nA new dev log entry\nnew folder devlog/posts/YYYY-MM-DD-slug/index.qmd with title, description, author, date, categories\nrender, push\n\n\nThe critical-path diagram\nthe two {mermaid} blocks in tracker/critical-path.qmd (the float table is computed)\nrender, push\n\n\n\nRendering: open the repo folder in Positron (File, Open Folder, the folder itself), then in the terminal run quarto render. The output goes to docs/ because _quarto.yml sets output-dir: docs, and GitHub Pages serves main /docs, so docs/ is committed along with the source: a source change that is not re-rendered does not reach the site. quarto preview gives a live local preview while editing.\nStatuses used in the CSVs: Not started, In progress, Done, Blocked, Dropped for activities; Upcoming, In progress, Submitted, Graded, Done, Missed, Dropped for dated items and weeks.",
+    "crumbs": [
+      "Context bank",
+      "Conventions"
+    ]
+  },
+  {
+    "objectID": "context-bank/conventions.html#maintaining-this-site",
+    "href": "context-bank/conventions.html#maintaining-this-site",
+    "title": "Conventions",
+    "section": "",
+    "text": "The site is a Quarto website whose content comes from three CSVs. The loop for any update is the same loop the course teaches: edit, render, read the diff, verify, commit, push.\n\n\n\n\n\n\n\n\nTo change\nEdit\nThen\n\n\n\n\nA deadline’s state or a note\ndata/deadlines.csv\nrender, push\n\n\nAn activity’s status, owner or dates\ndata/activities.csv\nrender, push\n\n\nHow a week went\ndata/weeks.csv (status, progress_note)\nrender, push\n\n\nThe roster, topic, account owners, contributions\ncontext-bank/team.qmd\nrender, push\n\n\nA new dev log entry\nnew folder devlog/posts/YYYY-MM-DD-slug/index.qmd with title, description, author, date, categories\nrender, push\n\n\nThe critical-path diagram\nthe two {mermaid} blocks in tracker/critical-path.qmd (the float table is computed)\nrender, push\n\n\n\nRendering: open the repo folder in Positron (File, Open Folder, the folder itself), then in the terminal run quarto render. The output goes to docs/ because _quarto.yml sets output-dir: docs, and GitHub Pages serves main /docs, so docs/ is committed along with the source: a source change that is not re-rendered does not reach the site. quarto preview gives a live local preview while editing.\nStatuses used in the CSVs: Not started, In progress, Done, Blocked, Dropped for activities; Upcoming, In progress, Submitted, Graded, Done, Missed, Dropped for dated items and weeks.",
+    "crumbs": [
+      "Context bank",
+      "Conventions"
+    ]
+  },
+  {
+    "objectID": "context-bank/conventions.html#r-and-quarto-habits-from-the-course",
+    "href": "context-bank/conventions.html#r-and-quarto-habits-from-the-course",
+    "title": "Conventions",
+    "section": "R and Quarto habits from the course",
+    "text": "R and Quarto habits from the course\n\nOpen folders, not files: Positron sets the working directory to the opened folder, so relative paths work. On this site _quarto.yml also sets execute-dir: project, so every page reads data with file.path(\"data\", \"file.csv\") from the repo root.\nPaths with file.path(), relative to the opened folder. Never change the working directory from code, never absolute paths, never here() in student files.\nNo .Rproj files; the course templates ship them and the instruction is to ignore them.\nEvery report renders cleanly before it is committed; a .qmd that does not render is not submitted.\nCharts: informative titles that state the finding, real axis labels, a source caption, white background, direct labels where possible (the my-chart-style skill from week 2 encodes this).\nAsk the agent for code, not answers; keep the data, script, figure pipeline; sanity-check row counts, duplicates, NA handling and totals yourself.",
+    "crumbs": [
+      "Context bank",
+      "Conventions"
+    ]
+  },
+  {
+    "objectID": "context-bank/conventions.html#git-habits",
+    "href": "context-bank/conventions.html#git-habits",
+    "title": "Conventions",
+    "section": "Git habits",
+    "text": "Git habits\nCommit messages say what changed and why (“Add pilot power analysis”, not “update”). Pull before push when someone else may have pushed. Never force-push, never rewrite main. Nothing personal and no credentials in this repo: it is public.",
+    "crumbs": [
+      "Context bank",
+      "Conventions"
+    ]
+  },
+  {
+    "objectID": "context-bank/conventions.html#working-with-an-agent-in-this-repo",
+    "href": "context-bank/conventions.html#working-with-an-agent-in-this-repo",
+    "title": "Conventions",
+    "section": "Working with an agent in this repo",
+    "text": "Working with an agent in this repo\nCLAUDE.md in the repo root is the standing brief for Claude Code (or any agent) opened in this folder. It says what the site is, how to render it, what to edit for each kind of change, and the privacy line. Read it, then this context bank, before making changes; after a session, write a dev log entry and update the activity statuses.",
+    "crumbs": [
+      "Context bank",
+      "Conventions"
+    ]
+  },
+  {
+    "objectID": "context-bank/deadlines.html",
+    "href": "context-bank/deadlines.html",
+    "title": "Deadlines",
+    "section": "",
+    "text": "All homework and project deliverables are due by 11:59 pm on the date shown. Homework is due the night before the class week begins: a Monday for HW1 to HW11, a Sunday for HW12 (Nov 22) and HW13 (Nov 29). Where the course overview table shows a project date one day later than the schedule file, the earlier date is tracked. This table is the whole of data/deadlines.csv; the state column is the team’s to update.",
+    "crumbs": [
+      "Context bank",
+      "Deadlines"
+    ]
+  },
+  {
+    "objectID": "context-bank/deadlines.html#filter-by-kind",
+    "href": "context-bank/deadlines.html#filter-by-kind",
+    "title": "Deadlines",
+    "section": "Filter by kind",
+    "text": "Filter by kind\nproject: 7   homework: 13   quiz: 6   exam: 1   class: 15",
+    "crumbs": [
+      "Context bank",
+      "Deadlines"
+    ]
+  },
+  {
+    "objectID": "context-bank/deadlines.html#full-calendar",
+    "href": "context-bank/deadlines.html#full-calendar",
+    "title": "Deadlines",
+    "section": "Full calendar",
+    "text": "Full calendar\n\n\n\n \n  \n    Date \n    When \n    Kind \n    Item \n    Weight (%) \n    Where \n    State \n    Notes \n  \n \n\n  \n    Wed Aug 26 \n    7 days ago \n    class \n    Class 1: Getting Started (orientation, intro to conjoint, R and Positron, project intros) \n     \n    Tompkins 201 \n    Done \n     \n  \n  \n    Mon Aug 31 \n    2 days ago \n    homework \n    HW1: Agentic Workflows and GitHub \n    2.5 \n    madd-[netID] repo, hw1/ \n    Submitted \n    Due 11:59 pm \n  \n  \n    Wed Sep 2 \n    today \n    class \n    Class 2: Agentic Workflows (GitHub, Claude Code in Positron, modes, skills) \n     \n    Tompkins 201 \n    Done \n     \n  \n  \n    Mon Sep 7 \n    in 5 days \n    homework \n    HW2: Data Wrangling \n    2.5 \n    madd-[netID] repo, hw2/ \n    Upcoming \n    Due 11:59 pm \n  \n  \n    Wed Sep 9 \n    in 7 days \n    quiz \n    Quiz 1 (weeks 1 to 2) \n     \n    In class, start of class, paper \n    Upcoming \n    Six quizzes, lowest dropped \n  \n  \n    Wed Sep 9 \n    in 7 days \n    class \n    Class 3: Data Wrangling (tidyverse); decision variables vs attributes \n     \n    Tompkins 201 \n    Upcoming \n    Team and topic should be settled by now \n  \n  \n    Wed Sep 16 \n    in 14 days \n    class \n    Week 4: no lecture, Project Proposal Workshop (remote team meetings with the professor) \n     \n    Remote (sign-up link) \n    Upcoming \n    Sign up via the calendar link in Slack \n  \n  \n    Sun Sep 20 \n    in 18 days \n    project \n    Project Proposal \n    5 \n    Team GitHub repo \n    Upcoming \n    Overview table says Sep 21; the earlier date is tracked. Rubric 55 pts \n  \n  \n    Mon Sep 21 \n    in 19 days \n    homework \n    HW3: Quarto and Plotting \n    2.5 \n    madd-[netID] repo, hw3/ \n    Upcoming \n    First .qmd homework \n  \n  \n    Wed Sep 23 \n    in 21 days \n    quiz \n    Quiz 2 (week 3) \n     \n    In class \n    Upcoming \n     \n  \n  \n    Wed Sep 23 \n    in 21 days \n    class \n    Class 5: Quarto and Plotting; project scope (attribute levels, target population, competitors) \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Mon Sep 28 \n    in 26 days \n    homework \n    HW4: Intro to surveydown \n    2.5 \n    madd-[netID] repo, hw4/ \n    Upcoming \n     \n  \n  \n    Tue Sep 29 \n    in 27 days \n    project \n    Survey Plan \n    5 \n    Team GitHub repo \n    Upcoming \n    Overview says Sep 30. Rubric 35 pts \n  \n  \n    Wed Sep 30 \n    in 28 days \n    class \n    Class 6: Intro to surveydown; make the survey plan \n     \n    Tompkins 201 \n    Upcoming \n    Sign up for a survey-plan meeting slot via #project \n  \n  \n    Mon Oct 5 \n    in 33 days \n    homework \n    HW5: Conjoint Questions \n    2.5 \n    madd-[netID] repo, hw5/ \n    Upcoming \n     \n  \n  \n    Wed Oct 7 \n    in 35 days \n    quiz \n    Quiz 3 (week 5) \n     \n    In class \n    Upcoming \n     \n  \n  \n    Wed Oct 7 \n    in 35 days \n    class \n    Class 7: Conjoint Questions (cbc_design, labeled vs unlabeled, surveydown) \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Mon Oct 12 \n    in 40 days \n    homework \n    HW6: Utility Models \n    2.5 \n    madd-[netID] repo, hw6/ \n    Upcoming \n     \n  \n  \n    Tue Oct 13 \n    in 41 days \n    project \n    Pilot Survey \n    5 \n    Team GitHub repo + live on shinyapps.io \n    Upcoming \n    Overview says Oct 14. Rubric 35 pts \n  \n  \n    Wed Oct 14 \n    in 42 days \n    class \n    Class 8: Utility Models; finish pilot survey \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Mon Oct 19 \n    in 47 days \n    homework \n    HW7: Optimization and MLE \n    2.5 \n    madd-[netID] repo, hw7/ \n    Upcoming \n     \n  \n  \n    Wed Oct 21 \n    in 49 days \n    quiz \n    Quiz 4 (week 8) \n     \n    In class \n    Upcoming \n     \n  \n  \n    Wed Oct 21 \n    in 49 days \n    class \n    Class 9: Optimization and MLE; everyone takes everyone else's pilot survey \n     \n    Tompkins 201 \n    Upcoming \n    Part of HW8 \n  \n  \n    Mon Oct 26 \n    in 54 days \n    homework \n    HW8: Uncertainty (plus classmates' pilot surveys and feedback sheet) \n    2.5 \n    madd-[netID] repo, hw8/ \n    Upcoming \n     \n  \n  \n    Wed Oct 28 \n    in 56 days \n    class \n    Class 10: Uncertainty; pivoting; cleaning pilot data; estimating pilot models \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Sun Nov 1 \n    in 60 days \n    project \n    Pilot Analysis \n    5 \n    Team GitHub repo \n    Upcoming \n    Overview says Nov 2. Rubric 35 pts \n  \n  \n    Mon Nov 2 \n    in 61 days \n    homework \n    HW9: DOE and Power Analysis \n    2.5 \n    madd-[netID] repo, hw9/ \n    Upcoming \n     \n  \n  \n    Wed Nov 4 \n    in 63 days \n    quiz \n    Quiz 5 (week 9) \n     \n    In class \n    Upcoming \n     \n  \n  \n    Wed Nov 4 \n    in 63 days \n    class \n    Class 11: DOE and Power Analysis; refine attributes and levels, sample size \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Mon Nov 9 \n    in 68 days \n    homework \n    HW10: WTP and Simulation \n    2.5 \n    madd-[netID] repo, hw10/ \n    Upcoming \n     \n  \n  \n    Wed Nov 11 \n    in 70 days \n    class \n    Class 12: WTP and Simulation; finalize final survey \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Sun Nov 15 \n    in 74 days \n    project \n    Final Survey \n    5 \n    Team GitHub repo + live on shinyapps.io \n    Upcoming \n    Overview says Nov 16. Eligibility text goes with the submission (Prolific pre-screening). Rubric 35 pts \n  \n  \n    Mon Nov 16 \n    in 75 days \n    homework \n    HW11: Heterogeneity \n    2.5 \n    madd-[netID] repo, hw11/ \n    Upcoming \n     \n  \n  \n    Wed Nov 18 \n    in 77 days \n    quiz \n    Quiz 6 (week 12), the last one \n     \n    In class \n    Upcoming \n     \n  \n  \n    Wed Nov 18 \n    in 77 days \n    class \n    Class 13: Heterogeneity (mixed logit, sub-group models) \n     \n    Tompkins 201 \n    Upcoming \n     \n  \n  \n    Sun Nov 22 \n    in 81 days \n    homework \n    HW12: Sensitivity Analysis \n    2.5 \n    madd-[netID] repo, hw12/ \n    Upcoming \n    Due Sunday, not Monday \n  \n  \n    Wed Nov 25 \n    in 84 days \n    class \n    Week 14: Thanksgiving, no class; final survey fielding on Prolific \n     \n     \n    Upcoming \n     \n  \n  \n    Sun Nov 29 \n    in 88 days \n    homework \n    HW13: Exam Prep, Auditing an AI-Generated Analysis \n    2.5 \n    madd-[netID] repo, hw13/ \n    Upcoming \n    Due Sunday, not Monday \n  \n  \n    Wed Dec 2 \n    in 91 days \n    exam \n    Final Exam (first 45 min, closed book, on paper), then what goes in the final report and how to give a talk \n    10 \n    In class \n    Upcoming \n     \n  \n  \n    Sun Dec 6 \n    in 95 days \n    project \n    Final Analysis Report \n    15 \n    Team GitHub repo \n    Upcoming \n    Overview says Dec 7. Rubric 40 pts \n  \n  \n    Tue Dec 8 \n    in 97 days \n    project \n    Final Presentation (slides in the repo; live Dec 9 or video link by Slack DM) \n    5 \n    Team GitHub repo \n    Upcoming \n    Overview says Dec 9. 10 minutes, everyone presents. Rubric 35 pts \n  \n  \n    Wed Dec 9 \n    in 98 days \n    class \n    Class 16: Final Presentations, in-class showcase with Q and A \n     \n    Tompkins 201 \n    Upcoming",
+    "crumbs": [
+      "Context bank",
+      "Deadlines"
+    ]
+  },
+  {
+    "objectID": "context-bank/deadlines.html#project-deliverables-only",
+    "href": "context-bank/deadlines.html#project-deliverables-only",
+    "title": "Deadlines",
+    "section": "Project deliverables only",
+    "text": "Project deliverables only\n\n\n\n \n  \n    # \n    Deliverable \n    Due \n    When \n    Weight (%) \n    State \n    Notes \n  \n \n\n  \n    1 \n    Project Proposal \n    Sunday, September 20 \n    in 18 days \n    5 \n    Upcoming \n    Overview table says Sep 21; the earlier date is tracked. Rubric 55 pts \n  \n  \n    2 \n    Survey Plan \n    Tuesday, September 29 \n    in 27 days \n    5 \n    Upcoming \n    Overview says Sep 30. Rubric 35 pts \n  \n  \n    3 \n    Pilot Survey \n    Tuesday, October 13 \n    in 41 days \n    5 \n    Upcoming \n    Overview says Oct 14. Rubric 35 pts \n  \n  \n    4 \n    Pilot Analysis \n    Sunday, November 1 \n    in 60 days \n    5 \n    Upcoming \n    Overview says Nov 2. Rubric 35 pts \n  \n  \n    5 \n    Final Survey \n    Sunday, November 15 \n    in 74 days \n    5 \n    Upcoming \n    Overview says Nov 16. Eligibility text goes with the submission (Prolific pre-screening). Rubric 35 pts \n  \n  \n    6 \n    Final Analysis Report \n    Sunday, December 6 \n    in 95 days \n    15 \n    Upcoming \n    Overview says Dec 7. Rubric 40 pts \n  \n  \n    7 \n    Final Presentation (slides in the repo; live Dec 9 or video link by Slack DM) \n    Tuesday, December 8 \n    in 97 days \n    5 \n    Upcoming \n    Overview says Dec 9. 10 minutes, everyone presents. Rubric 35 pts",
+    "crumbs": [
+      "Context bank",
+      "Deadlines"
+    ]
+  },
+  {
+    "objectID": "context-bank/project-requirements.html",
+    "href": "context-bank/project-requirements.html",
+    "title": "Project requirements",
+    "section": "",
+    "text": "Teams of 3 to 4 develop quantitative models of consumer choice to inform design decisions for a novel product, technology or policy, in three phases: proposal; pilot survey and analysis; final survey and analysis. The professor wants the result to be portfolio-worthy. Every deliverable is submitted by pushing to the team’s GitHub repo by 11:59 pm on the due date, one submitter per deliverable.",
+    "crumbs": [
+      "Context bank",
+      "Project requirements"
+    ]
+  },
+  {
+    "objectID": "context-bank/project-requirements.html#the-project",
+    "href": "context-bank/project-requirements.html#the-project",
+    "title": "Project requirements",
+    "section": "",
+    "text": "Teams of 3 to 4 develop quantitative models of consumer choice to inform design decisions for a novel product, technology or policy, in three phases: proposal; pilot survey and analysis; final survey and analysis. The professor wants the result to be portfolio-worthy. Every deliverable is submitted by pushing to the team’s GitHub repo by 11:59 pm on the due date, one submitter per deliverable.",
+    "crumbs": [
+      "Context bank",
+      "Project requirements"
+    ]
+  },
+  {
+    "objectID": "context-bank/project-requirements.html#selecting-a-topic-all-seven-must-hold",
+    "href": "context-bank/project-requirements.html#selecting-a-topic-all-seven-must-hold",
+    "title": "Project requirements",
+    "section": "Selecting a topic (all seven must hold)",
+    "text": "Selecting a topic (all seven must hold)\n\n\n\n\n\n\n\nCriterion\nMeaning\n\n\n\n\nInnovative or emerging\nA new product or technology whose attributes may be competitive but whose market adoption is still uncertain\n\n\nWell-defined\nThe course models design decisions; there is no time for conceptual design\n\n\nIdentified target market\nA market exists, competitors are known, the competing attributes can be identified, and representative potential customers can be surveyed\n\n\nPrior to mass commercialization\nOnly recently or not yet introduced to the mass market\n\n\nModerate scope and complexity\nNot a commodity like sugar; not a vehicle\n\n\nExpertise\nReliable access to experts if specialized knowledge is needed\n\n\nDecision variables\nSeveral non-trivial design decisions the models will inform\n\n\n\nThe default respondent pool is paid U.S. Prolific participants, so a product U.S. consumers can evaluate is much easier to field. Policy projects are allowed with an alternative structure (problem, policy options, target population, policy attributes).",
+    "crumbs": [
+      "Context bank",
+      "Project requirements"
+    ]
+  },
+  {
+    "objectID": "context-bank/project-requirements.html#rules-common-to-every-written-deliverable",
+    "href": "context-bank/project-requirements.html#rules-common-to-every-written-deliverable",
+    "title": "Project requirements",
+    "section": "Rules common to every written deliverable",
+    "text": "Rules common to every written deliverable\nClear, concise, logically structured writing; proof-read with spelling::spell_check_files(\"file.qmd\"); every figure, table and equation referenced in the text; a YAML title and all teammates’ names in author; the template’s explanatory text deleted; an Attribution section (or “All members contributed equally”). Team members who do not contribute meaningfully do not receive the same grade.",
+    "crumbs": [
+      "Context bank",
+      "Project requirements"
+    ]
+  },
+  {
+    "objectID": "context-bank/project-requirements.html#the-deliverables",
+    "href": "context-bank/project-requirements.html#the-deliverables",
+    "title": "Project requirements",
+    "section": "The deliverables",
+    "text": "The deliverables\n\n\n\n\n\n\n\n\n\n\n\n#\nDeliverable\nDue\nWeight (%)\nRubric points\nTemplate\n\n\n\n\n1\nProject Proposal\nSep 20\n5\n55\nproposal.qmd\n\n\n2\nSurvey Plan\nSep 29\n5\n35\nsurvey_plan.qmd\n\n\n3\nPilot Survey\nOct 13\n5\n35\nsurveydown conjoint buttons template\n\n\n4\nPilot Analysis\nNov 1\n5\n35\nreport.qmd, clean-data.R, modeling.R, power-analysis.R\n\n\n5\nFinal Survey\nNov 15\n5\n35\nsurveydown conjoint buttons template\n\n\n6\nFinal Analysis Report\nDec 6\n15\n40\nreport.qmd, clean_data.R, modeling.R, analysis.R\n\n\n7\nFinal Presentation\nDec 8\n5\n35\nAny slide tool\n\n\n\n\n1. Proposal (55 points)\nSections, each its own heading: Abstract (what product, what attributes set it apart, what research questions); Introduction (description, background, a picture or diagram); Market Opportunity with Identify Your Customer, Identify Competitors, Identify Market Size; Product Attributes (2 to 4 key attributes, described, quantified, with level ranges, labelled on the diagram and summarised in a table); Research Questions (2 to 3 central design decisions and how they relate to the attributes); Other Questions (at least three outstanding questions and how they will be answered); Attribution. Rubric: Organization and Formatting 5, Abstract 5, Introduction 5, Market Opportunity 10, Product Attributes 10, Research Questions 10, Questions 5, Writing Quality 5. Feedback comes in the week 4 workshop; some teams are asked to narrow scope.\n\n\n2. Survey Plan (35 points)\nTarget population (ideal, fallback, exact eligibility question text; default Prolific U.S. general population; other channels if any); attributes and levels for the choice questions (the exact choice question text and a table of attributes, levels, units); survey content (welcome text, consent text restricting to 18 and older and including “I have read and understand the above information”, education material for each attribute, critical respondent information questions, other questions, all as exact text); Attribution. Rubric: Organization and Formatting 5, Target Population 10, Attributes and Levels 10, Survey Content 10.\n\n\n3. Pilot Survey (35 points)\nBuilt in surveydown from the conjoint buttons template: code/1_make_choice_questions.R generates data/choice_questions.csv with cbc_design; survey.qmd holds welcome, consent, eligibility screening, education, randomised conjoint questions and other questions; app.R runs the Shiny app. Supabase stores the data; the survey is deployed on shinyapps.io from one teammate’s account. Classmates take it in week 9 and leave anonymous feedback. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10 (randomised questions render live without error), Deployment 10.\n\n\n4. Pilot Analysis (35 points)\nDownload with sd_get_data(), save raw data, clean to long format in clean-data.R, estimate preliminary models in modeling.R, run a power analysis in power-analysis.R. Report sections: Abstract; Introduction; Survey Design (eligibility, respondent information, education, attributes and levels justified, alternatives per question and questions per respondent, no-choice meaning, an example choice question); Pilot Data Analysis with Sample Description, Data Cleaning, Modeling (utility model in LaTeX, coefficient table with standard errors, coefficient figures with uncertainty), Power Analysis; Changes to Final Survey; Attribution; Appendix (full survey). Rubric: Organization and Formatting 5, Pilot Analysis 10, Report Contents 15, Appendix 5.\n\n\n5. Final Survey (35 points)\nThe pilot survey with the changes from the pilot analysis, redeployed, all referenced files on the web, plus the eligibility text the professor needs to pre-screen Prolific respondents. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10, Deployment 10.\n\n\n6. Final Analysis Report (40 points, 15 percent of the grade)\nA fully reproducible HTML report written as narrative paragraphs. Minimum analysis: clean_data.R to long format; modeling.R with a simple logit on all attributes, a mixed logit with random parameters and at least one sub-group comparison; analysis.R with WTP for every attribute (mean and 95 percent CI, plotted on a common scale), at least one market simulation against competitors with a plot, and sensitivity of market share to price and to other attributes with plots including at least one tornado plot. Sections: Abstract; Introduction; Survey Design; Data Analysis (sample description table, cleaning, modeling with the utility model in LaTeX and a coefficient table); Results; Final Recommendations and Conclusions; Limitations; Attribution; Appendix. Rubric: Organization and Formatting 5, Data Analysis 15, Report Contents 15, Appendix 5.\n\n\n7. Final Presentation (35 points)\nTen minutes maximum, every member presents at least one slide, slides numbered, title slide with project title, names and date. Content: product introduction, survey overview with an example choice question and a sample-stats slide, main findings with a utility model slide and polished WTP, market simulation and sensitivity charts, a table of simulation attributes, and recommendations. Present live in class on Dec 9 or publish a video and DM the link to the professor on Slack. Rubric: Slide Design 10, Content 15, Communication 10.",
+    "crumbs": [
+      "Context bank",
+      "Project requirements"
+    ]
+  },
+  {
+    "objectID": "devlog/index.html",
+    "href": "devlog/index.html",
+    "title": "Dev log",
+    "section": "",
+    "text": "The dev log is the team’s memory. Every time someone works on the project, they add a short post here (a folder under devlog/posts/ with an index.qmd), following the loop the course teaches: what was asked, what the agent or the person produced, how it was verified, and what changed as a result. Entries are dated and tagged by phase so the activities page and the log can be read side by side.\n\n\n\n\n\n\n\n\n\nKickoff: the tracker site exists\n\n\n\nsetup\n\nagentic-workflow\n\n\n\nBuilt during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.\n\n\n\n\n\nSep 2, 2026\n\n\nHarshit (with Claude)\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Team Project Tracker",
+    "section": "",
+    "text": "One page that knows where the team project stands: what is due next, which activities are on the critical path, how each week went, and a dev log of every work session. Everything on this site is generated from three CSV files in data/; edit those, re-render, push."
+  },
+  {
+    "objectID": "index.html#next-up",
+    "href": "index.html#next-up",
+    "title": "Team Project Tracker",
+    "section": "Next up",
+    "text": "Next up\nEvery dated item in the next stretch, from the course calendar. Project deliverables are the ones this site exists for; homework and quizzes are shown because they compete for the same weeks.\n\n\n\n \n  \n    When \n    Kind \n    Item \n    Where \n    State \n  \n \n\n  \n    Wed Sep 2 (today) \n    class \n    Class 2: Agentic Workflows (GitHub, Claude Code in Positron, modes, skills) \n    Tompkins 201 \n    Done \n  \n  \n    Mon Sep 7 (in 5 days) \n    homework \n    HW2: Data Wrangling \n    madd-[netID] repo, hw2/ \n    Upcoming \n  \n  \n    Wed Sep 9 (in 7 days) \n    quiz \n    Quiz 1 (weeks 1 to 2) \n    In class, start of class, paper \n    Upcoming \n  \n  \n    Wed Sep 9 (in 7 days) \n    class \n    Class 3: Data Wrangling (tidyverse); decision variables vs attributes \n    Tompkins 201 \n    Upcoming \n  \n  \n    Wed Sep 16 (in 14 days) \n    class \n    Week 4: no lecture, Project Proposal Workshop (remote team meetings with the professor) \n    Remote (sign-up link) \n    Upcoming \n  \n  \n    Sun Sep 20 (in 18 days) \n    project \n    Project Proposal \n    Team GitHub repo \n    Upcoming \n  \n  \n    Mon Sep 21 (in 19 days) \n    homework \n    HW3: Quarto and Plotting \n    madd-[netID] repo, hw3/ \n    Upcoming \n  \n  \n    Wed Sep 23 (in 21 days) \n    quiz \n    Quiz 2 (week 3) \n    In class \n    Upcoming"
+  },
+  {
+    "objectID": "index.html#deliverable-pipeline",
+    "href": "index.html#deliverable-pipeline",
+    "title": "Team Project Tracker",
+    "section": "Deliverable pipeline",
+    "text": "Deliverable pipeline\nSeven deliverables, all submitted by pushing to the team’s GitHub repo by 11:59 pm on the tracked date (the course overview table shows a date one day later for most of them; the earlier date is the one tracked here).\n\n\n\n \n  \n    # \n    Deliverable \n    Due \n    When \n    Weight (%) \n    State \n    Notes \n  \n \n\n  \n    1 \n    Project Proposal \n    Sun Sep 20 \n    in 18 days \n    5 \n    Upcoming \n    Overview table says Sep 21; the earlier date is tracked. Rubric 55 pts \n  \n  \n    2 \n    Survey Plan \n    Tue Sep 29 \n    in 27 days \n    5 \n    Upcoming \n    Overview says Sep 30. Rubric 35 pts \n  \n  \n    3 \n    Pilot Survey \n    Tue Oct 13 \n    in 41 days \n    5 \n    Upcoming \n    Overview says Oct 14. Rubric 35 pts \n  \n  \n    4 \n    Pilot Analysis \n    Sun Nov 1 \n    in 60 days \n    5 \n    Upcoming \n    Overview says Nov 2. Rubric 35 pts \n  \n  \n    5 \n    Final Survey \n    Sun Nov 15 \n    in 74 days \n    5 \n    Upcoming \n    Overview says Nov 16. Eligibility text goes with the submission (Prolific pre-screening). Rubric 35 pts \n  \n  \n    6 \n    Final Analysis Report \n    Sun Dec 6 \n    in 95 days \n    15 \n    Upcoming \n    Overview says Dec 7. Rubric 40 pts \n  \n  \n    7 \n    Final Presentation \n    Tue Dec 8 \n    in 97 days \n    5 \n    Upcoming \n    Overview says Dec 9. 10 minutes, everyone presents. Rubric 35 pts"
+  },
+  {
+    "objectID": "index.html#on-the-critical-path-right-now",
+    "href": "index.html#on-the-critical-path-right-now",
+    "title": "Team Project Tracker",
+    "section": "On the critical path right now",
+    "text": "On the critical path right now\nThe next open activities that sit on the critical path. If one of these slips, the deliverable behind it slips.\n\n\n\n \n  \n    ID \n    Phase \n    Activity \n    Owner \n    Due \n    Status \n  \n \n\n  \n    A01 \n    Setup \n    Form the team (3 to 4 members) on the team-formation sheet \n    Team \n    Wed Sep 9 (in 7 days) \n    In progress \n  \n  \n    A02 \n    Setup \n    Pick the project topic against the seven selection criteria \n    Team \n    Wed Sep 9 (in 7 days) \n    Not started \n  \n  \n    A03 \n    Setup \n    Create the shared team GitHub repo and agree the folder layout \n    Team \n    Fri Sep 11 (in 9 days) \n    Not started \n  \n  \n    A05 \n    Proposal \n    Market opportunity research: customer, competitors, market size with references \n    Team \n    Tue Sep 15 (in 13 days) \n    Not started \n  \n  \n    A06 \n    Proposal \n    Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges) \n    Team \n    Tue Sep 15 (in 13 days) \n    Not started \n  \n  \n    A07 \n    Proposal \n    Write 2 to 3 research questions tied to the attributes \n    Team \n    Wed Sep 16 (in 14 days) \n    Not started"
+  },
+  {
+    "objectID": "index.html#this-week",
+    "href": "index.html#this-week",
+    "title": "Team Project Tracker",
+    "section": "This week",
+    "text": "This week\nWeek 2 (class on Wed Sep 2): Agentic Workflows: GitHub, Claude Code in Positron, modes, skills, working safely. Project focus: Team formation open; scout topics against the selection criteria. Progress note: In-class agentic exercise: this tracker site was built and published.\nSee the full week-by-week table, the activity list, and the dev log for what happened in each work session."
+  },
+  {
+    "objectID": "tracker/critical-path.html",
+    "href": "tracker/critical-path.html",
+    "title": "Critical path",
+    "section": "",
+    "text": "The project is a strict pipeline: each deliverable is the input to the next, and the final survey has to be in the field over Thanksgiving week before any final analysis can happen. That makes almost every project activity critical. The diagram shows the chain by deliverable; the table underneath is computed from data/activities.csv and shows, for each critical activity, how many days of float sit between its due date and the start of whatever depends on it."
+  },
+  {
+    "objectID": "tracker/critical-path.html#the-chain",
+    "href": "tracker/critical-path.html#the-chain",
+    "title": "Critical path",
+    "section": "The chain",
+    "text": "The chain\n\n\n\n\n\nflowchart TD\n  T[Team formed&lt;br/&gt;by Sep 9] --&gt; TP[Topic chosen&lt;br/&gt;by Sep 9]\n  TP --&gt; P[Proposal&lt;br/&gt;Sep 20]\n  P --&gt; W[Proposal workshop&lt;br/&gt;week of Sep 16]\n  W --&gt; SP[Survey plan&lt;br/&gt;Sep 29]\n  SP --&gt; PS[Pilot survey live&lt;br/&gt;Oct 13]\n  PS --&gt; CL[Classmates take pilots&lt;br/&gt;week of Oct 21]\n  CL --&gt; PA[Pilot analysis&lt;br/&gt;Nov 1]\n  PA --&gt; FS[Final survey live&lt;br/&gt;Nov 15]\n  FS --&gt; FD[Fielding on Prolific&lt;br/&gt;Nov 23 to 29]\n  FD --&gt; FA[Final analysis report&lt;br/&gt;Dec 6]\n  FA --&gt; PR[Presentation&lt;br/&gt;Dec 8 and 9]\n  classDef done fill:#d4edda,stroke:#155724,color:#155724;\n  classDef active fill:#fff3cd,stroke:#7a5a00,color:#7a5a00;\n  class T active;"
+  },
+  {
+    "objectID": "tracker/critical-path.html#timeline",
+    "href": "tracker/critical-path.html#timeline",
+    "title": "Critical path",
+    "section": "Timeline",
+    "text": "Timeline\n\n\n\n\n\ngantt\n  title Project deliverables and the work behind them\n  dateFormat YYYY-MM-DD\n  axisFormat %b %d\n  section Setup\n    Team and topic            :active, setup, 2026-08-26, 2026-09-09\n    Team repo                 :repo, after setup, 2d\n  section Proposal\n    Research and drafting     :prop, 2026-09-09, 2026-09-18\n    Submit proposal           :milestone, m1, 2026-09-20, 0d\n    Workshop with professor   :ws, 2026-09-14, 2026-09-18\n  section Survey plan\n    Population, questions, content :splan, 2026-09-21, 2026-09-28\n    Submit survey plan        :milestone, m2, 2026-09-29, 0d\n  section Pilot survey\n    Design file and survey.qmd :pilot, 2026-10-01, 2026-10-09\n    Supabase and shinyapps     :deploy, 2026-10-06, 2026-10-12\n    Submit pilot survey        :milestone, m3, 2026-10-13, 0d\n    Classmates take pilots     :field1, 2026-10-21, 2026-10-26\n  section Pilot analysis\n    Clean, model, power        :pan, 2026-10-22, 2026-10-29\n    Report                     :prep, 2026-10-27, 2026-10-31\n    Submit pilot analysis      :milestone, m4, 2026-11-01, 0d\n  section Final survey\n    Apply pilot changes        :fs, 2026-11-02, 2026-11-13\n    Submit final survey        :milestone, m5, 2026-11-15, 0d\n    Fielding on Prolific       :crit, field2, 2026-11-23, 2026-11-29\n  section Final analysis\n    Clean, model, analyse      :crit, fa, 2026-11-27, 2026-12-04\n    Report                     :crit, frep, 2026-12-02, 2026-12-05\n    Submit final report        :milestone, m6, 2026-12-06, 0d\n  section Presentation\n    Slides and rehearsal       :pres, 2026-12-03, 2026-12-08\n    Present                    :milestone, m7, 2026-12-09, 0d"
+  },
+  {
+    "objectID": "tracker/critical-path.html#float-on-each-critical-activity",
+    "href": "tracker/critical-path.html#float-on-each-critical-activity",
+    "title": "Critical path",
+    "section": "Float on each critical activity",
+    "text": "Float on each critical activity\nFloat is the number of days between an activity’s due date and the earliest start of anything that depends on it. Zero or negative float means the next task is waiting on this one the day it is due.\n\n\n\n \n  \n    ID \n    Phase \n    Activity \n    Due \n    Feeds into \n    Float (days) \n    Status \n  \n \n\n  \n    A01 \n    Setup \n    Form the team (3 to 4 members) on the team-formation sheet \n    Wed Sep 9 \n    A02, A03, A04, A40 \n    -14 \n    In progress \n  \n  \n    A02 \n    Setup \n    Pick the project topic against the seven selection criteria \n    Wed Sep 9 \n    A05, A06 \n    0 \n    Not started \n  \n  \n    A03 \n    Setup \n    Create the shared team GitHub repo and agree the folder layout \n    Fri Sep 11 \n     \n     \n    Not started \n  \n  \n    A05 \n    Proposal \n    Market opportunity research: customer, competitors, market size with references \n    Tue Sep 15 \n    A08 \n    -1 \n    Not started \n  \n  \n    A06 \n    Proposal \n    Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges) \n    Tue Sep 15 \n    A07, A08 \n    -3 \n    Not started \n  \n  \n    A07 \n    Proposal \n    Write 2 to 3 research questions tied to the attributes \n    Wed Sep 16 \n    A08 \n    -2 \n    Not started \n  \n  \n    A08 \n    Proposal \n    Write proposal.qmd from the template (Abstract, Introduction with picture, Market Opportunity, Product Attributes, Research Questions, Other Questions, Attribution) \n    Fri Sep 18 \n    A09 \n    0 \n    Not started \n  \n  \n    A10 \n    Proposal \n    Proposal workshop meeting with the professor (remote, week 4) \n    Fri Sep 18 \n    A11, A12 \n    3 \n    Not started \n  \n  \n    A09 \n    Proposal \n    Submit the proposal (render, commit, push to the team repo) \n    Sun Sep 20 \n    A10 \n    -6 \n    Not started \n  \n  \n    A11 \n    Survey plan \n    Target population, fallback, and exact eligibility question text \n    Fri Sep 25 \n    A13 \n    -2 \n    Not started \n  \n  \n    A12 \n    Survey plan \n    Choice question text and the final attributes and levels table with units \n    Sat Sep 26 \n    A13 \n    -3 \n    Not started \n  \n  \n    A13 \n    Survey plan \n    Survey content: welcome, consent (18+, 'I have read and understand'), education, critical respondent info, other questions \n    Mon Sep 28 \n    A14 \n    0 \n    Not started \n  \n  \n    A14 \n    Survey plan \n    Submit the survey plan \n    Tue Sep 29 \n    A15, A16, A20 \n    1 \n    Not started \n  \n  \n    A15 \n    Pilot survey \n    Generate the design file with cbc_design (code/1_make_choice_questions.R) \n    Tue Oct 6 \n     \n     \n    Not started \n  \n  \n    A16 \n    Pilot survey \n    Build survey.qmd from the surveydown conjoint buttons template; reuse the plan text \n    Fri Oct 9 \n    A17 \n    -3 \n    Not started \n  \n  \n    A17 \n    Pilot survey \n    Connect Supabase and confirm responses are stored \n    Sat Oct 10 \n    A18 \n    -1 \n    Not started \n  \n  \n    A18 \n    Pilot survey \n    Deploy to shinyapps.io and test end to end \n    Mon Oct 12 \n    A19 \n    0 \n    Not started \n  \n  \n    A19 \n    Pilot survey \n    Submit the pilot survey (push the folder; survey live) \n    Tue Oct 13 \n    A21 \n    8 \n    Not started \n  \n  \n    A22 \n    Pilot analysis \n    Download pilot data with sd_get_data(); clean-data.R to long format \n    Sun Oct 25 \n    A23 \n    -1 \n    Not started \n  \n  \n    A21 \n    Pilot analysis \n    Take every other team's pilot survey and fill the feedback sheet (part of HW8) \n    Mon Oct 26 \n    A22 \n    -4 \n    Not started \n  \n  \n    A23 \n    Pilot analysis \n    modeling.R: preliminary models; coefficient table and figures with uncertainty \n    Wed Oct 28 \n    A24, A25 \n    -2 \n    Not started \n  \n  \n    A24 \n    Pilot analysis \n    power-analysis.R: standard errors vs sample size; pick the final sample size \n    Thu Oct 29 \n    A25 \n    -2 \n    Not started \n  \n  \n    A25 \n    Pilot analysis \n    report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power, changes to final survey, appendix \n    Sat Oct 31 \n    A26 \n    0 \n    Not started \n  \n  \n    A26 \n    Pilot analysis \n    Submit the pilot analysis \n    Sun Nov 1 \n    A27 \n    1 \n    Not started \n  \n  \n    A27 \n    Final survey \n    Apply pilot changes (attributes, levels, question text, sample size) \n    Sun Nov 8 \n    A28 \n    0 \n    Not started \n  \n  \n    A28 \n    Final survey \n    Redeploy the final survey; all referenced files on the web; end-to-end test \n    Fri Nov 13 \n    A29 \n    0 \n    Not started \n  \n  \n    A29 \n    Final survey \n    Write the Prolific eligibility text and submit the final survey \n    Sun Nov 15 \n    A30 \n    8 \n    Not started \n  \n  \n    A30 \n    Final survey \n    Fielding on Prolific (arranged through the professor) \n    Sun Nov 29 \n    A31 \n    -2 \n    Not started \n  \n  \n    A31 \n    Final analysis \n    clean_data.R on the final data; sample description table \n    Tue Dec 1 \n    A32 \n    -2 \n    Not started \n  \n  \n    A32 \n    Final analysis \n    modeling.R: simple logit, mixed logit with random parameters, at least one sub-group comparison \n    Thu Dec 3 \n    A33 \n    -2 \n    Not started \n  \n  \n    A33 \n    Final analysis \n    analysis.R: WTP with 95% CIs, market simulation vs competitors, price and attribute sensitivity with a tornado plot \n    Fri Dec 4 \n    A34, A36 \n    -2 \n    Not started \n  \n  \n    A34 \n    Final analysis \n    report.qmd as narrative paragraphs: results, recommendations, limitations, attribution, appendix \n    Sat Dec 5 \n    A35 \n    0 \n    Not started \n  \n  \n    A35 \n    Final analysis \n    Submit the final analysis report \n    Sun Dec 6 \n     \n     \n    Not started \n  \n  \n    A36 \n    Presentation \n    Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations \n    Mon Dec 7 \n    A37 \n    -1 \n    Not started \n  \n  \n    A37 \n    Presentation \n    Rehearse to 10 minutes with every member presenting at least one slide \n    Tue Dec 8 \n    A38 \n    0 \n    Not started \n  \n  \n    A38 \n    Presentation \n    Submit slides to the repo (due Dec 8) and present live in class Dec 9 or DM a video link \n    Wed Dec 9 \n     \n     \n    Not started"
+  },
+  {
+    "objectID": "tracker/critical-path.html#where-the-risk-concentrates",
+    "href": "tracker/critical-path.html#where-the-risk-concentrates",
+    "title": "Critical path",
+    "section": "Where the risk concentrates",
+    "text": "Where the risk concentrates\nThe two links with no give at all are the pilot-to-final-survey handoff (the pilot analysis is due Nov 1 and the final survey Nov 15, with HW9 and HW10 and Quiz 5 in the same fortnight) and the fielding-to-report link (data arrives during Thanksgiving week and the report is due the Sunday after the final exam). The practical defence is to scaffold clean_data.R, modeling.R and analysis.R on the pilot data in early November so that when the final data lands they only need re-running."
+  }
+]

@@ -1,0 +1,38 @@
+---
+title: "Conventions"
+subtitle: "How this site is maintained, and the R and Quarto habits the course grades on"
+---
+
+## Maintaining this site
+
+The site is a Quarto website whose content comes from three CSVs. The loop for any update is the same loop the course teaches: edit, render, read the diff, verify, commit, push.
+
+| To change | Edit | Then |
+|---|---|---|
+| A deadline's state or a note | `data/deadlines.csv` | render, push |
+| An activity's status, owner or dates | `data/activities.csv` | render, push |
+| How a week went | `data/weeks.csv` (`status`, `progress_note`) | render, push |
+| The roster, topic, account owners, contributions | `context-bank/team.qmd` | render, push |
+| A new dev log entry | new folder `devlog/posts/YYYY-MM-DD-slug/index.qmd` with `title`, `description`, `author`, `date`, `categories` | render, push |
+| The critical-path diagram | the two `{mermaid}` blocks in `tracker/critical-path.qmd` (the float table is computed) | render, push |
+
+Rendering: open the repo folder in Positron (File, Open Folder, the folder itself), then in the terminal run `quarto render`. The output goes to `docs/` because `_quarto.yml` sets `output-dir: docs`, and GitHub Pages serves `main` `/docs`, so `docs/` is committed along with the source: a source change that is not re-rendered does not reach the site. `quarto preview` gives a live local preview while editing.
+
+Statuses used in the CSVs: `Not started`, `In progress`, `Done`, `Blocked`, `Dropped` for activities; `Upcoming`, `In progress`, `Submitted`, `Graded`, `Done`, `Missed`, `Dropped` for dated items and weeks.
+
+## R and Quarto habits from the course
+
+- Open folders, not files: Positron sets the working directory to the opened folder, so relative paths work. On this site `_quarto.yml` also sets `execute-dir: project`, so every page reads data with `file.path("data", "file.csv")` from the repo root.
+- Paths with `file.path()`, relative to the opened folder. Never change the working directory from code, never absolute paths, never `here()` in student files.
+- No `.Rproj` files; the course templates ship them and the instruction is to ignore them.
+- Every report renders cleanly before it is committed; a `.qmd` that does not render is not submitted.
+- Charts: informative titles that state the finding, real axis labels, a source caption, white background, direct labels where possible (the `my-chart-style` skill from week 2 encodes this).
+- Ask the agent for code, not answers; keep the data, script, figure pipeline; sanity-check row counts, duplicates, NA handling and totals yourself.
+
+## Git habits
+
+Commit messages say what changed and why ("Add pilot power analysis", not "update"). Pull before push when someone else may have pushed. Never force-push, never rewrite `main`. Nothing personal and no credentials in this repo: it is public.
+
+## Working with an agent in this repo
+
+`CLAUDE.md` in the repo root is the standing brief for Claude Code (or any agent) opened in this folder. It says what the site is, how to render it, what to edit for each kind of change, and the privacy line. Read it, then this context bank, before making changes; after a session, write a dev log entry and update the activity statuses.

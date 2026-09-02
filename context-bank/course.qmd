@@ -1,0 +1,45 @@
+---
+title: "The course"
+subtitle: "EMSE 6035, Marketing Analytics for Design Decisions, GWU, Fall 2026"
+---
+
+## In one paragraph
+
+EMSE 6035 teaches how to use choice-based conjoint surveys and discrete choice models to inform design decisions for a new product, technology or policy. Class meets Wednesdays in Tompkins 201, in person, attendance taken. Nearly all the work is done in R with an AI agent alongside, and the course is explicit that the agent's output has to be verified by the student: the final exam opens with an AI-written conjoint analysis that has to be audited. The semester project (45 percent) runs the whole term in teams of 3 to 4 and ends with a reproducible HTML report and a ten-minute presentation.
+
+## Grade composition
+
+| Item | Weight (%) |
+|---|---:|
+| Participation and attendance | 5 |
+| Homework (13, lowest dropped, 2.5 each) | 30 |
+| Quizzes (6, lowest dropped) | 10 |
+| Final exam (Dec 2, closed book, on paper) | 10 |
+| Project proposal | 5 |
+| Survey plan | 5 |
+| Pilot survey | 5 |
+| Pilot analysis | 5 |
+| Final survey | 5 |
+| Final analysis report | 15 |
+| Final presentation | 5 |
+
+Homework is graded on a check system (check-plus 110, check 100, check-minus 50) and "is not submitted until you've pushed it". Quizzes are ten minutes at the very start of class, low stakes by design, no make-ups without an excused absence.
+
+## Toolchain
+
+| Tool | Role |
+|---|---|
+| R 4.x | All analysis |
+| Positron | The IDE: R, Quarto and Claude Code together. Open folders, not files |
+| Quarto | Literate documents; every report and this site |
+| Course packages | tidyverse, cbcTools, logitr, surveydown, kableExtra, cowplot, ggrepel, janitor, viridis, fastDummies, knitr, rmarkdown, plus a few from GitHub |
+| GitHub | Every submission: the per-student `madd-<netID>` repo for homework, the team repo for project deliverables |
+| GitHub Desktop or the terminal | Commit and push; the course teaches Desktop, the command line is fine |
+| Claude Code | The agent, run from the Positron terminal in the project folder |
+| surveydown, Supabase, shinyapps.io | Building, storing and hosting the survey from week 6 onward |
+| Prolific | Paid U.S. respondents for the final survey, arranged through the professor |
+| Slack | Course communication; `#project` for team matters |
+
+## The loop the course runs on
+
+Prompt, read the diff, verify, commit and push. The agent almost never makes a syntax mistake, so a wrong answer arrives looking exactly like a right one; running is not the same as right. The three habits the course teaches for working safely: ask for code rather than results, run sanity checks the agent cannot fake (row counts, duplicates, spot checks against the source, NA handling, totals that make sense), and use fake data with the same columns when the real data cannot be shared.

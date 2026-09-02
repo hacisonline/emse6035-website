@@ -1,0 +1,61 @@
+project:
+  type: website
+  output-dir: docs
+  execute-dir: project
+  render:
+    - "*.qmd"
+    - "**/*.qmd"
+
+website:
+  title: "EMSE 6035 Project Tracker"
+  description: "Team project tracker for EMSE 6035, Marketing Analytics for Design Decisions, GWU, Fall 2026"
+  favicon: favicon.svg
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Tracker"
+        menu:
+          - text: "Activities"
+            href: tracker/activities.qmd
+          - text: "Critical path"
+            href: tracker/critical-path.qmd
+          - text: "Week by week"
+            href: tracker/progress.qmd
+      - text: "Dev log"
+        href: devlog/index.qmd
+      - text: "Context bank"
+        href: context-bank/index.qmd
+  sidebar:
+    - title: "Context bank"
+      style: docked
+      contents:
+        - context-bank/index.qmd
+        - context-bank/course.qmd
+        - context-bank/deadlines.qmd
+        - context-bank/project-requirements.qmd
+        - context-bank/team.qmd
+        - context-bank/conventions.qmd
+  page-footer:
+    left: "EMSE 6035 team project tracker. Public site: no grades, no personal details, no credentials."
+    right: "Built with Quarto and R; data lives in data/*.csv."
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: false
+    df-print: kable
+    html-table-processing: none
+    page-layout: full
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: false

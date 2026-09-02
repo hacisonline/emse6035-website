@@ -1,0 +1,16 @@
+---
+title: "Dev log"
+subtitle: "One entry per work session: what was done, what was checked, what is next"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  fields: [date, title, author, categories, description]
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+toc: false
+---
+
+The dev log is the team's memory. Every time someone works on the project, they add a short post here (a folder under `devlog/posts/` with an `index.qmd`), following the loop the course teaches: what was asked, what the agent or the person produced, how it was verified, and what changed as a result. Entries are dated and tagged by phase so the [activities](../tracker/activities.qmd) page and the log can be read side by side.

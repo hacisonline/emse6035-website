@@ -1,0 +1,17 @@
+week,date,class_topic,quiz,homework_due,project_due,project_focus,status,progress_note
+1,2026-08-26,"Getting Started: orientation, intro to conjoint, R and Positron, project intros",,"HW1 (Mon Aug 31)",,"Meet the project list; start thinking about teams",Done,"HW1 submitted on time"
+2,2026-09-02,"Agentic Workflows: GitHub, Claude Code in Positron, modes, skills, working safely",,"HW2 (Mon Sep 7)",,"Team formation open; scout topics against the selection criteria",In progress,"In-class agentic exercise: this tracker site was built and published"
+3,2026-09-09,"Data Wrangling (tidyverse); decision variables vs attributes","Quiz 1 (wks 1-2)","none (finish proposals)","Proposal (Sun Sep 20)","Team and topic settled; proposal drafting",Upcoming,
+4,2026-09-16,"No lecture: Proposal Workshop, remote team meetings with the professor",,"HW3 (Mon Sep 21)","Survey Plan (Tue Sep 29)","Proposal feedback; narrow scope if asked",Upcoming,
+5,2026-09-23,"Quarto and Plotting; project scope: attribute levels, target population, competitors","Quiz 2 (wk 3)","HW4 (Mon Sep 28)",,"Survey plan: target population, eligibility, choice question text",Upcoming,
+6,2026-09-30,"Intro to surveydown; make the survey plan",,"HW5 (Mon Oct 5)","Pilot Survey (Tue Oct 13)","Start building the survey from the surveydown template",Upcoming,
+7,2026-10-07,"Conjoint Questions: cbc_design, labeled vs unlabeled, surveydown","Quiz 3 (wk 5)","HW6 (Mon Oct 12)",,"Design file (choice_questions.csv); Supabase; deploy to shinyapps.io",Upcoming,
+8,2026-10-14,"Utility Models; finish pilot survey",,"HW7 (Mon Oct 19)",,"Pilot survey live",Upcoming,
+9,2026-10-21,"Optimization and MLE; everyone takes everyone else's pilot survey","Quiz 4 (wk 8)","HW8 (Mon Oct 26)","Pilot Analysis (Sun Nov 1)","Collect classmate responses and feedback",Upcoming,
+10,2026-10-28,"Uncertainty; pivoting; cleaning pilot data; estimating pilot models",,"HW9 (Mon Nov 2)",,"Clean pilot data, preliminary models, power analysis, report",Upcoming,
+11,2026-11-04,"DOE and Power Analysis; refine attributes and levels, sample size","Quiz 5 (wk 9)","HW10 (Mon Nov 9)","Final Survey (Sun Nov 15)","Apply pilot lessons to the final survey",Upcoming,
+12,2026-11-11,"WTP and Simulation; finalize final survey",,"HW11 (Mon Nov 16)",,"Final survey deployed; eligibility text ready for Prolific",Upcoming,
+13,2026-11-18,"Heterogeneity: mixed logit and sub-group models","Quiz 6 (wk 12)","HW12 (Sun Nov 22)","Final Analysis Report (Sun Dec 6)","Fielding prep; analysis code scaffolded from the pilot",Upcoming,
+14,2026-11-25,"Thanksgiving, no class; final survey fielding",,"HW13 (Sun Nov 29)",,"Data collection on Prolific; start cleaning as data lands",Upcoming,
+15,2026-12-02,"Final Exam (45 min), exam solutions, what goes in the final report, how to give a talk",Exam,,,"Final report: logit, mixed logit, sub-groups, WTP, simulation, sensitivity",Upcoming,
+16,2026-12-09,"Final Presentations: in-class showcase with Q and A",,,"Final Presentation (Tue Dec 8)","Slides, rehearsal, present",Upcoming,

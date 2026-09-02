@@ -1,0 +1,109 @@
+---
+title: "Critical path"
+subtitle: "The chain of activities that cannot slip without moving a deliverable"
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+activities <- read_data("activities.csv")
+```
+
+The project is a strict pipeline: each deliverable is the input to the next, and the final survey has to be in the field over Thanksgiving week before any final analysis can happen. That makes almost every project activity critical. The diagram shows the chain by deliverable; the table underneath is computed from `data/activities.csv` and shows, for each critical activity, how many days of float sit between its due date and the start of whatever depends on it.
+
+## The chain
+
+```{mermaid}
+%%| fig-width: 10
+flowchart TD
+  T[Team formed<br/>by Sep 9] --> TP[Topic chosen<br/>by Sep 9]
+  TP --> P[Proposal<br/>Sep 20]
+  P --> W[Proposal workshop<br/>week of Sep 16]
+  W --> SP[Survey plan<br/>Sep 29]
+  SP --> PS[Pilot survey live<br/>Oct 13]
+  PS --> CL[Classmates take pilots<br/>week of Oct 21]
+  CL --> PA[Pilot analysis<br/>Nov 1]
+  PA --> FS[Final survey live<br/>Nov 15]
+  FS --> FD[Fielding on Prolific<br/>Nov 23 to 29]
+  FD --> FA[Final analysis report<br/>Dec 6]
+  FA --> PR[Presentation<br/>Dec 8 and 9]
+  classDef done fill:#d4edda,stroke:#155724,color:#155724;
+  classDef active fill:#fff3cd,stroke:#7a5a00,color:#7a5a00;
+  class T active;
+```
+
+## Timeline
+
+```{mermaid}
+%%| fig-width: 10
+gantt
+  title Project deliverables and the work behind them
+  dateFormat YYYY-MM-DD
+  axisFormat %b %d
+  section Setup
+    Team and topic            :active, setup, 2026-08-26, 2026-09-09
+    Team repo                 :repo, after setup, 2d
+  section Proposal
+    Research and drafting     :prop, 2026-09-09, 2026-09-18
+    Submit proposal           :milestone, m1, 2026-09-20, 0d
+    Workshop with professor   :ws, 2026-09-14, 2026-09-18
+  section Survey plan
+    Population, questions, content :splan, 2026-09-21, 2026-09-28
+    Submit survey plan        :milestone, m2, 2026-09-29, 0d
+  section Pilot survey
+    Design file and survey.qmd :pilot, 2026-10-01, 2026-10-09
+    Supabase and shinyapps     :deploy, 2026-10-06, 2026-10-12
+    Submit pilot survey        :milestone, m3, 2026-10-13, 0d
+    Classmates take pilots     :field1, 2026-10-21, 2026-10-26
+  section Pilot analysis
+    Clean, model, power        :pan, 2026-10-22, 2026-10-29
+    Report                     :prep, 2026-10-27, 2026-10-31
+    Submit pilot analysis      :milestone, m4, 2026-11-01, 0d
+  section Final survey
+    Apply pilot changes        :fs, 2026-11-02, 2026-11-13
+    Submit final survey        :milestone, m5, 2026-11-15, 0d
+    Fielding on Prolific       :crit, field2, 2026-11-23, 2026-11-29
+  section Final analysis
+    Clean, model, analyse      :crit, fa, 2026-11-27, 2026-12-04
+    Report                     :crit, frep, 2026-12-02, 2026-12-05
+    Submit final report        :milestone, m6, 2026-12-06, 0d
+  section Presentation
+    Slides and rehearsal       :pres, 2026-12-03, 2026-12-08
+    Present                    :milestone, m7, 2026-12-09, 0d
+```
+
+## Float on each critical activity
+
+Float is the number of days between an activity's due date and the earliest start of anything that depends on it. Zero or negative float means the next task is waiting on this one the day it is due.
+
+```{r}
+crit <- activities |> filter(critical)
+
+succ_start <- function(this_id) {
+  dep <- activities |>
+    filter(!is.na(depends_on), str_detect(depends_on, fixed(this_id)))
+  if (nrow(dep) == 0) return(as.Date(NA))
+  min(as.Date(dep$start))
+}
+
+crit |>
+  mutate(next_start = map(id, succ_start) |> reduce(c),
+         float = as.integer(next_start - as.Date(due))) |>
+  arrange(due) |>
+  transmute(
+    ID = id,
+    Phase = phase,
+    Activity = activity,
+    Due = fmt_date(due),
+    `Feeds into` = map_chr(id, function(i) {
+      d <- activities |> filter(!is.na(depends_on), str_detect(depends_on, fixed(i)))
+      if (nrow(d) == 0) "" else paste(d$id, collapse = ", ")
+    }),
+    `Float (days)` = ifelse(is.na(float), "", as.character(float)),
+    Status = pill(status)
+  ) |>
+  nice_table(align = "llllllc")
+```
+
+## Where the risk concentrates
+
+The two links with no give at all are the pilot-to-final-survey handoff (the pilot analysis is due Nov 1 and the final survey Nov 15, with HW9 and HW10 and Quiz 5 in the same fortnight) and the fielding-to-report link (data arrives during Thanksgiving week and the report is due the Sunday after the final exam). The practical defence is to scaffold `clean_data.R`, `modeling.R` and `analysis.R` on the pilot data in early November so that when the final data lands they only need re-running.

@@ -1,0 +1,41 @@
+id,phase,activity,owner,start,due,depends_on,critical,status,deliverable,notes
+A01,Setup,"Form the team (3 to 4 members) on the team-formation sheet",Team,2026-08-26,2026-09-09,,TRUE,In progress,,"Must be settled within the first two weeks"
+A02,Setup,"Pick the project topic against the seven selection criteria",Team,2026-08-26,2026-09-09,A01,TRUE,Not started,,"Emerging, well-defined, identified market, pre-mass-market, moderate scope, expertise available, several decision variables"
+A03,Setup,"Create the shared team GitHub repo and agree the folder layout",Team,2026-09-09,2026-09-11,A01,TRUE,Not started,,"One submitter per deliverable; every deliverable is pushed here"
+A04,Setup,"Decide who owns the shinyapps.io account and the Supabase project",Team,2026-09-09,2026-09-30,A01,FALSE,Not started,,"Keys stay in .Renviron on that person's machine, never in any repo"
+A05,Proposal,"Market opportunity research: customer, competitors, market size with references",Team,2026-09-09,2026-09-15,A02,TRUE,Not started,Proposal,"Rubric: Market Opportunity 10 pts"
+A06,Proposal,"Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges)",Team,2026-09-09,2026-09-15,A02,TRUE,Not started,Proposal,"Rubric: Product Attributes 10 pts; label them on the product diagram"
+A07,Proposal,"Write 2 to 3 research questions tied to the attributes",Team,2026-09-12,2026-09-16,A06,TRUE,Not started,Proposal,"Rubric: Research Questions 10 pts"
+A08,Proposal,"Write proposal.qmd from the template (Abstract, Introduction with picture, Market Opportunity, Product Attributes, Research Questions, Other Questions, Attribution)",Team,2026-09-14,2026-09-18,A05;A06;A07,TRUE,Not started,Proposal,"Render clean; spell_check_files(); all names in YAML author"
+A09,Proposal,"Submit the proposal (render, commit, push to the team repo)",Submitter,2026-09-18,2026-09-20,A08,TRUE,Not started,Proposal,"Due 11:59 pm Sun Sep 20 (tracked date)"
+A10,Proposal,"Proposal workshop meeting with the professor (remote, week 4)",Team,2026-09-14,2026-09-18,A09,TRUE,Not started,,"Sign up via the calendar link; expect a request to narrow scope"
+A11,Survey plan,"Target population, fallback, and exact eligibility question text",Team,2026-09-21,2026-09-25,A10,TRUE,Not started,Survey Plan,"Default: paid U.S. Prolific respondents"
+A12,Survey plan,"Choice question text and the final attributes and levels table with units",Team,2026-09-21,2026-09-26,A10,TRUE,Not started,Survey Plan,"Rubric: Attributes and Levels 10 pts"
+A13,Survey plan,"Survey content: welcome, consent (18+, 'I have read and understand'), education, critical respondent info, other questions",Team,2026-09-23,2026-09-28,A11;A12,TRUE,Not started,Survey Plan,"Exact question text, not descriptions"
+A14,Survey plan,"Submit the survey plan",Submitter,2026-09-28,2026-09-29,A13,TRUE,Not started,Survey Plan,"Due Tue Sep 29"
+A15,Pilot survey,"Generate the design file with cbc_design (code/1_make_choice_questions.R)",Team,2026-10-01,2026-10-06,A14,TRUE,Not started,Pilot Survey,"Randomized choice sets must work from data/choice_questions.csv"
+A16,Pilot survey,"Build survey.qmd from the surveydown conjoint buttons template; reuse the plan text",Team,2026-10-01,2026-10-09,A14,TRUE,Not started,Pilot Survey,"Replace every placeholder; render often; run app.R locally"
+A17,Pilot survey,"Connect Supabase and confirm responses are stored",Owner of accounts,2026-10-06,2026-10-10,A04;A16,TRUE,Not started,Pilot Survey,
+A18,Pilot survey,"Deploy to shinyapps.io and test end to end",Owner of accounts,2026-10-09,2026-10-12,A17,TRUE,Not started,Pilot Survey,"Rubric: deployment 10 pts"
+A19,Pilot survey,"Submit the pilot survey (push the folder; survey live)",Submitter,2026-10-12,2026-10-13,A18,TRUE,Not started,Pilot Survey,"Due Tue Oct 13"
+A20,Pilot survey,"Sign up for the survey-plan meeting slot with the professor (Slack #project)",Team,2026-09-30,2026-10-07,A14,FALSE,Not started,,
+A21,Pilot analysis,"Take every other team's pilot survey and fill the feedback sheet (part of HW8)",Everyone,2026-10-21,2026-10-26,A19,TRUE,Not started,,"Their responses to ours land in the same window"
+A22,Pilot analysis,"Download pilot data with sd_get_data(); clean-data.R to long format",Team,2026-10-22,2026-10-25,A21,TRUE,Not started,Pilot Analysis,"Save raw data in data/; save the cleaned CSV"
+A23,Pilot analysis,"modeling.R: preliminary models; coefficient table and figures with uncertainty",Team,2026-10-24,2026-10-28,A22,TRUE,Not started,Pilot Analysis,"Write the utility model in LaTeX in the report"
+A24,Pilot analysis,"power-analysis.R: standard errors vs sample size; pick the final sample size",Team,2026-10-26,2026-10-29,A23,TRUE,Not started,Pilot Analysis,
+A25,Pilot analysis,"report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power, changes to final survey, appendix",Team,2026-10-27,2026-10-31,A23;A24,TRUE,Not started,Pilot Analysis,"Rubric: Report Contents 15 pts"
+A26,Pilot analysis,"Submit the pilot analysis",Submitter,2026-10-31,2026-11-01,A25,TRUE,Not started,Pilot Analysis,"Due Sun Nov 1"
+A27,Final survey,"Apply pilot changes (attributes, levels, question text, sample size)",Team,2026-11-02,2026-11-08,A26,TRUE,Not started,Final Survey,
+A28,Final survey,"Redeploy the final survey; all referenced files on the web; end-to-end test",Owner of accounts,2026-11-08,2026-11-13,A27,TRUE,Not started,Final Survey,
+A29,Final survey,"Write the Prolific eligibility text and submit the final survey",Submitter,2026-11-13,2026-11-15,A28,TRUE,Not started,Final Survey,"Due Sun Nov 15"
+A30,Final survey,"Fielding on Prolific (arranged through the professor)",Professor + team,2026-11-23,2026-11-29,A29,TRUE,Not started,,"Thanksgiving week; start cleaning as data lands"
+A31,Final analysis,"clean_data.R on the final data; sample description table",Team,2026-11-27,2026-12-01,A30,TRUE,Not started,Final Analysis Report,
+A32,Final analysis,"modeling.R: simple logit, mixed logit with random parameters, at least one sub-group comparison",Team,2026-11-29,2026-12-03,A31,TRUE,Not started,Final Analysis Report,
+A33,Final analysis,"analysis.R: WTP with 95% CIs, market simulation vs competitors, price and attribute sensitivity with a tornado plot",Team,2026-12-01,2026-12-04,A32,TRUE,Not started,Final Analysis Report,
+A34,Final analysis,"report.qmd as narrative paragraphs: results, recommendations, limitations, attribution, appendix",Team,2026-12-02,2026-12-05,A33,TRUE,Not started,Final Analysis Report,"Fully reproducible HTML; rubric 40 pts"
+A35,Final analysis,"Submit the final analysis report",Submitter,2026-12-05,2026-12-06,A34,TRUE,Not started,Final Analysis Report,"Due Sun Dec 6"
+A36,Presentation,"Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations",Team,2026-12-03,2026-12-07,A33,TRUE,Not started,Final Presentation,"Numbered slides; title slide with names and date; not bullet-heavy"
+A37,Presentation,"Rehearse to 10 minutes with every member presenting at least one slide",Team,2026-12-06,2026-12-08,A36,TRUE,Not started,Final Presentation,
+A38,Presentation,"Submit slides to the repo (due Dec 8) and present live in class Dec 9 or DM a video link",Submitter,2026-12-08,2026-12-09,A37,TRUE,Not started,Final Presentation,
+A39,Ongoing,"Keep this tracker current: update activities.csv, write a dev log entry after each work session, re-render, push",Everyone,2026-09-02,2026-12-09,,FALSE,In progress,,"quarto render, then commit docs/ with the source"
+A40,Ongoing,"Log each member's contributions for the Attribution section of every deliverable",Everyone,2026-09-09,2026-12-09,A01,FALSE,Not started,,"Unequal contributions do not get equal grades"

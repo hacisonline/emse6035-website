@@ -1,0 +1,23 @@
+---
+title: "Kickoff: the tracker site exists"
+description: "Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages."
+author: "Harshit (with Claude)"
+date: 2026-09-02
+categories: [setup, agentic-workflow]
+---
+
+## What was asked
+
+Class 2 was the agentic workflows session: open a folder in Positron, run an agent in it, build a Quarto website, switch the output folder to `docs`, push, and publish it with GitHub Pages. The brief for this one was a team project tracker for the semester: activities, a critical path, week-by-week progress, dev logs, and a context bank that knows the course deadlines.
+
+## What was built
+
+A Quarto website with `output-dir: docs` and `execute-dir: project`. Three CSVs in `data/` hold the facts: `deadlines.csv` (every dated item on the course calendar), `weeks.csv` (the sixteen class weeks with the project focus and a progress note for each), and `activities.csv` (forty activities from team formation to the final presentation, each with an owner, start, due, dependencies, a critical-path flag and a status). R code in `R/helpers.R` reads them and every page is a table or a summary computed from them, so the home page dashboard, the activity list, the float calculation on the critical path and the week table all update from a CSV edit and a re-render. The context bank pages hold the course facts that are safe to publish: grading weights, the deliverable requirements and rubric points, the toolchain and the conventions the professor grades on.
+
+## How it was verified
+
+The site was rendered end to end with Quarto and R before the first commit, and the dates were checked line by line against the course schedule the professor publishes (the tracked date for each project deliverable is the earlier of the two dates the course materials show). The activity count on the home page matches `nrow(activities)`, and the critical-path table lists a successor for every activity that has one.
+
+## What is next
+
+Form the team by Sep 9, pick a topic against the seven selection criteria, then fill in the team page and start the proposal activities (A05 to A09). Each work session from here gets its own entry.

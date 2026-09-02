@@ -1,0 +1,53 @@
+---
+title: "Deadlines"
+subtitle: "Every dated item of the semester, from data/deadlines.csv"
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+deadlines <- read_data("deadlines.csv") |> arrange(date)
+```
+
+All homework and project deliverables are due by 11:59 pm on the date shown. Homework is due the night before the class week begins: a Monday for HW1 to HW11, a Sunday for HW12 (Nov 22) and HW13 (Nov 29). Where the course overview table shows a project date one day later than the schedule file, the earlier date is tracked. This table is the whole of `data/deadlines.csv`; the `state` column is the team's to update.
+
+## Filter by kind
+
+```{r}
+#| results: asis
+kinds <- c("project", "homework", "quiz", "exam", "class")
+counts <- deadlines |> count(kind) |> deframe()
+cat(paste(sprintf("%s: %d", kind_pill(kinds), counts[kinds]), collapse = " &nbsp; "))
+```
+
+## Full calendar
+
+```{r}
+deadlines |>
+  transmute(
+    Date = fmt_date(date, "%a %b %e"),
+    When = when_label(date),
+    Kind = kind_pill(kind),
+    Item = item,
+    `Weight (%)` = ifelse(is.na(weight_pct), "", as.character(weight_pct)),
+    Where = replace_na(where, ""),
+    State = pill(state),
+    Notes = replace_na(notes, "")
+  ) |>
+  nice_table(align = "lllllllcl")
+```
+
+## Project deliverables only
+
+```{r}
+deliverables(deadlines) |>
+  transmute(
+    `#` = n,
+    Deliverable = item,
+    Due = fmt_date(date, "%A, %B %e"),
+    When = when_label(date),
+    `Weight (%)` = weight_pct,
+    State = pill(state),
+    Notes = replace_na(notes, "")
+  ) |>
+  nice_table(align = "rlllccl")
+```
