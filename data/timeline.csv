@@ -1,0 +1,16 @@
+date,event,kind,state
+2026-08-26,"Course starts; the project brief, the seven selection criteria and the deliverable calendar are introduced",course,Done
+2026-09-02,"This tracker is built during the week 2 agentic-workflows exercise and published",tracker,Done
+2026-09-09,"Team of five forms by the week 3 deadline",team,Done
+2026-09-10,"The professor creates the official submission repo for team E",course,Done
+2026-09-15,"Proposal draft v1 rendered: Smart Urban Living, six attributes, three research questions, five open questions",proposal,Done
+2026-09-16,"Draft reviewed against the 55-point rubric: five blocking fixes, seven improvements, one fit risk; both statistics verified",proposal,Done
+2026-09-16,"Brainstorming repo created and teammates invited; official repo joined; tracker replanned with a computed schedule, a risk register and this decision log",tracker,Done
+2026-09-18,"Proposal workshop meeting with the professor (remote, week 4)",course,Next
+2026-09-20,"Proposal v2 submitted from the official repo",proposal,Next
+2026-09-29,"Survey plan due: locked attributes and levels, eligibility text, choice question text, survey content",deliverable,Next
+2026-10-13,"Pilot survey live on shinyapps.io",deliverable,Next
+2026-11-01,"Pilot analysis due",deliverable,Next
+2026-11-15,"Final survey due; Prolific fielding follows",deliverable,Next
+2026-12-06,"Final analysis report due",deliverable,Next
+2026-12-09,"Final presentation in class",deliverable,Next

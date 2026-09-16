@@ -17,16 +17,22 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Project"
+        href: context-bank/project.qmd
       - text: "Schedule"
         href: tracker/schedule.qmd
       - text: "Critical path"
         href: tracker/critical-path.qmd
-      - text: "Activities"
-        href: tracker/activities.qmd
-      - text: "Risks"
-        href: tracker/risks.qmd
-      - text: "Week by week"
-        href: tracker/progress.qmd
+      - text: "Tracker"
+        menu:
+          - text: "Activities"
+            href: tracker/activities.qmd
+          - text: "Requirements"
+            href: tracker/coverage.qmd
+          - text: "Risks"
+            href: tracker/risks.qmd
+          - text: "Week by week"
+            href: tracker/progress.qmd
       - text: "Dev log"
         href: devlog/index.qmd
       - text: "Context bank"
@@ -36,6 +42,7 @@ website:
       style: docked
       contents:
         - context-bank/index.qmd
+        - context-bank/project.qmd
         - context-bank/course.qmd
         - context-bank/deadlines.qmd
         - context-bank/project-requirements.qmd

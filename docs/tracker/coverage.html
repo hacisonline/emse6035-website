@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harshit (with Claude)">
-<meta name="dcterms.date" content="2026-09-02">
-<meta name="description" content="Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.">
 
-<title>Kickoff: the tracker site exists – EMSE 6035 Project Tracker</title>
+<title>Requirements – EMSE 6035 Project Tracker</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,24 +29,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -92,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EMSE 6035 Project Tracker</span>
     </a>
   </div>
@@ -103,19 +100,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../context-bank/project.html"> 
+    <a class="nav-link" href="../context-bank/project.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/schedule.html"> 
+    <a class="nav-link" href="../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/critical-path.html"> 
+    <a class="nav-link" href="../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -124,29 +121,29 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
         <li>
-    <a class="dropdown-item" href="../../../tracker/activities.html">
+    <a class="dropdown-item" href="../tracker/activities.html">
  <span class="dropdown-text">Activities</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../tracker/coverage.html">
+    <a class="dropdown-item" href="../tracker/coverage.html">
  <span class="dropdown-text">Requirements</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../tracker/risks.html">
+    <a class="dropdown-item" href="../tracker/risks.html">
  <span class="dropdown-text">Risks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../tracker/progress.html">
+    <a class="dropdown-item" href="../tracker/progress.html">
  <span class="dropdown-text">Week by week</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../devlog/index.html"> 
+    <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../context-bank/index.html"> 
+    <a class="nav-link" href="../context-bank/index.html"> 
 <span class="menu-text">Context bank</span></a>
   </li>  
 </ul>
@@ -166,35 +163,15 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Kickoff: the tracker site exists</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">setup</div>
-    <div class="quarto-category">agentic-workflow</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.
-  </div>
+<h1 class="title">Requirements</h1>
+<p class="subtitle lead">Every rubric criterion the course grades, the activities that carry it, and how far along each is</p>
 </div>
+
 
 
 <div class="quarto-title-meta column-page">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Harshit (with Claude) </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 2, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -204,21 +181,1133 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-was-asked" class="level2">
-<h2 class="anchored" data-anchor-id="what-was-asked">What was asked</h2>
-<p>Class 2 was the agentic workflows session: open a folder in Positron, run an agent in it, build a Quarto website, switch the output folder to <code>docs</code>, push, and publish it with GitHub Pages. The brief for this one was a team project tracker for the semester: activities, a critical path, week-by-week progress, dev logs, and a context bank that knows the course deadlines.</p>
+<p>The course grades seven deliverables on 270 rubric points (45 percent of the final grade). This page is the traceability check: each criterion from the course’s deliverable pages, in <code>data/requirements.csv</code>, points at the activity ids in <code>data/activities.csv</code> that produce it. A criterion with no live activity would show as missing; today none is.</p>
+<section id="by-deliverable" class="level2">
+<h2 class="anchored" data-anchor-id="by-deliverable">By deliverable</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="table-wrap"><table class="table table-hover table-sm nice-table ">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Deliverable </th>
+   <th style="text-align:right;"> Criteria </th>
+   <th style="text-align:right;"> Points </th>
+   <th style="text-align:right;"> Done </th>
+   <th style="text-align:right;"> In progress </th>
+   <th style="text-align:right;"> Not started </th>
+   <th style="text-align:right;"> On zero float </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Proposal </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 55 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Survey plan </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pilot survey </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pilot analysis </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Final survey </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Final analysis </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Presentation </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table></div>
+
+</div>
+</div>
 </section>
-<section id="what-was-built" class="level2">
-<h2 class="anchored" data-anchor-id="what-was-built">What was built</h2>
-<p>A Quarto website with <code>output-dir: docs</code> and <code>execute-dir: project</code>. Three CSVs in <code>data/</code> hold the facts: <code>deadlines.csv</code> (every dated item on the course calendar), <code>weeks.csv</code> (the sixteen class weeks with the project focus and a progress note for each), and <code>activities.csv</code> (forty activities from team formation to the final presentation, each with an owner, start, due, dependencies, a critical-path flag and a status). R code in <code>R/helpers.R</code> reads them and every page is a table or a summary computed from them, so the home page dashboard, the activity list, the float calculation on the critical path and the week table all update from a CSV edit and a re-render. The context bank pages hold the course facts that are safe to publish: grading weights, the deliverable requirements and rubric points, the toolchain and the conventions the professor grades on.</p>
+<section id="every-criterion" class="level2">
+<h2 class="anchored" data-anchor-id="every-criterion">Every criterion</h2>
+<section id="proposal-55-points" class="level3">
+<h3 class="anchored" data-anchor-id="proposal-55-points">Proposal (55 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PR-1
+</td>
+<td style="text-align:left;">
+Organization and formatting
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Template structure, YAML with title and all five names, placeholder text deleted, renders clean
+</td>
+<td style="text-align:left;">
+P07, P08
+</td>
+<td style="text-align:left;">
+Sep 19 to Sep 20
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-2
+</td>
+<td style="text-align:left;">
+Abstract
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Product, the attributes that set it apart, the research questions
+</td>
+<td style="text-align:left;">
+P03, P06
+</td>
+<td style="text-align:left;">
+Sep 12 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (61%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-3
+</td>
+<td style="text-align:left;">
+Introduction
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Product description and background with a picture or diagram, referenced in the text
+</td>
+<td style="text-align:left;">
+P03, P06
+</td>
+<td style="text-align:left;">
+Sep 12 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (61%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-4
+</td>
+<td style="text-align:left;">
+Market opportunity
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Customer and how the survey reaches them; competitors and their attributes; annual market size with scope, references and growth
+</td>
+<td style="text-align:left;">
+P01, P06
+</td>
+<td style="text-align:left;">
+Sep 9 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (70%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-5
+</td>
+<td style="text-align:left;">
+Product attributes
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Major attributes described with metrics and level ranges, labelled on the diagram, summarised in a table that also shows competitors’ features
+</td>
+<td style="text-align:left;">
+P02, P06
+</td>
+<td style="text-align:left;">
+Sep 9 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (70%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-6
+</td>
+<td style="text-align:left;">
+Research questions
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Two to three design questions, rationale, tied to the attributes
+</td>
+<td style="text-align:left;">
+P02, P06
+</td>
+<td style="text-align:left;">
+Sep 9 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (70%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-7
+</td>
+<td style="text-align:left;">
+Other questions
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+At least three outstanding questions with how they will be answered
+</td>
+<td style="text-align:left;">
+P03, P06
+</td>
+<td style="text-align:left;">
+Sep 12 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (61%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR-8
+</td>
+<td style="text-align:left;">
+Writing quality
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Clear, concise, logically structured; spell-checked; figures referenced
+</td>
+<td style="text-align:left;">
+P06, P07
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 19
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (8%)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="how-it-was-verified" class="level2">
-<h2 class="anchored" data-anchor-id="how-it-was-verified">How it was verified</h2>
-<p>The site was rendered end to end with Quarto and R before the first commit, and the dates were checked line by line against the course schedule the professor publishes (the tracked date for each project deliverable is the earlier of the two dates the course materials show). The activity count on the home page matches <code>nrow(activities)</code>, and the critical-path table lists a successor for every activity that has one.</p>
+<section id="survey-plan-35-points" class="level3">
+<h3 class="anchored" data-anchor-id="survey-plan-35-points">Survey plan (35 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SP-1
+</td>
+<td style="text-align:left;">
+Organization and formatting
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+YAML with title and names, template text deleted, survey_plan.qmd compiles to HTML
+</td>
+<td style="text-align:left;">
+SP05
+</td>
+<td style="text-align:left;">
+Sep 29 to Sep 29
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP-2
+</td>
+<td style="text-align:left;">
+Target population
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Ideal pool, fallback, exact eligibility question text, distribution strategy (course default: Prolific U.S. general population), any subpopulation or alternative channel
+</td>
+<td style="text-align:left;">
+SP02
+</td>
+<td style="text-align:left;">
+Sep 21 to Sep 24
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP-3
+</td>
+<td style="text-align:left;">
+Attributes and levels
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+The choice question text respondents will read; a table of attributes, levels and units
+</td>
+<td style="text-align:left;">
+SP01, SP03
+</td>
+<td style="text-align:left;">
+Sep 21 to Sep 26
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP-4
+</td>
+<td style="text-align:left;">
+Survey content
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Welcome text; consent with the 18-plus requirement and the understanding statement; plain-language attribute descriptions; critical respondent information; other questions; all as exact text
+</td>
+<td style="text-align:left;">
+SP04
+</td>
+<td style="text-align:left;">
+Sep 27 to Sep 28
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="what-is-next" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-next">What is next</h2>
-<p>Form the team by Sep 9, pick a topic against the seven selection criteria, then fill in the team page and start the proposal activities (A05 to A09). Each work session from here gets its own entry.</p>
+<section id="pilot-survey-35-points" class="level3">
+<h3 class="anchored" data-anchor-id="pilot-survey-35-points">Pilot survey (35 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PS-1
+</td>
+<td style="text-align:left;">
+Organization and formatting
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Template files in 3-pilot-survey/: survey.qmd, code/1_make_choice_questions.R, data/choice_questions.csv, app.R, images/
+</td>
+<td style="text-align:left;">
+PS02, PS03, PS07
+</td>
+<td style="text-align:left;">
+Oct 4 to Oct 13
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PS-2
+</td>
+<td style="text-align:left;">
+Survey content
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Welcome, screening, education, randomised conjoint block, demographics; skip logic correct
+</td>
+<td style="text-align:left;">
+PS03
+</td>
+<td style="text-align:left;">
+Oct 4 to Oct 8
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PS-3
+</td>
+<td style="text-align:left;">
+Conjoint questions
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Randomised choice questions render without error
+</td>
+<td style="text-align:left;">
+PS02, PS05
+</td>
+<td style="text-align:left;">
+Oct 4 to Oct 12
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PS-4
+</td>
+<td style="text-align:left;">
+surveydown
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Whole survey renders, is completable to the end, and stores responses (Supabase); deployed on shinyapps.io
+</td>
+<td style="text-align:left;">
+PS04, PS05
+</td>
+<td style="text-align:left;">
+Oct 9 to Oct 12
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pilot-analysis-35-points" class="level3">
+<h3 class="anchored" data-anchor-id="pilot-analysis-35-points">Pilot analysis (35 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PA-1
+</td>
+<td style="text-align:left;">
+Organization and formatting
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+4-pilot-analysis/ with report.qmd, clean-data.R, modeling.R, power-analysis.R, data/
+</td>
+<td style="text-align:left;">
+PA02, PA03, PA04, PA07
+</td>
+<td style="text-align:left;">
+Oct 25 to Nov 1
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA-2
+</td>
+<td style="text-align:left;">
+Pilot analysis
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+sd_get_data() download, raw data saved, cleaned to long format, preliminary models, power analysis; code reproducible
+</td>
+<td style="text-align:left;">
+PA02, PA03, PA04
+</td>
+<td style="text-align:left;">
+Oct 25 to Oct 29
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA-3
+</td>
+<td style="text-align:left;">
+Report contents
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Abstract; introduction; survey design (eligibility, respondent info, education, attributes and levels justified, alternatives and questions per respondent, the no-choice option, an example question screenshot); sample description; cleaning counts; modeling with the utility model in LaTeX, coefficient table with standard errors and plots; power analysis figure; changes for the final survey
+</td>
+<td style="text-align:left;">
+PA05, PA06
+</td>
+<td style="text-align:left;">
+Oct 25 to Oct 31
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA-4
+</td>
+<td style="text-align:left;">
+Appendix
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Complete survey copy including one example conjoint question
+</td>
+<td style="text-align:left;">
+PA06
+</td>
+<td style="text-align:left;">
+Oct 30 to Oct 31
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="final-survey-35-points" class="level3">
+<h3 class="anchored" data-anchor-id="final-survey-35-points">Final survey (35 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FS-1
+</td>
+<td style="text-align:left;">
+Organization and formatting
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+5-final-survey/ with the full template set
+</td>
+<td style="text-align:left;">
+FS03
+</td>
+<td style="text-align:left;">
+Nov 12 to Nov 14
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FS-2
+</td>
+<td style="text-align:left;">
+Survey content
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Compiles without error; every referenced file on the web; the pilot report’s changes applied
+</td>
+<td style="text-align:left;">
+FS01, FS02
+</td>
+<td style="text-align:left;">
+Nov 2 to Nov 11
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FS-3
+</td>
+<td style="text-align:left;">
+Conjoint questions
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Render without error on the live survey
+</td>
+<td style="text-align:left;">
+FS01, FS02
+</td>
+<td style="text-align:left;">
+Nov 2 to Nov 11
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FS-4
+</td>
+<td style="text-align:left;">
+surveydown
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+No errors to completion; eligibility requirements written in survey.qmd for the professor’s pre-screen
+</td>
+<td style="text-align:left;">
+FS02, FS03
+</td>
+<td style="text-align:left;">
+Nov 8 to Nov 14
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="final-analysis-40-points" class="level3">
+<h3 class="anchored" data-anchor-id="final-analysis-40-points">Final analysis (40 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FA-1
+</td>
+<td style="text-align:left;">
+Organization and formatting
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+6-final-analysis/ with report.qmd, clean_data.R, modeling.R, analysis.R; every figure, table and equation referenced
+</td>
+<td style="text-align:left;">
+FA05, FA06
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 6
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FA-2
+</td>
+<td style="text-align:left;">
+Data analysis
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Simple logit on all attributes; mixed logit with random parameters; a sub-group comparison; WTP per attribute with 95 percent CIs and plots; market simulation against competitors with CIs; sensitivity to price and attributes with a tornado plot; fully reproducible
+</td>
+<td style="text-align:left;">
+FA01, FA02, FA03, FA04, FA07
+</td>
+<td style="text-align:left;">
+Nov 9 to Dec 3
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FA-3
+</td>
+<td style="text-align:left;">
+Report contents
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Abstract; introduction with visuals; survey design with the changes from the pilot and an example question; data analysis (sample, cleaning, modeling with LaTeX and standard errors); results; recommendations and conclusions; limitations; attribution
+</td>
+<td style="text-align:left;">
+FA05
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 5
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FA-4
+</td>
+<td style="text-align:left;">
+Appendix
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Full survey copy and supplementary material
+</td>
+<td style="text-align:left;">
+FA05
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 5
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="presentation-35-points" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-35-points">Presentation (35 points)</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PT-1
+</td>
+<td style="text-align:left;">
+Slide design
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Class design guidelines, numbered slides, title slide with project title, names and date, not bullet-heavy
+</td>
+<td style="text-align:left;">
+PR01
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 6
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PT-2
+</td>
+<td style="text-align:left;">
+Content
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Product introduction; an example choice question slide; a sample statistics slide; the utility model; polished WTP, simulation and sensitivity charts; an attribute table for each simulation; recommendations grounded in the findings
+</td>
+<td style="text-align:left;">
+PR01
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 6
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PT-3
+</td>
+<td style="text-align:left;">
+Communication
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Ten minutes at most, every member presents at least one slide, live in class Dec 9 or a published video sent by Slack DM
+</td>
+<td style="text-align:left;">
+PR02, PR03, PR04
+</td>
+<td style="text-align:left;">
+Dec 7 to Dec 9
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="every-deliverable" class="level3">
+<h3 class="anchored" data-anchor-id="every-deliverable">Every deliverable</h3>
+<div class="table-wrap">
+<table class="table table-hover table-sm nice-table req-table">
+<thead>
+<tr>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+Criterion
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:left;">
+What it needs
+</th>
+<th style="text-align:left;">
+Activities
+</th>
+<th style="text-align:left;">
+Window
+</th>
+<th style="text-align:center;">
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+XX-1
+</td>
+<td style="text-align:left;">
+Attribution section
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+Each member’s contributions, or ‘All members contributed equally’; the professor grades non-contributors differently
+</td>
+<td style="text-align:left;">
+O03
+</td>
+<td style="text-align:left;">
+Sep 9 to Dec 9
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress (10%)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+XX-2
+</td>
+<td style="text-align:left;">
+Team size and repo access
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+Teams of three to four; every member on the official repo
+</td>
+<td style="text-align:left;">
+S05
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 18
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="where-the-course-pages-and-the-plan-differ" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-course-pages-and-the-plan-differ">Where the course pages and the plan differ</h2>
+<ul>
+<li>The proposal page does not cap the number of attributes (“the major product attributes you will include”); six is allowed, and it asks that the attribute table also show competitors’ features, which is why v2 names real products.</li>
+<li>The survey plan page sets Prolific’s U.S. general population as the default distribution; the draft proposal names the GWU community and networks. Decision D07 on the <a href="../context-bank/project.html">project</a> page; settled in SP02.</li>
+<li>The pilot and final survey rubrics score deployment under “surveydown”: the survey must render, be completable to the end, and store responses. PS04 and PS05 (and FS02) carry that; an end-to-end test on a phone is part of both.</li>
+<li>The final presentation page still shows last year’s date in its title-slide instruction; the class date this year is Wednesday Dec 9, and slides are due Tuesday Dec 8.</li>
+</ul>
 
 
 </section>

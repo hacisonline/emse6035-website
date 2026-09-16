@@ -107,6 +107,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../../context-bank/project.html"> 
+<span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -114,18 +118,29 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/activities.html"> 
-<span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tracker</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
+        <li>
+    <a class="dropdown-item" href="../../../tracker/activities.html">
+ <span class="dropdown-text">Activities</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/risks.html"> 
-<span class="menu-text">Risks</span></a>
+        <li>
+    <a class="dropdown-item" href="../../../tracker/coverage.html">
+ <span class="dropdown-text">Requirements</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/progress.html"> 
-<span class="menu-text">Week by week</span></a>
+        <li>
+    <a class="dropdown-item" href="../../../tracker/risks.html">
+ <span class="dropdown-text">Risks</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../../tracker/progress.html">
+ <span class="dropdown-text">Week by week</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -204,6 +219,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="how-it-was-verified" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-was-verified">How it was verified</h2>
 <p>The site was rendered end to end with Quarto and R and every page was opened in a browser at laptop and phone widths; the Gantt filters, the phase selector, the tooltips and the click-to-trace were exercised by hand, and the browser console was clean (a jQuery error from kableExtra’s print helper was found and removed by dropping that package). The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.</p>
+</section>
+<section id="same-day-second-pass-scope-check-against-the-course" class="level2">
+<h2 class="anchored" data-anchor-id="same-day-second-pass-scope-check-against-the-course">Same day, second pass: scope check against the course</h2>
+<p>Every deliverable page on the course site was re-read and its rubric copied into <code>data/requirements.csv</code> (33 criteria, 270 points); the new <a href="../../../tracker/coverage.html">Requirements</a> page maps each criterion to the activities that produce it and rolls their status up. Gaps it found and fixed: the design parameters (alternatives per question, questions per respondent, the no-choice option) were nowhere in the plan (now in SP03 and PS02); the eligibility text has to sit inside <code>survey.qmd</code> (FS03); the market simulation needs a defined competitor set (new FA07); the pilot report needs an example-question screenshot (PS05). The context bank’s “2 to 4 attributes” line was wrong (the course sets no count) and was corrected. The proposal draft was read again line by line and is now reflected on a <a href="../../../context-bank/project.html">project page</a>: product statement, buyer versus respondent, the six attributes with metrics and open points, the three research questions with how each is answered, the market opportunity as the draft states it, the draft’s five open questions, a fit check against the seven selection criteria, a twelve-entry decision log (<code>data/decisions.csv</code>) and a timeline of the direction so far (<code>data/timeline.csv</code>). One real mismatch surfaced: the draft names the GWU community and personal networks as the respondent pool while the course default is Prolific with an eligibility pre-screen; it is decision D07 and risk R11, to be settled in the survey plan. Tooltips now open on tap on phones.</p>
 </section>
 <section id="what-is-next" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-next">What is next</h2>
@@ -289,6 +308,12 @@ ul.task-list li input[type="checkbox"] {
   }
   function moveTip(evt) {
     if (!tip) return;
+    if (noHover) {
+      tip.style.left = Math.max(8, window.scrollX + 8) + "px";
+      tip.style.top = (window.scrollY + Math.min(evt.clientY + 16, window.innerHeight - tip.offsetHeight - 8)) + "px";
+      tip.style.maxWidth = (window.innerWidth - 16) + "px";
+      return;
+    }
     var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
     var x = evt.clientX + pad, y = evt.clientY + pad;
     if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
@@ -297,6 +322,10 @@ ul.task-list li input[type="checkbox"] {
     tip.style.top = (y + window.scrollY) + "px";
   }
   function hideTip() { if (tip) tip.style.display = "none"; }
+  var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  document.addEventListener("click", function (ev) {
+    if (noHover && tip && tip.style.display === "block" && !(ev.target.closest && ev.target.closest(".trk-hit, .trk-node, .trk-event"))) hideTip();
+  });
 
   function floatLabel(a) {
     if (a.slug === "done") return "done";
@@ -482,9 +511,9 @@ ul.task-list li input[type="checkbox"] {
         }
         // hit area + tooltip
         var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
-        hit.addEventListener("click", function () { focusRow(a.id); });
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { focusRow(a.id); if (noHover) showTip(activityTip(a), ev); });
         y += rowH;
       });
     });
@@ -687,8 +716,9 @@ ul.task-list li input[type="checkbox"] {
       var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
       var a = byId[n.id];
       if (a) {
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { showTip(activityTip(a), ev); });
       }
     });
   }

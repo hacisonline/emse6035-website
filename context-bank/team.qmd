@@ -1,6 +1,6 @@
 ---
 title: "Team"
-subtitle: "Roster, topic, the living attributes table, who owns what, and the contribution log"
+subtitle: "Roster, who owns what, meetings with the professor, and the contribution log"
 ---
 
 This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential.
@@ -21,24 +21,7 @@ Two repos, both private: a brainstorming repo under one member's account (ideas,
 
 ## Topic
 
-**Smart Urban Living** (chosen with the proposal draft of Sep 15): consumer preferences and willingness to pay for smart apartment features. The product is a Smart Urban Apartment Package, a configurable set of smart-home technologies and technology-enabled amenities for modern multifamily rentals, and the study is a choice-based conjoint among U.S. renters.
-
-Against the [seven selection criteria](project-requirements.qmd#selecting-a-topic-all-seven-must-hold), the weak spot is "emerging and pre-commercial": smart locks and thermostats are common in new Class A buildings. The argument the proposal makes is that the design decision is unresolved for mid-market and retrofit stock, and that no public source gives tradeoff-based willingness to pay per feature, only stated-preference percentages.
-
-## Attributes and levels (living table)
-
-This table feeds the proposal, the survey plan and every later deliverable. The levels are the proposal draft's; the survey plan (SP01) locks them after the workshop feedback.
-
-| Attribute | Type | Levels (draft) | Unit | Open question |
-|---|---|---|---|---|
-| Monthly smart-package premium | continuous | 0, 25, 50, 75 | USD per month over a comparable standard apartment | Zero makes a free smart package a valid profile; reserve it for the standard-apartment reference or shift the range, and show a base rent in every choice task |
-| Smart access and security | discrete | standard key; smart keyless lock; smart lock plus video security | system type | Split into lock and video, or keep as one attribute |
-| Smart climate control | discrete | standard thermostat; smart thermostat; smart thermostat plus automated energy management | system type | One-line definition of "automated energy management" |
-| Smart lighting | discrete | standard; app-controlled; automated | system type | Likely the first attribute to drop if the pilot says respondents are overloaded |
-| Package management | discrete | standard delivery area; secure lockers; smart package room with digital access | system type | |
-| EV charging access | discrete | none; shared stations; reserved access | service level | Keep as an attribute or use for sub-group analysis only |
-
-Research questions: which features most influence apartment choice; how much extra rent renters will pay for each; which bundle at which premium gives the strongest value proposition (answered by a market simulation of package tiers).
+**Smart Urban Living**, a Smart Urban Apartment Package for multifamily rentals, studied with a choice-based conjoint among renters. The product statement, the attributes and levels, the research questions, the market and the decision log live on [the project page](project.qmd).
 
 ## Who owns what
 

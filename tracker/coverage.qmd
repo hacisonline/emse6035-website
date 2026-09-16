@@ -1,0 +1,98 @@
+---
+title: "Requirements"
+subtitle: "Every rubric criterion the course grades, the activities that carry it, and how far along each is"
+toc: false
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+req   <- read_data("requirements.csv")
+sched <- cpm(read_activities())
+by_id <- setNames(split(sched, seq_len(nrow(sched))), sched$id)
+
+status_of <- function(ids) {
+  ids <- trimws(str_split(ids, ";")[[1]])
+  missing <- ids[!ids %in% sched$id]
+  if (length(missing)) return(list(label = paste("missing:", paste(missing, collapse = ", ")), slug = "blocked", pct = 0))
+  rows <- sched |> filter(id %in% ids)
+  slugs <- status_slug(rows$status)
+  pct <- round(100 * sum(rows$pct / 100 * rows$dur) / sum(rows$dur))
+  if (all(slugs == "done")) list(label = "Done", slug = "done", pct = 100)
+  else if (any(slugs %in% c("done", "active"))) list(label = sprintf("In progress (%d%%)", pct), slug = "active", pct = pct)
+  else list(label = "Not started", slug = "todo", pct = 0)
+}
+st <- lapply(req$activities, status_of)
+req <- req |>
+  mutate(
+    status_label = map_chr(st, "label"),
+    status_slug  = map_chr(st, "slug"),
+    earliest = map_chr(activities, function(a) {
+      ids <- trimws(str_split(a, ";")[[1]])
+      rows <- sched |> filter(id %in% ids)
+      if (!nrow(rows)) "" else fmt_date(min(rows$es), "%b %e")
+    }),
+    latest = map_chr(activities, function(a) {
+      ids <- trimws(str_split(a, ";")[[1]])
+      rows <- sched |> filter(id %in% ids)
+      if (!nrow(rows)) "" else fmt_date(max(rows$ef), "%b %e")
+    }),
+    crit = map_lgl(activities, function(a) {
+      ids <- trimws(str_split(a, ";")[[1]])
+      any(sched$critical[sched$id %in% ids] & status_slug(sched$status[sched$id %in% ids]) != "done")
+    })
+  )
+unmapped <- req |> filter(status_slug == "blocked")
+graded <- req |> filter(points > 0)
+```
+
+The course grades seven deliverables on `r sum(graded$points)` rubric points (45 percent of the final grade). This page is the traceability check: each criterion from the course's deliverable pages, in `data/requirements.csv`, points at the activity ids in `data/activities.csv` that produce it. A criterion with no live activity would show as missing; today `r if (nrow(unmapped) == 0) "none is" else paste(nrow(unmapped), "are")`.
+
+## By deliverable
+
+```{r}
+graded |>
+  group_by(Deliverable = deliverable) |>
+  summarise(
+    Criteria = n(),
+    Points = sum(points),
+    Done = sum(status_slug == "done"),
+    `In progress` = sum(status_slug == "active"),
+    `Not started` = sum(status_slug == "todo"),
+    `On zero float` = sum(crit),
+    .groups = "drop"
+  ) |>
+  mutate(Deliverable = factor(Deliverable, levels = c("Proposal", "Survey plan", "Pilot survey", "Pilot analysis", "Final survey", "Final analysis", "Presentation"))) |>
+  arrange(Deliverable) |>
+  nice_table(align = "lrrrrrr")
+```
+
+## Every criterion
+
+```{r}
+#| results: asis
+for (d in c("Proposal", "Survey plan", "Pilot survey", "Pilot analysis", "Final survey", "Final analysis", "Presentation", "Every deliverable")) {
+  block <- req |> filter(deliverable == d)
+  if (!nrow(block)) next
+  pts <- sum(block$points)
+  cat("\n\n### ", d, if (pts > 0) sprintf(" (%d points)", pts) else "", "\n\n", sep = "")
+  tbl <- block |>
+    transmute(
+      ID = id,
+      Criterion = criterion,
+      Points = ifelse(points > 0, as.character(points), ""),
+      `What it needs` = needs,
+      Activities = str_replace_all(activities, ";", ", "),
+      Window = ifelse(earliest == "", "", paste0(earliest, " to ", latest)),
+      Status = sprintf('<span class="pill pill-%s">%s</span>', status_slug, status_label)
+    ) |>
+    nice_table(align = "llrlllc", class = "req-table")
+  cat(as.character(tbl))
+}
+```
+
+## Where the course pages and the plan differ
+
+- The proposal page does not cap the number of attributes ("the major product attributes you will include"); six is allowed, and it asks that the attribute table also show competitors' features, which is why v2 names real products.
+- The survey plan page sets Prolific's U.S. general population as the default distribution; the draft proposal names the GWU community and networks. Decision D07 on the [project](../context-bank/project.qmd) page; settled in SP02.
+- The pilot and final survey rubrics score deployment under "surveydown": the survey must render, be completable to the end, and store responses. PS04 and PS05 (and FS02) carry that; an end-to-end test on a phone is part of both.
+- The final presentation page still shows last year's date in its title-slide instruction; the class date this year is Wednesday Dec 9, and slides are due Tuesday Dec 8.

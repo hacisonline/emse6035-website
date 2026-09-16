@@ -300,3 +300,30 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .hero-lead { font-size: 1.05rem; color: var(--ink-2); max-width: 62ch; }
 .kicker { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; margin-bottom: 0.2rem; }
 .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+
+/* ---------- project strip and chips ---------- */
+.build-strip { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; border: 1px solid var(--hair); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); padding: 1rem 1.1rem; margin: 0.6rem 0 1rem; }
+.build-main p { margin: 0.2rem 0 0; color: var(--ink-2); }
+.build-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; align-content: flex-start; }
+.chip { display: inline-block; padding: 0.25em 0.7em; border-radius: 999px; background: #eef2f8; color: var(--accent-ink); font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.chip-price { background: var(--ink); color: #fff; }
+@media (max-width: 720px) { .build-strip { grid-template-columns: 1fr; } }
+
+/* ---------- timeline ---------- */
+.timeline { list-style: none; padding: 0; margin: 0.6rem 0 1rem; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 118px; top: 6px; bottom: 6px; width: 2px; background: var(--hair); }
+.timeline li { display: grid; grid-template-columns: 104px 28px 1fr; align-items: start; gap: 0; padding: 0.35rem 0; }
+.tl-date { font-size: 0.8rem; color: var(--muted); text-align: right; padding-right: 0.2rem; padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+.tl-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--card); border: 2px solid var(--axis); margin: 0.3rem 0 0 9px; position: relative; z-index: 1; }
+.tl-done .tl-dot { background: var(--good); border-color: var(--good); }
+.tl-next .tl-dot { background: var(--card); border-color: var(--accent); }
+.tl-text { font-size: 0.93rem; color: var(--ink); }
+.tl-next .tl-text { color: var(--ink-2); }
+@media (max-width: 560px) {
+  .timeline::before { left: 74px; }
+  .timeline li { grid-template-columns: 60px 28px 1fr; }
+  .tl-date { font-size: 0.72rem; }
+}
+.req-table td:nth-child(4) { min-width: 20em; }
+.decisions-table td:nth-child(3) { min-width: 18em; }
+.decisions-table td:nth-child(5) { min-width: 18em; }

@@ -74,6 +74,13 @@ spi_word <- dplyr::case_when(
 <div class="meter"><div class="meter-fill" style="width: `r health$earned_pct`%"></div><div class="meter-mark" style="left: `r health$planned_pct`%"></div></div>
 <div class="meter-caption"><span>Earned `r health$earned_pct`% of planned activity-days</span><span>Plan says `r health$planned_pct`% by today (the mark)</span></div>
 
+## What we are building
+
+<div class="build-strip">
+<div class="build-main"><span class="kicker">Smart Urban Living</span><p>A <strong>Smart Urban Apartment Package</strong>: a configurable set of smart-home technologies and technology-enabled amenities for modern multifamily rentals. A choice-based conjoint among U.S. renters tells a developer which features to install and what monthly premium they carry. <a href="context-bank/project.qmd">The project page</a> has the attributes, the research questions, the market and the decision log.</p></div>
+<div class="build-chips"><span class="chip chip-price">Monthly premium</span><span class="chip">Access and security</span><span class="chip">Climate control</span><span class="chip">Lighting</span><span class="chip">Package management</span><span class="chip">EV charging</span></div>
+</div>
+
 ## The next four weeks
 
 Open activities with a computed early start inside the window. Solid is done, the hatched tint is what remains, a diamond is an official deadline, the red edge marks zero float. Hover any row for the early and late dates; click a row to light up everything it depends on and everything waiting on it.
@@ -147,4 +154,4 @@ if (nrow(wk) == 1) {
 }
 ```
 
-See the full [schedule](tracker/schedule.qmd), the [activity list](tracker/activities.qmd), the [risk register](tracker/risks.qmd), the [week-by-week table](tracker/progress.qmd), and the [dev log](devlog/index.qmd) for what happened in each work session.
+See the [project page](context-bank/project.qmd) for what we are studying and the decisions so far, the full [schedule](tracker/schedule.qmd), the [activity list](tracker/activities.qmd), the [requirements coverage](tracker/coverage.qmd), the [risk register](tracker/risks.qmd), the [week-by-week table](tracker/progress.qmd), and the [dev log](devlog/index.qmd).

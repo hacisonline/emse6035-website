@@ -104,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../context-bank/project.html"> 
+<span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -111,18 +115,29 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../tracker/activities.html" aria-current="page"> 
-<span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tracker</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
+        <li>
+    <a class="dropdown-item" href="../tracker/activities.html">
+ <span class="dropdown-text">Activities</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/risks.html"> 
-<span class="menu-text">Risks</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/coverage.html">
+ <span class="dropdown-text">Requirements</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/progress.html"> 
-<span class="menu-text">Week by week</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/risks.html">
+ <span class="dropdown-text">Risks</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tracker/progress.html">
+ <span class="dropdown-text">Week by week</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -268,10 +283,10 @@ ul.task-list li input[type="checkbox"] {
   </tr>
   <tr>
    <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
-   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 5 </td>
    <td style="text-align:left;"> Mon Nov 9 </td>
    <td style="text-align:left;"> Sun Dec 6 </td>
@@ -413,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
   <tr>
    <td style="text-align:left;"> SP02 </td>
    <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
-   <td style="text-align:left;"> Target population, fallback, and the exact eligibility question text </td>
+   <td style="text-align:left;"> Target population, fallback, distribution strategy, and the exact eligibility question text </td>
    <td style="text-align:left;"> Team </td>
    <td style="text-align:left;"> Mon Sep 21 <small class="text-muted">(in 5 days)</small> </td>
    <td style="text-align:left;"> Thu Sep 24 </td>
@@ -433,7 +448,7 @@ ul.task-list li input[type="checkbox"] {
   <tr>
    <td style="text-align:left;"> SP03 </td>
    <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
-   <td style="text-align:left;"> Choice question text and the attributes-and-levels table </td>
+   <td style="text-align:left;"> Choice question text, the attributes-and-levels table with units, and the design parameters (alternatives per question, questions per respondent, no-choice option) </td>
    <td style="text-align:left;"> Team </td>
    <td style="text-align:left;"> Thu Sep 24 <small class="text-muted">(in 8 days)</small> </td>
    <td style="text-align:left;"> Sat Sep 26 </td>
@@ -1173,7 +1188,7 @@ Decide whether security splits into lock and video, and whether EV charging stay
 SP02
 </td>
 <td style="text-align:left;">
-Target population, fallback, and the exact eligibility question text
+Target population, fallback, distribution strategy, and the exact eligibility question text
 </td>
 <td style="text-align:left;">
 Team
@@ -1199,7 +1214,7 @@ P08
 0
 </td>
 <td style="text-align:left;">
-Default: paid U.S. Prolific respondents who rent or expect to rent within two years
+Course default: paid U.S. Prolific respondents pre-screened with our eligibility text; the draft proposal names GWU networks instead (decision D07). Respondents 18 plus who rent or expect to rent within two years
 </td>
 </tr>
 <tr>
@@ -1207,7 +1222,7 @@ Default: paid U.S. Prolific respondents who rent or expect to rent within two ye
 SP03
 </td>
 <td style="text-align:left;">
-Choice question text and the attributes-and-levels table
+Choice question text, the attributes-and-levels table with units, and the design parameters (alternatives per question, questions per respondent, no-choice option)
 </td>
 <td style="text-align:left;">
 Team
@@ -1233,7 +1248,7 @@ SP01
 0
 </td>
 <td style="text-align:left;">
-Rubric: Attributes and Levels 10 pts
+Rubric: Attributes and Levels 10 pts; the design parameters are decision D10
 </td>
 </tr>
 <tr>
@@ -1424,7 +1439,7 @@ Class 6 (Sep 30) introduces surveydown; HW4 covers the basics
 PS02
 </td>
 <td style="text-align:left;">
-code/1_make_choice_questions.R: generate data/choice_questions.csv with cbc_design
+code/1_make_choice_questions.R: generate data/choice_questions.csv with cbc_design using the plan’s design parameters
 </td>
 <td style="text-align:left;">
 Team
@@ -1458,7 +1473,7 @@ Randomised choice sets must render live without error
 PS03
 </td>
 <td style="text-align:left;">
-Build survey.qmd from the plan text: welcome, consent, screening, education, conjoint block, other questions
+Build survey.qmd from the plan text: welcome, consent, screening, education (with images/), conjoint block, other questions; render it and run app.R locally
 </td>
 <td style="text-align:left;">
 Team
@@ -1484,7 +1499,7 @@ SP04, PS01
 0
 </td>
 <td style="text-align:left;">
-Replace every placeholder; render often
+Replace every placeholder; render often; the template’s app.R is the local Shiny preview
 </td>
 </tr>
 <tr>
@@ -1560,7 +1575,7 @@ Keys in .Renviron only
 PS05
 </td>
 <td style="text-align:left;">
-Deploy to shinyapps.io; end-to-end test on a phone and a laptop
+Deploy to shinyapps.io; end-to-end test on a phone and a laptop; screenshot an example choice question for the reports
 </td>
 <td style="text-align:left;">
 Account owner
@@ -1586,7 +1601,7 @@ PS02, PS04
 0
 </td>
 <td style="text-align:left;">
-Rubric: Deployment 10 pts
+Rubric: surveydown 10 pts (renders, completable, responses stored)
 </td>
 </tr>
 <tr>
@@ -1842,7 +1857,7 @@ PA03
 PA06
 </td>
 <td style="text-align:left;">
-report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power analysis, changes, appendix
+report.qmd: abstract, intro, survey design (eligibility, education, attributes justified, alternatives and questions per respondent, no-choice, example question), sample, cleaning counts, modeling, power analysis, changes, appendix
 </td>
 <td style="text-align:left;">
 Team
@@ -1868,7 +1883,7 @@ PA03, PA04, PA05
 0
 </td>
 <td style="text-align:left;">
-Rubric: Report Contents 15 pts
+Rubric: Report Contents 15 pts, Appendix 5 pts (full survey copy)
 </td>
 </tr>
 <tr>
@@ -2024,7 +2039,7 @@ FS01
 FS03
 </td>
 <td style="text-align:left;">
-Write the Prolific eligibility text; push the final survey folder
+Write the eligibility requirements into survey.qmd for the professor’s Prolific pre-screen; push the final survey folder
 </td>
 <td style="text-align:left;">
 Submitter
@@ -2051,7 +2066,7 @@ FS02
 0
 </td>
 <td style="text-align:left;">
-Official due date Sun Nov 15; the eligibility text is what the professor uses to pre-screen. One day of float by design
+Official due date Sun Nov 15. One day of float by design
 </td>
 </tr>
 <tr>
@@ -2170,6 +2185,40 @@ Logit, mixed logit with random parameters, one sub-group comparison, WTP with 95
 </tr>
 <tr>
 <td style="text-align:left;">
+FA07
+</td>
+<td style="text-align:left;">
+Define the competitor alternatives for the market simulation (levels and premiums) from the products benchmarked in the proposal
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Nov 9 to Nov 14
+</td>
+<td style="text-align:left;">
+Nov 9 to Nov 14
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+PA07
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">17 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Decision D12; the simulation compares the package against real competing offers
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 FA02
 </td>
 <td style="text-align:left;">
@@ -2253,7 +2302,7 @@ Dec 2 to Dec 3
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-FA03
+FA03, FA07
 </td>
 <td style="text-align:center;">
 <span class="pill pill-critical">0 d</span>
@@ -2273,7 +2322,7 @@ The final exam is in class on Dec 2
 FA05
 </td>
 <td style="text-align:left;">
-report.qmd as narrative: results, recommendations, limitations, attribution, appendix; fully reproducible
+report.qmd as narrative: abstract, intro with visuals, survey design with the changes from the pilot, data analysis, results, recommendations and conclusions, limitations, attribution, appendix; fully reproducible
 </td>
 <td style="text-align:left;">
 Team
@@ -2388,7 +2437,7 @@ Notes
 PR01
 </td>
 <td style="text-align:left;">
-Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations
+Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation with its attribute table, sensitivity, recommendations
 </td>
 <td style="text-align:left;">
 Team
@@ -2414,7 +2463,7 @@ FA04
 0
 </td>
 <td style="text-align:left;">
-Numbered slides; title slide with names and date
+Numbered slides; title slide with project title, names and date; class slide-design guidelines; not bullet-heavy
 </td>
 </tr>
 <tr>
@@ -2750,6 +2799,12 @@ S01
   }
   function moveTip(evt) {
     if (!tip) return;
+    if (noHover) {
+      tip.style.left = Math.max(8, window.scrollX + 8) + "px";
+      tip.style.top = (window.scrollY + Math.min(evt.clientY + 16, window.innerHeight - tip.offsetHeight - 8)) + "px";
+      tip.style.maxWidth = (window.innerWidth - 16) + "px";
+      return;
+    }
     var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
     var x = evt.clientX + pad, y = evt.clientY + pad;
     if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
@@ -2758,6 +2813,10 @@ S01
     tip.style.top = (y + window.scrollY) + "px";
   }
   function hideTip() { if (tip) tip.style.display = "none"; }
+  var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  document.addEventListener("click", function (ev) {
+    if (noHover && tip && tip.style.display === "block" && !(ev.target.closest && ev.target.closest(".trk-hit, .trk-node, .trk-event"))) hideTip();
+  });
 
   function floatLabel(a) {
     if (a.slug === "done") return "done";
@@ -2943,9 +3002,9 @@ S01
         }
         // hit area + tooltip
         var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
-        hit.addEventListener("click", function () { focusRow(a.id); });
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { focusRow(a.id); if (noHover) showTip(activityTip(a), ev); });
         y += rowH;
       });
     });
@@ -3148,8 +3207,9 @@ S01
       var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
       var a = byId[n.id];
       if (a) {
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { showTip(activityTip(a), ev); });
       }
     });
   }

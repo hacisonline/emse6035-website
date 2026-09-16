@@ -104,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link active" href="../context-bank/project.html" aria-current="page"> 
+<span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -111,24 +115,35 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/activities.html"> 
-<span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tracker</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
+        <li>
+    <a class="dropdown-item" href="../tracker/activities.html">
+ <span class="dropdown-text">Activities</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/risks.html"> 
-<span class="menu-text">Risks</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/coverage.html">
+ <span class="dropdown-text">Requirements</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/progress.html"> 
-<span class="menu-text">Week by week</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/risks.html">
+ <span class="dropdown-text">Risks</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tracker/progress.html">
+ <span class="dropdown-text">Week by week</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../context-bank/index.html" aria-current="page"> 
+    <a class="nav-link" href="../context-bank/index.html"> 
 <span class="menu-text">Context bank</span></a>
   </li>  
 </ul>
@@ -158,6 +173,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../context-bank/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Context bank</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,7 +223,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#roster" id="toc-roster" class="nav-link active" data-scroll-target="#roster">Roster</a></li>
   <li><a href="#topic" id="toc-topic" class="nav-link" data-scroll-target="#topic">Topic</a></li>
-  <li><a href="#attributes-and-levels-living-table" id="toc-attributes-and-levels-living-table" class="nav-link" data-scroll-target="#attributes-and-levels-living-table">Attributes and levels (living table)</a></li>
   <li><a href="#who-owns-what" id="toc-who-owns-what" class="nav-link" data-scroll-target="#who-owns-what">Who owns what</a></li>
   <li><a href="#meetings-with-the-professor" id="toc-meetings-with-the-professor" class="nav-link" data-scroll-target="#meetings-with-the-professor">Meetings with the professor</a></li>
   <li><a href="#contribution-log" id="toc-contribution-log" class="nav-link" data-scroll-target="#contribution-log">Contribution log</a></li>
@@ -215,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Team</h1>
-<p class="subtitle lead">Roster, topic, the living attributes table, who owns what, and the contribution log</p>
+<p class="subtitle lead">Roster, who owns what, meetings with the professor, and the contribution log</p>
 </div>
 
 
@@ -281,75 +301,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="topic" class="level2">
 <h2 class="anchored" data-anchor-id="topic">Topic</h2>
-<p><strong>Smart Urban Living</strong> (chosen with the proposal draft of Sep 15): consumer preferences and willingness to pay for smart apartment features. The product is a Smart Urban Apartment Package, a configurable set of smart-home technologies and technology-enabled amenities for modern multifamily rentals, and the study is a choice-based conjoint among U.S. renters.</p>
-<p>Against the <a href="../context-bank/project-requirements.html#selecting-a-topic-all-seven-must-hold">seven selection criteria</a>, the weak spot is “emerging and pre-commercial”: smart locks and thermostats are common in new Class A buildings. The argument the proposal makes is that the design decision is unresolved for mid-market and retrofit stock, and that no public source gives tradeoff-based willingness to pay per feature, only stated-preference percentages.</p>
-</section>
-<section id="attributes-and-levels-living-table" class="level2">
-<h2 class="anchored" data-anchor-id="attributes-and-levels-living-table">Attributes and levels (living table)</h2>
-<p>This table feeds the proposal, the survey plan and every later deliverable. The levels are the proposal draft’s; the survey plan (SP01) locks them after the workshop feedback.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Type</th>
-<th>Levels (draft)</th>
-<th>Unit</th>
-<th>Open question</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Monthly smart-package premium</td>
-<td>continuous</td>
-<td>0, 25, 50, 75</td>
-<td>USD per month over a comparable standard apartment</td>
-<td>Zero makes a free smart package a valid profile; reserve it for the standard-apartment reference or shift the range, and show a base rent in every choice task</td>
-</tr>
-<tr class="even">
-<td>Smart access and security</td>
-<td>discrete</td>
-<td>standard key; smart keyless lock; smart lock plus video security</td>
-<td>system type</td>
-<td>Split into lock and video, or keep as one attribute</td>
-</tr>
-<tr class="odd">
-<td>Smart climate control</td>
-<td>discrete</td>
-<td>standard thermostat; smart thermostat; smart thermostat plus automated energy management</td>
-<td>system type</td>
-<td>One-line definition of “automated energy management”</td>
-</tr>
-<tr class="even">
-<td>Smart lighting</td>
-<td>discrete</td>
-<td>standard; app-controlled; automated</td>
-<td>system type</td>
-<td>Likely the first attribute to drop if the pilot says respondents are overloaded</td>
-</tr>
-<tr class="odd">
-<td>Package management</td>
-<td>discrete</td>
-<td>standard delivery area; secure lockers; smart package room with digital access</td>
-<td>system type</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>EV charging access</td>
-<td>discrete</td>
-<td>none; shared stations; reserved access</td>
-<td>service level</td>
-<td>Keep as an attribute or use for sub-group analysis only</td>
-</tr>
-</tbody>
-</table>
-<p>Research questions: which features most influence apartment choice; how much extra rent renters will pay for each; which bundle at which premium gives the strongest value proposition (answered by a market simulation of package tiers).</p>
+<p><strong>Smart Urban Living</strong>, a Smart Urban Apartment Package for multifamily rentals, studied with a choice-based conjoint among renters. The product statement, the attributes and levels, the research questions, the market and the decision log live on <a href="../context-bank/project.html">the project page</a>.</p>
 </section>
 <section id="who-owns-what" class="level2">
 <h2 class="anchored" data-anchor-id="who-owns-what">Who owns what</h2>
@@ -598,6 +550,12 @@ ul.task-list li input[type="checkbox"] {
   }
   function moveTip(evt) {
     if (!tip) return;
+    if (noHover) {
+      tip.style.left = Math.max(8, window.scrollX + 8) + "px";
+      tip.style.top = (window.scrollY + Math.min(evt.clientY + 16, window.innerHeight - tip.offsetHeight - 8)) + "px";
+      tip.style.maxWidth = (window.innerWidth - 16) + "px";
+      return;
+    }
     var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
     var x = evt.clientX + pad, y = evt.clientY + pad;
     if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
@@ -606,6 +564,10 @@ ul.task-list li input[type="checkbox"] {
     tip.style.top = (y + window.scrollY) + "px";
   }
   function hideTip() { if (tip) tip.style.display = "none"; }
+  var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  document.addEventListener("click", function (ev) {
+    if (noHover && tip && tip.style.display === "block" && !(ev.target.closest && ev.target.closest(".trk-hit, .trk-node, .trk-event"))) hideTip();
+  });
 
   function floatLabel(a) {
     if (a.slug === "done") return "done";
@@ -791,9 +753,9 @@ ul.task-list li input[type="checkbox"] {
         }
         // hit area + tooltip
         var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
-        hit.addEventListener("click", function () { focusRow(a.id); });
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { focusRow(a.id); if (noHover) showTip(activityTip(a), ev); });
         y += rowH;
       });
     });
@@ -996,8 +958,9 @@ ul.task-list li input[type="checkbox"] {
       var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
       var a = byId[n.id];
       if (a) {
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { showTip(activityTip(a), ev); });
       }
     });
   }

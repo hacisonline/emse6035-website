@@ -1,0 +1,130 @@
+---
+title: "The project"
+subtitle: "Smart Urban Living: what we are studying, what we have decided, and where the direction stands"
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+decisions <- read_data("decisions.csv") |> mutate(date = as.Date(date))
+timeline  <- read_data("timeline.csv") |> mutate(date = as.Date(date)) |> arrange(date)
+sched     <- cpm(read_activities())
+prop <- sched |> filter(phase == "Proposal")
+n_open_dec <- sum(decisions$status != "Decided")
+```
+
+<p class="kicker">Working title</p>
+
+**Smart Urban Living: consumer preferences and willingness to pay for smart apartment features.** The product is a *Smart Urban Apartment Package*: a configurable set of smart-home technologies and technology-enabled amenities integrated into an otherwise comparable modern multifamily rental apartment. The study is a choice-based conjoint survey of renters. It asks which features renters value most, how much extra monthly rent they would pay for each, and which combination of features gives the strongest value proposition, so that a developer or property manager can decide what to install and what premium to charge.
+
+::: {.status-strip}
+::: {.status-card}
+<div class="label">Proposal</div>
+<div class="value">v1 <small>reviewed</small></div>
+<div class="sub">Draft Sep 15; rubric review Sep 16; v2 due Sun Sep 20</div>
+:::
+::: {.status-card}
+<div class="label">Attributes</div>
+<div class="value">6</div>
+<div class="sub">One price attribute and five features, three levels each</div>
+:::
+::: {.status-card}
+<div class="label">Research questions</div>
+<div class="value">3</div>
+<div class="sub">Importance, willingness to pay, best bundle</div>
+:::
+::: {.status-card}
+<div class="label">Decisions</div>
+<div class="value">`r nrow(decisions)` <small>logged</small></div>
+<div class="sub">`r n_open_dec` still open or proposed</div>
+:::
+:::
+
+## Who decides, who answers
+
+The **buyer** of the package is the developer or property operator who chooses what to install. The **respondent** is the renter: an adult who rents, or expects to rent within the next two years, an apartment in an urban or suburban multifamily building. The proposal focuses on renters rather than mixing renters and homebuyers because renting and buying carry different financial commitments and different measures of willingness to pay. Respondents will also answer basic demographic and housing questions so that preferences can be compared across segments: current versus prospective renters, vehicle owners versus non-owners, and different levels of familiarity with smart-home technology.
+
+The course's default respondent pool is paid U.S. participants on Prolific, pre-screened with the eligibility text the team writes; the pilot is taken by classmates. The draft proposal names the GWU community and personal networks instead. That is decision D07 below, and the survey plan has to settle it.
+
+## Attributes and levels
+
+Everything else about the apartment (neighbourhood, size, bedrooms, condition) is held equal across the alternatives in a choice question, so the tradeoffs are only about the technology package and its price. Levels are the proposal draft's; the survey plan locks them after the workshop.
+
+| # | Attribute | What it is | Levels (draft) | Metric | Open point |
+|---|---|---|---|---|---|
+| 1 | Monthly smart-package premium | Extra rent for the package over a comparable standard apartment | $0, $25, $50, $75 | USD per month | The zero level makes a free fully smart package a valid profile; reserve it for the standard-apartment baseline or shift the range, and show a base rent in every choice task (D05) |
+| 2 | Smart access and security | How residents get in and how the home is protected | standard key; smart keyless lock; smart lock plus video security | system type | One attribute or two (lock, video)? |
+| 3 | Smart climate control | Temperature control and energy management | standard thermostat; smart thermostat; smart thermostat plus automated energy management | system type | Define "automated energy management" in one line |
+| 4 | Smart lighting | Remote or automatic lighting control | standard; app-controlled; automated | system type | First candidate to drop if the pilot shows overload |
+| 5 | Package management | How deliveries are received securely | standard delivery area; secure lockers; smart package room with digital access | system type | |
+| 6 | EV charging access | Charging availability at the property | none; shared stations; reserved access | service level | Keep as an attribute, or use for sub-group analysis only? |
+
+## Research questions and how each gets answered
+
+1. **Which smart-apartment features have the greatest influence on renters' apartment choices?** Answered by the relative size of the estimated utility coefficients: which attributes move choices most when developers have limited budget for technology.
+2. **How much additional monthly rent are renters willing to pay for individual features?** Answered by the ratio of each feature coefficient to the price coefficient, with confidence intervals: the dollar value renters put on a smart lock, a smart thermostat, and so on.
+3. **Which combination of features provides the strongest value proposition?** Answered by a market simulation: predicted choice shares for candidate packages (basic, security-focused, convenience-focused, comprehensive) at their premiums, against the competing alternatives.
+
+## Market opportunity, as the draft states it
+
+**Customer.** Adult renters and prospective renters in urban or suburban multifamily buildings, reached (per the draft) through the GWU community and the team's networks; students, recent graduates and working professionals are relevant because they have recent rental-search experience.
+
+**Competitors.** A conventional modern apartment without integrated smart technology, and existing properties that already bundle some smart features. The draft's table contrasts four archetypes (conventional; basic smart with lock and thermostat; enhanced smart adding lighting and package technology; the proposed package with every feature optional). The rubric wants real competing products and their features in the attribute table, so v2 names actual operators' technology packages and their fees.
+
+**Market size.** The U.S. multifamily rental market. Yardi Matrix's Q2 2026 supply forecast projects about 478,000 multifamily completions in 2026 and about 443,000 in 2027 (declining from the recent peak, still hundreds of thousands of new units a year), plus the existing stock where smart locks, thermostats and lighting can be retrofitted. v2 adds the references and a number for the retrofit stock.
+
+**Evidence the draft leans on.** Rently's 2025 survey of 500 U.S. renters: 65 percent find apartments with smart-home technology more appealing, 65 percent would pay more rent for smart amenities, 52 percent are comfortable paying more than $20 a month; 35 percent worry about unauthorised monitoring and 32 percent about smart-lock failures. Both figures were checked against the report on Sep 16.
+
+## Open questions the proposal itself lists
+
+1. What premium range makes the tradeoffs realistic? Existing research, competitor pricing and pilot responses will say whether $0 to $75 is right.
+2. Is smart security one attribute or two (lock, video)?
+3. Should EV charging stay a major attribute when many respondents do not own an EV? Vehicle ownership and EV interest will be measured.
+4. How much do privacy and cybersecurity concerns shape attitudes? Extra questions on privacy, reliability and trust may be added.
+5. Do preferences differ across renter segments (age, rental status, budget, vehicle ownership, familiarity)?
+
+## Does it fit what the course asks for?
+
+| Criterion | Where we stand |
+|---|---|
+| Innovative or emerging | Contested. Smart locks and thermostats are common in new Class A buildings and renter surveys exist. The argument (D11): the unresolved design decision is which features to bundle at what premium for mid-market and retrofit stock, and no public source gives tradeoff-based willingness to pay per feature. Test it at the workshop. |
+| Well-defined | Yes: six named attributes with levels and a price. |
+| Identified target market | Yes: U.S. renters; competitors known in kind; the named benchmarks are the v2 fix. |
+| Prior to mass commercialisation | Contested, same argument as above; the package as a priced bundle is not standard outside Class A. |
+| Moderate scope | Yes; six attributes is the upper end of comfortable, and the pilot decides whether one goes. |
+| Expertise | The technologies are documented publicly by their vendors; nothing here needs specialist access. |
+| Decision variables | Yes: which features, at which level, at what premium. |
+
+## Decision log
+
+Decided, proposed, or open. Open items carry the activity where they get settled.
+
+```{r}
+decisions |>
+  arrange(date, id) |>
+  transmute(
+    ID = id,
+    Date = fmt_date(date, "%b %e"),
+    Decision = decision,
+    Status = sprintf('<span class="pill %s">%s</span>',
+                     c(Decided = "pill-done", Proposed = "pill-near", Open = "pill-critical")[status], status),
+    Rationale = rationale,
+    Source = source,
+    `Settled in` = str_replace_all(replace_na(activities, ""), ";", ", ")
+  ) |>
+  nice_table(align = "lllclll", class = "decisions-table")
+```
+
+## Direction so far
+
+```{r}
+#| results: asis
+cat('<ol class="timeline">')
+for (i in seq_len(nrow(timeline))) {
+  r <- timeline[i, ]
+  cat(sprintf('<li class="tl-%s tl-kind-%s"><span class="tl-date">%s</span><span class="tl-dot"></span><span class="tl-text">%s</span></li>',
+              tolower(r$state), r$kind, fmt_date(r$date, "%a %b %e"), r$event))
+}
+cat('</ol>')
+```
+
+The proposal activities on the [schedule](../tracker/schedule.qmd): `r sum(status_slug(prop$status) == "done")` of `r nrow(prop)` done, the rest on a zero-float chain to Sunday. The [requirements](../tracker/coverage.qmd) page shows which activity carries each rubric criterion.

@@ -104,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../context-bank/project.html"> 
+<span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -111,18 +115,29 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/activities.html"> 
-<span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tracker</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
+        <li>
+    <a class="dropdown-item" href="../tracker/activities.html">
+ <span class="dropdown-text">Activities</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../tracker/risks.html" aria-current="page"> 
-<span class="menu-text">Risks</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/coverage.html">
+ <span class="dropdown-text">Requirements</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/progress.html"> 
-<span class="menu-text">Week by week</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/risks.html">
+ <span class="dropdown-text">Risks</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tracker/progress.html">
+ <span class="dropdown-text">Week by week</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -201,7 +216,7 @@ Medium likelihood
 <b>1</b>R10
 </div>
 <div class="rm-cell rm-3">
-<b>2</b>R05, R09
+<b>3</b>R05, R09, R11
 </div>
 <div class="rm-cell rm-4">
 <b>4</b>R03, R04, R06, R08
@@ -359,6 +374,19 @@ Low likelihood
    <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> R11 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> The survey plan repeats the proposal's GWU-network distribution while the course expects Prolific with an eligibility pre-screen; the final survey then lacks a fielding plan the professor can run </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:center;"> <span class="pill pill-near">4</span> </td>
+   <td style="text-align:left;"> SP02 drafted without naming Prolific and the exact eligibility text </td>
+   <td style="text-align:left;"> Decision D07: state Prolific as the strategy for the final survey, classmates for the pilot, networks as a supplement; write the eligibility question text in the plan </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> SP02, FS03 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> R10 </td>
    <td style="text-align:left;"> <span class="phase-dot phase-ongoing"></span>Ongoing </td>
    <td style="text-align:left;"> Decisions made on WhatsApp never reach the repo and the team re-argues them </td>
@@ -457,6 +485,12 @@ Low likelihood
   }
   function moveTip(evt) {
     if (!tip) return;
+    if (noHover) {
+      tip.style.left = Math.max(8, window.scrollX + 8) + "px";
+      tip.style.top = (window.scrollY + Math.min(evt.clientY + 16, window.innerHeight - tip.offsetHeight - 8)) + "px";
+      tip.style.maxWidth = (window.innerWidth - 16) + "px";
+      return;
+    }
     var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
     var x = evt.clientX + pad, y = evt.clientY + pad;
     if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
@@ -465,6 +499,10 @@ Low likelihood
     tip.style.top = (y + window.scrollY) + "px";
   }
   function hideTip() { if (tip) tip.style.display = "none"; }
+  var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  document.addEventListener("click", function (ev) {
+    if (noHover && tip && tip.style.display === "block" && !(ev.target.closest && ev.target.closest(".trk-hit, .trk-node, .trk-event"))) hideTip();
+  });
 
   function floatLabel(a) {
     if (a.slug === "done") return "done";
@@ -650,9 +688,9 @@ Low likelihood
         }
         // hit area + tooltip
         var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
-        hit.addEventListener("click", function () { focusRow(a.id); });
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { focusRow(a.id); if (noHover) showTip(activityTip(a), ev); });
         y += rowH;
       });
     });
@@ -855,8 +893,9 @@ Low likelihood
       var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
       var a = byId[n.id];
       if (a) {
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { showTip(activityTip(a), ev); });
       }
     });
   }

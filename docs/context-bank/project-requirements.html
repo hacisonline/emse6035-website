@@ -104,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link active" href="../context-bank/project.html" aria-current="page"> 
+<span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -111,24 +115,35 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/activities.html"> 
-<span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tracker</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
+        <li>
+    <a class="dropdown-item" href="../tracker/activities.html">
+ <span class="dropdown-text">Activities</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/risks.html"> 
-<span class="menu-text">Risks</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/coverage.html">
+ <span class="dropdown-text">Requirements</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tracker/progress.html"> 
-<span class="menu-text">Week by week</span></a>
+        <li>
+    <a class="dropdown-item" href="../tracker/risks.html">
+ <span class="dropdown-text">Risks</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tracker/progress.html">
+ <span class="dropdown-text">Week by week</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../context-bank/index.html" aria-current="page"> 
+    <a class="nav-link" href="../context-bank/index.html"> 
 <span class="menu-text">Context bank</span></a>
   </li>  
 </ul>
@@ -158,6 +173,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../context-bank/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Context bank</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -292,6 +313,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="rules-common-to-every-written-deliverable" class="level2">
 <h2 class="anchored" data-anchor-id="rules-common-to-every-written-deliverable">Rules common to every written deliverable</h2>
 <p>Clear, concise, logically structured writing; proof-read with <code>spelling::spell_check_files("file.qmd")</code>; every figure, table and equation referenced in the text; a YAML title and all teammates’ names in <code>author</code>; the template’s explanatory text deleted; an Attribution section (or “All members contributed equally”). Team members who do not contribute meaningfully do not receive the same grade.</p>
+<p>The <a href="../tracker/coverage.html">requirements</a> page maps every rubric criterion below to the activities that produce it.</p>
 </section>
 <section id="the-deliverables" class="level2">
 <h2 class="anchored" data-anchor-id="the-deliverables">The deliverables</h2>
@@ -375,7 +397,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="proposal-55-points" class="level3">
 <h3 class="anchored" data-anchor-id="proposal-55-points">1. Proposal (55 points)</h3>
-<p>Sections, each its own heading: Abstract (what product, what attributes set it apart, what research questions); Introduction (description, background, a picture or diagram); Market Opportunity with Identify Your Customer, Identify Competitors, Identify Market Size; Product Attributes (2 to 4 key attributes, described, quantified, with level ranges, labelled on the diagram and summarised in a table); Research Questions (2 to 3 central design decisions and how they relate to the attributes); Other Questions (at least three outstanding questions and how they will be answered); Attribution. Rubric: Organization and Formatting 5, Abstract 5, Introduction 5, Market Opportunity 10, Product Attributes 10, Research Questions 10, Questions 5, Writing Quality 5. Feedback comes in the week 4 workshop; some teams are asked to narrow scope.</p>
+<p>Sections, each its own heading: Abstract (what product, what attributes set it apart, what research questions); Introduction (description, background, a picture or diagram); Market Opportunity with Identify Your Customer, Identify Competitors, Identify Market Size; Product Attributes (the major attributes, described, quantified, with level ranges, labelled on the diagram and summarised in a table that also shows competitors’ features; the page sets no count); Research Questions (2 to 3 central design decisions and how they relate to the attributes); Other Questions (at least three outstanding questions and how they will be answered); Attribution. Rubric: Organization and Formatting 5, Abstract 5, Introduction 5, Market Opportunity 10, Product Attributes 10, Research Questions 10, Questions 5, Writing Quality 5. Feedback comes in the week 4 workshop; some teams are asked to narrow scope.</p>
 </section>
 <section id="survey-plan-35-points" class="level3">
 <h3 class="anchored" data-anchor-id="survey-plan-35-points">2. Survey Plan (35 points)</h3>
@@ -383,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="pilot-survey-35-points" class="level3">
 <h3 class="anchored" data-anchor-id="pilot-survey-35-points">3. Pilot Survey (35 points)</h3>
-<p>Built in surveydown from the conjoint buttons template: <code>code/1_make_choice_questions.R</code> generates <code>data/choice_questions.csv</code> with <code>cbc_design</code>; <code>survey.qmd</code> holds welcome, consent, eligibility screening, education, randomised conjoint questions and other questions; <code>app.R</code> runs the Shiny app. Supabase stores the data; the survey is deployed on shinyapps.io from one teammate’s account. Classmates take it in week 9 and leave anonymous feedback. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10 (randomised questions render live without error), Deployment 10.</p>
+<p>Built in surveydown from the conjoint buttons template: <code>code/1_make_choice_questions.R</code> generates <code>data/choice_questions.csv</code> with <code>cbc_design</code>; <code>survey.qmd</code> holds welcome, consent, eligibility screening, education, randomised conjoint questions and other questions; <code>app.R</code> runs the Shiny app locally. Supabase stores the data; the survey is deployed on shinyapps.io from one teammate’s account. Classmates take it in week 9 and leave anonymous feedback. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10 (randomised questions render live without error), surveydown 10 (the whole survey renders, is completable to the end, stores responses).</p>
 </section>
 <section id="pilot-analysis-35-points" class="level3">
 <h3 class="anchored" data-anchor-id="pilot-analysis-35-points">4. Pilot Analysis (35 points)</h3>
@@ -391,15 +413,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="final-survey-35-points" class="level3">
 <h3 class="anchored" data-anchor-id="final-survey-35-points">5. Final Survey (35 points)</h3>
-<p>The pilot survey with the changes from the pilot analysis, redeployed, all referenced files on the web, plus the eligibility text the professor needs to pre-screen Prolific respondents. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10, Deployment 10.</p>
+<p>The pilot survey with the changes from the pilot analysis, redeployed, all referenced files on the web, plus the eligibility requirements written into <code>survey.qmd</code> so the professor can pre-screen Prolific respondents. Rubric: Organization and Formatting 5, Survey Content 10, Conjoint Questions 10, surveydown 10.</p>
 </section>
 <section id="final-analysis-report-40-points-15-percent-of-the-grade" class="level3">
 <h3 class="anchored" data-anchor-id="final-analysis-report-40-points-15-percent-of-the-grade">6. Final Analysis Report (40 points, 15 percent of the grade)</h3>
-<p>A fully reproducible HTML report written as narrative paragraphs. Minimum analysis: <code>clean_data.R</code> to long format; <code>modeling.R</code> with a simple logit on all attributes, a mixed logit with random parameters and at least one sub-group comparison; <code>analysis.R</code> with WTP for every attribute (mean and 95 percent CI, plotted on a common scale), at least one market simulation against competitors with a plot, and sensitivity of market share to price and to other attributes with plots including at least one tornado plot. Sections: Abstract; Introduction; Survey Design; Data Analysis (sample description table, cleaning, modeling with the utility model in LaTeX and a coefficient table); Results; Final Recommendations and Conclusions; Limitations; Attribution; Appendix. Rubric: Organization and Formatting 5, Data Analysis 15, Report Contents 15, Appendix 5.</p>
+<p>A fully reproducible HTML report written as narrative paragraphs. Minimum analysis: <code>clean_data.R</code> to long format; <code>modeling.R</code> with a simple logit on all attributes, a mixed logit with random parameters and at least one sub-group comparison; <code>analysis.R</code> with WTP for every attribute (mean and 95 percent CI, plotted on a common scale), at least one market simulation against competitors with a plot, and sensitivity of market share to price and to other attributes with plots including at least one tornado plot. Sections: Abstract; Introduction; Survey Design (including the changes from the pilot); Data Analysis (sample description table, cleaning, modeling with the utility model in LaTeX and a coefficient table); Results; Final Recommendations and Conclusions; Limitations; Attribution; Appendix. Rubric: Organization and Formatting 5, Data Analysis 15, Report Contents 15, Appendix 5.</p>
 </section>
 <section id="final-presentation-35-points" class="level3">
 <h3 class="anchored" data-anchor-id="final-presentation-35-points">7. Final Presentation (35 points)</h3>
-<p>Ten minutes maximum, every member presents at least one slide, slides numbered, title slide with project title, names and date. Content: product introduction, survey overview with an example choice question and a sample-stats slide, main findings with a utility model slide and polished WTP, market simulation and sensitivity charts, a table of simulation attributes, and recommendations. Present live in class on Dec 9 or publish a video and DM the link to the professor on Slack. Rubric: Slide Design 10, Content 15, Communication 10.</p>
+<p>Ten minutes maximum, every member presents at least one slide, slides numbered, title slide with project title, names and date. Content: product introduction, survey overview with an example choice question and a sample-stats slide, main findings with a utility model slide and polished WTP, market simulation and sensitivity charts, a table of simulation attributes, and recommendations. Present live in class on Dec 9 or publish a video and DM the link to the professor on Slack (the course page’s title-slide instruction still carries last year’s date). Rubric: Slide Design 10, Content 15, Communication 10.</p>
 
 
 </section>
@@ -482,6 +504,12 @@ ul.task-list li input[type="checkbox"] {
   }
   function moveTip(evt) {
     if (!tip) return;
+    if (noHover) {
+      tip.style.left = Math.max(8, window.scrollX + 8) + "px";
+      tip.style.top = (window.scrollY + Math.min(evt.clientY + 16, window.innerHeight - tip.offsetHeight - 8)) + "px";
+      tip.style.maxWidth = (window.innerWidth - 16) + "px";
+      return;
+    }
     var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
     var x = evt.clientX + pad, y = evt.clientY + pad;
     if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
@@ -490,6 +518,10 @@ ul.task-list li input[type="checkbox"] {
     tip.style.top = (y + window.scrollY) + "px";
   }
   function hideTip() { if (tip) tip.style.display = "none"; }
+  var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  document.addEventListener("click", function (ev) {
+    if (noHover && tip && tip.style.display === "block" && !(ev.target.closest && ev.target.closest(".trk-hit, .trk-node, .trk-event"))) hideTip();
+  });
 
   function floatLabel(a) {
     if (a.slug === "done") return "done";
@@ -675,9 +707,9 @@ ul.task-list li input[type="checkbox"] {
         }
         // hit area + tooltip
         var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
-        hit.addEventListener("click", function () { focusRow(a.id); });
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { focusRow(a.id); if (noHover) showTip(activityTip(a), ev); });
         y += rowH;
       });
     });
@@ -880,8 +912,9 @@ ul.task-list li input[type="checkbox"] {
       var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
       var a = byId[n.id];
       if (a) {
-        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
+        hit.addEventListener("click", function (ev) { showTip(activityTip(a), ev); });
       }
     });
   }

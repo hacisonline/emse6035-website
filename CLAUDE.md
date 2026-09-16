@@ -19,12 +19,15 @@ data/activities.csv    the work breakdown (id, phase, activity, owner, start, du
 data/deadlines.csv     every dated item of the semester (date, item, kind, weight_pct, where, state, notes)
 data/weeks.csv         the sixteen class weeks (week, date, class_topic, quiz, homework_due, project_due, project_focus, status, progress_note)
 data/risks.csv         the risk register (id, risk, phase, likelihood, impact, trigger, response, owner, status, activities)
+data/requirements.csv  every rubric criterion from the course's deliverable pages (id, deliverable, criterion, points, needs, activities)
+data/decisions.csv     the decision log (id, date, decision, status Decided/Proposed/Open, rationale, source, activities)
+data/timeline.csv      the direction so far, one dated line per event (date, event, kind, state Done/Next)
 R/helpers.R            shared R: read_activities(), cpm(), schedule_health(), embed_schedule(), pills, tables
 assets/tracker.html    the client-side schedule views (Gantt, deliverable chain) as one inline <script>, included on every page
 tracker/               schedule.qmd (full Gantt), critical-path.qmd (chain, critical-only Gantt, float table),
-                       activities.qmd (planned vs computed dates), risks.qmd (matrix and register), progress.qmd (weeks)
+                       activities.qmd (planned vs computed dates), coverage.qmd (requirements to activities), risks.qmd, progress.qmd
 devlog/                index.qmd (listing) and posts/YYYY-MM-DD-slug/index.qmd, one per work session
-context-bank/          course, deadlines, project-requirements, team, conventions
+context-bank/          project (product, attributes, research questions, market, decision log, timeline), course, deadlines, project-requirements, team, conventions
 favicon.svg
 .claude/skills/        project skills (my-chart-style, from the week 2 class folder); settings.local.json stays untracked
 practice/week-NN/      class exercises with their data, scripts and figs; not rendered, not part of the tracker
@@ -46,7 +49,7 @@ To move the plan, change dates or dependencies in `activities.csv`; never edit c
 
 ## Making changes
 
-- Facts go in the CSVs, not in prose. A status change is a CSV edit (status and pct), a render, a commit that includes `docs/`, and a push.
+- Facts go in the CSVs, not in prose. A status change is a CSV edit (status and pct), a render, a commit that includes `docs/`, and a push. A new decision is a row in `decisions.csv`; a change in what the course asks for is a row in `requirements.csv` pointing at the activities that carry it (the requirements page flags any id that does not exist).
 - Statuses: activities use Not started / In progress / Done / Blocked / Dropped; dated items and weeks use Upcoming / In progress / Submitted / Graded / Done / Missed / Dropped; risks use Open / Closed. `R/helpers.R` maps these to colours; do not invent new ones without adding them there.
 - Every work session ends with a new dev log post (`devlog/posts/YYYY-MM-DD-slug/index.qmd`, front matter: title, description, author, date, categories) and updated activity statuses. Keep the post to what was asked, what was built, how it was verified, what is next.
 - Adding a page that needs the Gantt or the chain: source `R/helpers.R`, compute `sched <- cpm(read_activities())`, call `embed_schedule(sched, deadlines, weeks)` once inside a `results: asis` chunk, then print `<div data-tracker="gantt" ...>` or `<div data-tracker="chain">`. Gantt attributes: `data-mode` (all, open, critical, phase:Name), `data-window` (semester, next4), `data-controls`, `data-load`, `data-legend` (true/false).

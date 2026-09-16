@@ -3,10 +3,11 @@ title: "Context bank"
 subtitle: "The course facts the team needs at hand, kept where an agent can read them"
 ---
 
-The context bank is the standing knowledge behind the tracker: what the course is, when everything is due, what each deliverable must contain and how it is scored, who is on the team and who owns which account, and the conventions the professor grades on. It exists so that nobody (person or agent) has to re-derive these facts from the syllabus every time, and so that a fresh Claude Code session in this repo can read `CLAUDE.md`, then these pages, and be useful within a minute.
+The context bank is the standing knowledge behind the tracker: what the project is and what has been decided, what the course is, when everything is due, what each deliverable must contain and how it is scored, who is on the team and who owns which account, and the conventions the professor grades on. It exists so that nobody (person or agent) has to re-derive these facts from the syllabus every time, and so that a fresh Claude Code session in this repo can read `CLAUDE.md`, then these pages, and be useful within a minute.
 
 | Page | What it holds | Source of truth |
 |---|---|---|
+| [The project](project.qmd) | What we are studying, attributes and levels, research questions, market, the decision log, the direction so far | The proposal draft and the team's decisions |
 | [Course](course.qmd) | What EMSE 6035 is, grading weights, toolchain | Syllabus and course site |
 | [Deadlines](deadlines.qmd) | The full semester calendar, every dated item | `schedule.csv` on the course site, mirrored in `data/deadlines.csv` |
 | [Project requirements](project-requirements.qmd) | The seven deliverables, their sections and rubric points | The project pages and rubric CSVs |

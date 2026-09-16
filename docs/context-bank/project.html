@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harshit (with Claude)">
-<meta name="dcterms.date" content="2026-09-02">
-<meta name="description" content="Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.">
 
-<title>Kickoff: the tracker site exists – EMSE 6035 Project Tracker</title>
+<title>The project – EMSE 6035 Project Tracker</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,24 +29,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,17 +79,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EMSE 6035 Project Tracker</span>
     </a>
   </div>
@@ -103,19 +100,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../context-bank/project.html"> 
+    <a class="nav-link active" href="../context-bank/project.html" aria-current="page"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/schedule.html"> 
+    <a class="nav-link" href="../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../tracker/critical-path.html"> 
+    <a class="nav-link" href="../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -124,29 +121,29 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
         <li>
-    <a class="dropdown-item" href="../../../tracker/activities.html">
+    <a class="dropdown-item" href="../tracker/activities.html">
  <span class="dropdown-text">Activities</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../tracker/coverage.html">
+    <a class="dropdown-item" href="../tracker/coverage.html">
  <span class="dropdown-text">Requirements</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../tracker/risks.html">
+    <a class="dropdown-item" href="../tracker/risks.html">
  <span class="dropdown-text">Risks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../tracker/progress.html">
+    <a class="dropdown-item" href="../tracker/progress.html">
  <span class="dropdown-text">Week by week</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../devlog/index.html"> 
+    <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../context-bank/index.html"> 
+    <a class="nav-link" href="../context-bank/index.html"> 
 <span class="menu-text">Context bank</span></a>
   </li>  
 </ul>
@@ -155,46 +152,100 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../context-bank/project.html">The project</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Context bank</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/project.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">The project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/course.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The course</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/deadlines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deadlines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/project-requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project requirements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../context-bank/conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conventions</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#who-decides-who-answers" id="toc-who-decides-who-answers" class="nav-link active" data-scroll-target="#who-decides-who-answers">Who decides, who answers</a></li>
+  <li><a href="#attributes-and-levels" id="toc-attributes-and-levels" class="nav-link" data-scroll-target="#attributes-and-levels">Attributes and levels</a></li>
+  <li><a href="#research-questions-and-how-each-gets-answered" id="toc-research-questions-and-how-each-gets-answered" class="nav-link" data-scroll-target="#research-questions-and-how-each-gets-answered">Research questions and how each gets answered</a></li>
+  <li><a href="#market-opportunity-as-the-draft-states-it" id="toc-market-opportunity-as-the-draft-states-it" class="nav-link" data-scroll-target="#market-opportunity-as-the-draft-states-it">Market opportunity, as the draft states it</a></li>
+  <li><a href="#open-questions-the-proposal-itself-lists" id="toc-open-questions-the-proposal-itself-lists" class="nav-link" data-scroll-target="#open-questions-the-proposal-itself-lists">Open questions the proposal itself lists</a></li>
+  <li><a href="#does-it-fit-what-the-course-asks-for" id="toc-does-it-fit-what-the-course-asks-for" class="nav-link" data-scroll-target="#does-it-fit-what-the-course-asks-for">Does it fit what the course asks for?</a></li>
+  <li><a href="#decision-log" id="toc-decision-log" class="nav-link" data-scroll-target="#decision-log">Decision log</a></li>
+  <li><a href="#direction-so-far" id="toc-direction-so-far" class="nav-link" data-scroll-target="#direction-so-far">Direction so far</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Kickoff: the tracker site exists</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">setup</div>
-    <div class="quarto-category">agentic-workflow</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.
-  </div>
+<h1 class="title">The project</h1>
+<p class="subtitle lead">Smart Urban Living: what we are studying, what we have decided, and where the direction stands</p>
 </div>
 
 
-<div class="quarto-title-meta column-page">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Harshit (with Claude) </p>
-          </div>
-  </div>
+<div class="quarto-title-meta column-body">
+
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 2, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -204,21 +255,387 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-was-asked" class="level2">
-<h2 class="anchored" data-anchor-id="what-was-asked">What was asked</h2>
-<p>Class 2 was the agentic workflows session: open a folder in Positron, run an agent in it, build a Quarto website, switch the output folder to <code>docs</code>, push, and publish it with GitHub Pages. The brief for this one was a team project tracker for the semester: activities, a critical path, week-by-week progress, dev logs, and a context bank that knows the course deadlines.</p>
+<p class="kicker">
+Working title
+</p>
+<p><strong>Smart Urban Living: consumer preferences and willingness to pay for smart apartment features.</strong> The product is a <em>Smart Urban Apartment Package</em>: a configurable set of smart-home technologies and technology-enabled amenities integrated into an otherwise comparable modern multifamily rental apartment. The study is a choice-based conjoint survey of renters. It asks which features renters value most, how much extra monthly rent they would pay for each, and which combination of features gives the strongest value proposition, so that a developer or property manager can decide what to install and what premium to charge.</p>
+<div class="status-strip">
+<div class="status-card">
+<div class="label">
+Proposal
+</div>
+<div class="value">
+v1 <small>reviewed</small>
+</div>
+<div class="sub">
+Draft Sep 15; rubric review Sep 16; v2 due Sun Sep 20
+</div>
+</div>
+<div class="status-card">
+<div class="label">
+Attributes
+</div>
+<div class="value">
+6
+</div>
+<div class="sub">
+One price attribute and five features, three levels each
+</div>
+</div>
+<div class="status-card">
+<div class="label">
+Research questions
+</div>
+<div class="value">
+3
+</div>
+<div class="sub">
+Importance, willingness to pay, best bundle
+</div>
+</div>
+<div class="status-card">
+<div class="label">
+Decisions
+</div>
+<div class="value">
+12 <small>logged</small>
+</div>
+<div class="sub">
+6 still open or proposed
+</div>
+</div>
+</div>
+<section id="who-decides-who-answers" class="level2">
+<h2 class="anchored" data-anchor-id="who-decides-who-answers">Who decides, who answers</h2>
+<p>The <strong>buyer</strong> of the package is the developer or property operator who chooses what to install. The <strong>respondent</strong> is the renter: an adult who rents, or expects to rent within the next two years, an apartment in an urban or suburban multifamily building. The proposal focuses on renters rather than mixing renters and homebuyers because renting and buying carry different financial commitments and different measures of willingness to pay. Respondents will also answer basic demographic and housing questions so that preferences can be compared across segments: current versus prospective renters, vehicle owners versus non-owners, and different levels of familiarity with smart-home technology.</p>
+<p>The course’s default respondent pool is paid U.S. participants on Prolific, pre-screened with the eligibility text the team writes; the pilot is taken by classmates. The draft proposal names the GWU community and personal networks instead. That is decision D07 below, and the survey plan has to settle it.</p>
 </section>
-<section id="what-was-built" class="level2">
-<h2 class="anchored" data-anchor-id="what-was-built">What was built</h2>
-<p>A Quarto website with <code>output-dir: docs</code> and <code>execute-dir: project</code>. Three CSVs in <code>data/</code> hold the facts: <code>deadlines.csv</code> (every dated item on the course calendar), <code>weeks.csv</code> (the sixteen class weeks with the project focus and a progress note for each), and <code>activities.csv</code> (forty activities from team formation to the final presentation, each with an owner, start, due, dependencies, a critical-path flag and a status). R code in <code>R/helpers.R</code> reads them and every page is a table or a summary computed from them, so the home page dashboard, the activity list, the float calculation on the critical path and the week table all update from a CSV edit and a re-render. The context bank pages hold the course facts that are safe to publish: grading weights, the deliverable requirements and rubric points, the toolchain and the conventions the professor grades on.</p>
+<section id="attributes-and-levels" class="level2">
+<h2 class="anchored" data-anchor-id="attributes-and-levels">Attributes and levels</h2>
+<p>Everything else about the apartment (neighbourhood, size, bedrooms, condition) is held equal across the alternatives in a choice question, so the tradeoffs are only about the technology package and its price. Levels are the proposal draft’s; the survey plan locks them after the workshop.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Attribute</th>
+<th>What it is</th>
+<th>Levels (draft)</th>
+<th>Metric</th>
+<th>Open point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Monthly smart-package premium</td>
+<td>Extra rent for the package over a comparable standard apartment</td>
+<td>$0, $25, $50, $75</td>
+<td>USD per month</td>
+<td>The zero level makes a free fully smart package a valid profile; reserve it for the standard-apartment baseline or shift the range, and show a base rent in every choice task (D05)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Smart access and security</td>
+<td>How residents get in and how the home is protected</td>
+<td>standard key; smart keyless lock; smart lock plus video security</td>
+<td>system type</td>
+<td>One attribute or two (lock, video)?</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Smart climate control</td>
+<td>Temperature control and energy management</td>
+<td>standard thermostat; smart thermostat; smart thermostat plus automated energy management</td>
+<td>system type</td>
+<td>Define “automated energy management” in one line</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Smart lighting</td>
+<td>Remote or automatic lighting control</td>
+<td>standard; app-controlled; automated</td>
+<td>system type</td>
+<td>First candidate to drop if the pilot shows overload</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Package management</td>
+<td>How deliveries are received securely</td>
+<td>standard delivery area; secure lockers; smart package room with digital access</td>
+<td>system type</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>EV charging access</td>
+<td>Charging availability at the property</td>
+<td>none; shared stations; reserved access</td>
+<td>service level</td>
+<td>Keep as an attribute, or use for sub-group analysis only?</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="how-it-was-verified" class="level2">
-<h2 class="anchored" data-anchor-id="how-it-was-verified">How it was verified</h2>
-<p>The site was rendered end to end with Quarto and R before the first commit, and the dates were checked line by line against the course schedule the professor publishes (the tracked date for each project deliverable is the earlier of the two dates the course materials show). The activity count on the home page matches <code>nrow(activities)</code>, and the critical-path table lists a successor for every activity that has one.</p>
+<section id="research-questions-and-how-each-gets-answered" class="level2">
+<h2 class="anchored" data-anchor-id="research-questions-and-how-each-gets-answered">Research questions and how each gets answered</h2>
+<ol type="1">
+<li><strong>Which smart-apartment features have the greatest influence on renters’ apartment choices?</strong> Answered by the relative size of the estimated utility coefficients: which attributes move choices most when developers have limited budget for technology.</li>
+<li><strong>How much additional monthly rent are renters willing to pay for individual features?</strong> Answered by the ratio of each feature coefficient to the price coefficient, with confidence intervals: the dollar value renters put on a smart lock, a smart thermostat, and so on.</li>
+<li><strong>Which combination of features provides the strongest value proposition?</strong> Answered by a market simulation: predicted choice shares for candidate packages (basic, security-focused, convenience-focused, comprehensive) at their premiums, against the competing alternatives.</li>
+</ol>
 </section>
-<section id="what-is-next" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-next">What is next</h2>
-<p>Form the team by Sep 9, pick a topic against the seven selection criteria, then fill in the team page and start the proposal activities (A05 to A09). Each work session from here gets its own entry.</p>
+<section id="market-opportunity-as-the-draft-states-it" class="level2">
+<h2 class="anchored" data-anchor-id="market-opportunity-as-the-draft-states-it">Market opportunity, as the draft states it</h2>
+<p><strong>Customer.</strong> Adult renters and prospective renters in urban or suburban multifamily buildings, reached (per the draft) through the GWU community and the team’s networks; students, recent graduates and working professionals are relevant because they have recent rental-search experience.</p>
+<p><strong>Competitors.</strong> A conventional modern apartment without integrated smart technology, and existing properties that already bundle some smart features. The draft’s table contrasts four archetypes (conventional; basic smart with lock and thermostat; enhanced smart adding lighting and package technology; the proposed package with every feature optional). The rubric wants real competing products and their features in the attribute table, so v2 names actual operators’ technology packages and their fees.</p>
+<p><strong>Market size.</strong> The U.S. multifamily rental market. Yardi Matrix’s Q2 2026 supply forecast projects about 478,000 multifamily completions in 2026 and about 443,000 in 2027 (declining from the recent peak, still hundreds of thousands of new units a year), plus the existing stock where smart locks, thermostats and lighting can be retrofitted. v2 adds the references and a number for the retrofit stock.</p>
+<p><strong>Evidence the draft leans on.</strong> Rently’s 2025 survey of 500 U.S. renters: 65 percent find apartments with smart-home technology more appealing, 65 percent would pay more rent for smart amenities, 52 percent are comfortable paying more than $20 a month; 35 percent worry about unauthorised monitoring and 32 percent about smart-lock failures. Both figures were checked against the report on Sep 16.</p>
+</section>
+<section id="open-questions-the-proposal-itself-lists" class="level2">
+<h2 class="anchored" data-anchor-id="open-questions-the-proposal-itself-lists">Open questions the proposal itself lists</h2>
+<ol type="1">
+<li>What premium range makes the tradeoffs realistic? Existing research, competitor pricing and pilot responses will say whether $0 to $75 is right.</li>
+<li>Is smart security one attribute or two (lock, video)?</li>
+<li>Should EV charging stay a major attribute when many respondents do not own an EV? Vehicle ownership and EV interest will be measured.</li>
+<li>How much do privacy and cybersecurity concerns shape attitudes? Extra questions on privacy, reliability and trust may be added.</li>
+<li>Do preferences differ across renter segments (age, rental status, budget, vehicle ownership, familiarity)?</li>
+</ol>
+</section>
+<section id="does-it-fit-what-the-course-asks-for" class="level2">
+<h2 class="anchored" data-anchor-id="does-it-fit-what-the-course-asks-for">Does it fit what the course asks for?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Where we stand</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Innovative or emerging</td>
+<td>Contested. Smart locks and thermostats are common in new Class A buildings and renter surveys exist. The argument (D11): the unresolved design decision is which features to bundle at what premium for mid-market and retrofit stock, and no public source gives tradeoff-based willingness to pay per feature. Test it at the workshop.</td>
+</tr>
+<tr class="even">
+<td>Well-defined</td>
+<td>Yes: six named attributes with levels and a price.</td>
+</tr>
+<tr class="odd">
+<td>Identified target market</td>
+<td>Yes: U.S. renters; competitors known in kind; the named benchmarks are the v2 fix.</td>
+</tr>
+<tr class="even">
+<td>Prior to mass commercialisation</td>
+<td>Contested, same argument as above; the package as a priced bundle is not standard outside Class A.</td>
+</tr>
+<tr class="odd">
+<td>Moderate scope</td>
+<td>Yes; six attributes is the upper end of comfortable, and the pilot decides whether one goes.</td>
+</tr>
+<tr class="even">
+<td>Expertise</td>
+<td>The technologies are documented publicly by their vendors; nothing here needs specialist access.</td>
+</tr>
+<tr class="odd">
+<td>Decision variables</td>
+<td>Yes: which features, at which level, at what premium.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decision-log" class="level2">
+<h2 class="anchored" data-anchor-id="decision-log">Decision log</h2>
+<p>Decided, proposed, or open. Open items carry the activity where they get settled.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="table-wrap"><table class="table table-hover table-sm nice-table decisions-table">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> ID </th>
+   <th style="text-align:left;"> Date </th>
+   <th style="text-align:left;"> Decision </th>
+   <th style="text-align:center;"> Status </th>
+   <th style="text-align:left;"> Rationale </th>
+   <th style="text-align:left;"> Source </th>
+   <th style="text-align:left;"> Settled in </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> D01 </td>
+   <td style="text-align:left;"> Sep 9 </td>
+   <td style="text-align:left;"> Team of five: Harshit, Michael, Vlad, Ishita, Youssouf </td>
+   <td style="text-align:center;"> <span class="pill pill-done">Decided</span> </td>
+   <td style="text-align:left;"> Formed by the week 3 deadline; the course guideline says three to four, so the size is being confirmed with the professor </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> S05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D02 </td>
+   <td style="text-align:left;"> Sep 15 </td>
+   <td style="text-align:left;"> Topic: Smart Urban Living, a Smart Urban Apartment Package for modern multifamily rentals, studied with a choice-based conjoint among renters </td>
+   <td style="text-align:center;"> <span class="pill pill-done">Decided</span> </td>
+   <td style="text-align:left;"> Configurable smart-home technologies and technology-enabled amenities in an otherwise comparable apartment; the question is which features to include and what renters will pay for them </td>
+   <td style="text-align:left;"> Proposal v1 </td>
+   <td style="text-align:left;"> P03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D03 </td>
+   <td style="text-align:left;"> Sep 15 </td>
+   <td style="text-align:left;"> The survey respondent is the renter; the package's buyer is the developer or operator </td>
+   <td style="text-align:center;"> <span class="pill pill-done">Decided</span> </td>
+   <td style="text-align:left;"> Renters, not homebuyers, because rental and purchase decisions carry different financial commitments; the proposal should state both roles in one sentence </td>
+   <td style="text-align:left;"> Proposal v1 and the Sep 16 review </td>
+   <td style="text-align:left;"> P06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D04 </td>
+   <td style="text-align:left;"> Sep 15 </td>
+   <td style="text-align:left;"> Six attributes: monthly premium, smart access and security, smart climate control, smart lighting, package management, EV charging access </td>
+   <td style="text-align:center;"> <span class="pill pill-done">Decided</span> </td>
+   <td style="text-align:left;"> Features a developer or manager can modify; neighbourhood, size, bedrooms and condition held equal across alternatives. Whether lighting or EV charging survive the pilot, and whether security splits into lock and video, stay open </td>
+   <td style="text-align:left;"> Proposal v1 </td>
+   <td style="text-align:left;"> P02, SP01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D05 </td>
+   <td style="text-align:left;"> Sep 15 </td>
+   <td style="text-align:left;"> Price as a monthly premium over a comparable standard apartment, draft levels $0, $25, $50, $75 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">Open</span> </td>
+   <td style="text-align:left;"> The review flags the zero level (a free fully smart package becomes a valid profile) and the missing base-rent anchor; the survey plan locks the levels after the workshop </td>
+   <td style="text-align:left;"> Proposal v1 and the Sep 16 review </td>
+   <td style="text-align:left;"> SP01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D06 </td>
+   <td style="text-align:left;"> Sep 15 </td>
+   <td style="text-align:left;"> Three research questions: which features most influence choice; willingness to pay per feature; which bundle at which premium gives the strongest value proposition </td>
+   <td style="text-align:center;"> <span class="pill pill-done">Decided</span> </td>
+   <td style="text-align:left;"> RQ1 from the relative size of coefficients, RQ2 from coefficient ratios to price, RQ3 from a market simulation of package tiers </td>
+   <td style="text-align:left;"> Proposal v1 </td>
+   <td style="text-align:left;"> P02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D07 </td>
+   <td style="text-align:left;"> Sep 15 </td>
+   <td style="text-align:left;"> Distribution: the proposal names the GWU community and personal and professional networks; the course default is Prolific U.S. general population with an eligibility pre-screen, and the pilot is taken by classmates </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">Open</span> </td>
+   <td style="text-align:left;"> The survey plan (Sep 29) has to state the strategy and the exact eligibility text; the two are reconcilable (Prolific for the final, networks as a supplement) but the plan must say so </td>
+   <td style="text-align:left;"> Proposal v1 and the survey plan page </td>
+   <td style="text-align:left;"> SP02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D08 </td>
+   <td style="text-align:left;"> Sep 16 </td>
+   <td style="text-align:left;"> Two repos: a private brainstorming repo under one member's account, and the official submission repo in the course organisation </td>
+   <td style="text-align:center;"> <span class="pill pill-done">Decided</span> </td>
+   <td style="text-align:left;"> Ideas, decisions and meeting notes stay in the brainstorming repo; every deliverable is pushed from the official repo's numbered folders </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> S03, S04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D09 </td>
+   <td style="text-align:left;"> Sep 16 </td>
+   <td style="text-align:left;"> Owners and backups per deliverable </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">Open</span> </td>
+   <td style="text-align:left;"> To be assigned at the next sync; every member submits at least once </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> S06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D10 </td>
+   <td style="text-align:left;"> Sep 16 </td>
+   <td style="text-align:left;"> Design parameters: alternatives per choice question, questions per respondent, whether to include a no-choice option </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">Open</span> </td>
+   <td style="text-align:left;"> Needed for the design file (cbc_design) and reported in the pilot analysis; decided when the survey plan is written </td>
+   <td style="text-align:left;"> Course pages </td>
+   <td style="text-align:left;"> SP03, PS02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D11 </td>
+   <td style="text-align:left;"> Sep 16 </td>
+   <td style="text-align:left;"> Argument for the emerging and pre-commercial criteria: the unresolved design decision is which features to bundle at what premium for mid-market and retrofit stock, and no public source gives tradeoff-based willingness to pay per feature </td>
+   <td style="text-align:center;"> <span class="pill pill-near">Proposed</span> </td>
+   <td style="text-align:left;"> To be tested at the proposal workshop; if the professor asks to narrow scope, the fallback is to drop lighting or EV charging or to focus on retrofit packages </td>
+   <td style="text-align:left;"> Sep 16 review </td>
+   <td style="text-align:left;"> P05, P06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D12 </td>
+   <td style="text-align:left;"> Sep 16 </td>
+   <td style="text-align:left;"> Competitor set for the final market simulation: the real products benchmarked in the proposal's attribute table, with their premiums </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">Open</span> </td>
+   <td style="text-align:left;"> The final analysis simulates the package against competitors; the benchmark table written for proposal v2 is the source </td>
+   <td style="text-align:left;"> Sep 16 review </td>
+   <td style="text-align:left;"> P06, FA07 </td>
+  </tr>
+</tbody>
+</table></div>
+
+</div>
+</div>
+</section>
+<section id="direction-so-far" class="level2">
+<h2 class="anchored" data-anchor-id="direction-so-far">Direction so far</h2>
+<ol class="timeline">
+<li class="tl-done tl-kind-course">
+<span class="tl-date">Wed Aug 26</span><span class="tl-dot"></span><span class="tl-text">Course starts; the project brief, the seven selection criteria and the deliverable calendar are introduced</span>
+</li>
+<li class="tl-done tl-kind-tracker">
+<span class="tl-date">Wed Sep 2</span><span class="tl-dot"></span><span class="tl-text">This tracker is built during the week 2 agentic-workflows exercise and published</span>
+</li>
+<li class="tl-done tl-kind-team">
+<span class="tl-date">Wed Sep 9</span><span class="tl-dot"></span><span class="tl-text">Team of five forms by the week 3 deadline</span>
+</li>
+<li class="tl-done tl-kind-course">
+<span class="tl-date">Thu Sep 10</span><span class="tl-dot"></span><span class="tl-text">The professor creates the official submission repo for team E</span>
+</li>
+<li class="tl-done tl-kind-proposal">
+<span class="tl-date">Tue Sep 15</span><span class="tl-dot"></span><span class="tl-text">Proposal draft v1 rendered: Smart Urban Living, six attributes, three research questions, five open questions</span>
+</li>
+<li class="tl-done tl-kind-proposal">
+<span class="tl-date">Wed Sep 16</span><span class="tl-dot"></span><span class="tl-text">Draft reviewed against the 55-point rubric: five blocking fixes, seven improvements, one fit risk; both statistics verified</span>
+</li>
+<li class="tl-done tl-kind-tracker">
+<span class="tl-date">Wed Sep 16</span><span class="tl-dot"></span><span class="tl-text">Brainstorming repo created and teammates invited; official repo joined; tracker replanned with a computed schedule, a risk register and this decision log</span>
+</li>
+<li class="tl-next tl-kind-course">
+<span class="tl-date">Fri Sep 18</span><span class="tl-dot"></span><span class="tl-text">Proposal workshop meeting with the professor (remote, week 4)</span>
+</li>
+<li class="tl-next tl-kind-proposal">
+<span class="tl-date">Sun Sep 20</span><span class="tl-dot"></span><span class="tl-text">Proposal v2 submitted from the official repo</span>
+</li>
+<li class="tl-next tl-kind-deliverable">
+<span class="tl-date">Tue Sep 29</span><span class="tl-dot"></span><span class="tl-text">Survey plan due: locked attributes and levels, eligibility text, choice question text, survey content</span>
+</li>
+<li class="tl-next tl-kind-deliverable">
+<span class="tl-date">Tue Oct 13</span><span class="tl-dot"></span><span class="tl-text">Pilot survey live on shinyapps.io</span>
+</li>
+<li class="tl-next tl-kind-deliverable">
+<span class="tl-date">Sun Nov 1</span><span class="tl-dot"></span><span class="tl-text">Pilot analysis due</span>
+</li>
+<li class="tl-next tl-kind-deliverable">
+<span class="tl-date">Sun Nov 15</span><span class="tl-dot"></span><span class="tl-text">Final survey due; Prolific fielding follows</span>
+</li>
+<li class="tl-next tl-kind-deliverable">
+<span class="tl-date">Sun Dec 6</span><span class="tl-dot"></span><span class="tl-text">Final analysis report due</span>
+</li>
+<li class="tl-next tl-kind-deliverable">
+<span class="tl-date">Wed Dec 9</span><span class="tl-dot"></span><span class="tl-text">Final presentation in class</span>
+</li>
+</ol>
+<p>The proposal activities on the <a href="../tracker/schedule.html">schedule</a>: 4 of 8 done, the rest on a zero-float chain to Sunday. The <a href="../tracker/coverage.html">requirements</a> page shows which activity carries each rubric criterion.</p>
 
 
 </section>

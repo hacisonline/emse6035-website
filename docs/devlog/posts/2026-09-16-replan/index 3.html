@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Harshit (with Claude)">
-<meta name="dcterms.date" content="2026-09-02">
-<meta name="description" content="Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.">
+<meta name="dcterms.date" content="2026-09-16">
+<meta name="description" content="The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.">
 
-<title>Kickoff: the tracker site exists – EMSE 6035 Project Tracker</title>
+<title>Replan: team formed, topic chosen, schedule computed – EMSE 6035 Project Tracker</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -107,10 +107,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../context-bank/project.html"> 
-<span class="menu-text">Project</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -118,29 +114,18 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tracker</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
-        <li>
-    <a class="dropdown-item" href="../../../tracker/activities.html">
- <span class="dropdown-text">Activities</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tracker/activities.html"> 
+<span class="menu-text">Activities</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../../tracker/coverage.html">
- <span class="dropdown-text">Requirements</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tracker/risks.html"> 
+<span class="menu-text">Risks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../../tracker/risks.html">
- <span class="dropdown-text">Risks</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tracker/progress.html"> 
+<span class="menu-text">Week by week</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../../tracker/progress.html">
- <span class="dropdown-text">Week by week</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -166,16 +151,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Kickoff: the tracker site exists</h1>
+<h1 class="title">Replan: team formed, topic chosen, schedule computed</h1>
   <div class="quarto-categories">
     <div class="quarto-category">setup</div>
-    <div class="quarto-category">agentic-workflow</div>
+    <div class="quarto-category">proposal</div>
+    <div class="quarto-category">planning</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.
+    The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.
   </div>
 </div>
 
@@ -192,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 2, 2026</p>
+      <p class="date">September 16, 2026</p>
     </div>
   </div>
   
@@ -206,19 +192,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="what-was-asked" class="level2">
 <h2 class="anchored" data-anchor-id="what-was-asked">What was asked</h2>
-<p>Class 2 was the agentic workflows session: open a folder in Positron, run an agent in it, build a Quarto website, switch the output folder to <code>docs</code>, push, and publish it with GitHub Pages. The brief for this one was a team project tracker for the semester: activities, a critical path, week-by-week progress, dev logs, and a context bank that knows the course deadlines.</p>
+<p>Two weeks after the kickoff the facts had changed: a team of five, a topic, a proposal draft rendered by a teammate, an official submission repo from the professor, and a workshop meeting this week. The ask was to bring the tracker up to date and, from an engineering-management point of view, make the timeline honest: a real critical path rather than a hand-drawn one, a Gantt chart, float, and a cleaner site.</p>
 </section>
 <section id="what-was-built" class="level2">
 <h2 class="anchored" data-anchor-id="what-was-built">What was built</h2>
-<p>A Quarto website with <code>output-dir: docs</code> and <code>execute-dir: project</code>. Three CSVs in <code>data/</code> hold the facts: <code>deadlines.csv</code> (every dated item on the course calendar), <code>weeks.csv</code> (the sixteen class weeks with the project focus and a progress note for each), and <code>activities.csv</code> (forty activities from team formation to the final presentation, each with an owner, start, due, dependencies, a critical-path flag and a status). R code in <code>R/helpers.R</code> reads them and every page is a table or a summary computed from them, so the home page dashboard, the activity list, the float calculation on the critical path and the week table all update from a CSV edit and a re-render. The context bank pages hold the course facts that are safe to publish: grading weights, the deliverable requirements and rubric points, the toolchain and the conventions the professor grades on.</p>
+<p><strong>Data.</strong> <code>data/activities.csv</code> was rewritten as a 54-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. <code>deadlines.csv</code> and <code>weeks.csv</code> were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. <code>data/risks.csv</code> is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.</p>
+<p><strong>Engine.</strong> <code>R/helpers.R</code> gained <code>cpm()</code>: a forward pass from today as the status date (planned starts as start-no-earlier-than constraints), a backward pass from the official deadlines, total and free float, critical and near-critical flags, and an overdue flag. <code>schedule_health()</code> compares duration-weighted earned progress with what the plan says should be done by today. <code>embed_schedule()</code> writes the computed schedule into the page as JSON.</p>
+<p><strong>Views.</strong> <code>assets/tracker.html</code> is a dependency-free script, inlined into every page, that draws the Gantt (early-schedule bars with progress, late windows, deadline diamonds, a today line, the course-load lane, filters, hover details, click-to-trace dependencies) and the deliverable chain with the float on each handoff. New pages: <a href="../../../tracker/schedule.html">Schedule</a> and <a href="../../../tracker/risks.html">Risks</a>. The home page leads with the next deadline, schedule health and the zero-float count. The critical-path page is now computed, not typed. The team page carries the roster, the topic, the attributes table and the ownership grid (owners TBD until the next sync).</p>
+<p><strong>Proposal review.</strong> The Sep 15 draft was read against the 55-point rubric. Blocking fixes: an AI citation artifact and a chat-tool tracking parameter left in the text, a doubled “Figure Figure 1” cross-reference, heading levels that break the template’s structure, and no references at all. Improvements: separate the buyer (developer or operator) from the respondent (renter); name the Prolific pipeline; replace the archetype competitor table with real products and prices; quantify the retrofit market; fix the zero-dollar price level and anchor the premium to a base rent; define bundled levels in one line each; say how research question three is answered. Fit risk: the emerging and pre-commercial criteria, to be argued at the workshop. Both statistics in the draft were verified against their sources.</p>
 </section>
 <section id="how-it-was-verified" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-was-verified">How it was verified</h2>
-<p>The site was rendered end to end with Quarto and R before the first commit, and the dates were checked line by line against the course schedule the professor publishes (the tracked date for each project deliverable is the earlier of the two dates the course materials show). The activity count on the home page matches <code>nrow(activities)</code>, and the critical-path table lists a successor for every activity that has one.</p>
+<p>The site was rendered end to end with Quarto and R and every page was opened in a browser at laptop and phone widths; the Gantt filters, the phase selector, the tooltips and the click-to-trace were exercised by hand, and the browser console was clean (a jQuery error from kableExtra’s print helper was found and removed by dropping that package). The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.</p>
 </section>
 <section id="what-is-next" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-next">What is next</h2>
-<p>Form the team by Sep 9, pick a topic against the seven selection criteria, then fill in the team page and start the proposal activities (A05 to A09). Each work session from here gets its own entry.</p>
+<p>Book the workshop slot, revise the proposal to v2 (the review checklist sits in the team’s brainstorming repo under <code>1-proposal/</code>), move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.</p>
 
 
 </section>
@@ -300,12 +289,6 @@ ul.task-list li input[type="checkbox"] {
   }
   function moveTip(evt) {
     if (!tip) return;
-    if (noHover) {
-      tip.style.left = Math.max(8, window.scrollX + 8) + "px";
-      tip.style.top = (window.scrollY + Math.min(evt.clientY + 16, window.innerHeight - tip.offsetHeight - 8)) + "px";
-      tip.style.maxWidth = (window.innerWidth - 16) + "px";
-      return;
-    }
     var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
     var x = evt.clientX + pad, y = evt.clientY + pad;
     if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
@@ -314,10 +297,6 @@ ul.task-list li input[type="checkbox"] {
     tip.style.top = (y + window.scrollY) + "px";
   }
   function hideTip() { if (tip) tip.style.display = "none"; }
-  var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
-  document.addEventListener("click", function (ev) {
-    if (noHover && tip && tip.style.display === "block" && !(ev.target.closest && ev.target.closest(".trk-hit, .trk-node, .trk-event"))) hideTip();
-  });
 
   function floatLabel(a) {
     if (a.slug === "done") return "done";
@@ -503,9 +482,9 @@ ul.task-list li input[type="checkbox"] {
         }
         // hit area + tooltip
         var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
-        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
-        hit.addEventListener("click", function (ev) { focusRow(a.id); if (noHover) showTip(activityTip(a), ev); });
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("click", function () { focusRow(a.id); });
         y += rowH;
       });
     });
@@ -708,9 +687,8 @@ ul.task-list li input[type="checkbox"] {
       var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
       var a = byId[n.id];
       if (a) {
-        hit.addEventListener("mousemove", function (ev) { if (!noHover) showTip(activityTip(a), ev); });
-        hit.addEventListener("mouseleave", function () { if (!noHover) hideTip(); });
-        hit.addEventListener("click", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
       }
     });
   }
