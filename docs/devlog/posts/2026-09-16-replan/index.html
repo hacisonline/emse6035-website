@@ -196,18 +196,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-was-built" class="level2">
 <h2 class="anchored" data-anchor-id="what-was-built">What was built</h2>
-<p><strong>Data.</strong> <code>data/activities.csv</code> was rewritten as a 52-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. <code>deadlines.csv</code> and <code>weeks.csv</code> were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. <code>data/risks.csv</code> is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.</p>
+<p><strong>Data.</strong> <code>data/activities.csv</code> was rewritten as a 54-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. <code>deadlines.csv</code> and <code>weeks.csv</code> were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. <code>data/risks.csv</code> is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.</p>
 <p><strong>Engine.</strong> <code>R/helpers.R</code> gained <code>cpm()</code>: a forward pass from today as the status date (planned starts as start-no-earlier-than constraints), a backward pass from the official deadlines, total and free float, critical and near-critical flags, and an overdue flag. <code>schedule_health()</code> compares duration-weighted earned progress with what the plan says should be done by today. <code>embed_schedule()</code> writes the computed schedule into the page as JSON.</p>
 <p><strong>Views.</strong> <code>assets/tracker.html</code> is a dependency-free script, inlined into every page, that draws the Gantt (early-schedule bars with progress, late windows, deadline diamonds, a today line, the course-load lane, filters, hover details, click-to-trace dependencies) and the deliverable chain with the float on each handoff. New pages: <a href="../../../tracker/schedule.html">Schedule</a> and <a href="../../../tracker/risks.html">Risks</a>. The home page leads with the next deadline, schedule health and the zero-float count. The critical-path page is now computed, not typed. The team page carries the roster, the topic, the attributes table and the ownership grid (owners TBD until the next sync).</p>
 <p><strong>Proposal review.</strong> The Sep 15 draft was read against the 55-point rubric. Blocking fixes: an AI citation artifact and a chat-tool tracking parameter left in the text, a doubled “Figure Figure 1” cross-reference, heading levels that break the template’s structure, and no references at all. Improvements: separate the buyer (developer or operator) from the respondent (renter); name the Prolific pipeline; replace the archetype competitor table with real products and prices; quantify the retrofit market; fix the zero-dollar price level and anchor the premium to a base rent; define bundled levels in one line each; say how research question three is answered. Fit risk: the emerging and pre-commercial criteria, to be argued at the workshop. Both statistics in the draft were verified against their sources.</p>
 </section>
 <section id="how-it-was-verified" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-was-verified">How it was verified</h2>
-<p>The site was rendered end to end with Quarto and R and every page was opened in a browser. The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.</p>
+<p>The site was rendered end to end with Quarto and R and every page was opened in a browser at laptop and phone widths; the Gantt filters, the phase selector, the tooltips and the click-to-trace were exercised by hand, and the browser console was clean (a jQuery error from kableExtra’s print helper was found and removed by dropping that package). The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.</p>
 </section>
 <section id="what-is-next" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-next">What is next</h2>
-<p>Book the workshop slot, revise the proposal to v2, move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.</p>
+<p>Book the workshop slot, revise the proposal to v2 (the review checklist sits in the team’s brainstorming repo under <code>1-proposal/</code>), move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.</p>
 
 
 </section>
@@ -352,9 +352,10 @@ ul.task-list li input[type="checkbox"] {
       return a.efDate >= t0 && a.esDate < t1 || (a.deadlineDate && a.deadlineDate >= t0 && a.deadlineDate < t1);
     });
 
-    var labelW = opts.labelWidth || 300;
+    var narrow = (container.clientWidth || 900) < 640;
+    var labelW = opts.labelWidth || (narrow ? 170 : 300);
     var rowH = 24, headH = 58, laneH = opts.showLoad === false ? 0 : 30, phaseH = 26, padR = 24, bottom = 12;
-    var width = Math.max(container.clientWidth || 900, opts.minWidth || 900);
+    var width = Math.max(container.clientWidth || 900, opts.minWidth || (narrow ? 720 : 900));
     var plotW = width - labelW - padR;
     var totalDays = days(t0, t1);
     var x = function (dt) { return labelW + Math.max(0, Math.min(totalDays, days(t0, dt))) / totalDays * plotW; };
@@ -538,6 +539,7 @@ ul.task-list li input[type="checkbox"] {
       b.addEventListener("click", function () {
         state[key] = value;
         bar.querySelectorAll('[data-group="' + group + '"]').forEach(function (o) { o.classList.toggle("is-active", o.getAttribute("data-value") === value); });
+        if (group === "mode") { var sl = bar.querySelector(".trk-select"); if (sl) sl.value = ""; }
         rerender();
       });
       return b;
@@ -553,8 +555,13 @@ ul.task-list li input[type="checkbox"] {
     var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "All phases"; sel.appendChild(o0);
     phases.forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p; sel.appendChild(o); });
     sel.addEventListener("change", function () {
-      if (sel.value) { state.mode = "phase:" + sel.value; g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); }); }
-      else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
+      if (sel.value) {
+        state.mode = "phase:" + sel.value;
+        g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        // a single phase is best seen on the whole semester
+        state.window = "semester";
+        g2.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-value") === "semester"); });
+      } else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
       rerender();
     });
     bar.appendChild(g1); bar.appendChild(g2); bar.appendChild(sel);

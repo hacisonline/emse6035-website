@@ -57,8 +57,5 @@ risks |>
     Activities = str_replace_all(activities, ";", ", "),
     Status = pill(status)
   ) |>
-  nice_table(align = "lllllclllll") |>
-  kableExtra::column_spec(3, width = "22em") |>
-  kableExtra::column_spec(7, width = "14em") |>
-  kableExtra::column_spec(8, width = "20em")
+  nice_table(align = "lllllclllll", class = "risk-table")
 ```

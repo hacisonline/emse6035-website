@@ -74,8 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -254,7 +252,7 @@ Wed Sep 16; 6 of 49 activities done
 <p>If any of these slip by a day, the deliverable behind them slips by a day. The <a href="./tracker/critical-path.html">critical path</a> page shows the whole chain.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<div class="table-wrap"><table class="table table-hover table-sm nice-table ">
  <thead>
   <tr>
    <th style="text-align:left;"> ID </th>
@@ -349,7 +347,7 @@ Wed Sep 16; 6 of 49 activities done
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
 </tbody>
-</table>
+</table></div>
 
 </div>
 </div>
@@ -366,7 +364,7 @@ Wed Sep 16; 6 of 49 activities done
 <p>Every dated item in the next stretch, from the course calendar. Project deliverables are the ones this site exists for; homework and quizzes are shown because they compete for the same weeks.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<div class="table-wrap"><table class="table table-hover table-sm nice-table ">
  <thead>
   <tr>
    <th style="text-align:left;"> When </th>
@@ -434,7 +432,7 @@ Wed Sep 16; 6 of 49 activities done
    <td style="text-align:center;"> <span class="pill pill-todo">Upcoming</span> </td>
   </tr>
 </tbody>
-</table>
+</table></div>
 
 </div>
 </div>
@@ -587,9 +585,10 @@ Wed Sep 16; 6 of 49 activities done
       return a.efDate >= t0 && a.esDate < t1 || (a.deadlineDate && a.deadlineDate >= t0 && a.deadlineDate < t1);
     });
 
-    var labelW = opts.labelWidth || 300;
+    var narrow = (container.clientWidth || 900) < 640;
+    var labelW = opts.labelWidth || (narrow ? 170 : 300);
     var rowH = 24, headH = 58, laneH = opts.showLoad === false ? 0 : 30, phaseH = 26, padR = 24, bottom = 12;
-    var width = Math.max(container.clientWidth || 900, opts.minWidth || 900);
+    var width = Math.max(container.clientWidth || 900, opts.minWidth || (narrow ? 720 : 900));
     var plotW = width - labelW - padR;
     var totalDays = days(t0, t1);
     var x = function (dt) { return labelW + Math.max(0, Math.min(totalDays, days(t0, dt))) / totalDays * plotW; };
@@ -773,6 +772,7 @@ Wed Sep 16; 6 of 49 activities done
       b.addEventListener("click", function () {
         state[key] = value;
         bar.querySelectorAll('[data-group="' + group + '"]').forEach(function (o) { o.classList.toggle("is-active", o.getAttribute("data-value") === value); });
+        if (group === "mode") { var sl = bar.querySelector(".trk-select"); if (sl) sl.value = ""; }
         rerender();
       });
       return b;
@@ -788,8 +788,13 @@ Wed Sep 16; 6 of 49 activities done
     var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "All phases"; sel.appendChild(o0);
     phases.forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p; sel.appendChild(o); });
     sel.addEventListener("change", function () {
-      if (sel.value) { state.mode = "phase:" + sel.value; g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); }); }
-      else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
+      if (sel.value) {
+        state.mode = "phase:" + sel.value;
+        g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        // a single phase is best seen on the whole semester
+        state.window = "semester";
+        g2.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-value") === "semester"); });
+      } else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
       rerender();
     });
     bar.appendChild(g1); bar.appendChild(g2); bar.appendChild(sel);

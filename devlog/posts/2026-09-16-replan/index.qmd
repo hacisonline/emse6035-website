@@ -12,7 +12,7 @@ Two weeks after the kickoff the facts had changed: a team of five, a topic, a pr
 
 ## What was built
 
-**Data.** `data/activities.csv` was rewritten as a 52-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. `deadlines.csv` and `weeks.csv` were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. `data/risks.csv` is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.
+**Data.** `data/activities.csv` was rewritten as a 54-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. `deadlines.csv` and `weeks.csv` were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. `data/risks.csv` is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.
 
 **Engine.** `R/helpers.R` gained `cpm()`: a forward pass from today as the status date (planned starts as start-no-earlier-than constraints), a backward pass from the official deadlines, total and free float, critical and near-critical flags, and an overdue flag. `schedule_health()` compares duration-weighted earned progress with what the plan says should be done by today. `embed_schedule()` writes the computed schedule into the page as JSON.
 
@@ -22,8 +22,8 @@ Two weeks after the kickoff the facts had changed: a team of five, a topic, a pr
 
 ## How it was verified
 
-The site was rendered end to end with Quarto and R and every page was opened in a browser. The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.
+The site was rendered end to end with Quarto and R and every page was opened in a browser at laptop and phone widths; the Gantt filters, the phase selector, the tooltips and the click-to-trace were exercised by hand, and the browser console was clean (a jQuery error from kableExtra's print helper was found and removed by dropping that package). The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.
 
 ## What is next
 
-Book the workshop slot, revise the proposal to v2, move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.
+Book the workshop slot, revise the proposal to v2 (the review checklist sits in the team's brainstorming repo under `1-proposal/`), move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.

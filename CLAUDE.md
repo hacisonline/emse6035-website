@@ -41,7 +41,7 @@ To move the plan, change dates or dependencies in `activities.csv`; never edit c
 
 - Render everything: `quarto render` (from the repo root; a Positron terminal with this folder opened, or any native shell).
 - Live preview while editing: `quarto preview`.
-- R packages used: tidyverse, knitr, kableExtra, jsonlite (all in the course's package list).
+- R packages used: tidyverse, knitr, jsonlite (all in the course's package list). kableExtra is deliberately not used: its kePrint.js expects jQuery and errors in the console.
 - Never change the working directory from code; never use absolute paths; read files with `file.path("data", "x.csv")`. `execute-dir: project` makes that work from every page.
 
 ## Making changes
@@ -66,4 +66,4 @@ To move the plan, change dates or dependencies in `activities.csv`; never edit c
 - Commit and push from a native terminal in this folder: `git add -A && git commit -m "..." && git push`. Commit messages name the change ("Mark P08 done, add Sep 20 dev log").
 - Commit `docs/` with the source that produced it; never commit source without re-rendering.
 - Never force-push, never rewrite history, never delete the repo.
-- `.gitignore` keeps out `.quarto/`, `_site/`, `.Rproj.user/`, `.Renviron`, `.env`, `.DS_Store`. Do not add `.Renviron` or any credential file, ever.
+- `.gitignore` keeps out `.quarto/`, `_site/`, `.Rproj.user/`, `.Renviron`, `.env`, `.DS_Store` and `*.quarto_ipynb` (Quarto appends that last line itself on render; leave it). Do not add `.Renviron` or any credential file, ever.

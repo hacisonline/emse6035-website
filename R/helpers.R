@@ -5,7 +5,6 @@
 suppressPackageStartupMessages({
   library(tidyverse)
   library(knitr)
-  library(kableExtra)
   library(jsonlite)
 })
 
@@ -102,13 +101,18 @@ float_pill <- function(tf, status) {
   )
 }
 
-nice_table <- function(df, ...) {
-  knitr::kable(df, format = "html", escape = FALSE, ...) |>
-    kableExtra::kable_styling(
-      bootstrap_options = c("hover", "condensed"),
-      full_width = TRUE,
-      font_size = 14
-    )
+# Plain knitr table with Bootstrap classes, wrapped in a horizontal-scroll
+# container so wide tables never force the page to scroll sideways on a phone.
+# (kableExtra's kable_styling was dropped: its kePrint.js dependency expects
+# jQuery, which Quarto does not load, and threw a console error on every page.)
+nice_table <- function(df, ..., class = "") {
+  k <- knitr::kable(
+    df, format = "html", escape = FALSE,
+    table.attr = sprintf('class="table table-hover table-sm nice-table %s"', class),
+    ...
+  )
+  structure(paste0('<div class="table-wrap">', as.character(k), '</div>'),
+            format = "html", class = "knitr_kable")
 }
 
 # Convenience: the deliverable pipeline, derived from deadlines.csv

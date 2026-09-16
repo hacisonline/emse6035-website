@@ -36,7 +36,7 @@ weeks |>
     Status = pill(status),
     Note = replace_na(progress_note, "")
   ) |>
-  nice_table(align = "rllllllcl")
+  nice_table(align = "rllllllcl", class = "weeks-table")
 ```
 
 ## Reading the cadence

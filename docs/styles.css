@@ -154,6 +154,17 @@ table.table thead th {
 table.table td, table.table th { vertical-align: top; border-color: var(--hair) !important; }
 table.table tbody tr:hover { background: #f7f9fc; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0.5rem 0 1.2rem; border-radius: 10px; }
+.table-wrap > table { margin-bottom: 0; font-size: 0.9rem; }
+.nice-table td, .nice-table th { padding: 0.45rem 0.6rem; }
+.risk-table td:nth-child(3) { min-width: 20em; }
+.risk-table td:nth-child(7) { min-width: 13em; }
+.risk-table td:nth-child(8) { min-width: 18em; }
+.weeks-table td:nth-child(3) { min-width: 16em; }
+.weeks-table td:nth-child(7) { min-width: 14em; }
+@media (max-width: 640px) {
+  table:not(.nice-table) { display: block; overflow-x: auto; }
+}
 
 /* ---------- risk matrix ---------- */
 .risk-matrix {

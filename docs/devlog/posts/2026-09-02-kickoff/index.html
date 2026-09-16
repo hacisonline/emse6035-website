@@ -348,9 +348,10 @@ ul.task-list li input[type="checkbox"] {
       return a.efDate >= t0 && a.esDate < t1 || (a.deadlineDate && a.deadlineDate >= t0 && a.deadlineDate < t1);
     });
 
-    var labelW = opts.labelWidth || 300;
+    var narrow = (container.clientWidth || 900) < 640;
+    var labelW = opts.labelWidth || (narrow ? 170 : 300);
     var rowH = 24, headH = 58, laneH = opts.showLoad === false ? 0 : 30, phaseH = 26, padR = 24, bottom = 12;
-    var width = Math.max(container.clientWidth || 900, opts.minWidth || 900);
+    var width = Math.max(container.clientWidth || 900, opts.minWidth || (narrow ? 720 : 900));
     var plotW = width - labelW - padR;
     var totalDays = days(t0, t1);
     var x = function (dt) { return labelW + Math.max(0, Math.min(totalDays, days(t0, dt))) / totalDays * plotW; };
@@ -534,6 +535,7 @@ ul.task-list li input[type="checkbox"] {
       b.addEventListener("click", function () {
         state[key] = value;
         bar.querySelectorAll('[data-group="' + group + '"]').forEach(function (o) { o.classList.toggle("is-active", o.getAttribute("data-value") === value); });
+        if (group === "mode") { var sl = bar.querySelector(".trk-select"); if (sl) sl.value = ""; }
         rerender();
       });
       return b;
@@ -549,8 +551,13 @@ ul.task-list li input[type="checkbox"] {
     var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "All phases"; sel.appendChild(o0);
     phases.forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p; sel.appendChild(o); });
     sel.addEventListener("change", function () {
-      if (sel.value) { state.mode = "phase:" + sel.value; g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); }); }
-      else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
+      if (sel.value) {
+        state.mode = "phase:" + sel.value;
+        g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        // a single phase is best seen on the whole semester
+        state.window = "semester";
+        g2.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-value") === "semester"); });
+      } else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
       rerender();
     });
     bar.appendChild(g1); bar.appendChild(g2); bar.appendChild(sel);
