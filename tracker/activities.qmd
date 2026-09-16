@@ -1,61 +1,63 @@
 ---
 title: "Activities"
-subtitle: "Every task between now and the final presentation, by phase"
+subtitle: "Every task between now and the final presentation, by phase, with the computed dates beside the planned ones"
 ---
 
 ```{r}
 source(file.path("R", "helpers.R"))
-activities <- read_data("activities.csv") |>
-  mutate(phase = factor(phase, levels = c(
-    "Setup", "Proposal", "Survey plan", "Pilot survey", "Pilot analysis",
-    "Final survey", "Final analysis", "Presentation", "Ongoing"
-  )))
+sched <- cpm(read_activities())
 ```
 
-The activity list lives in `data/activities.csv`. Each row has an `id`, a `phase`, an `owner`, a `start` and `due` date, the ids it `depends_on`, whether it sits on the `critical` path, and a `status` (Not started, In progress, Done, Blocked, Dropped). To change anything, edit the CSV, re-render, and push; the tables below and the home page dashboard update themselves.
+The activity list lives in `data/activities.csv`. Each row has an `id`, a `phase`, an `owner`, a planned `start` and `due`, an optional hard `deadline` (the official due date), the ids it `depends_on`, a `status` (Not started, In progress, Done, Blocked, Dropped) and a `pct` complete. Everything else on this page, early and late dates, float, the critical flag, is computed by `cpm()` in `R/helpers.R` when the site renders. To change anything, edit the CSV, re-render, push.
 
 ## Summary by phase
 
 ```{r}
-activities |>
+sched |>
   group_by(Phase = phase) |>
   summarise(
     Activities = n(),
     Done = sum(status_slug(status) == "done"),
     `In progress` = sum(status_slug(status) == "active"),
     `Not started` = sum(status_slug(status) == "todo"),
-    `First due` = fmt_date(min(due)),
-    `Last due` = fmt_date(max(due)),
+    `Zero float` = sum(critical & status_slug(status) != "done"),
+    `Earliest start` = fmt_date(min(es)),
+    `Latest finish` = fmt_date(max(ef)),
     .groups = "drop"
   ) |>
-  nice_table(align = "lrrrrll")
+  mutate(Phase = phase_dot(Phase)) |>
+  nice_table(align = "lrrrrrll")
 ```
 
-## Overdue or due within 14 days
+## Overdue or starting within 14 days
 
 ```{r}
-soon <- activities |>
-  filter(status_slug(status) != "done", days_until(due) <= 14) |>
-  arrange(due)
+soon <- sched |>
+  filter(status_slug(status) != "done", phase != "Ongoing", overdue | days_until(es) <= 14) |>
+  arrange(es, id)
 if (nrow(soon) == 0) {
-  cat("Nothing open is due in the next two weeks.")
+  cat("Nothing open starts in the next two weeks.")
 } else {
   soon |>
     transmute(
-      ID = id, Phase = phase, Activity = activity, Owner = owner,
-      Due = paste0(fmt_date(due), " <small class='text-muted'>(", when_label(due), ")</small>"),
+      ID = id, Phase = phase_dot(phase), Activity = activity, Owner = owner,
+      `Early start` = paste0(fmt_date(es), " <small class='text-muted'>(", when_label(es), ")</small>"),
+      `Early finish` = fmt_date(ef),
+      Float = float_pill(total_float, status),
       Status = pill(status)
     ) |>
-    nice_table(align = "llllll")
+    nice_table(align = "llllllcc")
 }
 ```
 
 ## Full list
 
+Planned dates are what the team wrote down; early dates are what the dependencies and today's date allow. When the two differ, a predecessor is holding the activity back.
+
 ```{r}
 #| results: asis
-for (ph in levels(activities$phase)) {
-  block <- activities |> filter(phase == ph) |> arrange(due, id)
+for (ph in levels(sched$phase)) {
+  block <- sched |> filter(phase == ph) |> arrange(es, id)
   if (nrow(block) == 0) next
   cat("\n\n### ", ph, "\n\n", sep = "")
   tbl <- block |>
@@ -63,15 +65,16 @@ for (ph in levels(activities$phase)) {
       ID = id,
       Activity = activity,
       Owner = owner,
-      Start = fmt_date(start),
-      Due = fmt_date(due),
-      `Depends on` = replace_na(depends_on, ""),
-      Critical = ifelse(critical, "yes", ""),
+      Planned = paste0(fmt_date(start, "%b %e"), " to ", fmt_date(due, "%b %e")),
+      Early = paste0(fmt_date(es, "%b %e"), " to ", fmt_date(ef, "%b %e")),
+      Deadline = fmt_date(deadline, "%b %e"),
+      `Depends on` = str_replace_all(replace_na(depends_on, ""), ";", ", "),
+      Float = float_pill(total_float, status),
       Status = pill(status),
-      Deliverable = replace_na(deliverable, ""),
+      `%` = pct,
       Notes = replace_na(notes, "")
     ) |>
-    nice_table(align = "lllllllcll")
+    nice_table(align = "lllllllccrl")
   cat(as.character(tbl))
 }
 ```

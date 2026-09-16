@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dev log – EMSE 6035 Project Tracker</title>
+<title>Schedule – EMSE 6035 Project Tracker</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,8 +37,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,68 +74,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -164,7 +104,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/schedule.html"> 
+    <a class="nav-link active" href="../tracker/schedule.html" aria-current="page"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
@@ -184,7 +124,7 @@ window.Quarto = {
 <span class="menu-text">Week by week</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../devlog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
@@ -202,20 +142,19 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="YWdlbnRpYy13b3JrZmxvdw==">agentic-workflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxhbm5pbmc=">planning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvcG9zYWw=">proposal <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2V0dXA=">setup <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dev log</h1>
-<p class="subtitle lead">One entry per work session: what was done, what was checked, what is next</p>
+<h1 class="title">Schedule</h1>
+<p class="subtitle lead">The Gantt chart: every activity on its computed early dates, with the course load above it</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -227,72 +166,39 @@ window.Quarto = {
 </header>
 
 
-<p>The dev log is the team’s memory. Every time someone works on the project, they add a short post here (a folder under <code>devlog/posts/</code> with an <code>index.qmd</code>), following the loop the course teaches: what was asked, what the agent or the person produced, how it was verified, and what changed as a result. Entries are dated and tagged by phase so the <a href="../tracker/activities.html">activities</a> page and the log can be read side by side.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c2V0dXAlMkNwcm9wb3NhbCUyQ3BsYW5uaW5n" data-listing-date-sort="1789531200000" data-listing-file-modified-sort="1789579971931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="558">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">Replan: team formed, topic chosen, schedule computed</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvcG9zYWw='); return false;">proposal</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGxhbm5pbmc='); return false;">planning</div>
+<script type="application/json" id="schedule-data">
+{"today":"2026-09-16","semester_start":"2026-08-24","semester_end":"2026-12-13","activities":[{"id":"S01","phase":"Setup","activity":"Form the team on the team-formation sheet","owner":"Team","start":"2026-08-26","due":"2026-09-10","deadline":null,"es":"2026-08-26","ef":"2026-09-10","ls":"2026-08-07","lf":"2026-08-22","dur":16,"pct":100,"status":"Done","deliverable":"","depends_on":"","successors":"S02;S03;S04;S05;S06;O01;O03","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Five members; the course guideline says three to four, so the size is confirmed with the professor under S05"},{"id":"S02","phase":"Setup","activity":"Choose the topic against the seven selection criteria","owner":"Team","start":"2026-09-02","due":"2026-09-14","deadline":null,"es":"2026-09-02","ef":"2026-09-14","ls":"2026-08-23","lf":"2026-09-04","dur":13,"pct":100,"status":"Done","deliverable":"","depends_on":"S01","successors":"P01;P02","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Smart Urban Living: a Smart Urban Apartment Package for multifamily rentals, settled with the proposal draft of Sep 15"},{"id":"S03","phase":"Setup","activity":"Create the brainstorming repo from the local scaffold and invite every teammate","owner":"Harshit","start":"2026-09-09","due":"2026-09-18","deadline":null,"es":"2026-09-09","ef":"2026-09-18","ls":null,"lf":null,"dur":10,"pct":60,"status":"In progress","deliverable":"","depends_on":"S01","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Repo created and pushed Sep 16; two invitations out, two still to send"},{"id":"S04","phase":"Setup","activity":"Everyone accepts the official team repo invitation and clones it","owner":"Team","start":"2026-09-10","due":"2026-09-18","deadline":null,"es":"2026-09-10","ef":"2026-09-18","ls":"2026-09-11","lf":"2026-09-19","dur":9,"pct":80,"status":"In progress","deliverable":"","depends_on":"S01","successors":"P08","total_float":1,"free_float":1,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"The professor created the official repo Sep 10; four of five members are on it"},{"id":"S05","phase":"Setup","activity":"Ask the professor to add the fifth member to the official repo and confirm the team size","owner":"Team","start":"2026-09-16","due":"2026-09-18","deadline":"2026-09-20","es":"2026-09-16","ef":"2026-09-18","ls":"2026-09-18","lf":"2026-09-20","dur":3,"pct":0,"status":"Not started","deliverable":"","depends_on":"S01","successors":"","total_float":2,"free_float":null,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Only an org admin can add a collaborator; the proposal carries five names, so this is settled before submission"},{"id":"S06","phase":"Setup","activity":"Fill TEAM.md and the team page: one owner and one backup per deliverable, meeting cadence","owner":"Team","start":"2026-09-16","due":"2026-09-23","deadline":null,"es":"2026-09-16","ef":"2026-09-23","ls":"2026-09-22","lf":"2026-09-29","dur":8,"pct":0,"status":"Not started","deliverable":"","depends_on":"S01","successors":"S07","total_float":6,"free_float":0,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Owners are TBD until the team assigns them at a sync"},{"id":"S07","phase":"Setup","activity":"Decide who owns the shinyapps.io account and the Supabase project","owner":"Team","start":"2026-09-24","due":"2026-10-02","deadline":null,"es":"2026-09-24","ef":"2026-10-02","ls":"2026-09-30","lf":"2026-10-08","dur":9,"pct":0,"status":"Not started","deliverable":"","depends_on":"S06","successors":"PS04","total_float":6,"free_float":6,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Keys stay in that person's .Renviron, never in any repo"},{"id":"P01","phase":"Proposal","activity":"Market opportunity research: customer, competitors, market size","owner":"Team","start":"2026-09-09","due":"2026-09-14","deadline":null,"es":"2026-09-09","ef":"2026-09-14","ls":"2026-09-05","lf":"2026-09-10","dur":6,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"S02","successors":"P03","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Draft carries Rently 2025 and Yardi Matrix Q2 2026 figures, both verified Sep 16; references still to be added under P06"},{"id":"P02","phase":"Proposal","activity":"Attributes and levels table, product diagram, and the three research questions","owner":"Team","start":"2026-09-09","due":"2026-09-14","deadline":null,"es":"2026-09-09","ef":"2026-09-14","ls":"2026-09-05","lf":"2026-09-10","dur":6,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"S02","successors":"P03","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Six attributes: monthly premium, access and security, climate, lighting, package management, EV charging"},{"id":"P03","phase":"Proposal","activity":"Draft proposal.qmd v1 and render it","owner":"Teammate","start":"2026-09-12","due":"2026-09-15","deadline":null,"es":"2026-09-12","ef":"2026-09-15","ls":"2026-09-11","lf":"2026-09-14","dur":4,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"P01;P02","successors":"P04;P05","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rendered Sep 15 with all five names in the YAML"},{"id":"P04","phase":"Proposal","activity":"Review the draft against the 55-point rubric and log the findings","owner":"Harshit","start":"2026-09-16","due":"2026-09-16","deadline":null,"es":"2026-09-16","ef":"2026-09-16","ls":"2026-09-15","lf":"2026-09-15","dur":1,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"P03","successors":"P06","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Findings in the Sep 16 dev log post: five blocking fixes, seven improvements, one fit risk"},{"id":"P05","phase":"Proposal","activity":"Proposal workshop meeting with the professor (remote, week 4)","owner":"Team","start":"2026-09-16","due":"2026-09-18","deadline":null,"es":"2026-09-16","ef":"2026-09-18","ls":"2026-09-16","lf":"2026-09-18","dur":3,"pct":0,"status":"Not started","deliverable":"","depends_on":"P03","successors":"P07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Book through the professor's scheduling link; bring the emerging-product argument"},{"id":"P06","phase":"Proposal","activity":"Revise to v2: remove AI paste artifacts, fix cross-ref and heading levels, add references, benchmark real competitors with prices, quantify the retrofit market, rework price levels, argue the fit","owner":"Team","start":"2026-09-16","due":"2026-09-18","deadline":null,"es":"2026-09-16","ef":"2026-09-18","ls":"2026-09-16","lf":"2026-09-18","dur":3,"pct":10,"status":"In progress","deliverable":"Proposal","depends_on":"P04","successors":"P07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"The fix list exists; the edits are in the teammate's .qmd"},{"id":"P07","phase":"Proposal","activity":"Move the proposal into the official repo (1-proposal/proposal.qmd, image in images/), apply the workshop feedback, render, spell-check","owner":"Submitter","start":"2026-09-19","due":"2026-09-19","deadline":null,"es":"2026-09-19","ef":"2026-09-19","ls":"2026-09-19","lf":"2026-09-19","dur":1,"pct":0,"status":"Not started","deliverable":"Proposal","depends_on":"P05;P06","successors":"P08","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"spelling::spell_check_files(); delete leftover template text; update the date"},{"id":"P08","phase":"Proposal","activity":"Final read-through by a second member, commit and push the proposal","owner":"Submitter","start":"2026-09-20","due":"2026-09-20","deadline":"2026-09-20","es":"2026-09-20","ef":"2026-09-20","ls":"2026-09-20","lf":"2026-09-20","dur":1,"pct":0,"status":"Not started","deliverable":"Proposal","depends_on":"P07;S04","successors":"SP01;SP02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Sun Sep 20, 11:59 pm. Zero float: the workshop sits in the same week"},{"id":"SP01","phase":"Survey plan","activity":"Lock the attribute list and levels after the workshop: units, price levels with a base-rent anchor, one-line level definitions","owner":"Team","start":"2026-09-21","due":"2026-09-23","deadline":null,"es":"2026-09-21","ef":"2026-09-23","ls":"2026-09-21","lf":"2026-09-23","dur":3,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"P08","successors":"SP03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Decide whether security splits into lock and video, and whether EV charging stays a full attribute"},{"id":"SP02","phase":"Survey plan","activity":"Target population, fallback, and the exact eligibility question text","owner":"Team","start":"2026-09-21","due":"2026-09-24","deadline":null,"es":"2026-09-21","ef":"2026-09-24","ls":"2026-09-23","lf":"2026-09-26","dur":4,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"P08","successors":"SP04","total_float":2,"free_float":2,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Default: paid U.S. Prolific respondents who rent or expect to rent within two years"},{"id":"SP03","phase":"Survey plan","activity":"Choice question text and the attributes-and-levels table","owner":"Team","start":"2026-09-24","due":"2026-09-26","deadline":null,"es":"2026-09-24","ef":"2026-09-26","ls":"2026-09-24","lf":"2026-09-26","dur":3,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"SP01","successors":"SP04;PS02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric: Attributes and Levels 10 pts"},{"id":"SP04","phase":"Survey plan","activity":"Survey content as exact text: welcome, consent (18 plus, 'I have read and understand'), education per attribute, respondent info, other questions","owner":"Team","start":"2026-09-27","due":"2026-09-28","deadline":null,"es":"2026-09-27","ef":"2026-09-28","ls":"2026-09-27","lf":"2026-09-28","dur":2,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"SP02;SP03","successors":"SP05;PS03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Include the privacy and EV-ownership questions from the proposal's open questions"},{"id":"SP05","phase":"Survey plan","activity":"Assemble survey_plan.qmd, render, spell-check, commit and push","owner":"Submitter","start":"2026-09-29","due":"2026-09-29","deadline":"2026-09-29","es":"2026-09-29","ef":"2026-09-29","ls":"2026-09-29","lf":"2026-09-29","dur":1,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"SP04","successors":"SP06;PS01","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Tue Sep 29"},{"id":"SP06","phase":"Survey plan","activity":"Sign up for the survey-plan meeting with the professor (week of Oct 7)","owner":"Team","start":"2026-09-30","due":"2026-10-06","deadline":null,"es":"2026-09-30","ef":"2026-10-06","ls":null,"lf":null,"dur":7,"pct":0,"status":"Not started","deliverable":"","depends_on":"SP05","successors":"PS06","total_float":null,"free_float":0,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Sign-up is announced in the course Slack"},{"id":"PS01","phase":"Pilot survey","activity":"Learn the surveydown conjoint-buttons template; run the sample app locally","owner":"Team","start":"2026-09-30","due":"2026-10-03","deadline":null,"es":"2026-09-30","ef":"2026-10-03","ls":"2026-09-30","lf":"2026-10-03","dur":4,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"SP05","successors":"PS02;PS03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Class 6 (Sep 30) introduces surveydown; HW4 covers the basics"},{"id":"PS02","phase":"Pilot survey","activity":"code/1_make_choice_questions.R: generate data/choice_questions.csv with cbc_design","owner":"Team","start":"2026-10-04","due":"2026-10-07","deadline":null,"es":"2026-10-04","ef":"2026-10-07","ls":"2026-10-07","lf":"2026-10-10","dur":4,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"SP03;PS01","successors":"PS05","total_float":3,"free_float":3,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Randomised choice sets must render live without error"},{"id":"PS03","phase":"Pilot survey","activity":"Build survey.qmd from the plan text: welcome, consent, screening, education, conjoint block, other questions","owner":"Team","start":"2026-10-04","due":"2026-10-08","deadline":null,"es":"2026-10-04","ef":"2026-10-08","ls":"2026-10-04","lf":"2026-10-08","dur":5,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"SP04;PS01","successors":"PS04","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Replace every placeholder; render often"},{"id":"PS04","phase":"Pilot survey","activity":"Connect the Supabase project and confirm responses are stored","owner":"Account owner","start":"2026-10-09","due":"2026-10-10","deadline":null,"es":"2026-10-09","ef":"2026-10-10","ls":"2026-10-09","lf":"2026-10-10","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"S07;PS03","successors":"PS05","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Keys in .Renviron only"},{"id":"PS05","phase":"Pilot survey","activity":"Deploy to shinyapps.io; end-to-end test on a phone and a laptop","owner":"Account owner","start":"2026-10-11","due":"2026-10-12","deadline":null,"es":"2026-10-11","ef":"2026-10-12","ls":"2026-10-11","lf":"2026-10-12","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"PS02;PS04","successors":"PS07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric: Deployment 10 pts"},{"id":"PS06","phase":"Pilot survey","activity":"Survey-plan meeting with the professor (week of Oct 7)","owner":"Team","start":"2026-10-07","due":"2026-10-09","deadline":null,"es":"2026-10-07","ef":"2026-10-09","ls":null,"lf":null,"dur":3,"pct":0,"status":"Not started","deliverable":"","depends_on":"SP06","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Bring the draft choice question and the design file"},{"id":"PS07","phase":"Pilot survey","activity":"Push the pilot survey folder and confirm the live link","owner":"Submitter","start":"2026-10-13","due":"2026-10-13","deadline":"2026-10-13","es":"2026-10-13","ef":"2026-10-13","ls":"2026-10-13","lf":"2026-10-13","dur":1,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"PS05","successors":"PA01","total_float":0,"free_float":7,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Tue Oct 13"},{"id":"PA01","phase":"Pilot analysis","activity":"Classmates take our pilot; we take theirs and fill the feedback sheet (part of HW8)","owner":"Everyone","start":"2026-10-21","due":"2026-10-24","deadline":null,"es":"2026-10-21","ef":"2026-10-24","ls":"2026-10-21","lf":"2026-10-24","dur":4,"pct":0,"status":"Not started","deliverable":"","depends_on":"PS07","successors":"PA02;PA05","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Week 9 class on Oct 21 starts the exchange; most responses land within three days"},{"id":"PA02","phase":"Pilot analysis","activity":"Download with sd_get_data(); save raw data; clean-data.R to long format","owner":"Team","start":"2026-10-25","due":"2026-10-26","deadline":null,"es":"2026-10-25","ef":"2026-10-26","ls":"2026-10-25","lf":"2026-10-26","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA01","successors":"PA03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"PA03","phase":"Pilot analysis","activity":"modeling.R: preliminary logit, coefficient table with standard errors, coefficient plots, utility model in LaTeX","owner":"Team","start":"2026-10-27","due":"2026-10-28","deadline":null,"es":"2026-10-27","ef":"2026-10-28","ls":"2026-10-27","lf":"2026-10-28","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA02","successors":"PA04;PA06","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Class 10 (Oct 28) covers estimating pilot models"},{"id":"PA04","phase":"Pilot analysis","activity":"power-analysis.R: standard errors against sample size; choose the final sample size","owner":"Team","start":"2026-10-29","due":"2026-10-29","deadline":null,"es":"2026-10-29","ef":"2026-10-29","ls":"2026-10-29","lf":"2026-10-29","dur":1,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA03","successors":"PA06","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"PA05","phase":"Pilot analysis","activity":"Triage classmate feedback and list the changes for the final survey","owner":"Team","start":"2026-10-25","due":"2026-10-26","deadline":null,"es":"2026-10-25","ef":"2026-10-26","ls":"2026-10-28","lf":"2026-10-29","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA01","successors":"PA06","total_float":3,"free_float":3,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":""},{"id":"PA06","phase":"Pilot analysis","activity":"report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power analysis, changes, appendix","owner":"Team","start":"2026-10-30","due":"2026-10-31","deadline":null,"es":"2026-10-30","ef":"2026-10-31","ls":"2026-10-30","lf":"2026-10-31","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA03;PA04;PA05","successors":"PA07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric: Report Contents 15 pts"},{"id":"PA07","phase":"Pilot analysis","activity":"Render, spell-check, commit and push the pilot analysis","owner":"Submitter","start":"2026-11-01","due":"2026-11-01","deadline":"2026-11-01","es":"2026-11-01","ef":"2026-11-01","ls":"2026-11-01","lf":"2026-11-01","dur":1,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA06","successors":"FS01;FA01","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Sun Nov 1"},{"id":"FS01","phase":"Final survey","activity":"Apply the pilot changes: attributes, levels, question text; regenerate the design for the chosen sample size","owner":"Team","start":"2026-11-02","due":"2026-11-07","deadline":null,"es":"2026-11-02","ef":"2026-11-07","ls":"2026-11-03","lf":"2026-11-08","dur":6,"pct":0,"status":"Not started","deliverable":"Final Survey","depends_on":"PA07","successors":"FS02","total_float":1,"free_float":0,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Class 11 (Nov 4) covers DOE and power analysis"},{"id":"FS02","phase":"Final survey","activity":"Redeploy the final survey; every referenced file on the web; fresh data table; end-to-end test","owner":"Account owner","start":"2026-11-08","due":"2026-11-11","deadline":null,"es":"2026-11-08","ef":"2026-11-11","ls":"2026-11-09","lf":"2026-11-12","dur":4,"pct":0,"status":"Not started","deliverable":"Final Survey","depends_on":"FS01","successors":"FS03","total_float":1,"free_float":0,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":""},{"id":"FS03","phase":"Final survey","activity":"Write the Prolific eligibility text; push the final survey folder","owner":"Submitter","start":"2026-11-12","due":"2026-11-14","deadline":"2026-11-15","es":"2026-11-12","ef":"2026-11-14","ls":"2026-11-13","lf":"2026-11-15","dur":3,"pct":0,"status":"Not started","deliverable":"Final Survey","depends_on":"FS02","successors":"FS04","total_float":1,"free_float":2,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Official due date Sun Nov 15; the eligibility text is what the professor uses to pre-screen. One day of float by design"},{"id":"FS04","phase":"Final survey","activity":"Fielding on Prolific, arranged through the professor; monitor responses daily","owner":"Professor and team","start":"2026-11-17","due":"2026-11-27","deadline":null,"es":"2026-11-17","ef":"2026-11-27","ls":"2026-11-17","lf":"2026-11-27","dur":11,"pct":0,"status":"Not started","deliverable":"","depends_on":"FS03","successors":"FA02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Assumed window; confirm the launch date with the professor at the Nov 11 class"},{"id":"FA01","phase":"Final analysis","activity":"Scaffold clean_data.R, modeling.R, analysis.R and the report skeleton on the pilot data so the final data only needs re-running","owner":"Team","start":"2026-11-09","due":"2026-11-21","deadline":null,"es":"2026-11-09","ef":"2026-11-21","ls":"2026-11-15","lf":"2026-11-27","dur":13,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"PA07","successors":"FA02","total_float":6,"free_float":6,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Logit, mixed logit with random parameters, one sub-group comparison, WTP with 95 percent CIs, market simulation, sensitivity with a tornado plot"},{"id":"FA02","phase":"Final analysis","activity":"Clean the final data; sample description table","owner":"Team","start":"2026-11-28","due":"2026-11-29","deadline":null,"es":"2026-11-28","ef":"2026-11-29","ls":"2026-11-28","lf":"2026-11-29","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FS04;FA01","successors":"FA03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"FA03","phase":"Final analysis","activity":"Run the models on the final data: logit, mixed logit, sub-group comparison","owner":"Team","start":"2026-11-30","due":"2026-12-01","deadline":null,"es":"2026-11-30","ef":"2026-12-01","ls":"2026-11-30","lf":"2026-12-01","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA02","successors":"FA04","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"FA04","phase":"Final analysis","activity":"analysis.R: WTP, market simulation against competitors, price and attribute sensitivity, tornado plot","owner":"Team","start":"2026-12-02","due":"2026-12-03","deadline":null,"es":"2026-12-02","ef":"2026-12-03","ls":"2026-12-02","lf":"2026-12-03","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA03","successors":"FA05;PR01","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"The final exam is in class on Dec 2"},{"id":"FA05","phase":"Final analysis","activity":"report.qmd as narrative: results, recommendations, limitations, attribution, appendix; fully reproducible","owner":"Team","start":"2026-12-04","due":"2026-12-05","deadline":null,"es":"2026-12-04","ef":"2026-12-05","ls":"2026-12-04","lf":"2026-12-05","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA04","successors":"FA06","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric 40 pts; 15 percent of the grade; the skeleton from FA01 makes two days enough"},{"id":"FA06","phase":"Final analysis","activity":"Render, spell-check, commit and push the final report","owner":"Submitter","start":"2026-12-06","due":"2026-12-06","deadline":"2026-12-06","es":"2026-12-06","ef":"2026-12-06","ls":"2026-12-06","lf":"2026-12-06","dur":1,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA05","successors":"","total_float":0,"free_float":null,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Sun Dec 6"},{"id":"PR01","phase":"Presentation","activity":"Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations","owner":"Team","start":"2026-12-04","due":"2026-12-06","deadline":null,"es":"2026-12-04","ef":"2026-12-06","ls":"2026-12-04","lf":"2026-12-06","dur":3,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"FA04","successors":"PR02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Numbered slides; title slide with names and date"},{"id":"PR02","phase":"Presentation","activity":"Rehearse to ten minutes with every member presenting at least one slide","owner":"Team","start":"2026-12-07","due":"2026-12-07","deadline":null,"es":"2026-12-07","ef":"2026-12-07","ls":"2026-12-07","lf":"2026-12-07","dur":1,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"PR01","successors":"PR03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"PR03","phase":"Presentation","activity":"Push the slides to the official repo","owner":"Submitter","start":"2026-12-08","due":"2026-12-08","deadline":"2026-12-08","es":"2026-12-08","ef":"2026-12-08","ls":"2026-12-08","lf":"2026-12-08","dur":1,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"PR02","successors":"PR04","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Tue Dec 8"},{"id":"PR04","phase":"Presentation","activity":"Present in class (or send the video link by Slack DM)","owner":"Team","start":"2026-12-09","due":"2026-12-09","deadline":"2026-12-09","es":"2026-12-09","ef":"2026-12-09","ls":"2026-12-09","lf":"2026-12-09","dur":1,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"PR03","successors":"","total_float":0,"free_float":null,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Class 16, Dec 9"},{"id":"O01","phase":"Ongoing","activity":"Weekly sync before Wednesday class; decisions copied into decisions/DECISIONS.md the same day","owner":"Team","start":"2026-09-16","due":"2026-12-09","deadline":null,"es":"2026-09-16","ef":"2026-12-09","ls":null,"lf":null,"dur":85,"pct":5,"status":"In progress","deliverable":"","depends_on":"S01","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"O02","phase":"Ongoing","activity":"Keep this tracker current: edit the CSVs, re-render, push; one dev log post per work session","owner":"Harshit","start":"2026-09-02","due":"2026-12-09","deadline":null,"es":"2026-09-02","ef":"2026-12-09","ls":null,"lf":null,"dur":99,"pct":20,"status":"In progress","deliverable":"","depends_on":"","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"O03","phase":"Ongoing","activity":"Log every member's contributions in CONTRIBUTIONS.md for the Attribution sections","owner":"Everyone","start":"2026-09-09","due":"2026-12-09","deadline":null,"es":"2026-09-09","ef":"2026-12-09","ls":null,"lf":null,"dur":92,"pct":10,"status":"In progress","deliverable":"","depends_on":"S01","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Unequal contributions do not get equal grades"}],"events":[{"date":"2026-08-31","item":"HW1: Agentic Workflows and GitHub","kind":"homework","state":"Submitted"},{"date":"2026-09-08","item":"HW2: Data Wrangling","kind":"homework","state":"Submitted"},{"date":"2026-09-09","item":"Quiz 1 (weeks 1 to 2)","kind":"quiz","state":"Done"},{"date":"2026-09-18","item":"HW3: Quarto and Plotting","kind":"homework","state":"Upcoming"},{"date":"2026-09-20","item":"Project Proposal","kind":"project","state":"In progress"},{"date":"2026-09-23","item":"Quiz 2 (week 3)","kind":"quiz","state":"Upcoming"},{"date":"2026-09-28","item":"HW4: Intro to surveydown","kind":"homework","state":"Upcoming"},{"date":"2026-09-29","item":"Survey Plan","kind":"project","state":"Upcoming"},{"date":"2026-10-05","item":"HW5: Conjoint Questions","kind":"homework","state":"Upcoming"},{"date":"2026-10-07","item":"Quiz 3 (week 5)","kind":"quiz","state":"Upcoming"},{"date":"2026-10-12","item":"HW6: Utility Models","kind":"homework","state":"Upcoming"},{"date":"2026-10-13","item":"Pilot Survey","kind":"project","state":"Upcoming"},{"date":"2026-10-19","item":"HW7: Optimization and MLE","kind":"homework","state":"Upcoming"},{"date":"2026-10-21","item":"Quiz 4 (week 8)","kind":"quiz","state":"Upcoming"},{"date":"2026-10-26","item":"HW8: Uncertainty (plus classmates' pilot surveys and feedback sheet)","kind":"homework","state":"Upcoming"},{"date":"2026-11-01","item":"Pilot Analysis","kind":"project","state":"Upcoming"},{"date":"2026-11-02","item":"HW9: DOE and Power Analysis","kind":"homework","state":"Upcoming"},{"date":"2026-11-04","item":"Quiz 5 (week 9)","kind":"quiz","state":"Upcoming"},{"date":"2026-11-09","item":"HW10: WTP and Simulation","kind":"homework","state":"Upcoming"},{"date":"2026-11-15","item":"Final Survey","kind":"project","state":"Upcoming"},{"date":"2026-11-16","item":"HW11: Heterogeneity","kind":"homework","state":"Upcoming"},{"date":"2026-11-18","item":"Quiz 6 (week 12), the last one","kind":"quiz","state":"Upcoming"},{"date":"2026-11-22","item":"HW12: Sensitivity Analysis","kind":"homework","state":"Upcoming"},{"date":"2026-11-29","item":"HW13: Take-home Analysis","kind":"homework","state":"Upcoming"},{"date":"2026-12-02","item":"Final Exam (first 45 min, closed book, on paper), then what goes in the final report and how to give a talk","kind":"exam","state":"Upcoming"},{"date":"2026-12-06","item":"Final Analysis Report","kind":"project","state":"Upcoming"},{"date":"2026-12-08","item":"Final Presentation (slides in the repo; live Dec 9 or video link by Slack DM)","kind":"project","state":"Upcoming"}],"weeks":[{"week":1,"date":"2026-08-26","topic":"Getting Started: orientation, intro to conjoint, R and Positron, project intros","status":"Done"},{"week":2,"date":"2026-09-02","topic":"Agentic Workflows: GitHub, Claude Code in Positron, modes, skills, working safely","status":"Done"},{"week":3,"date":"2026-09-09","topic":"Data Wrangling (tidyverse); decision variables vs attributes","status":"Done"},{"week":4,"date":"2026-09-16","topic":"No lecture: Proposal Workshop, remote team meetings with the professor","status":"In progress"},{"week":5,"date":"2026-09-23","topic":"Quarto and Plotting; project scope: attribute levels, target population, competitors","status":"Upcoming"},{"week":6,"date":"2026-09-30","topic":"Intro to surveydown; make the survey plan","status":"Upcoming"},{"week":7,"date":"2026-10-07","topic":"Conjoint Questions: cbc_design, labeled vs unlabeled, surveydown","status":"Upcoming"},{"week":8,"date":"2026-10-14","topic":"Utility Models; finish pilot survey","status":"Upcoming"},{"week":9,"date":"2026-10-21","topic":"Optimization and MLE; everyone takes everyone else's pilot survey","status":"Upcoming"},{"week":10,"date":"2026-10-28","topic":"Uncertainty; pivoting; cleaning pilot data; estimating pilot models","status":"Upcoming"},{"week":11,"date":"2026-11-04","topic":"DOE and Power Analysis; refine attributes and levels, sample size","status":"Upcoming"},{"week":12,"date":"2026-11-11","topic":"WTP and Simulation; finalize final survey","status":"Upcoming"},{"week":13,"date":"2026-11-18","topic":"Heterogeneity: mixed logit and sub-group models","status":"Upcoming"},{"week":14,"date":"2026-11-25","topic":"Thanksgiving, no class; final survey fielding","status":"Upcoming"},{"week":15,"date":"2026-12-02","topic":"Final Exam (45 min), exam solutions, what goes in the final report, how to give a talk","status":"Upcoming"},{"week":16,"date":"2026-12-09","topic":"Final Presentations: in-class showcase with Q and A","status":"Upcoming"}]}
+</script>
+<div data-tracker="gantt" data-mode="all" data-window="semester">
 
 </div>
-<div class="delink listing-description"><a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">
-<p>The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2026
-</div>
-<div class="listing-author">
-Harshit (with Claude)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="c2V0dXAlMkNhZ2VudGljLXdvcmtmbG93" data-listing-date-sort="1788321600000" data-listing-file-modified-sort="1788380744343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">Kickoff: the tracker site exists</a>
-</h3>
-<div class="listing-categories">
+<section id="how-to-read-it" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-it">How to read it</h2>
+<p>Each bar sits on the activity’s <strong>early schedule</strong>: the earliest it can start given its planned start, today’s date, and the finish of everything it depends on. The solid part of a bar is the reported progress, the hatched tint is what remains. A diamond is an official due date; the faint band behind a bar is the <strong>late window</strong>, the latest the activity could run without moving a deadline. The 3-pixel edge in the label gutter is the float verdict: red for zero (29 of the 43 open activities today), amber for one to three days.</p>
+<p>The lane at the top is everything else the course asks for in the same weeks: squares are homework, triangles quizzes, the black diamond is the final exam, the blue dots are the project deliverables. Weeks 9 to 13 are where the lane and the bars pile up together.</p>
+</section>
+<section id="the-rules-behind-the-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="the-rules-behind-the-numbers">The rules behind the numbers</h2>
+<ul>
+<li>Time is counted in calendar days because the team works weekends. An activity occupies its start and due dates inclusive; the duration is the number of days between them.</li>
+<li><code>depends_on</code> in <code>data/activities.csv</code> holds finish-to-start predecessors: an activity cannot start until every predecessor has finished. Planned start dates are start-no-earlier-than constraints; they encode when the course teaches what an activity needs (surveydown arrives Sep 30, <code>cbc_design</code> on Oct 7, mixed logit on Nov 18).</li>
+<li>Official due dates are hard finish-no-later-than constraints on the submission activities. The backward pass runs from those, so <strong>float is measured against the professor’s deadlines</strong>, not against a made-up project end.</li>
+<li>Today is the status date. A not-started activity whose planned start has passed is pushed to today; an in-progress one is assumed to finish on its due date or today, whichever is later. Done activities keep their actual dates and carry no float.</li>
+<li>Total float is the number of days an activity can slip without moving a deadline. Zero float is the critical chain; one to three days is near-critical. Activities with no deadline downstream (the meeting sign-ups, the ongoing habits) are shown as open-ended rather than given a meaningless number.</li>
+</ul>
+</section>
+<section id="assumptions-worth-checking" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-worth-checking">Assumptions worth checking</h2>
+<ul>
+<li>The Prolific fielding window (FS04) is assumed to be Nov 17 to Nov 27. The professor launches it; the date should be confirmed at the Nov 11 class. Every day it starts late comes straight out of the final analysis, which has zero float.</li>
+<li>The proposal workshop meeting (P05) is booked through the professor’s scheduling link this week; if the slot lands on Friday, the revision (P06) and the move into the official repo (P07) compress into the weekend.</li>
+<li>Classmates take the pilot over Oct 21 to 24 (PA01). The feedback sheet is due with HW8 on Oct 26, but the responses to our survey arrive earlier and cleaning starts on the partial data.</li>
+</ul>
 
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('YWdlbnRpYy13b3JrZmxvdw=='); return false;">agentic-workflow</div>
+</section>
 
-</div>
-<div class="delink listing-description"><a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">
-<p>Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">
-<div class="listing-date">
-Sep 2, 2026
-</div>
-<div class="listing-author">
-Harshit (with Claude)
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script>
 /* tracker.js - client-side schedule views for the EMSE 6035 project tracker.
    Reads the JSON that R embeds in <script id="schedule-data"> (see R/helpers.R:

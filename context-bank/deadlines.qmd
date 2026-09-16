@@ -8,7 +8,7 @@ source(file.path("R", "helpers.R"))
 deadlines <- read_data("deadlines.csv") |> arrange(date)
 ```
 
-All homework and project deliverables are due by 11:59 pm on the date shown. Homework is due the night before the class week begins: a Monday for HW1 to HW11, a Sunday for HW12 (Nov 22) and HW13 (Nov 29). Where the course overview table shows a project date one day later than the schedule file, the earlier date is tracked. This table is the whole of `data/deadlines.csv`; the `state` column is the team's to update.
+All homework and project deliverables are due by 11:59 pm on the date shown. Homework dates are the ones printed on the course schedule page (checked Sep 16): mostly Mondays, with HW1 on a Sunday, HW3 on a Friday, and HW12 and HW13 on Sundays. Where the course overview table shows a project date one day later than the schedule page, the earlier date is tracked. This table is the whole of `data/deadlines.csv`; the `state` column is the team's to update.
 
 ## Filter by kind
 

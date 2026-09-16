@@ -11,19 +11,22 @@ website:
   description: "Team project tracker for EMSE 6035, Marketing Analytics for Design Decisions, GWU, Fall 2026"
   favicon: favicon.svg
   navbar:
-    background: primary
+    background: "#0f172a"
+    foreground: "#e6e9ef"
     search: true
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Tracker"
-        menu:
-          - text: "Activities"
-            href: tracker/activities.qmd
-          - text: "Critical path"
-            href: tracker/critical-path.qmd
-          - text: "Week by week"
-            href: tracker/progress.qmd
+      - text: "Schedule"
+        href: tracker/schedule.qmd
+      - text: "Critical path"
+        href: tracker/critical-path.qmd
+      - text: "Activities"
+        href: tracker/activities.qmd
+      - text: "Risks"
+        href: tracker/risks.qmd
+      - text: "Week by week"
+        href: tracker/progress.qmd
       - text: "Dev log"
         href: devlog/index.qmd
       - text: "Context bank"
@@ -40,11 +43,11 @@ website:
         - context-bank/conventions.qmd
   page-footer:
     left: "EMSE 6035 team project tracker. Public site: no grades, no personal details, no credentials."
-    right: "Built with Quarto and R; data lives in data/*.csv."
+    right: "Built with Quarto and R; the schedule is computed from data/*.csv on every render."
 
 format:
   html:
-    theme: flatly
+    theme: [cosmo, theme.scss]
     css: styles.css
     toc: true
     toc-depth: 3
@@ -53,6 +56,13 @@ format:
     df-print: kable
     html-table-processing: none
     page-layout: full
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    include-after-body:
+      - assets/tracker.html
 
 execute:
   echo: false

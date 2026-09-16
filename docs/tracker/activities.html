@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Activities – EMSE 6035 Project Tracker</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8d68b46d66c3c2185d226d4d244cb7a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +76,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -96,25 +105,26 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tracker</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
-        <li>
-    <a class="dropdown-item" href="../tracker/activities.html">
- <span class="dropdown-text">Activities</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/schedule.html"> 
+<span class="menu-text">Schedule</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../tracker/critical-path.html">
- <span class="dropdown-text">Critical path</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/critical-path.html"> 
+<span class="menu-text">Critical path</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../tracker/progress.html">
- <span class="dropdown-text">Week by week</span></a>
+  <li class="nav-item">
+    <a class="nav-link active" href="../tracker/activities.html" aria-current="page"> 
+<span class="menu-text">Activities</span></a>
   </li>  
-    </ul>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/risks.html"> 
+<span class="menu-text">Risks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/progress.html"> 
+<span class="menu-text">Week by week</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -140,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#summary-by-phase" id="toc-summary-by-phase" class="nav-link active" data-scroll-target="#summary-by-phase">Summary by phase</a></li>
-  <li><a href="#overdue-or-due-within-14-days" id="toc-overdue-or-due-within-14-days" class="nav-link" data-scroll-target="#overdue-or-due-within-14-days">Overdue or due within 14 days</a></li>
+  <li><a href="#overdue-or-starting-within-14-days" id="toc-overdue-or-starting-within-14-days" class="nav-link" data-scroll-target="#overdue-or-starting-within-14-days">Overdue or starting within 14 days</a></li>
   <li><a href="#full-list" id="toc-full-list" class="nav-link" data-scroll-target="#full-list">Full list</a>
   <ul class="collapse">
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
@@ -162,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Activities</h1>
-<p class="subtitle lead">Every task between now and the final presentation, by phase</p>
+<p class="subtitle lead">Every task between now and the final presentation, by phase, with the computed dates beside the planned ones</p>
 </div>
 
 
@@ -179,12 +189,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The activity list lives in <code>data/activities.csv</code>. Each row has an <code>id</code>, a <code>phase</code>, an <code>owner</code>, a <code>start</code> and <code>due</code> date, the ids it <code>depends_on</code>, whether it sits on the <code>critical</code> path, and a <code>status</code> (Not started, In progress, Done, Blocked, Dropped). To change anything, edit the CSV, re-render, and push; the tables below and the home page dashboard update themselves.</p>
+<p>The activity list lives in <code>data/activities.csv</code>. Each row has an <code>id</code>, a <code>phase</code>, an <code>owner</code>, a planned <code>start</code> and <code>due</code>, an optional hard <code>deadline</code> (the official due date), the ids it <code>depends_on</code>, a <code>status</code> (Not started, In progress, Done, Blocked, Dropped) and a <code>pct</code> complete. Everything else on this page, early and late dates, float, the critical flag, is computed by <code>cpm()</code> in <code>R/helpers.R</code> when the site renders. To change anything, edit the CSV, re-render, push.</p>
 <section id="summary-by-phase" class="level2">
 <h2 class="anchored" data-anchor-id="summary-by-phase">Summary by phase</h2>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> Phase </th>
@@ -192,90 +202,100 @@ ul.task-list li input[type="checkbox"] {
    <th style="text-align:right;"> Done </th>
    <th style="text-align:right;"> In progress </th>
    <th style="text-align:right;"> Not started </th>
-   <th style="text-align:left;"> First due </th>
-   <th style="text-align:left;"> Last due </th>
+   <th style="text-align:right;"> Zero float </th>
+   <th style="text-align:left;"> Earliest start </th>
+   <th style="text-align:left;"> Latest finish </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> Wed Sep 9 </td>
-   <td style="text-align:left;"> Wed Sep 30 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Wed Aug 26 </td>
+   <td style="text-align:left;"> Fri Oct 2 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:left;"> Tue Sep 15 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> Wed Sep 9 </td>
    <td style="text-align:left;"> Sun Sep 20 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Survey plan </td>
-   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> Fri Sep 25 </td>
-   <td style="text-align:left;"> Tue Sep 29 </td>
+   <td style="text-align:left;"> Mon Sep 21 </td>
+   <td style="text-align:left;"> Tue Oct 6 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Pilot survey </td>
-   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:left;"> Tue Oct 6 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> Wed Sep 30 </td>
    <td style="text-align:left;"> Tue Oct 13 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:left;"> Sun Oct 25 </td>
+   <td style="text-align:left;"> Wed Oct 21 </td>
    <td style="text-align:left;"> Sun Nov 1 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Final survey </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-survey"></span>Final survey </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> Sun Nov 8 </td>
-   <td style="text-align:left;"> Sun Nov 29 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Mon Nov 2 </td>
+   <td style="text-align:left;"> Fri Nov 27 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Final analysis </td>
-   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> Tue Dec 1 </td>
+   <td style="text-align:left;"> Mon Nov 9 </td>
    <td style="text-align:left;"> Sun Dec 6 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Presentation </td>
-   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-presentation"></span>Presentation </td>
+   <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> Mon Dec 7 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> Fri Dec 4 </td>
    <td style="text-align:left;"> Wed Dec 9 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Ongoing </td>
-   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-ongoing"></span>Ongoing </td>
+   <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> Wed Dec 9 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Wed Sep 2 </td>
    <td style="text-align:left;"> Wed Dec 9 </td>
   </tr>
 </tbody>
@@ -284,69 +304,183 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="overdue-or-due-within-14-days" class="level2">
-<h2 class="anchored" data-anchor-id="overdue-or-due-within-14-days">Overdue or due within 14 days</h2>
+<section id="overdue-or-starting-within-14-days" class="level2">
+<h2 class="anchored" data-anchor-id="overdue-or-starting-within-14-days">Overdue or starting within 14 days</h2>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID </th>
    <th style="text-align:left;"> Phase </th>
    <th style="text-align:left;"> Activity </th>
    <th style="text-align:left;"> Owner </th>
-   <th style="text-align:left;"> Due </th>
-   <th style="text-align:left;"> Status </th>
+   <th style="text-align:left;"> Early start </th>
+   <th style="text-align:left;"> Early finish </th>
+   <th style="text-align:center;"> Float </th>
+   <th style="text-align:center;"> Status </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> A01 </td>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:left;"> Form the team (3 to 4 members) on the team-formation sheet </td>
-   <td style="text-align:left;"> Team </td>
-   <td style="text-align:left;"> Wed Sep 9 <small class="text-muted">(in 7 days)</small> </td>
-   <td style="text-align:left;"> <span class="pill pill-active">In progress</span> </td>
+   <td style="text-align:left;"> S03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Create the brainstorming repo from the local scaffold and invite every teammate </td>
+   <td style="text-align:left;"> Harshit </td>
+   <td style="text-align:left;"> Wed Sep 9 <small class="text-muted">(7 days ago)</small> </td>
+   <td style="text-align:left;"> Fri Sep 18 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">open</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-active">In progress</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A02 </td>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:left;"> Pick the project topic against the seven selection criteria </td>
+   <td style="text-align:left;"> S04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Everyone accepts the official team repo invitation and clones it </td>
    <td style="text-align:left;"> Team </td>
-   <td style="text-align:left;"> Wed Sep 9 <small class="text-muted">(in 7 days)</small> </td>
-   <td style="text-align:left;"> <span class="pill pill-todo">Not started</span> </td>
+   <td style="text-align:left;"> Thu Sep 10 <small class="text-muted">(6 days ago)</small> </td>
+   <td style="text-align:left;"> Fri Sep 18 </td>
+   <td style="text-align:center;"> <span class="pill pill-near">1 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-active">In progress</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A03 </td>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:left;"> Create the shared team GitHub repo and agree the folder layout </td>
+   <td style="text-align:left;"> P05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Proposal workshop meeting with the professor (remote, week 4) </td>
    <td style="text-align:left;"> Team </td>
-   <td style="text-align:left;"> Fri Sep 11 <small class="text-muted">(in 9 days)</small> </td>
-   <td style="text-align:left;"> <span class="pill pill-todo">Not started</span> </td>
+   <td style="text-align:left;"> Wed Sep 16 <small class="text-muted">(today)</small> </td>
+   <td style="text-align:left;"> Fri Sep 18 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A05 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Market opportunity research: customer, competitors, market size with references </td>
+   <td style="text-align:left;"> P06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Revise to v2: remove AI paste artifacts, fix cross-ref and heading levels, add references, benchmark real competitors with prices, quantify the retrofit market, rework price levels, argue the fit </td>
    <td style="text-align:left;"> Team </td>
-   <td style="text-align:left;"> Tue Sep 15 <small class="text-muted">(in 13 days)</small> </td>
-   <td style="text-align:left;"> <span class="pill pill-todo">Not started</span> </td>
+   <td style="text-align:left;"> Wed Sep 16 <small class="text-muted">(today)</small> </td>
+   <td style="text-align:left;"> Fri Sep 18 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-active">In progress</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A06 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges) </td>
+   <td style="text-align:left;"> S05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Ask the professor to add the fifth member to the official repo and confirm the team size </td>
    <td style="text-align:left;"> Team </td>
-   <td style="text-align:left;"> Tue Sep 15 <small class="text-muted">(in 13 days)</small> </td>
-   <td style="text-align:left;"> <span class="pill pill-todo">Not started</span> </td>
+   <td style="text-align:left;"> Wed Sep 16 <small class="text-muted">(today)</small> </td>
+   <td style="text-align:left;"> Fri Sep 18 </td>
+   <td style="text-align:center;"> <span class="pill pill-near">2 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A07 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Write 2 to 3 research questions tied to the attributes </td>
+   <td style="text-align:left;"> S06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Fill TEAM.md and the team page: one owner and one backup per deliverable, meeting cadence </td>
    <td style="text-align:left;"> Team </td>
-   <td style="text-align:left;"> Wed Sep 16 <small class="text-muted">(in 14 days)</small> </td>
-   <td style="text-align:left;"> <span class="pill pill-todo">Not started</span> </td>
+   <td style="text-align:left;"> Wed Sep 16 <small class="text-muted">(today)</small> </td>
+   <td style="text-align:left;"> Wed Sep 23 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">6 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> P07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Move the proposal into the official repo (1-proposal/proposal.qmd, image in images/), apply the workshop feedback, render, spell-check </td>
+   <td style="text-align:left;"> Submitter </td>
+   <td style="text-align:left;"> Sat Sep 19 <small class="text-muted">(in 3 days)</small> </td>
+   <td style="text-align:left;"> Sat Sep 19 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> P08 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Final read-through by a second member, commit and push the proposal </td>
+   <td style="text-align:left;"> Submitter </td>
+   <td style="text-align:left;"> Sun Sep 20 <small class="text-muted">(in 4 days)</small> </td>
+   <td style="text-align:left;"> Sun Sep 20 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Lock the attribute list and levels after the workshop: units, price levels with a base-rent anchor, one-line level definitions </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Mon Sep 21 <small class="text-muted">(in 5 days)</small> </td>
+   <td style="text-align:left;"> Wed Sep 23 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Target population, fallback, and the exact eligibility question text </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Mon Sep 21 <small class="text-muted">(in 5 days)</small> </td>
+   <td style="text-align:left;"> Thu Sep 24 </td>
+   <td style="text-align:center;"> <span class="pill pill-near">2 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Decide who owns the shinyapps.io account and the Supabase project </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Thu Sep 24 <small class="text-muted">(in 8 days)</small> </td>
+   <td style="text-align:left;"> Fri Oct 2 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">6 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Choice question text and the attributes-and-levels table </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Thu Sep 24 <small class="text-muted">(in 8 days)</small> </td>
+   <td style="text-align:left;"> Sat Sep 26 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Survey content as exact text: welcome, consent (18 plus, 'I have read and understand'), education per attribute, respondent info, other questions </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Sun Sep 27 <small class="text-muted">(in 11 days)</small> </td>
+   <td style="text-align:left;"> Mon Sep 28 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Assemble survey_plan.qmd, render, spell-check, commit and push </td>
+   <td style="text-align:left;"> Submitter </td>
+   <td style="text-align:left;"> Tue Sep 29 <small class="text-muted">(in 13 days)</small> </td>
+   <td style="text-align:left;"> Tue Sep 29 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PS01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> Learn the surveydown conjoint-buttons template; run the sample app locally </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Wed Sep 30 <small class="text-muted">(in 14 days)</small> </td>
+   <td style="text-align:left;"> Sat Oct 3 </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Sign up for the survey-plan meeting with the professor (week of Oct 7) </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> Wed Sep 30 <small class="text-muted">(in 14 days)</small> </td>
+   <td style="text-align:left;"> Tue Oct 6 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">open</span> </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
 </tbody>
 </table>
@@ -356,9 +490,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="full-list" class="level2">
 <h2 class="anchored" data-anchor-id="full-list">Full list</h2>
+<p>Planned dates are what the team wrote down; early dates are what the dependencies and today’s date allow. When the two differ, a predecessor is holding the activity back.</p>
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -371,22 +506,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -396,99 +534,211 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A01
+S01
 </td>
 <td style="text-align:left;">
-Form the team (3 to 4 members) on the team-formation sheet
+Form the team on the team-formation sheet
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Aug 26
+Aug 26 to Sep 10
 </td>
 <td style="text-align:left;">
-Wed Sep 9
+Aug 26 to Sep 10
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-yes
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">done</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">Done</span>
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+Five members; the course guideline says three to four, so the size is confirmed with the professor under S05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S02
+</td>
+<td style="text-align:left;">
+Choose the topic against the seven selection criteria
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Sep 2 to Sep 14
+</td>
+<td style="text-align:left;">
+Sep 2 to Sep 14
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">done</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">Done</span>
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+Smart Urban Living: a Smart Urban Apartment Package for multifamily rentals, settled with the proposal draft of Sep 15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S03
+</td>
+<td style="text-align:left;">
+Create the brainstorming repo from the local scaffold and invite every teammate
+</td>
+<td style="text-align:left;">
+Harshit
+</td>
+<td style="text-align:left;">
+Sep 9 to Sep 18
+</td>
+<td style="text-align:left;">
+Sep 9 to Sep 18
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">open</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-active">In progress</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+60
 </td>
 <td style="text-align:left;">
-Must be settled within the first two weeks
+Repo created and pushed Sep 16; two invitations out, two still to send
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A02
+S04
 </td>
 <td style="text-align:left;">
-Pick the project topic against the seven selection criteria
+Everyone accepts the official team repo invitation and clones it
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Aug 26
+Sep 10 to Sep 18
 </td>
 <td style="text-align:left;">
-Wed Sep 9
+Sep 10 to Sep 18
 </td>
 <td style="text-align:left;">
-A01
 </td>
 <td style="text-align:left;">
-yes
+S01
 </td>
 <td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
+<span class="pill pill-near">1 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress</span>
+</td>
+<td style="text-align:right;">
+80
 </td>
 <td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Emerging, well-defined, identified market, pre-mass-market, moderate scope, expertise available, several decision variables
+The professor created the official repo Sep 10; four of five members are on it
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A03
+S05
 </td>
 <td style="text-align:left;">
-Create the shared team GitHub repo and agree the folder layout
+Ask the professor to add the fifth member to the official repo and confirm the team size
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Sep 9
+Sep 16 to Sep 18
 </td>
 <td style="text-align:left;">
-Fri Sep 11
+Sep 16 to Sep 18
 </td>
 <td style="text-align:left;">
-A01
+Sep 20
 </td>
 <td style="text-align:left;">
-yes
+S01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">2 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-One submitter per deliverable; every deliverable is pushed here
+Only an org admin can add a collaborator; the proposal carries five names, so this is settled before submission
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A04
+S06
+</td>
+<td style="text-align:left;">
+Fill TEAM.md and the team page: one owner and one backup per deliverable, meeting cadence
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 23
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 23
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">6 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Owners are TBD until the team assigns them at a sync
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S07
 </td>
 <td style="text-align:left;">
 Decide who owns the shinyapps.io account and the Supabase project
@@ -497,23 +747,27 @@ Decide who owns the shinyapps.io account and the Supabase project
 Team
 </td>
 <td style="text-align:left;">
-Wed Sep 9
+Sep 24 to Oct 2
 </td>
 <td style="text-align:left;">
-Wed Sep 30
+Sep 24 to Oct 2
 </td>
 <td style="text-align:left;">
-A01
 </td>
 <td style="text-align:left;">
+S06
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">6 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Keys stay in .Renviron on that person’s machine, never in any repo
+Keys stay in that person’s .Renviron, never in any repo
 </td>
 </tr>
 </tbody>
@@ -521,7 +775,7 @@ Keys stay in .Renviron on that person’s machine, never in any repo
 </section>
 <section id="proposal" class="level3">
 <h3 class="anchored" data-anchor-id="proposal">Proposal</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -534,22 +788,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -559,135 +816,143 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A05
+P01
 </td>
 <td style="text-align:left;">
-Market opportunity research: customer, competitors, market size with references
-</td>
-<td style="text-align:left;">
-Team
-</td>
-<td style="text-align:left;">
-Wed Sep 9
-</td>
-<td style="text-align:left;">
-Tue Sep 15
-</td>
-<td style="text-align:left;">
-A02
-</td>
-<td style="text-align:left;">
-yes
-</td>
-<td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
-</td>
-<td style="text-align:left;">
-Proposal
-</td>
-<td style="text-align:left;">
-Rubric: Market Opportunity 10 pts
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-A06
-</td>
-<td style="text-align:left;">
-Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges)
+Market opportunity research: customer, competitors, market size
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Sep 9
+Sep 9 to Sep 14
 </td>
 <td style="text-align:left;">
-Tue Sep 15
+Sep 9 to Sep 14
 </td>
 <td style="text-align:left;">
-A02
 </td>
 <td style="text-align:left;">
-yes
+S02
 </td>
 <td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
+<span class="pill pill-done">done</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">Done</span>
+</td>
+<td style="text-align:right;">
+100
 </td>
 <td style="text-align:left;">
-Proposal
-</td>
-<td style="text-align:left;">
-Rubric: Product Attributes 10 pts; label them on the product diagram
+Draft carries Rently 2025 and Yardi Matrix Q2 2026 figures, both verified Sep 16; references still to be added under P06
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A07
+P02
 </td>
 <td style="text-align:left;">
-Write 2 to 3 research questions tied to the attributes
+Attributes and levels table, product diagram, and the three research questions
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Sat Sep 12
+Sep 9 to Sep 14
 </td>
 <td style="text-align:left;">
-Wed Sep 16
+Sep 9 to Sep 14
 </td>
 <td style="text-align:left;">
-A06
 </td>
 <td style="text-align:left;">
-yes
+S02
 </td>
 <td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
+<span class="pill pill-done">done</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">Done</span>
+</td>
+<td style="text-align:right;">
+100
 </td>
 <td style="text-align:left;">
-Proposal
-</td>
-<td style="text-align:left;">
-Rubric: Research Questions 10 pts
+Six attributes: monthly premium, access and security, climate, lighting, package management, EV charging
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A08
+P03
 </td>
 <td style="text-align:left;">
-Write proposal.qmd from the template (Abstract, Introduction with picture, Market Opportunity, Product Attributes, Research Questions, Other Questions, Attribution)
+Draft proposal.qmd v1 and render it
 </td>
 <td style="text-align:left;">
-Team
+Teammate
 </td>
 <td style="text-align:left;">
-Mon Sep 14
+Sep 12 to Sep 15
 </td>
 <td style="text-align:left;">
-Fri Sep 18
+Sep 12 to Sep 15
 </td>
 <td style="text-align:left;">
-A05;A06;A07
 </td>
 <td style="text-align:left;">
-yes
+P01, P02
 </td>
 <td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
+<span class="pill pill-done">done</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">Done</span>
+</td>
+<td style="text-align:right;">
+100
 </td>
 <td style="text-align:left;">
-Proposal
-</td>
-<td style="text-align:left;">
-Render clean; spell_check_files(); all names in YAML author
+Rendered Sep 15 with all five names in the YAML
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A10
+P04
+</td>
+<td style="text-align:left;">
+Review the draft against the 55-point rubric and log the findings
+</td>
+<td style="text-align:left;">
+Harshit
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 16
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 16
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+P03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">done</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-done">Done</span>
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+Findings in the Sep 16 dev log post: five blocking fixes, seven improvements, one fit risk
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P05
 </td>
 <td style="text-align:left;">
 Proposal workshop meeting with the professor (remote, week 4)
@@ -696,56 +961,130 @@ Proposal workshop meeting with the professor (remote, week 4)
 Team
 </td>
 <td style="text-align:left;">
-Mon Sep 14
+Sep 16 to Sep 18
 </td>
 <td style="text-align:left;">
-Fri Sep 18
+Sep 16 to Sep 18
 </td>
 <td style="text-align:left;">
-A09
 </td>
 <td style="text-align:left;">
-yes
+P03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Sign up via the calendar link; expect a request to narrow scope
+Book through the professor’s scheduling link; bring the emerging-product argument
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A09
+P06
 </td>
 <td style="text-align:left;">
-Submit the proposal (render, commit, push to the team repo)
+Revise to v2: remove AI paste artifacts, fix cross-ref and heading levels, add references, benchmark real competitors with prices, quantify the retrofit market, rework price levels, argue the fit
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 18
+</td>
+<td style="text-align:left;">
+Sep 16 to Sep 18
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+P04
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress</span>
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+The fix list exists; the edits are in the teammate’s .qmd
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P07
+</td>
+<td style="text-align:left;">
+Move the proposal into the official repo (1-proposal/proposal.qmd, image in images/), apply the workshop feedback, render, spell-check
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Fri Sep 18
+Sep 19 to Sep 19
 </td>
 <td style="text-align:left;">
-Sun Sep 20
+Sep 19 to Sep 19
 </td>
 <td style="text-align:left;">
-A08
 </td>
 <td style="text-align:left;">
-yes
+P05, P06
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Proposal
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Due 11:59 pm Sun Sep 20 (tracked date)
+spelling::spell_check_files(); delete leftover template text; update the date
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P08
+</td>
+<td style="text-align:left;">
+Final read-through by a second member, commit and push the proposal
+</td>
+<td style="text-align:left;">
+Submitter
+</td>
+<td style="text-align:left;">
+Sep 20 to Sep 20
+</td>
+<td style="text-align:left;">
+Sep 20 to Sep 20
+</td>
+<td style="text-align:left;">
+Sep 20
+</td>
+<td style="text-align:left;">
+P07, S04
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Official due date Sun Sep 20, 11:59 pm. Zero float: the workshop sits in the same week
 </td>
 </tr>
 </tbody>
@@ -753,7 +1092,7 @@ Due 11:59 pm Sun Sep 20 (tracked date)
 </section>
 <section id="survey-plan" class="level3">
 <h3 class="anchored" data-anchor-id="survey-plan">Survey plan</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -766,22 +1105,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -791,63 +1133,101 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A11
+SP01
 </td>
 <td style="text-align:left;">
-Target population, fallback, and exact eligibility question text
+Lock the attribute list and levels after the workshop: units, price levels with a base-rent anchor, one-line level definitions
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Mon Sep 21
+Sep 21 to Sep 23
 </td>
 <td style="text-align:left;">
-Fri Sep 25
+Sep 21 to Sep 23
 </td>
 <td style="text-align:left;">
-A10
 </td>
 <td style="text-align:left;">
-yes
+P08
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Survey Plan
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Default: paid U.S. Prolific respondents
+Decide whether security splits into lock and video, and whether EV charging stays a full attribute
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A12
+SP02
 </td>
 <td style="text-align:left;">
-Choice question text and the final attributes and levels table with units
+Target population, fallback, and the exact eligibility question text
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Mon Sep 21
+Sep 21 to Sep 24
 </td>
 <td style="text-align:left;">
-Sat Sep 26
+Sep 21 to Sep 24
 </td>
 <td style="text-align:left;">
-A10
 </td>
 <td style="text-align:left;">
-yes
+P08
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">2 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Survey Plan
+Default: paid U.S. Prolific respondents who rent or expect to rent within two years
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP03
+</td>
+<td style="text-align:left;">
+Choice question text and the attributes-and-levels table
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Sep 24 to Sep 26
+</td>
+<td style="text-align:left;">
+Sep 24 to Sep 26
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+SP01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 Rubric: Attributes and Levels 10 pts
@@ -855,66 +1235,105 @@ Rubric: Attributes and Levels 10 pts
 </tr>
 <tr>
 <td style="text-align:left;">
-A13
+SP04
 </td>
 <td style="text-align:left;">
-Survey content: welcome, consent (18+, ‘I have read and understand’), education, critical respondent info, other questions
+Survey content as exact text: welcome, consent (18 plus, ‘I have read and understand’), education per attribute, respondent info, other questions
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Sep 23
+Sep 27 to Sep 28
 </td>
 <td style="text-align:left;">
-Mon Sep 28
+Sep 27 to Sep 28
 </td>
 <td style="text-align:left;">
-A11;A12
 </td>
 <td style="text-align:left;">
-yes
+SP02, SP03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Survey Plan
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Exact question text, not descriptions
+Include the privacy and EV-ownership questions from the proposal’s open questions
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A14
+SP05
 </td>
 <td style="text-align:left;">
-Submit the survey plan
+Assemble survey_plan.qmd, render, spell-check, commit and push
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Mon Sep 28
+Sep 29 to Sep 29
 </td>
 <td style="text-align:left;">
-Tue Sep 29
+Sep 29 to Sep 29
 </td>
 <td style="text-align:left;">
-A13
+Sep 29
 </td>
 <td style="text-align:left;">
-yes
+SP04
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Survey Plan
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Due Tue Sep 29
+Official due date Tue Sep 29
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP06
+</td>
+<td style="text-align:left;">
+Sign up for the survey-plan meeting with the professor (week of Oct 7)
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Sep 30 to Oct 6
+</td>
+<td style="text-align:left;">
+Sep 30 to Oct 6
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+SP05
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">open</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Sign-up is announced in the course Slack
 </td>
 </tr>
 </tbody>
@@ -922,7 +1341,7 @@ Due Tue Sep 29
 </section>
 <section id="pilot-survey" class="level3">
 <h3 class="anchored" data-anchor-id="pilot-survey">Pilot survey</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -935,22 +1354,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -960,190 +1382,241 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A15
+PS01
 </td>
 <td style="text-align:left;">
-Generate the design file with cbc_design (code/1_make_choice_questions.R)
-</td>
-<td style="text-align:left;">
-Team
-</td>
-<td style="text-align:left;">
-Thu Oct 1
-</td>
-<td style="text-align:left;">
-Tue Oct 6
-</td>
-<td style="text-align:left;">
-A14
-</td>
-<td style="text-align:left;">
-yes
-</td>
-<td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
-</td>
-<td style="text-align:left;">
-Pilot Survey
-</td>
-<td style="text-align:left;">
-Randomized choice sets must work from data/choice_questions.csv
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-A20
-</td>
-<td style="text-align:left;">
-Sign up for the survey-plan meeting slot with the professor (Slack #project)
+Learn the surveydown conjoint-buttons template; run the sample app locally
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Sep 30
+Sep 30 to Oct 3
 </td>
 <td style="text-align:left;">
-Wed Oct 7
+Sep 30 to Oct 3
 </td>
 <td style="text-align:left;">
-A14
 </td>
 <td style="text-align:left;">
+SP05
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
+Class 6 (Sep 30) introduces surveydown; HW4 covers the basics
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A16
+PS02
 </td>
 <td style="text-align:left;">
-Build survey.qmd from the surveydown conjoint buttons template; reuse the plan text
+code/1_make_choice_questions.R: generate data/choice_questions.csv with cbc_design
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Thu Oct 1
+Oct 4 to Oct 7
 </td>
 <td style="text-align:left;">
-Fri Oct 9
+Oct 4 to Oct 7
 </td>
 <td style="text-align:left;">
-A14
 </td>
 <td style="text-align:left;">
-yes
+SP03, PS01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">3 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Pilot Survey
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Replace every placeholder; render often; run app.R locally
+Randomised choice sets must render live without error
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A17
+PS03
 </td>
 <td style="text-align:left;">
-Connect Supabase and confirm responses are stored
+Build survey.qmd from the plan text: welcome, consent, screening, education, conjoint block, other questions
 </td>
 <td style="text-align:left;">
-Owner of accounts
+Team
 </td>
 <td style="text-align:left;">
-Tue Oct 6
+Oct 4 to Oct 8
 </td>
 <td style="text-align:left;">
-Sat Oct 10
+Oct 4 to Oct 8
 </td>
 <td style="text-align:left;">
-A04;A16
 </td>
 <td style="text-align:left;">
-yes
+SP04, PS01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Pilot Survey
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
+Replace every placeholder; render often
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A18
+PS06
 </td>
 <td style="text-align:left;">
-Deploy to shinyapps.io and test end to end
+Survey-plan meeting with the professor (week of Oct 7)
 </td>
 <td style="text-align:left;">
-Owner of accounts
+Team
 </td>
 <td style="text-align:left;">
-Fri Oct 9
+Oct 7 to Oct 9
 </td>
 <td style="text-align:left;">
-Mon Oct 12
+Oct 7 to Oct 9
 </td>
 <td style="text-align:left;">
-A17
 </td>
 <td style="text-align:left;">
-yes
+SP06
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">open</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Pilot Survey
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Rubric: deployment 10 pts
+Bring the draft choice question and the design file
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A19
+PS04
 </td>
 <td style="text-align:left;">
-Submit the pilot survey (push the folder; survey live)
+Connect the Supabase project and confirm responses are stored
+</td>
+<td style="text-align:left;">
+Account owner
+</td>
+<td style="text-align:left;">
+Oct 9 to Oct 10
+</td>
+<td style="text-align:left;">
+Oct 9 to Oct 10
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S07, PS03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Keys in .Renviron only
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PS05
+</td>
+<td style="text-align:left;">
+Deploy to shinyapps.io; end-to-end test on a phone and a laptop
+</td>
+<td style="text-align:left;">
+Account owner
+</td>
+<td style="text-align:left;">
+Oct 11 to Oct 12
+</td>
+<td style="text-align:left;">
+Oct 11 to Oct 12
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+PS02, PS04
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Rubric: Deployment 10 pts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PS07
+</td>
+<td style="text-align:left;">
+Push the pilot survey folder and confirm the live link
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Mon Oct 12
+Oct 13 to Oct 13
 </td>
 <td style="text-align:left;">
-Tue Oct 13
+Oct 13 to Oct 13
 </td>
 <td style="text-align:left;">
-A18
+Oct 13
 </td>
 <td style="text-align:left;">
-yes
+PS05
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Pilot Survey
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Due Tue Oct 13
+Official due date Tue Oct 13
 </td>
 </tr>
 </tbody>
@@ -1151,7 +1624,7 @@ Due Tue Oct 13
 </section>
 <section id="pilot-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="pilot-analysis">Pilot analysis</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1164,22 +1637,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -1189,157 +1665,200 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A22
+PA01
 </td>
 <td style="text-align:left;">
-Download pilot data with sd_get_data(); clean-data.R to long format
-</td>
-<td style="text-align:left;">
-Team
-</td>
-<td style="text-align:left;">
-Thu Oct 22
-</td>
-<td style="text-align:left;">
-Sun Oct 25
-</td>
-<td style="text-align:left;">
-A21
-</td>
-<td style="text-align:left;">
-yes
-</td>
-<td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
-</td>
-<td style="text-align:left;">
-Pilot Analysis
-</td>
-<td style="text-align:left;">
-Save raw data in data/; save the cleaned CSV
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-A21
-</td>
-<td style="text-align:left;">
-Take every other team’s pilot survey and fill the feedback sheet (part of HW8)
+Classmates take our pilot; we take theirs and fill the feedback sheet (part of HW8)
 </td>
 <td style="text-align:left;">
 Everyone
 </td>
 <td style="text-align:left;">
-Wed Oct 21
+Oct 21 to Oct 24
 </td>
 <td style="text-align:left;">
-Mon Oct 26
+Oct 21 to Oct 24
 </td>
 <td style="text-align:left;">
-A19
 </td>
 <td style="text-align:left;">
-yes
+PS07
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Their responses to ours land in the same window
+Week 9 class on Oct 21 starts the exchange; most responses land within three days
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A23
+PA02
 </td>
 <td style="text-align:left;">
-modeling.R: preliminary models; coefficient table and figures with uncertainty
+Download with sd_get_data(); save raw data; clean-data.R to long format
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Sat Oct 24
+Oct 25 to Oct 26
 </td>
 <td style="text-align:left;">
-Wed Oct 28
+Oct 25 to Oct 26
 </td>
 <td style="text-align:left;">
-A22
 </td>
 <td style="text-align:left;">
-yes
+PA01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Pilot Analysis
-</td>
-<td style="text-align:left;">
-Write the utility model in LaTeX in the report
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-A24
-</td>
-<td style="text-align:left;">
-power-analysis.R: standard errors vs sample size; pick the final sample size
-</td>
-<td style="text-align:left;">
-Team
-</td>
-<td style="text-align:left;">
-Mon Oct 26
-</td>
-<td style="text-align:left;">
-Thu Oct 29
-</td>
-<td style="text-align:left;">
-A23
-</td>
-<td style="text-align:left;">
-yes
-</td>
-<td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
-</td>
-<td style="text-align:left;">
-Pilot Analysis
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A25
+PA05
 </td>
 <td style="text-align:left;">
-report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power, changes to final survey, appendix
+Triage classmate feedback and list the changes for the final survey
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Tue Oct 27
+Oct 25 to Oct 26
 </td>
 <td style="text-align:left;">
-Sat Oct 31
+Oct 25 to Oct 26
 </td>
 <td style="text-align:left;">
-A23;A24
 </td>
 <td style="text-align:left;">
-yes
+PA01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">3 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Pilot Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA03
+</td>
+<td style="text-align:left;">
+modeling.R: preliminary logit, coefficient table with standard errors, coefficient plots, utility model in LaTeX
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Oct 27 to Oct 28
+</td>
+<td style="text-align:left;">
+Oct 27 to Oct 28
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+PA02
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Class 10 (Oct 28) covers estimating pilot models
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA04
+</td>
+<td style="text-align:left;">
+power-analysis.R: standard errors against sample size; choose the final sample size
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Oct 29 to Oct 29
+</td>
+<td style="text-align:left;">
+Oct 29 to Oct 29
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+PA03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA06
+</td>
+<td style="text-align:left;">
+report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power analysis, changes, appendix
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Oct 30 to Oct 31
+</td>
+<td style="text-align:left;">
+Oct 30 to Oct 31
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+PA03, PA04, PA05
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 Rubric: Report Contents 15 pts
@@ -1347,34 +1866,37 @@ Rubric: Report Contents 15 pts
 </tr>
 <tr>
 <td style="text-align:left;">
-A26
+PA07
 </td>
 <td style="text-align:left;">
-Submit the pilot analysis
+Render, spell-check, commit and push the pilot analysis
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Sat Oct 31
+Nov 1 to Nov 1
 </td>
 <td style="text-align:left;">
-Sun Nov 1
+Nov 1 to Nov 1
 </td>
 <td style="text-align:left;">
-A25
+Nov 1
 </td>
 <td style="text-align:left;">
-yes
+PA06
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Pilot Analysis
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Due Sun Nov 1
+Official due date Sun Nov 1
 </td>
 </tr>
 </tbody>
@@ -1382,7 +1904,7 @@ Due Sun Nov 1
 </section>
 <section id="final-survey" class="level3">
 <h3 class="anchored" data-anchor-id="final-survey">Final survey</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1395,22 +1917,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -1420,127 +1945,138 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A27
+FS01
 </td>
 <td style="text-align:left;">
-Apply pilot changes (attributes, levels, question text, sample size)
+Apply the pilot changes: attributes, levels, question text; regenerate the design for the chosen sample size
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Mon Nov 2
+Nov 2 to Nov 7
 </td>
 <td style="text-align:left;">
-Sun Nov 8
+Nov 2 to Nov 7
 </td>
 <td style="text-align:left;">
-A26
 </td>
 <td style="text-align:left;">
-yes
+PA07
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">1 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Final Survey
+Class 11 (Nov 4) covers DOE and power analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FS02
+</td>
+<td style="text-align:left;">
+Redeploy the final survey; every referenced file on the web; fresh data table; end-to-end test
+</td>
+<td style="text-align:left;">
+Account owner
+</td>
+<td style="text-align:left;">
+Nov 8 to Nov 11
+</td>
+<td style="text-align:left;">
+Nov 8 to Nov 11
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+FS01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">1 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A28
+FS03
 </td>
 <td style="text-align:left;">
-Redeploy the final survey; all referenced files on the web; end-to-end test
-</td>
-<td style="text-align:left;">
-Owner of accounts
-</td>
-<td style="text-align:left;">
-Sun Nov 8
-</td>
-<td style="text-align:left;">
-Fri Nov 13
-</td>
-<td style="text-align:left;">
-A27
-</td>
-<td style="text-align:left;">
-yes
-</td>
-<td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
-</td>
-<td style="text-align:left;">
-Final Survey
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-A29
-</td>
-<td style="text-align:left;">
-Write the Prolific eligibility text and submit the final survey
+Write the Prolific eligibility text; push the final survey folder
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Fri Nov 13
+Nov 12 to Nov 14
 </td>
 <td style="text-align:left;">
-Sun Nov 15
+Nov 12 to Nov 14
 </td>
 <td style="text-align:left;">
-A28
+Nov 15
 </td>
 <td style="text-align:left;">
-yes
+FS02
+</td>
+<td style="text-align:center;">
+<span class="pill pill-near">1 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Survey
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Due Sun Nov 15
+Official due date Sun Nov 15; the eligibility text is what the professor uses to pre-screen. One day of float by design
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A30
+FS04
 </td>
 <td style="text-align:left;">
-Fielding on Prolific (arranged through the professor)
+Fielding on Prolific, arranged through the professor; monitor responses daily
 </td>
 <td style="text-align:left;">
-Professor + team
+Professor and team
 </td>
 <td style="text-align:left;">
-Mon Nov 23
+Nov 17 to Nov 27
 </td>
 <td style="text-align:left;">
-Sun Nov 29
+Nov 17 to Nov 27
 </td>
 <td style="text-align:left;">
-A29
 </td>
 <td style="text-align:left;">
-yes
+FS03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Thanksgiving week; start cleaning as data lands
+Assumed window; confirm the launch date with the professor at the Nov 11 class
 </td>
 </tr>
 </tbody>
@@ -1548,7 +2084,7 @@ Thanksgiving week; start cleaning as data lands
 </section>
 <section id="final-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="final-analysis">Final analysis</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1561,22 +2097,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -1586,159 +2125,205 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A31
+FA01
 </td>
 <td style="text-align:left;">
-clean_data.R on the final data; sample description table
+Scaffold clean_data.R, modeling.R, analysis.R and the report skeleton on the pilot data so the final data only needs re-running
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Fri Nov 27
+Nov 9 to Nov 21
 </td>
 <td style="text-align:left;">
-Tue Dec 1
+Nov 9 to Nov 21
 </td>
 <td style="text-align:left;">
-A30
 </td>
 <td style="text-align:left;">
-yes
+PA07
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">6 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Final Analysis Report
+Logit, mixed logit with random parameters, one sub-group comparison, WTP with 95 percent CIs, market simulation, sensitivity with a tornado plot
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FA02
+</td>
+<td style="text-align:left;">
+Clean the final data; sample description table
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Nov 28 to Nov 29
+</td>
+<td style="text-align:left;">
+Nov 28 to Nov 29
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+FS04, FA01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A32
+FA03
 </td>
 <td style="text-align:left;">
-modeling.R: simple logit, mixed logit with random parameters, at least one sub-group comparison
+Run the models on the final data: logit, mixed logit, sub-group comparison
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Sun Nov 29
+Nov 30 to Dec 1
 </td>
 <td style="text-align:left;">
-Thu Dec 3
+Nov 30 to Dec 1
 </td>
 <td style="text-align:left;">
-A31
 </td>
 <td style="text-align:left;">
-yes
+FA02
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Analysis Report
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A33
+FA04
 </td>
 <td style="text-align:left;">
-analysis.R: WTP with 95% CIs, market simulation vs competitors, price and attribute sensitivity with a tornado plot
-</td>
-<td style="text-align:left;">
-Team
-</td>
-<td style="text-align:left;">
-Tue Dec 1
-</td>
-<td style="text-align:left;">
-Fri Dec 4
-</td>
-<td style="text-align:left;">
-A32
-</td>
-<td style="text-align:left;">
-yes
-</td>
-<td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
-</td>
-<td style="text-align:left;">
-Final Analysis Report
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-A34
-</td>
-<td style="text-align:left;">
-report.qmd as narrative paragraphs: results, recommendations, limitations, attribution, appendix
+analysis.R: WTP, market simulation against competitors, price and attribute sensitivity, tornado plot
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Wed Dec 2
+Dec 2 to Dec 3
 </td>
 <td style="text-align:left;">
-Sat Dec 5
+Dec 2 to Dec 3
 </td>
 <td style="text-align:left;">
-A33
 </td>
 <td style="text-align:left;">
-yes
+FA03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Analysis Report
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Fully reproducible HTML; rubric 40 pts
+The final exam is in class on Dec 2
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A35
+FA05
 </td>
 <td style="text-align:left;">
-Submit the final analysis report
+report.qmd as narrative: results, recommendations, limitations, attribution, appendix; fully reproducible
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 5
+</td>
+<td style="text-align:left;">
+Dec 4 to Dec 5
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+FA04
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Rubric 40 pts; 15 percent of the grade; the skeleton from FA01 makes two days enough
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FA06
+</td>
+<td style="text-align:left;">
+Render, spell-check, commit and push the final report
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Sat Dec 5
+Dec 6 to Dec 6
 </td>
 <td style="text-align:left;">
-Sun Dec 6
+Dec 6 to Dec 6
 </td>
 <td style="text-align:left;">
-A34
+Dec 6
 </td>
 <td style="text-align:left;">
-yes
+FA05
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Analysis Report
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Due Sun Dec 6
+Official due date Sun Dec 6
 </td>
 </tr>
 </tbody>
@@ -1746,7 +2331,7 @@ Due Sun Dec 6
 </section>
 <section id="presentation" class="level3">
 <h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1759,22 +2344,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -1784,7 +2372,7 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A36
+PR01
 </td>
 <td style="text-align:left;">
 Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations
@@ -1793,87 +2381,130 @@ Build the slides: product intro, example choice question, sample stats, utility 
 Team
 </td>
 <td style="text-align:left;">
-Thu Dec 3
+Dec 4 to Dec 6
 </td>
 <td style="text-align:left;">
-Mon Dec 7
+Dec 4 to Dec 6
 </td>
 <td style="text-align:left;">
-A33
 </td>
 <td style="text-align:left;">
-yes
+FA04
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Presentation
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
-Numbered slides; title slide with names and date; not bullet-heavy
+Numbered slides; title slide with names and date
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A37
+PR02
 </td>
 <td style="text-align:left;">
-Rehearse to 10 minutes with every member presenting at least one slide
+Rehearse to ten minutes with every member presenting at least one slide
 </td>
 <td style="text-align:left;">
 Team
 </td>
 <td style="text-align:left;">
-Sun Dec 6
+Dec 7 to Dec 7
 </td>
 <td style="text-align:left;">
-Tue Dec 8
+Dec 7 to Dec 7
 </td>
 <td style="text-align:left;">
-A36
 </td>
 <td style="text-align:left;">
-yes
+PR01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Presentation
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A38
+PR03
 </td>
 <td style="text-align:left;">
-Submit slides to the repo (due Dec 8) and present live in class Dec 9 or DM a video link
+Push the slides to the official repo
 </td>
 <td style="text-align:left;">
 Submitter
 </td>
 <td style="text-align:left;">
-Tue Dec 8
+Dec 8 to Dec 8
 </td>
 <td style="text-align:left;">
-Wed Dec 9
+Dec 8 to Dec 8
 </td>
 <td style="text-align:left;">
-A37
+Dec 8
 </td>
 <td style="text-align:left;">
-yes
+PR02
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-todo">Not started</span>
 </td>
-<td style="text-align:left;">
-Final Presentation
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:left;">
+Official due date Tue Dec 8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PR04
+</td>
+<td style="text-align:left;">
+Present in class (or send the video link by Slack DM)
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Dec 9 to Dec 9
+</td>
+<td style="text-align:left;">
+Dec 9 to Dec 9
+</td>
+<td style="text-align:left;">
+Dec 9
+</td>
+<td style="text-align:left;">
+PR03
+</td>
+<td style="text-align:center;">
+<span class="pill pill-critical">0 d</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">Not started</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Class 16, Dec 9
 </td>
 </tr>
 </tbody>
@@ -1881,7 +2512,7 @@ Final Presentation
 </section>
 <section id="ongoing" class="level3">
 <h3 class="anchored" data-anchor-id="ongoing">Ongoing</h3>
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1894,22 +2525,25 @@ Activity
 Owner
 </th>
 <th style="text-align:left;">
-Start
+Planned
 </th>
 <th style="text-align:left;">
-Due
+Early
+</th>
+<th style="text-align:left;">
+Deadline
 </th>
 <th style="text-align:left;">
 Depends on
 </th>
-<th style="text-align:left;">
-Critical
+<th style="text-align:center;">
+Float
 </th>
 <th style="text-align:center;">
 Status
 </th>
-<th style="text-align:left;">
-Deliverable
+<th style="text-align:right;">
+%
 </th>
 <th style="text-align:left;">
 Notes
@@ -1919,61 +2553,101 @@ Notes
 <tbody>
 <tr>
 <td style="text-align:left;">
-A39
+O02
 </td>
 <td style="text-align:left;">
-Keep this tracker current: update activities.csv, write a dev log entry after each work session, re-render, push
+Keep this tracker current: edit the CSVs, re-render, push; one dev log post per work session
 </td>
 <td style="text-align:left;">
-Everyone
+Harshit
 </td>
 <td style="text-align:left;">
-Wed Sep 2
+Sep 2 to Dec 9
 </td>
 <td style="text-align:left;">
-Wed Dec 9
+Sep 2 to Dec 9
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">open</span>
 </td>
 <td style="text-align:center;">
 <span class="pill pill-active">In progress</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+20
 </td>
 <td style="text-align:left;">
-quarto render, then commit docs/ with the source
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-A40
+O03
 </td>
 <td style="text-align:left;">
-Log each member’s contributions for the Attribution section of every deliverable
+Log every member’s contributions in CONTRIBUTIONS.md for the Attribution sections
 </td>
 <td style="text-align:left;">
 Everyone
 </td>
 <td style="text-align:left;">
-Wed Sep 9
+Sep 9 to Dec 9
 </td>
 <td style="text-align:left;">
-Wed Dec 9
+Sep 9 to Dec 9
 </td>
 <td style="text-align:left;">
-A01
 </td>
 <td style="text-align:left;">
+S01
 </td>
 <td style="text-align:center;">
-<span class="pill pill-todo">Not started</span>
+<span class="pill pill-todo">open</span>
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
+<span class="pill pill-active">In progress</span>
+</td>
+<td style="text-align:right;">
+10
 </td>
 <td style="text-align:left;">
 Unequal contributions do not get equal grades
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+O01
+</td>
+<td style="text-align:left;">
+Weekly sync before Wednesday class; decisions copied into decisions/DECISIONS.md the same day
+</td>
+<td style="text-align:left;">
+Team
+</td>
+<td style="text-align:left;">
+Sep 16 to Dec 9
+</td>
+<td style="text-align:left;">
+Sep 16 to Dec 9
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S01
+</td>
+<td style="text-align:center;">
+<span class="pill pill-todo">open</span>
+</td>
+<td style="text-align:center;">
+<span class="pill pill-active">In progress</span>
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
 </td>
 </tr>
 </tbody>
@@ -1984,6 +2658,496 @@ Unequal contributions do not get equal grades
 </section>
 
 </main> <!-- /main -->
+<script>
+/* tracker.js - client-side schedule views for the EMSE 6035 project tracker.
+   Reads the JSON that R embeds in <script id="schedule-data"> (see R/helpers.R:
+   embed_schedule) and draws: an SVG Gantt with the computed early schedule, the
+   critical path, milestones, a today line and the course-load lane; and the
+   deliverable chain. No dependencies. Inlined into every page by _quarto.yml. */
+(function () {
+  "use strict";
+
+  var DAY = 86400000;
+  function d(s) { var p = s.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
+  function days(a, b) { return Math.round((b - a) / DAY); }
+  function addDays(a, n) { return new Date(a.getTime() + n * DAY); }
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function fmt(dt) { return DOW[dt.getUTCDay()] + " " + MONTHS[dt.getUTCMonth()] + " " + dt.getUTCDate(); }
+  function fmtShort(dt) { return MONTHS[dt.getUTCMonth()] + " " + dt.getUTCDate(); }
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function text(parent, x, y, str, attrs) {
+    var t = el("text", Object.assign({ x: x, y: y }, attrs || {}), parent);
+    t.textContent = str;
+    return t;
+  }
+  function slugify(s) { return String(s).toLowerCase().replace(/\s+/g, "-"); }
+  function statusSlug(s) {
+    s = String(s || "").toLowerCase();
+    if (s === "done" || s === "graded" || s === "submitted") return "done";
+    if (s === "in progress") return "active";
+    if (s === "blocked" || s === "missed") return "blocked";
+    return "todo";
+  }
+
+  var PHASES = ["Setup","Proposal","Survey plan","Pilot survey","Pilot analysis","Final survey","Final analysis","Presentation","Ongoing"];
+
+  function loadData() {
+    var node = document.getElementById("schedule-data");
+    if (!node) return null;
+    var data = JSON.parse(node.textContent);
+    data.todayDate = d(data.today);
+    data.activities.forEach(function (a) {
+      a.startDate = d(a.start); a.dueDate = d(a.due);
+      a.esDate = d(a.es); a.efDate = d(a.ef);
+      a.deadlineDate = a.deadline ? d(a.deadline) : null;
+      a.lsDate = a.ls ? d(a.ls) : null; a.lfDate = a.lf ? d(a.lf) : null;
+      a.slug = statusSlug(a.status);
+      a.preds = a.depends_on ? a.depends_on.split(";").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+      a.succs = a.successors ? a.successors.split(";").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+    });
+    data.events.forEach(function (e) { e.dateObj = d(e.date); });
+    return data;
+  }
+
+  /* ---------- tooltip ---------- */
+  var tip = null;
+  function ensureTip() {
+    if (tip) return tip;
+    tip = document.createElement("div");
+    tip.className = "trk-tip";
+    tip.setAttribute("role", "tooltip");
+    document.body.appendChild(tip);
+    return tip;
+  }
+  function showTip(html, evt) {
+    var t = ensureTip();
+    t.innerHTML = html;
+    t.style.display = "block";
+    moveTip(evt);
+  }
+  function moveTip(evt) {
+    if (!tip) return;
+    var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    var x = evt.clientX + pad, y = evt.clientY + pad;
+    if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
+    if (y + h > window.innerHeight - 8) y = evt.clientY - h - pad;
+    tip.style.left = (x + window.scrollX) + "px";
+    tip.style.top = (y + window.scrollY) + "px";
+  }
+  function hideTip() { if (tip) tip.style.display = "none"; }
+
+  function floatLabel(a) {
+    if (a.slug === "done") return "done";
+    if (a.total_float == null) return "open-ended";
+    if (a.total_float < 0) return Math.abs(a.total_float) + " d late";
+    if (a.total_float === 0) return "0 d float";
+    return a.total_float + " d float";
+  }
+  function activityTip(a) {
+    var rows = [
+      ["Phase", a.phase], ["Owner", a.owner],
+      ["Planned", fmt(a.startDate) + " to " + fmt(a.dueDate) + " (" + a.dur + " d)"],
+      ["Early", fmt(a.esDate) + " to " + fmt(a.efDate)],
+      a.lsDate ? ["Late", fmt(a.lsDate) + " to " + fmt(a.lfDate)] : null,
+      a.deadlineDate ? ["Deadline", fmt(a.deadlineDate)] : null,
+      ["Float", floatLabel(a) + (a.free_float != null ? ", free " + a.free_float + " d" : "")],
+      ["Status", a.status + (a.pct ? " (" + a.pct + "%)" : "")],
+      a.deliverable ? ["Deliverable", a.deliverable] : null,
+      a.preds.length ? ["After", a.preds.join(", ")] : null,
+      a.succs.length ? ["Feeds", a.succs.join(", ")] : null,
+      a.notes ? ["Note", a.notes] : null
+    ].filter(Boolean);
+    var flags = [];
+    if (a.critical) flags.push('<span class="trk-flag trk-flag-crit">critical</span>');
+    else if (a.near_critical) flags.push('<span class="trk-flag trk-flag-near">near-critical</span>');
+    if (a.overdue) flags.push('<span class="trk-flag trk-flag-crit">overdue</span>');
+    if (a.slipped) flags.push('<span class="trk-flag trk-flag-near">start pushed by a predecessor</span>');
+    return '<div class="trk-tip-h"><span class="trk-id">' + esc(a.id) + '</span> ' + esc(a.activity) + '</div>' +
+      (flags.length ? '<div class="trk-tip-flags">' + flags.join(" ") + '</div>' : "") +
+      '<table>' + rows.map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join("") + '</table>';
+  }
+
+  /* ---------- Gantt ---------- */
+  function renderGantt(container, data, opts) {
+    opts = opts || {};
+    container.innerHTML = "";
+    var mode = opts.mode || "all";           // all | critical | open | phase:<name>
+    var window_ = opts.window || "semester"; // semester | next4
+    var today = data.todayDate;
+
+    var t0, t1;
+    if (window_ === "next4") { t0 = addDays(today, -3); t1 = addDays(today, 29); }
+    else { t0 = d(data.semester_start); t1 = addDays(d(data.semester_end), 1); }
+
+    var acts = data.activities.filter(function (a) {
+      if (a.phase === "Ongoing" && !opts.showOngoing) return false;
+      if (mode === "critical") return a.critical && a.slug !== "done";
+      if (mode === "open") return a.slug !== "done";
+      if (mode.indexOf("phase:") === 0) return a.phase === mode.slice(6);
+      return true;
+    }).filter(function (a) {
+      if (window_ !== "next4") return true;
+      return a.efDate >= t0 && a.esDate < t1 || (a.deadlineDate && a.deadlineDate >= t0 && a.deadlineDate < t1);
+    });
+
+    var labelW = opts.labelWidth || 300;
+    var rowH = 24, headH = 58, laneH = opts.showLoad === false ? 0 : 30, phaseH = 26, padR = 24, bottom = 12;
+    var width = Math.max(container.clientWidth || 900, opts.minWidth || 900);
+    var plotW = width - labelW - padR;
+    var totalDays = days(t0, t1);
+    var x = function (dt) { return labelW + Math.max(0, Math.min(totalDays, days(t0, dt))) / totalDays * plotW; };
+    var dayW = plotW / totalDays;
+
+    // group rows by phase in canonical order
+    var groups = [];
+    PHASES.forEach(function (p) {
+      var rows = acts.filter(function (a) { return a.phase === p; });
+      if (rows.length) groups.push({ phase: p, rows: rows });
+    });
+    var nRows = acts.length, nGroups = groups.length;
+    var height = headH + laneH + nGroups * phaseH + nRows * rowH + bottom;
+
+    var wrap = document.createElement("div");
+    wrap.className = "trk-gantt-wrap";
+    container.appendChild(wrap);
+    var svg = el("svg", { width: width, height: height, viewBox: "0 0 " + width + " " + height, class: "trk-gantt", role: "img", "aria-label": "Gantt chart of project activities" }, wrap);
+
+    // defs: hatch for the remaining part of a bar (texture channel)
+    var defs = el("defs", {}, svg);
+    var pat = el("pattern", { id: "trk-hatch", patternUnits: "userSpaceOnUse", width: 6, height: 6, patternTransform: "rotate(45)" }, defs);
+    el("line", { x1: 0, y1: 0, x2: 0, y2: 6, stroke: "currentColor", "stroke-width": 1.2, opacity: 0.35 }, pat);
+
+    // header: months and weeks
+    var gHead = el("g", { class: "trk-head" }, svg);
+    var semStart = d(data.semester_start);
+    // week bands
+    for (var w = 0; w < 17; w++) {
+      var ws = addDays(semStart, w * 7), we = addDays(ws, 7);
+      if (we <= t0 || ws >= t1) continue;
+      var xa = x(ws < t0 ? t0 : ws), xb = x(we > t1 ? t1 : we);
+      if (w % 2 === 1) el("rect", { x: xa, y: headH, width: xb - xa, height: height - headH - bottom, class: "trk-weekband" }, gHead);
+      el("line", { x1: xa, y1: headH - 18, x2: xa, y2: height - bottom, class: "trk-grid" }, gHead);
+      if (w < 16 && xb - xa > 26) text(gHead, (xa + xb) / 2, headH - 5, "W" + (w + 1) + (window_ === "next4" ? " \u00b7 " + fmtShort(ws) : ""), { class: "trk-weeklabel", "text-anchor": "middle" });
+    }
+    // month labels
+    var m = new Date(Date.UTC(t0.getUTCFullYear(), t0.getUTCMonth(), 1));
+    while (m < t1) {
+      var mEnd = new Date(Date.UTC(m.getUTCFullYear(), m.getUTCMonth() + 1, 1));
+      var ma = x(m < t0 ? t0 : m), mb = x(mEnd > t1 ? t1 : mEnd);
+      if (mb - ma > 64) text(gHead, ma + 6, 16, MONTHS[m.getUTCMonth()] + " " + m.getUTCFullYear(), { class: "trk-monthlabel" });
+      else if (mb - ma > 26) text(gHead, ma + 4, 16, MONTHS[m.getUTCMonth()], { class: "trk-monthlabel" });
+      el("line", { x1: ma, y1: 4, x2: ma, y2: headH - 18, class: "trk-grid trk-grid-strong" }, gHead);
+      m = mEnd;
+    }
+
+    // course-load lane
+    var y = headH;
+    if (laneH) {
+      var gLane = el("g", { class: "trk-lane" }, svg);
+      el("rect", { x: labelW, y: y, width: plotW, height: laneH, class: "trk-lane-bg" }, gLane);
+      text(gLane, 10, y + 19, "Course load", { class: "trk-rowlabel trk-rowlabel-muted" });
+      data.events.forEach(function (e) {
+        if (e.dateObj < t0 || e.dateObj >= t1) return;
+        var cx = x(e.dateObj) + dayW / 2, cy = y + laneH / 2;
+        var g = el("g", { class: "trk-event trk-event-" + e.kind + (statusSlug(e.state) === "done" ? " trk-event-done" : "") }, gLane);
+        if (e.kind === "homework") el("rect", { x: cx - 4, y: cy - 4, width: 8, height: 8, rx: 1.5 }, g);
+        else if (e.kind === "quiz") el("path", { d: "M" + cx + " " + (cy - 5.5) + " L" + (cx + 5.5) + " " + (cy + 4.5) + " L" + (cx - 5.5) + " " + (cy + 4.5) + " Z" }, g);
+        else if (e.kind === "exam") el("path", { d: "M" + cx + " " + (cy - 7) + " L" + (cx + 7) + " " + cy + " L" + cx + " " + (cy + 7) + " L" + (cx - 7) + " " + cy + " Z" }, g);
+        else el("circle", { cx: cx, cy: cy, r: 5 }, g);
+        el("rect", { x: cx - 8, y: cy - 12, width: 16, height: 24, fill: "transparent" }, g);
+        g.addEventListener("mousemove", function (ev) { showTip('<div class="trk-tip-h">' + esc(e.item) + '</div><table><tr><th>When</th><td>' + fmt(e.dateObj) + '</td></tr><tr><th>Kind</th><td>' + esc(e.kind) + '</td></tr><tr><th>State</th><td>' + esc(e.state) + '</td></tr></table>', ev); });
+        g.addEventListener("mouseleave", hideTip);
+      });
+      y += laneH;
+    }
+
+    // rows
+    var gRows = el("g", { class: "trk-rows" }, svg);
+    var rowIndex = {};
+    groups.forEach(function (grp) {
+      var slug = slugify(grp.phase);
+      var gp = el("g", { class: "trk-phase-row" }, gRows);
+      el("rect", { x: 0, y: y, width: width, height: phaseH, class: "trk-phase-bg" }, gp);
+      el("rect", { x: 10, y: y + 8, width: 10, height: 10, rx: 2, class: "trk-swatch phase-" + slug }, gp);
+      var open = grp.rows.filter(function (a) { return a.slug !== "done"; }).length;
+      var pmin = grp.rows.reduce(function (acc, a) { return !acc || a.esDate < acc ? a.esDate : acc; }, null);
+      var pmax = grp.rows.reduce(function (acc, a) { return !acc || a.efDate > acc ? a.efDate : acc; }, null);
+      text(gp, 26, y + 17, grp.phase, { class: "trk-phaselabel" });
+      text(gp, labelW - 8, y + 17, grp.rows.length + (open ? " (" + open + " open)" : " (all done)"), { class: "trk-phasemeta", "text-anchor": "end" });
+      // phase span line
+      el("line", { x1: x(pmin), y1: y + phaseH / 2, x2: x(addDays(pmax, 1)), y2: y + phaseH / 2, class: "trk-phasespan phase-" + slug }, gp);
+      y += phaseH;
+
+      grp.rows.forEach(function (a) {
+        rowIndex[a.id] = y;
+        var g = el("g", { class: "trk-row trk-row-" + a.slug + (a.critical ? " trk-crit" : "") + (a.near_critical ? " trk-near" : ""), "data-id": a.id }, gRows);
+        el("rect", { x: 0, y: y, width: width, height: rowH, class: "trk-row-bg" }, g);
+        // label
+        var label = a.activity;
+        var maxChars = Math.floor((labelW - 70) / 6.3);
+        if (label.length > maxChars) label = label.slice(0, maxChars - 1) + "…";
+        var lab = text(g, 12, y + rowH / 2 + 4, a.id, { class: "trk-rowid" });
+        text(g, 52, y + rowH / 2 + 4, label, { class: "trk-rowlabel" });
+        if (a.critical && a.slug !== "done") el("rect", { x: 0, y: y + 3, width: 3, height: rowH - 6, class: "trk-critmark" }, g);
+        else if (a.near_critical) el("rect", { x: 0, y: y + 3, width: 3, height: rowH - 6, class: "trk-nearmark" }, g);
+
+        // late window (LS..LF) as a faint band for open constrained activities
+        if (a.lsDate && a.slug !== "done" && a.lsDate > a.esDate) {
+          el("rect", { x: x(a.esDate), y: y + 9, width: Math.max(0, x(addDays(a.lfDate, 1)) - x(a.esDate)), height: rowH - 18, class: "trk-latewindow" }, g);
+        }
+
+        // bar (early schedule)
+        var bx = x(a.esDate), bw = Math.max(dayW * 0.9, x(addDays(a.efDate, 1)) - bx - Math.min(2, dayW * 0.15));
+        var barH = 14, by = y + (rowH - barH) / 2;
+        el("rect", { x: bx, y: by, width: bw, height: barH, rx: 3, class: "trk-bar trk-bar-rest phase-" + slug }, g);
+        if (a.pct > 0) {
+          el("rect", { x: bx, y: by, width: Math.max(2, bw * Math.min(a.pct, 100) / 100), height: barH, rx: 3, class: "trk-bar trk-bar-done phase-" + slug }, g);
+        }
+        if (a.slug !== "done") {
+          el("rect", { x: bx + (a.pct > 0 ? bw * Math.min(a.pct, 100) / 100 : 0), y: by, width: bw - (a.pct > 0 ? bw * Math.min(a.pct, 100) / 100 : 0), height: barH, fill: "url(#trk-hatch)", class: "trk-bar-hatch", rx: 3 }, g);
+        }
+        // milestone diamond at the deadline
+        if (a.deadlineDate) {
+          var mx = x(a.deadlineDate) + dayW / 2, my = y + rowH / 2;
+          el("path", { d: "M" + mx + " " + (my - 8) + " L" + (mx + 8) + " " + my + " L" + mx + " " + (my + 8) + " L" + (mx - 8) + " " + my + " Z", class: "trk-milestone phase-" + slug }, g);
+        }
+        // float label at the bar end
+        if (a.slug !== "done" && a.total_float != null) {
+          var fl = a.total_float < 0 ? Math.abs(a.total_float) + "d late" : a.total_float + "d";
+          var fx = (a.deadlineDate ? x(a.deadlineDate) + dayW / 2 + 12 : bx + bw + 6);
+          if (fx < width - 30) text(g, fx, y + rowH / 2 + 4, fl, { class: "trk-float" + (a.total_float <= 0 ? " trk-float-crit" : a.total_float <= 3 ? " trk-float-near" : "") });
+        }
+        // hit area + tooltip
+        var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("click", function () { focusRow(a.id); });
+        y += rowH;
+      });
+    });
+
+    // dependency focus
+    var focused = null;
+    function focusRow(id) {
+      var byId = {};
+      data.activities.forEach(function (a) { byId[a.id] = a; });
+      if (focused === id) { focused = null; svg.classList.remove("trk-focused"); svg.querySelectorAll(".trk-row").forEach(function (r) { r.classList.remove("trk-rel", "trk-self", "trk-pred", "trk-succ"); }); return; }
+      focused = id;
+      svg.classList.add("trk-focused");
+      var preds = {}, succs = {};
+      (function walkP(i) { (byId[i] ? byId[i].preds : []).forEach(function (p) { if (!preds[p]) { preds[p] = 1; walkP(p); } }); })(id);
+      (function walkS(i) { (byId[i] ? byId[i].succs : []).forEach(function (s) { if (!succs[s]) { succs[s] = 1; walkS(s); } }); })(id);
+      svg.querySelectorAll(".trk-row").forEach(function (r) {
+        var rid = r.getAttribute("data-id");
+        r.classList.remove("trk-rel", "trk-self", "trk-pred", "trk-succ");
+        if (rid === id) r.classList.add("trk-rel", "trk-self");
+        else if (preds[rid]) r.classList.add("trk-rel", "trk-pred");
+        else if (succs[rid]) r.classList.add("trk-rel", "trk-succ");
+      });
+    }
+
+    // today line
+    if (today >= t0 && today < t1) {
+      var tx = x(today) + dayW / 2;
+      el("line", { x1: tx, y1: headH - 18, x2: tx, y2: height - bottom, class: "trk-today" }, svg);
+      var tl = el("g", { class: "trk-todaylabel" }, svg);
+      el("rect", { x: tx - 22, y: headH - 34, width: 44, height: 16, rx: 8 }, tl);
+      text(tl, tx, headH - 22, "Today", { "text-anchor": "middle" });
+    }
+
+    if (!acts.length) {
+      var empty = document.createElement("p");
+      empty.className = "trk-empty";
+      empty.textContent = "Nothing matches this view.";
+      container.appendChild(empty);
+    }
+    return svg;
+  }
+
+  function ganttControls(container, data, state, rerender) {
+    var bar = document.createElement("div");
+    bar.className = "trk-controls";
+    var phases = PHASES.filter(function (p) { return data.activities.some(function (a) { return a.phase === p; }); });
+    function btn(label, key, value, group) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "trk-btn"; b.textContent = label;
+      b.setAttribute("data-group", group); b.setAttribute("data-value", value);
+      if (state[key] === value) b.classList.add("is-active");
+      b.addEventListener("click", function () {
+        state[key] = value;
+        bar.querySelectorAll('[data-group="' + group + '"]').forEach(function (o) { o.classList.toggle("is-active", o.getAttribute("data-value") === value); });
+        rerender();
+      });
+      return b;
+    }
+    var g1 = document.createElement("div"); g1.className = "trk-btngroup";
+    g1.appendChild(btn("Everything", "mode", "all", "mode"));
+    g1.appendChild(btn("Open only", "mode", "open", "mode"));
+    g1.appendChild(btn("Critical path", "mode", "critical", "mode"));
+    var g2 = document.createElement("div"); g2.className = "trk-btngroup";
+    g2.appendChild(btn("Whole semester", "window", "semester", "window"));
+    g2.appendChild(btn("Next four weeks", "window", "next4", "window"));
+    var sel = document.createElement("select"); sel.className = "trk-select"; sel.setAttribute("aria-label", "Phase");
+    var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "All phases"; sel.appendChild(o0);
+    phases.forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p; sel.appendChild(o); });
+    sel.addEventListener("change", function () {
+      if (sel.value) { state.mode = "phase:" + sel.value; g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); }); }
+      else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
+      rerender();
+    });
+    bar.appendChild(g1); bar.appendChild(g2); bar.appendChild(sel);
+    container.appendChild(bar);
+  }
+
+  function legend(container) {
+    var lg = document.createElement("div");
+    lg.className = "trk-legend";
+    lg.innerHTML =
+      PHASES.slice(0, 8).map(function (p) { return '<span class="trk-lg"><span class="trk-swatch-i phase-' + slugify(p) + '"></span>' + esc(p) + '</span>'; }).join("") +
+      '<span class="trk-lg"><span class="trk-lg-bar"><span class="trk-lg-done"></span><span class="trk-lg-rest"></span></span>done / remaining</span>' +
+      '<span class="trk-lg"><span class="trk-lg-diamond"></span>deadline</span>' +
+      '<span class="trk-lg"><span class="trk-lg-late"></span>late window</span>' +
+      '<span class="trk-lg"><span class="trk-lg-critmark"></span>zero float (critical)</span>' +
+      '<span class="trk-lg"><span class="trk-lg-nearmark"></span>1 to 3 days of float</span>' +
+      '<span class="trk-lg"><span class="trk-lg-today"></span>today</span>' +
+      '<span class="trk-lg trk-lg-load"><span class="trk-ev-hw"></span>homework <span class="trk-ev-quiz"></span>quiz <span class="trk-ev-exam"></span>exam <span class="trk-ev-proj"></span>deliverable</span>';
+    container.appendChild(lg);
+  }
+
+  function mountGantt(container, data) {
+    var state = { mode: container.getAttribute("data-mode") || "all", window: container.getAttribute("data-window") || "semester" };
+    var showControls = container.getAttribute("data-controls") !== "false";
+    var showLoad = container.getAttribute("data-load") !== "false";
+    var chart = document.createElement("div");
+    function rerender() {
+      renderGantt(chart, data, { mode: state.mode, window: state.window, showLoad: showLoad, showOngoing: state.mode.indexOf("phase:") === 0 || state.mode === "all" });
+    }
+    if (showControls) ganttControls(container, data, state, rerender);
+    container.appendChild(chart);
+    rerender();
+    if (container.getAttribute("data-legend") !== "false") legend(container);
+    var t;
+    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(rerender, 150); });
+  }
+
+  /* ---------- deliverable chain ---------- */
+  function renderChain(container, data) {
+    container.innerHTML = "";
+    var today = data.todayDate;
+    var byId = {};
+    data.activities.forEach(function (a) { byId[a.id] = a; });
+    var ms = data.activities.filter(function (a) { return a.deadlineDate && a.phase !== "Setup"; })
+      .sort(function (a, b) { return a.deadlineDate - b.deadlineDate; });
+    // fielding is a milestone in practice even without a deadline
+    var field = byId["FS04"];
+    var nodes = [];
+    var teamDone = data.activities.filter(function (a) { return a.phase === "Setup" && a.slug === "done"; }).length;
+    nodes.push({ label: "Team and topic", date: byId["S02"] ? byId["S02"].dueDate : null, phase: "Setup", status: teamDone >= 2 ? "Done" : "In progress", float: null, id: "S02", sub: "settled" });
+    ms.forEach(function (a) {
+      var chain = {};
+      (function walk(i) { (byId[i] ? byId[i].preds : []).forEach(function (p) { if (!chain[p]) { chain[p] = 1; walk(p); } }); })(a.id);
+      var open = Object.keys(chain).map(function (k) { return byId[k]; }).concat([a]).filter(function (b) { return b && b.slug !== "done" && b.total_float != null && b.phase === a.phase; });
+      var f = open.length ? Math.min.apply(null, open.map(function (b) { return b.total_float; })) : null;
+      var openCount = data.activities.filter(function (b) { return b.phase === a.phase && b.slug !== "done"; }).length;
+      var st = a.slug === "done" ? "Done" : (a.deadlineDate < today ? "Late" : (open.length && data.activities.some(function (b) { return b.phase === a.phase && b.slug === "active"; }) ? "In progress" : "Upcoming"));
+      nodes.push({ label: a.deliverable || a.activity, date: a.deadlineDate, phase: a.phase, status: st, float: f, id: a.id, sub: openCount ? openCount + " open" : "all done" });
+    });
+    if (field) {
+      var idx = nodes.findIndex(function (n) { return n.id === "FA06"; });
+      nodes.splice(idx, 0, { label: "Fielding on Prolific", date: field.efDate, phase: field.phase, status: field.slug === "done" ? "Done" : "Upcoming", float: field.total_float, id: field.id, sub: "assumed window" });
+    }
+    // Presentation: merge PR03 (slides) and PR04 (present) labels
+    nodes = nodes.map(function (n) {
+      if (n.id === "PR03") n.label = "Slides pushed";
+      if (n.id === "PR04") n.label = "Presentation";
+      return n;
+    });
+
+    var width = Math.max(container.clientWidth || 900, 320);
+    var nodeW = 156, nodeH = 66, gapX = 66, gapY = 48, padX = 8;
+    var perRow = Math.max(1, Math.floor((width - padX * 2 + gapX) / (nodeW + gapX)));
+    var rows = Math.ceil(nodes.length / perRow);
+    var height = rows * nodeH + (rows - 1) * gapY + 20;
+    var svg = el("svg", { width: width, height: height, viewBox: "0 0 " + width + " " + height, class: "trk-chain", role: "img", "aria-label": "Deliverable chain with float" }, container);
+    var defs = el("defs", {}, svg);
+    var mk = el("marker", { id: "trk-arrow", viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: "auto-start-reverse" }, defs);
+    el("path", { d: "M0 0 L10 5 L0 10 Z", class: "trk-arrowhead" }, mk);
+
+    var pos = nodes.map(function (n, i) {
+      var r = Math.floor(i / perRow), c = i % perRow;
+      if (r % 2 === 1) c = perRow - 1 - c; // snake layout
+      return { x: padX + c * (nodeW + gapX), y: 10 + r * (nodeH + gapY) };
+    });
+    // connectors
+    for (var i = 0; i < nodes.length - 1; i++) {
+      var p = pos[i], q = pos[i + 1], r0 = Math.floor(i / perRow), r1 = Math.floor((i + 1) / perRow);
+      var crit = nodes[i + 1].float != null && nodes[i + 1].float <= 0 && nodes[i + 1].status !== "Done";
+      var cls = "trk-link" + (crit ? " trk-link-crit" : "");
+      var path;
+      if (r0 === r1) {
+        var goRight = q.x > p.x;
+        var x1 = goRight ? p.x + nodeW : p.x, x2 = goRight ? q.x : q.x + nodeW, yy = p.y + nodeH / 2;
+        path = "M" + x1 + " " + yy + " L" + x2 + " " + yy;
+      } else {
+        path = "M" + (p.x + nodeW / 2) + " " + (p.y + nodeH) + " L" + (q.x + nodeW / 2) + " " + q.y;
+      }
+      el("path", { d: path, class: cls, "marker-end": "url(#trk-arrow)" }, svg);
+      if (nodes[i + 1].float != null && nodes[i + 1].status !== "Done") {
+        var f = nodes[i + 1].float;
+        var lbl = f < 0 ? Math.abs(f) + " d late" : f + " d";
+        if (r0 === r1) {
+          text(svg, (p.x + q.x + nodeW) / 2, p.y + nodeH / 2 - 6, lbl, { class: "trk-linklabel" + (f <= 0 ? " trk-linklabel-crit" : ""), "text-anchor": "middle" });
+        } else {
+          text(svg, p.x + nodeW / 2 + 8, (p.y + nodeH + q.y) / 2 + 4, lbl, { class: "trk-linklabel" + (f <= 0 ? " trk-linklabel-crit" : "") });
+        }
+      }
+    }
+    nodes.forEach(function (n, i) {
+      var p = pos[i], slug = slugify(n.phase), st = statusSlug(n.status);
+      var g = el("g", { class: "trk-node trk-node-" + st + (n.float != null && n.float <= 0 && st !== "done" ? " trk-node-crit" : ""), transform: "translate(" + p.x + "," + p.y + ")" }, svg);
+      el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, rx: 10, class: "trk-node-bg" }, g);
+      el("rect", { x: 0, y: 0, width: 6, height: nodeH, class: "trk-node-stripe phase-" + slug }, g);
+      // clip the stripe corners
+      el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, rx: 10, class: "trk-node-ring" }, g);
+      var lab = n.label.length > 20 ? n.label.slice(0, 19) + "…" : n.label;
+      text(g, 16, 22, lab, { class: "trk-node-title" });
+      text(g, 16, 40, n.date ? fmt(n.date) : "", { class: "trk-node-date" });
+      var s2 = n.status === "Done" ? "done" : n.status.toLowerCase() + (n.sub ? " · " + n.sub : "");
+      text(g, 16, 56, s2, { class: "trk-node-sub" });
+      if (st === "done") text(g, nodeW - 12, 22, "✓", { class: "trk-node-check", "text-anchor": "end" });
+      var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
+      var a = byId[n.id];
+      if (a) {
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+      }
+    });
+  }
+
+  function mountChain(container, data) {
+    renderChain(container, data);
+    var t;
+    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(function () { renderChain(container, data); }, 150); });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    var data = loadData();
+    if (!data) return;
+    document.querySelectorAll("[data-tracker='gantt']").forEach(function (c) { mountGantt(c, data); });
+    document.querySelectorAll("[data-tracker='chain']").forEach(function (c) { mountChain(c, data); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})();
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -2035,13 +3199,14 @@ Unequal contributions do not get equal grades
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2393,7 +3558,7 @@ Unequal contributions do not get equal grades
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with Quarto and R; data lives in data/*.csv.</p>
+<p>Built with Quarto and R; the schedule is computed from data/*.csv on every render.</p>
 </div>
   </div>
 </footer>

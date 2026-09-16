@@ -1,0 +1,40 @@
+---
+title: "Schedule"
+subtitle: "The Gantt chart: every activity on its computed early dates, with the course load above it"
+toc: false
+---
+
+```{r}
+source(file.path("R", "helpers.R"))
+deadlines <- read_data("deadlines.csv")
+weeks     <- read_data("weeks.csv")
+sched     <- cpm(read_activities())
+n_crit <- sum(sched$critical & status_slug(sched$status) != "done")
+n_open <- sum(status_slug(sched$status) != "done" & sched$phase != "Ongoing")
+```
+
+```{r}
+#| results: asis
+embed_schedule(sched, deadlines, weeks)
+cat('<div data-tracker="gantt" data-mode="all" data-window="semester"></div>')
+```
+
+## How to read it
+
+Each bar sits on the activity's **early schedule**: the earliest it can start given its planned start, today's date, and the finish of everything it depends on. The solid part of a bar is the reported progress, the hatched tint is what remains. A diamond is an official due date; the faint band behind a bar is the **late window**, the latest the activity could run without moving a deadline. The 3-pixel edge in the label gutter is the float verdict: red for zero (`r n_crit` of the `r n_open` open activities today), amber for one to three days.
+
+The lane at the top is everything else the course asks for in the same weeks: squares are homework, triangles quizzes, the black diamond is the final exam, the blue dots are the project deliverables. Weeks 9 to 13 are where the lane and the bars pile up together.
+
+## The rules behind the numbers
+
+- Time is counted in calendar days because the team works weekends. An activity occupies its start and due dates inclusive; the duration is the number of days between them.
+- `depends_on` in `data/activities.csv` holds finish-to-start predecessors: an activity cannot start until every predecessor has finished. Planned start dates are start-no-earlier-than constraints; they encode when the course teaches what an activity needs (surveydown arrives Sep 30, `cbc_design` on Oct 7, mixed logit on Nov 18).
+- Official due dates are hard finish-no-later-than constraints on the submission activities. The backward pass runs from those, so **float is measured against the professor's deadlines**, not against a made-up project end.
+- Today is the status date. A not-started activity whose planned start has passed is pushed to today; an in-progress one is assumed to finish on its due date or today, whichever is later. Done activities keep their actual dates and carry no float.
+- Total float is the number of days an activity can slip without moving a deadline. Zero float is the critical chain; one to three days is near-critical. Activities with no deadline downstream (the meeting sign-ups, the ongoing habits) are shown as open-ended rather than given a meaningless number.
+
+## Assumptions worth checking
+
+- The Prolific fielding window (FS04) is assumed to be Nov 17 to Nov 27. The professor launches it; the date should be confirmed at the Nov 11 class. Every day it starts late comes straight out of the final analysis, which has zero float.
+- The proposal workshop meeting (P05) is booked through the professor's scheduling link this week; if the slot lands on Friday, the revision (P06) and the move into the official repo (P07) compress into the weekend.
+- Classmates take the pilot over Oct 21 to 24 (PA01). The feedback sheet is due with HW8 on Oct 26, but the responses to our survey arrive earlier and cleaning starts on the partial data.

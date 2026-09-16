@@ -1,6 +1,6 @@
 ---
 title: "Team Project Tracker"
-subtitle: "EMSE 6035 · Marketing Analytics for Design Decisions · GWU · Fall 2026"
+subtitle: "EMSE 6035 · Marketing Analytics for Design Decisions · GWU · Fall 2026 · Team E · Smart Urban Living"
 toc: false
 ---
 
@@ -8,65 +8,112 @@ toc: false
 #| label: setup
 source(file.path("R", "helpers.R"))
 deadlines  <- read_data("deadlines.csv")
-activities <- read_data("activities.csv")
 weeks      <- read_data("weeks.csv")
-
-next_project <- deadlines |>
-  filter(kind == "project", date >= today) |>
-  arrange(date) |>
-  slice(1)
+sched      <- cpm(read_activities())
+health     <- schedule_health(sched)
 
 deliv <- deliverables(deadlines)
 n_deliv_done <- sum(status_slug(deliv$state) == "done")
 
-acts_done  <- sum(status_slug(activities$status) == "done")
-acts_total <- nrow(activities)
-pct_done   <- round(100 * acts_done / acts_total)
+next_project <- deliv |> filter(date >= today) |> arrange(date) |> slice(1)
+next_days <- if (nrow(next_project)) days_until(next_project$date) else NA
 
-open_crit <- activities |>
-  filter(critical, status_slug(status) != "done") |>
-  arrange(due) |>
-  slice_head(n = 6)
+work <- sched |> filter(phase != "Ongoing")
+acts_done  <- sum(status_slug(work$status) == "done")
+acts_total <- nrow(work)
+
+open_crit <- sched |>
+  filter(status_slug(status) != "done", critical) |>
+  arrange(es, id)
+open_near <- sched |> filter(status_slug(status) != "done", near_critical)
+overdue   <- sched |> filter(overdue)
 
 upcoming <- deadlines |>
   filter(date >= today) |>
   arrange(date) |>
   slice_head(n = 8)
+
+spi_word <- dplyr::case_when(
+  is.na(health$spi) ~ "no plan yet",
+  health$spi >= 0.97 ~ "on plan",
+  health$spi >= 0.85 ~ "slightly behind",
+  TRUE ~ "behind plan"
+)
 ```
 
-One page that knows where the team project stands: what is due next, which activities are on the critical path, how each week went, and a dev log of every work session. Everything on this site is generated from three CSV files in `data/`; edit those, re-render, push.
+<p class="hero-lead">One page that knows where the team project stands. The schedule below is not typed in: every render runs a critical path method over <code>data/activities.csv</code> (early and late dates, total float, the zero-float chain) with today as the status date, so the numbers move as the CSV changes.</p>
 
 ::: {.status-strip}
-::: {.status-card}
-<div class="label">Rendered</div>
-<div class="value">`r fmt_date(today, "%b %e")`</div>
-<div class="sub">`r format(today, "%A, %Y")`</div>
+::: {.status-card .is-hero}
+<div class="label">Next deliverable</div>
+<div class="value">`r if (nrow(next_project)) paste0(next_days, " <small>days</small>") else "none"`</div>
+<div class="sub">`r if (nrow(next_project)) paste0(str_remove(next_project$item, " \\(.*\\)$"), ", due ", fmt_date(next_project$date), " (", next_project$weight_pct, " percent of the grade)") else "all deliverables past"`</div>
 :::
 ::: {.status-card}
-<div class="label">Semester week</div>
-<div class="value">`r semester_week()` of 16</div>
-<div class="sub">`r if (semester_week() < 16) paste(as.integer(semester_end - today), "days to the end") else "final week"`</div>
+<div class="label">Schedule health</div>
+<div class="value">`r health$earned_pct`%</div>
+<div class="sub">Earned activity-days; the plan says `r health$planned_pct`% by today. `r str_to_sentence(spi_word)` (index `r health$spi`)</div>
 :::
 ::: {.status-card}
-<div class="label">Next project deliverable</div>
-<div class="value">`r if (nrow(next_project)) fmt_date(next_project$date) else "none"`</div>
-<div class="sub">`r if (nrow(next_project)) paste0(next_project$item, ", ", when_label(next_project$date)) else "all deliverables past"`</div>
+<div class="label">Zero float, open now</div>
+<div class="value">`r nrow(open_crit)`</div>
+<div class="sub">`r nrow(open_near)` more with 1 to 3 days; `r nrow(overdue)` overdue</div>
 :::
 ::: {.status-card}
 <div class="label">Deliverables submitted</div>
-<div class="value">`r n_deliv_done` of `r nrow(deliv)`</div>
+<div class="value">`r n_deliv_done` <small>of `r nrow(deliv)`</small></div>
 <div class="sub">45 percent of the course grade</div>
 :::
 ::: {.status-card}
-<div class="label">Activities done</div>
-<div class="value">`r acts_done` of `r acts_total`</div>
-<div class="sub">`r pct_done` percent of the activity list</div>
+<div class="label">Semester week</div>
+<div class="value">`r semester_week()` <small>of 16</small></div>
+<div class="sub">`r fmt_date(today)`; `r acts_done` of `r acts_total` activities done</div>
 :::
 :::
 
-<div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: `r pct_done`%"></div></div>
+<div class="meter"><div class="meter-fill" style="width: `r health$earned_pct`%"></div><div class="meter-mark" style="left: `r health$planned_pct`%"></div></div>
+<div class="meter-caption"><span>Earned `r health$earned_pct`% of planned activity-days</span><span>Plan says `r health$planned_pct`% by today (the mark)</span></div>
 
-## Next up
+## The next four weeks
+
+Open activities with a computed early start inside the window. Solid is done, the hatched tint is what remains, a diamond is an official deadline, the red edge marks zero float. Hover any row for the early and late dates; click a row to light up everything it depends on and everything waiting on it.
+
+```{r}
+#| results: asis
+embed_schedule(sched, deadlines, weeks)
+cat('<div data-tracker="gantt" data-mode="open" data-window="next4" data-controls="false" data-load="true"></div>')
+```
+
+## On the zero-float chain right now
+
+If any of these slip by a day, the deliverable behind them slips by a day. The [critical path](tracker/critical-path.qmd) page shows the whole chain.
+
+```{r}
+open_crit |>
+  slice_head(n = 8) |>
+  transmute(
+    ID = id,
+    Phase = phase_dot(phase),
+    Activity = activity,
+    Owner = owner,
+    `Early start` = paste0(fmt_date(es), " <small class='text-muted'>(", when_label(es), ")</small>"),
+    `Must finish` = fmt_date(lf),
+    Float = float_pill(total_float, status),
+    Status = pill(status)
+  ) |>
+  nice_table(align = "lllllllc")
+```
+
+## Deliverable chain
+
+Each box is an official deadline. The label on the arrow is the smallest float left in the work feeding that deadline; red means none.
+
+```{r}
+#| results: asis
+cat('<div data-tracker="chain"></div>')
+```
+
+## Due next
 
 Every dated item in the next stretch, from the course calendar. Project deliverables are the ones this site exists for; homework and quizzes are shown because they compete for the same weeks.
 
@@ -82,41 +129,6 @@ upcoming |>
   nice_table(align = "llllc")
 ```
 
-## Deliverable pipeline
-
-Seven deliverables, all submitted by pushing to the team's GitHub repo by 11:59 pm on the tracked date (the course overview table shows a date one day later for most of them; the earlier date is the one tracked here).
-
-```{r}
-deliv |>
-  transmute(
-    `#` = n,
-    Deliverable = str_remove(item, " \\(.*\\)$"),
-    Due = fmt_date(date, "%a %b %e"),
-    When = when_label(date),
-    `Weight (%)` = weight_pct,
-    State = pill(state),
-    Notes = replace_na(notes, "")
-  ) |>
-  nice_table(align = "rlllccl")
-```
-
-## On the critical path right now
-
-The next open activities that sit on the [critical path](tracker/critical-path.qmd). If one of these slips, the deliverable behind it slips.
-
-```{r}
-open_crit |>
-  transmute(
-    ID = id,
-    Phase = phase,
-    Activity = activity,
-    Owner = owner,
-    Due = paste0(fmt_date(due), " <small class='text-muted'>(", when_label(due), ")</small>"),
-    Status = pill(status)
-  ) |>
-  nice_table(align = "llllll")
-```
-
 ## This week
 
 ```{r}
@@ -124,7 +136,7 @@ open_crit |>
 wk <- weeks |> filter(week == semester_week())
 if (nrow(wk) == 1) {
   cat(sprintf(
-    "**Week %d (class on %s): %s.** %s Project focus: %s. %s\n",
+    "**Week %d (%s): %s.** %sProject focus: %s. %s\n",
     wk$week, fmt_date(wk$date), wk$class_topic,
     ifelse(is.na(wk$quiz) | wk$quiz == "", "", paste0("Quiz: ", wk$quiz, ". ")),
     wk$project_focus,
@@ -135,4 +147,4 @@ if (nrow(wk) == 1) {
 }
 ```
 
-See the full [week-by-week table](tracker/progress.qmd), the [activity list](tracker/activities.qmd), and the [dev log](devlog/index.qmd) for what happened in each work session.
+See the full [schedule](tracker/schedule.qmd), the [activity list](tracker/activities.qmd), the [risk register](tracker/risks.qmd), the [week-by-week table](tracker/progress.qmd), and the [dev log](devlog/index.qmd) for what happened in each work session.

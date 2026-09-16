@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Critical path – EMSE 6035 Project Tracker</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8d68b46d66c3c2185d226d4d244cb7a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,11 +74,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -99,25 +105,26 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tracker</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
-        <li>
-    <a class="dropdown-item" href="../tracker/activities.html">
- <span class="dropdown-text">Activities</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/schedule.html"> 
+<span class="menu-text">Schedule</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../tracker/critical-path.html">
- <span class="dropdown-text">Critical path</span></a>
+  <li class="nav-item">
+    <a class="nav-link active" href="../tracker/critical-path.html" aria-current="page"> 
+<span class="menu-text">Critical path</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../tracker/progress.html">
- <span class="dropdown-text">Week by week</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/activities.html"> 
+<span class="menu-text">Activities</span></a>
   </li>  
-    </ul>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/risks.html"> 
+<span class="menu-text">Risks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/progress.html"> 
+<span class="menu-text">Week by week</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -137,30 +144,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-chain" id="toc-the-chain" class="nav-link active" data-scroll-target="#the-chain">The chain</a></li>
-  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">Timeline</a></li>
-  <li><a href="#float-on-each-critical-activity" id="toc-float-on-each-critical-activity" class="nav-link" data-scroll-target="#float-on-each-critical-activity">Float on each critical activity</a></li>
-  <li><a href="#where-the-risk-concentrates" id="toc-where-the-risk-concentrates" class="nav-link" data-scroll-target="#where-the-risk-concentrates">Where the risk concentrates</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Critical path</h1>
-<p class="subtitle lead">The chain of activities that cannot slip without moving a deliverable</p>
+<p class="subtitle lead">The chain of activities that cannot slip without moving a deliverable, computed on every render</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -172,424 +168,522 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The project is a strict pipeline: each deliverable is the input to the next, and the final survey has to be in the field over Thanksgiving week before any final analysis can happen. That makes almost every project activity critical. The diagram shows the chain by deliverable; the table underneath is computed from <code>data/activities.csv</code> and shows, for each critical activity, how many days of float sit between its due date and the start of whatever depends on it.</p>
+<p>The project is a strict pipeline: each deliverable is the input to the next, and the final survey has to be in the field over Thanksgiving before any final analysis can happen. Because every submission date is a hard constraint, the critical path is not one long chain but a series of zero-float segments, one per deliverable, joined by the handoffs between them. Today 29 open activities carry zero float, 8 carry one to three days, and 3 have more room than that.</p>
 <section id="the-chain" class="level2">
 <h2 class="anchored" data-anchor-id="the-chain">The chain</h2>
-<div class="cell" data-fig-width="10" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  T[Team formed&lt;br/&gt;by Sep 9] --&gt; TP[Topic chosen&lt;br/&gt;by Sep 9]
-  TP --&gt; P[Proposal&lt;br/&gt;Sep 20]
-  P --&gt; W[Proposal workshop&lt;br/&gt;week of Sep 16]
-  W --&gt; SP[Survey plan&lt;br/&gt;Sep 29]
-  SP --&gt; PS[Pilot survey live&lt;br/&gt;Oct 13]
-  PS --&gt; CL[Classmates take pilots&lt;br/&gt;week of Oct 21]
-  CL --&gt; PA[Pilot analysis&lt;br/&gt;Nov 1]
-  PA --&gt; FS[Final survey live&lt;br/&gt;Nov 15]
-  FS --&gt; FD[Fielding on Prolific&lt;br/&gt;Nov 23 to 29]
-  FD --&gt; FA[Final analysis report&lt;br/&gt;Dec 6]
-  FA --&gt; PR[Presentation&lt;br/&gt;Dec 8 and 9]
-  classDef done fill:#d4edda,stroke:#155724,color:#155724;
-  classDef active fill:#fff3cd,stroke:#7a5a00,color:#7a5a00;
-  class T active;
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
+<script type="application/json" id="schedule-data">
+{"today":"2026-09-16","semester_start":"2026-08-24","semester_end":"2026-12-13","activities":[{"id":"S01","phase":"Setup","activity":"Form the team on the team-formation sheet","owner":"Team","start":"2026-08-26","due":"2026-09-10","deadline":null,"es":"2026-08-26","ef":"2026-09-10","ls":"2026-08-07","lf":"2026-08-22","dur":16,"pct":100,"status":"Done","deliverable":"","depends_on":"","successors":"S02;S03;S04;S05;S06;O01;O03","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Five members; the course guideline says three to four, so the size is confirmed with the professor under S05"},{"id":"S02","phase":"Setup","activity":"Choose the topic against the seven selection criteria","owner":"Team","start":"2026-09-02","due":"2026-09-14","deadline":null,"es":"2026-09-02","ef":"2026-09-14","ls":"2026-08-23","lf":"2026-09-04","dur":13,"pct":100,"status":"Done","deliverable":"","depends_on":"S01","successors":"P01;P02","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Smart Urban Living: a Smart Urban Apartment Package for multifamily rentals, settled with the proposal draft of Sep 15"},{"id":"S03","phase":"Setup","activity":"Create the brainstorming repo from the local scaffold and invite every teammate","owner":"Harshit","start":"2026-09-09","due":"2026-09-18","deadline":null,"es":"2026-09-09","ef":"2026-09-18","ls":null,"lf":null,"dur":10,"pct":60,"status":"In progress","deliverable":"","depends_on":"S01","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Repo created and pushed Sep 16; two invitations out, two still to send"},{"id":"S04","phase":"Setup","activity":"Everyone accepts the official team repo invitation and clones it","owner":"Team","start":"2026-09-10","due":"2026-09-18","deadline":null,"es":"2026-09-10","ef":"2026-09-18","ls":"2026-09-11","lf":"2026-09-19","dur":9,"pct":80,"status":"In progress","deliverable":"","depends_on":"S01","successors":"P08","total_float":1,"free_float":1,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"The professor created the official repo Sep 10; four of five members are on it"},{"id":"S05","phase":"Setup","activity":"Ask the professor to add the fifth member to the official repo and confirm the team size","owner":"Team","start":"2026-09-16","due":"2026-09-18","deadline":"2026-09-20","es":"2026-09-16","ef":"2026-09-18","ls":"2026-09-18","lf":"2026-09-20","dur":3,"pct":0,"status":"Not started","deliverable":"","depends_on":"S01","successors":"","total_float":2,"free_float":null,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Only an org admin can add a collaborator; the proposal carries five names, so this is settled before submission"},{"id":"S06","phase":"Setup","activity":"Fill TEAM.md and the team page: one owner and one backup per deliverable, meeting cadence","owner":"Team","start":"2026-09-16","due":"2026-09-23","deadline":null,"es":"2026-09-16","ef":"2026-09-23","ls":"2026-09-22","lf":"2026-09-29","dur":8,"pct":0,"status":"Not started","deliverable":"","depends_on":"S01","successors":"S07","total_float":6,"free_float":0,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Owners are TBD until the team assigns them at a sync"},{"id":"S07","phase":"Setup","activity":"Decide who owns the shinyapps.io account and the Supabase project","owner":"Team","start":"2026-09-24","due":"2026-10-02","deadline":null,"es":"2026-09-24","ef":"2026-10-02","ls":"2026-09-30","lf":"2026-10-08","dur":9,"pct":0,"status":"Not started","deliverable":"","depends_on":"S06","successors":"PS04","total_float":6,"free_float":6,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Keys stay in that person's .Renviron, never in any repo"},{"id":"P01","phase":"Proposal","activity":"Market opportunity research: customer, competitors, market size","owner":"Team","start":"2026-09-09","due":"2026-09-14","deadline":null,"es":"2026-09-09","ef":"2026-09-14","ls":"2026-09-05","lf":"2026-09-10","dur":6,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"S02","successors":"P03","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Draft carries Rently 2025 and Yardi Matrix Q2 2026 figures, both verified Sep 16; references still to be added under P06"},{"id":"P02","phase":"Proposal","activity":"Attributes and levels table, product diagram, and the three research questions","owner":"Team","start":"2026-09-09","due":"2026-09-14","deadline":null,"es":"2026-09-09","ef":"2026-09-14","ls":"2026-09-05","lf":"2026-09-10","dur":6,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"S02","successors":"P03","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Six attributes: monthly premium, access and security, climate, lighting, package management, EV charging"},{"id":"P03","phase":"Proposal","activity":"Draft proposal.qmd v1 and render it","owner":"Teammate","start":"2026-09-12","due":"2026-09-15","deadline":null,"es":"2026-09-12","ef":"2026-09-15","ls":"2026-09-11","lf":"2026-09-14","dur":4,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"P01;P02","successors":"P04;P05","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rendered Sep 15 with all five names in the YAML"},{"id":"P04","phase":"Proposal","activity":"Review the draft against the 55-point rubric and log the findings","owner":"Harshit","start":"2026-09-16","due":"2026-09-16","deadline":null,"es":"2026-09-16","ef":"2026-09-16","ls":"2026-09-15","lf":"2026-09-15","dur":1,"pct":100,"status":"Done","deliverable":"Proposal","depends_on":"P03","successors":"P06","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Findings in the Sep 16 dev log post: five blocking fixes, seven improvements, one fit risk"},{"id":"P05","phase":"Proposal","activity":"Proposal workshop meeting with the professor (remote, week 4)","owner":"Team","start":"2026-09-16","due":"2026-09-18","deadline":null,"es":"2026-09-16","ef":"2026-09-18","ls":"2026-09-16","lf":"2026-09-18","dur":3,"pct":0,"status":"Not started","deliverable":"","depends_on":"P03","successors":"P07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Book through the professor's scheduling link; bring the emerging-product argument"},{"id":"P06","phase":"Proposal","activity":"Revise to v2: remove AI paste artifacts, fix cross-ref and heading levels, add references, benchmark real competitors with prices, quantify the retrofit market, rework price levels, argue the fit","owner":"Team","start":"2026-09-16","due":"2026-09-18","deadline":null,"es":"2026-09-16","ef":"2026-09-18","ls":"2026-09-16","lf":"2026-09-18","dur":3,"pct":10,"status":"In progress","deliverable":"Proposal","depends_on":"P04","successors":"P07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"The fix list exists; the edits are in the teammate's .qmd"},{"id":"P07","phase":"Proposal","activity":"Move the proposal into the official repo (1-proposal/proposal.qmd, image in images/), apply the workshop feedback, render, spell-check","owner":"Submitter","start":"2026-09-19","due":"2026-09-19","deadline":null,"es":"2026-09-19","ef":"2026-09-19","ls":"2026-09-19","lf":"2026-09-19","dur":1,"pct":0,"status":"Not started","deliverable":"Proposal","depends_on":"P05;P06","successors":"P08","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"spelling::spell_check_files(); delete leftover template text; update the date"},{"id":"P08","phase":"Proposal","activity":"Final read-through by a second member, commit and push the proposal","owner":"Submitter","start":"2026-09-20","due":"2026-09-20","deadline":"2026-09-20","es":"2026-09-20","ef":"2026-09-20","ls":"2026-09-20","lf":"2026-09-20","dur":1,"pct":0,"status":"Not started","deliverable":"Proposal","depends_on":"P07;S04","successors":"SP01;SP02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Sun Sep 20, 11:59 pm. Zero float: the workshop sits in the same week"},{"id":"SP01","phase":"Survey plan","activity":"Lock the attribute list and levels after the workshop: units, price levels with a base-rent anchor, one-line level definitions","owner":"Team","start":"2026-09-21","due":"2026-09-23","deadline":null,"es":"2026-09-21","ef":"2026-09-23","ls":"2026-09-21","lf":"2026-09-23","dur":3,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"P08","successors":"SP03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Decide whether security splits into lock and video, and whether EV charging stays a full attribute"},{"id":"SP02","phase":"Survey plan","activity":"Target population, fallback, and the exact eligibility question text","owner":"Team","start":"2026-09-21","due":"2026-09-24","deadline":null,"es":"2026-09-21","ef":"2026-09-24","ls":"2026-09-23","lf":"2026-09-26","dur":4,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"P08","successors":"SP04","total_float":2,"free_float":2,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Default: paid U.S. Prolific respondents who rent or expect to rent within two years"},{"id":"SP03","phase":"Survey plan","activity":"Choice question text and the attributes-and-levels table","owner":"Team","start":"2026-09-24","due":"2026-09-26","deadline":null,"es":"2026-09-24","ef":"2026-09-26","ls":"2026-09-24","lf":"2026-09-26","dur":3,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"SP01","successors":"SP04;PS02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric: Attributes and Levels 10 pts"},{"id":"SP04","phase":"Survey plan","activity":"Survey content as exact text: welcome, consent (18 plus, 'I have read and understand'), education per attribute, respondent info, other questions","owner":"Team","start":"2026-09-27","due":"2026-09-28","deadline":null,"es":"2026-09-27","ef":"2026-09-28","ls":"2026-09-27","lf":"2026-09-28","dur":2,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"SP02;SP03","successors":"SP05;PS03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Include the privacy and EV-ownership questions from the proposal's open questions"},{"id":"SP05","phase":"Survey plan","activity":"Assemble survey_plan.qmd, render, spell-check, commit and push","owner":"Submitter","start":"2026-09-29","due":"2026-09-29","deadline":"2026-09-29","es":"2026-09-29","ef":"2026-09-29","ls":"2026-09-29","lf":"2026-09-29","dur":1,"pct":0,"status":"Not started","deliverable":"Survey Plan","depends_on":"SP04","successors":"SP06;PS01","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Tue Sep 29"},{"id":"SP06","phase":"Survey plan","activity":"Sign up for the survey-plan meeting with the professor (week of Oct 7)","owner":"Team","start":"2026-09-30","due":"2026-10-06","deadline":null,"es":"2026-09-30","ef":"2026-10-06","ls":null,"lf":null,"dur":7,"pct":0,"status":"Not started","deliverable":"","depends_on":"SP05","successors":"PS06","total_float":null,"free_float":0,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Sign-up is announced in the course Slack"},{"id":"PS01","phase":"Pilot survey","activity":"Learn the surveydown conjoint-buttons template; run the sample app locally","owner":"Team","start":"2026-09-30","due":"2026-10-03","deadline":null,"es":"2026-09-30","ef":"2026-10-03","ls":"2026-09-30","lf":"2026-10-03","dur":4,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"SP05","successors":"PS02;PS03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Class 6 (Sep 30) introduces surveydown; HW4 covers the basics"},{"id":"PS02","phase":"Pilot survey","activity":"code/1_make_choice_questions.R: generate data/choice_questions.csv with cbc_design","owner":"Team","start":"2026-10-04","due":"2026-10-07","deadline":null,"es":"2026-10-04","ef":"2026-10-07","ls":"2026-10-07","lf":"2026-10-10","dur":4,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"SP03;PS01","successors":"PS05","total_float":3,"free_float":3,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Randomised choice sets must render live without error"},{"id":"PS03","phase":"Pilot survey","activity":"Build survey.qmd from the plan text: welcome, consent, screening, education, conjoint block, other questions","owner":"Team","start":"2026-10-04","due":"2026-10-08","deadline":null,"es":"2026-10-04","ef":"2026-10-08","ls":"2026-10-04","lf":"2026-10-08","dur":5,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"SP04;PS01","successors":"PS04","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Replace every placeholder; render often"},{"id":"PS04","phase":"Pilot survey","activity":"Connect the Supabase project and confirm responses are stored","owner":"Account owner","start":"2026-10-09","due":"2026-10-10","deadline":null,"es":"2026-10-09","ef":"2026-10-10","ls":"2026-10-09","lf":"2026-10-10","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"S07;PS03","successors":"PS05","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Keys in .Renviron only"},{"id":"PS05","phase":"Pilot survey","activity":"Deploy to shinyapps.io; end-to-end test on a phone and a laptop","owner":"Account owner","start":"2026-10-11","due":"2026-10-12","deadline":null,"es":"2026-10-11","ef":"2026-10-12","ls":"2026-10-11","lf":"2026-10-12","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"PS02;PS04","successors":"PS07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric: Deployment 10 pts"},{"id":"PS06","phase":"Pilot survey","activity":"Survey-plan meeting with the professor (week of Oct 7)","owner":"Team","start":"2026-10-07","due":"2026-10-09","deadline":null,"es":"2026-10-07","ef":"2026-10-09","ls":null,"lf":null,"dur":3,"pct":0,"status":"Not started","deliverable":"","depends_on":"SP06","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Bring the draft choice question and the design file"},{"id":"PS07","phase":"Pilot survey","activity":"Push the pilot survey folder and confirm the live link","owner":"Submitter","start":"2026-10-13","due":"2026-10-13","deadline":"2026-10-13","es":"2026-10-13","ef":"2026-10-13","ls":"2026-10-13","lf":"2026-10-13","dur":1,"pct":0,"status":"Not started","deliverable":"Pilot Survey","depends_on":"PS05","successors":"PA01","total_float":0,"free_float":7,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Tue Oct 13"},{"id":"PA01","phase":"Pilot analysis","activity":"Classmates take our pilot; we take theirs and fill the feedback sheet (part of HW8)","owner":"Everyone","start":"2026-10-21","due":"2026-10-24","deadline":null,"es":"2026-10-21","ef":"2026-10-24","ls":"2026-10-21","lf":"2026-10-24","dur":4,"pct":0,"status":"Not started","deliverable":"","depends_on":"PS07","successors":"PA02;PA05","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Week 9 class on Oct 21 starts the exchange; most responses land within three days"},{"id":"PA02","phase":"Pilot analysis","activity":"Download with sd_get_data(); save raw data; clean-data.R to long format","owner":"Team","start":"2026-10-25","due":"2026-10-26","deadline":null,"es":"2026-10-25","ef":"2026-10-26","ls":"2026-10-25","lf":"2026-10-26","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA01","successors":"PA03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"PA03","phase":"Pilot analysis","activity":"modeling.R: preliminary logit, coefficient table with standard errors, coefficient plots, utility model in LaTeX","owner":"Team","start":"2026-10-27","due":"2026-10-28","deadline":null,"es":"2026-10-27","ef":"2026-10-28","ls":"2026-10-27","lf":"2026-10-28","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA02","successors":"PA04;PA06","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Class 10 (Oct 28) covers estimating pilot models"},{"id":"PA04","phase":"Pilot analysis","activity":"power-analysis.R: standard errors against sample size; choose the final sample size","owner":"Team","start":"2026-10-29","due":"2026-10-29","deadline":null,"es":"2026-10-29","ef":"2026-10-29","ls":"2026-10-29","lf":"2026-10-29","dur":1,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA03","successors":"PA06","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"PA05","phase":"Pilot analysis","activity":"Triage classmate feedback and list the changes for the final survey","owner":"Team","start":"2026-10-25","due":"2026-10-26","deadline":null,"es":"2026-10-25","ef":"2026-10-26","ls":"2026-10-28","lf":"2026-10-29","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA01","successors":"PA06","total_float":3,"free_float":3,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":""},{"id":"PA06","phase":"Pilot analysis","activity":"report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power analysis, changes, appendix","owner":"Team","start":"2026-10-30","due":"2026-10-31","deadline":null,"es":"2026-10-30","ef":"2026-10-31","ls":"2026-10-30","lf":"2026-10-31","dur":2,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA03;PA04;PA05","successors":"PA07","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric: Report Contents 15 pts"},{"id":"PA07","phase":"Pilot analysis","activity":"Render, spell-check, commit and push the pilot analysis","owner":"Submitter","start":"2026-11-01","due":"2026-11-01","deadline":"2026-11-01","es":"2026-11-01","ef":"2026-11-01","ls":"2026-11-01","lf":"2026-11-01","dur":1,"pct":0,"status":"Not started","deliverable":"Pilot Analysis","depends_on":"PA06","successors":"FS01;FA01","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Sun Nov 1"},{"id":"FS01","phase":"Final survey","activity":"Apply the pilot changes: attributes, levels, question text; regenerate the design for the chosen sample size","owner":"Team","start":"2026-11-02","due":"2026-11-07","deadline":null,"es":"2026-11-02","ef":"2026-11-07","ls":"2026-11-03","lf":"2026-11-08","dur":6,"pct":0,"status":"Not started","deliverable":"Final Survey","depends_on":"PA07","successors":"FS02","total_float":1,"free_float":0,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Class 11 (Nov 4) covers DOE and power analysis"},{"id":"FS02","phase":"Final survey","activity":"Redeploy the final survey; every referenced file on the web; fresh data table; end-to-end test","owner":"Account owner","start":"2026-11-08","due":"2026-11-11","deadline":null,"es":"2026-11-08","ef":"2026-11-11","ls":"2026-11-09","lf":"2026-11-12","dur":4,"pct":0,"status":"Not started","deliverable":"Final Survey","depends_on":"FS01","successors":"FS03","total_float":1,"free_float":0,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":""},{"id":"FS03","phase":"Final survey","activity":"Write the Prolific eligibility text; push the final survey folder","owner":"Submitter","start":"2026-11-12","due":"2026-11-14","deadline":"2026-11-15","es":"2026-11-12","ef":"2026-11-14","ls":"2026-11-13","lf":"2026-11-15","dur":3,"pct":0,"status":"Not started","deliverable":"Final Survey","depends_on":"FS02","successors":"FS04","total_float":1,"free_float":2,"critical":false,"near_critical":true,"overdue":false,"slipped":false,"notes":"Official due date Sun Nov 15; the eligibility text is what the professor uses to pre-screen. One day of float by design"},{"id":"FS04","phase":"Final survey","activity":"Fielding on Prolific, arranged through the professor; monitor responses daily","owner":"Professor and team","start":"2026-11-17","due":"2026-11-27","deadline":null,"es":"2026-11-17","ef":"2026-11-27","ls":"2026-11-17","lf":"2026-11-27","dur":11,"pct":0,"status":"Not started","deliverable":"","depends_on":"FS03","successors":"FA02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Assumed window; confirm the launch date with the professor at the Nov 11 class"},{"id":"FA01","phase":"Final analysis","activity":"Scaffold clean_data.R, modeling.R, analysis.R and the report skeleton on the pilot data so the final data only needs re-running","owner":"Team","start":"2026-11-09","due":"2026-11-21","deadline":null,"es":"2026-11-09","ef":"2026-11-21","ls":"2026-11-15","lf":"2026-11-27","dur":13,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"PA07","successors":"FA02","total_float":6,"free_float":6,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Logit, mixed logit with random parameters, one sub-group comparison, WTP with 95 percent CIs, market simulation, sensitivity with a tornado plot"},{"id":"FA02","phase":"Final analysis","activity":"Clean the final data; sample description table","owner":"Team","start":"2026-11-28","due":"2026-11-29","deadline":null,"es":"2026-11-28","ef":"2026-11-29","ls":"2026-11-28","lf":"2026-11-29","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FS04;FA01","successors":"FA03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"FA03","phase":"Final analysis","activity":"Run the models on the final data: logit, mixed logit, sub-group comparison","owner":"Team","start":"2026-11-30","due":"2026-12-01","deadline":null,"es":"2026-11-30","ef":"2026-12-01","ls":"2026-11-30","lf":"2026-12-01","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA02","successors":"FA04","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"FA04","phase":"Final analysis","activity":"analysis.R: WTP, market simulation against competitors, price and attribute sensitivity, tornado plot","owner":"Team","start":"2026-12-02","due":"2026-12-03","deadline":null,"es":"2026-12-02","ef":"2026-12-03","ls":"2026-12-02","lf":"2026-12-03","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA03","successors":"FA05;PR01","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"The final exam is in class on Dec 2"},{"id":"FA05","phase":"Final analysis","activity":"report.qmd as narrative: results, recommendations, limitations, attribution, appendix; fully reproducible","owner":"Team","start":"2026-12-04","due":"2026-12-05","deadline":null,"es":"2026-12-04","ef":"2026-12-05","ls":"2026-12-04","lf":"2026-12-05","dur":2,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA04","successors":"FA06","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Rubric 40 pts; 15 percent of the grade; the skeleton from FA01 makes two days enough"},{"id":"FA06","phase":"Final analysis","activity":"Render, spell-check, commit and push the final report","owner":"Submitter","start":"2026-12-06","due":"2026-12-06","deadline":"2026-12-06","es":"2026-12-06","ef":"2026-12-06","ls":"2026-12-06","lf":"2026-12-06","dur":1,"pct":0,"status":"Not started","deliverable":"Final Analysis Report","depends_on":"FA05","successors":"","total_float":0,"free_float":null,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Sun Dec 6"},{"id":"PR01","phase":"Presentation","activity":"Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations","owner":"Team","start":"2026-12-04","due":"2026-12-06","deadline":null,"es":"2026-12-04","ef":"2026-12-06","ls":"2026-12-04","lf":"2026-12-06","dur":3,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"FA04","successors":"PR02","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Numbered slides; title slide with names and date"},{"id":"PR02","phase":"Presentation","activity":"Rehearse to ten minutes with every member presenting at least one slide","owner":"Team","start":"2026-12-07","due":"2026-12-07","deadline":null,"es":"2026-12-07","ef":"2026-12-07","ls":"2026-12-07","lf":"2026-12-07","dur":1,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"PR01","successors":"PR03","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"PR03","phase":"Presentation","activity":"Push the slides to the official repo","owner":"Submitter","start":"2026-12-08","due":"2026-12-08","deadline":"2026-12-08","es":"2026-12-08","ef":"2026-12-08","ls":"2026-12-08","lf":"2026-12-08","dur":1,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"PR02","successors":"PR04","total_float":0,"free_float":0,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Official due date Tue Dec 8"},{"id":"PR04","phase":"Presentation","activity":"Present in class (or send the video link by Slack DM)","owner":"Team","start":"2026-12-09","due":"2026-12-09","deadline":"2026-12-09","es":"2026-12-09","ef":"2026-12-09","ls":"2026-12-09","lf":"2026-12-09","dur":1,"pct":0,"status":"Not started","deliverable":"Final Presentation","depends_on":"PR03","successors":"","total_float":0,"free_float":null,"critical":true,"near_critical":false,"overdue":false,"slipped":false,"notes":"Class 16, Dec 9"},{"id":"O01","phase":"Ongoing","activity":"Weekly sync before Wednesday class; decisions copied into decisions/DECISIONS.md the same day","owner":"Team","start":"2026-09-16","due":"2026-12-09","deadline":null,"es":"2026-09-16","ef":"2026-12-09","ls":null,"lf":null,"dur":85,"pct":5,"status":"In progress","deliverable":"","depends_on":"S01","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"O02","phase":"Ongoing","activity":"Keep this tracker current: edit the CSVs, re-render, push; one dev log post per work session","owner":"Harshit","start":"2026-09-02","due":"2026-12-09","deadline":null,"es":"2026-09-02","ef":"2026-12-09","ls":null,"lf":null,"dur":99,"pct":20,"status":"In progress","deliverable":"","depends_on":"","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":""},{"id":"O03","phase":"Ongoing","activity":"Log every member's contributions in CONTRIBUTIONS.md for the Attribution sections","owner":"Everyone","start":"2026-09-09","due":"2026-12-09","deadline":null,"es":"2026-09-09","ef":"2026-12-09","ls":null,"lf":null,"dur":92,"pct":10,"status":"In progress","deliverable":"","depends_on":"S01","successors":"","total_float":null,"free_float":null,"critical":false,"near_critical":false,"overdue":false,"slipped":false,"notes":"Unequal contributions do not get equal grades"}],"events":[{"date":"2026-08-31","item":"HW1: Agentic Workflows and GitHub","kind":"homework","state":"Submitted"},{"date":"2026-09-08","item":"HW2: Data Wrangling","kind":"homework","state":"Submitted"},{"date":"2026-09-09","item":"Quiz 1 (weeks 1 to 2)","kind":"quiz","state":"Done"},{"date":"2026-09-18","item":"HW3: Quarto and Plotting","kind":"homework","state":"Upcoming"},{"date":"2026-09-20","item":"Project Proposal","kind":"project","state":"In progress"},{"date":"2026-09-23","item":"Quiz 2 (week 3)","kind":"quiz","state":"Upcoming"},{"date":"2026-09-28","item":"HW4: Intro to surveydown","kind":"homework","state":"Upcoming"},{"date":"2026-09-29","item":"Survey Plan","kind":"project","state":"Upcoming"},{"date":"2026-10-05","item":"HW5: Conjoint Questions","kind":"homework","state":"Upcoming"},{"date":"2026-10-07","item":"Quiz 3 (week 5)","kind":"quiz","state":"Upcoming"},{"date":"2026-10-12","item":"HW6: Utility Models","kind":"homework","state":"Upcoming"},{"date":"2026-10-13","item":"Pilot Survey","kind":"project","state":"Upcoming"},{"date":"2026-10-19","item":"HW7: Optimization and MLE","kind":"homework","state":"Upcoming"},{"date":"2026-10-21","item":"Quiz 4 (week 8)","kind":"quiz","state":"Upcoming"},{"date":"2026-10-26","item":"HW8: Uncertainty (plus classmates' pilot surveys and feedback sheet)","kind":"homework","state":"Upcoming"},{"date":"2026-11-01","item":"Pilot Analysis","kind":"project","state":"Upcoming"},{"date":"2026-11-02","item":"HW9: DOE and Power Analysis","kind":"homework","state":"Upcoming"},{"date":"2026-11-04","item":"Quiz 5 (week 9)","kind":"quiz","state":"Upcoming"},{"date":"2026-11-09","item":"HW10: WTP and Simulation","kind":"homework","state":"Upcoming"},{"date":"2026-11-15","item":"Final Survey","kind":"project","state":"Upcoming"},{"date":"2026-11-16","item":"HW11: Heterogeneity","kind":"homework","state":"Upcoming"},{"date":"2026-11-18","item":"Quiz 6 (week 12), the last one","kind":"quiz","state":"Upcoming"},{"date":"2026-11-22","item":"HW12: Sensitivity Analysis","kind":"homework","state":"Upcoming"},{"date":"2026-11-29","item":"HW13: Take-home Analysis","kind":"homework","state":"Upcoming"},{"date":"2026-12-02","item":"Final Exam (first 45 min, closed book, on paper), then what goes in the final report and how to give a talk","kind":"exam","state":"Upcoming"},{"date":"2026-12-06","item":"Final Analysis Report","kind":"project","state":"Upcoming"},{"date":"2026-12-08","item":"Final Presentation (slides in the repo; live Dec 9 or video link by Slack DM)","kind":"project","state":"Upcoming"}],"weeks":[{"week":1,"date":"2026-08-26","topic":"Getting Started: orientation, intro to conjoint, R and Positron, project intros","status":"Done"},{"week":2,"date":"2026-09-02","topic":"Agentic Workflows: GitHub, Claude Code in Positron, modes, skills, working safely","status":"Done"},{"week":3,"date":"2026-09-09","topic":"Data Wrangling (tidyverse); decision variables vs attributes","status":"Done"},{"week":4,"date":"2026-09-16","topic":"No lecture: Proposal Workshop, remote team meetings with the professor","status":"In progress"},{"week":5,"date":"2026-09-23","topic":"Quarto and Plotting; project scope: attribute levels, target population, competitors","status":"Upcoming"},{"week":6,"date":"2026-09-30","topic":"Intro to surveydown; make the survey plan","status":"Upcoming"},{"week":7,"date":"2026-10-07","topic":"Conjoint Questions: cbc_design, labeled vs unlabeled, surveydown","status":"Upcoming"},{"week":8,"date":"2026-10-14","topic":"Utility Models; finish pilot survey","status":"Upcoming"},{"week":9,"date":"2026-10-21","topic":"Optimization and MLE; everyone takes everyone else's pilot survey","status":"Upcoming"},{"week":10,"date":"2026-10-28","topic":"Uncertainty; pivoting; cleaning pilot data; estimating pilot models","status":"Upcoming"},{"week":11,"date":"2026-11-04","topic":"DOE and Power Analysis; refine attributes and levels, sample size","status":"Upcoming"},{"week":12,"date":"2026-11-11","topic":"WTP and Simulation; finalize final survey","status":"Upcoming"},{"week":13,"date":"2026-11-18","topic":"Heterogeneity: mixed logit and sub-group models","status":"Upcoming"},{"week":14,"date":"2026-11-25","topic":"Thanksgiving, no class; final survey fielding","status":"Upcoming"},{"week":15,"date":"2026-12-02","topic":"Final Exam (45 min), exam solutions, what goes in the final report, how to give a talk","status":"Upcoming"},{"week":16,"date":"2026-12-09","topic":"Final Presentations: in-class showcase with Q and A","status":"Upcoming"}]}
+</script>
+<div data-tracker="chain">
+
 </div>
 </section>
-<section id="timeline" class="level2">
-<h2 class="anchored" data-anchor-id="timeline">Timeline</h2>
-<div class="cell" data-fig-width="10" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">gantt
-  title Project deliverables and the work behind them
-  dateFormat YYYY-MM-DD
-  axisFormat %b %d
-  section Setup
-    Team and topic            :active, setup, 2026-08-26, 2026-09-09
-    Team repo                 :repo, after setup, 2d
-  section Proposal
-    Research and drafting     :prop, 2026-09-09, 2026-09-18
-    Submit proposal           :milestone, m1, 2026-09-20, 0d
-    Workshop with professor   :ws, 2026-09-14, 2026-09-18
-  section Survey plan
-    Population, questions, content :splan, 2026-09-21, 2026-09-28
-    Submit survey plan        :milestone, m2, 2026-09-29, 0d
-  section Pilot survey
-    Design file and survey.qmd :pilot, 2026-10-01, 2026-10-09
-    Supabase and shinyapps     :deploy, 2026-10-06, 2026-10-12
-    Submit pilot survey        :milestone, m3, 2026-10-13, 0d
-    Classmates take pilots     :field1, 2026-10-21, 2026-10-26
-  section Pilot analysis
-    Clean, model, power        :pan, 2026-10-22, 2026-10-29
-    Report                     :prep, 2026-10-27, 2026-10-31
-    Submit pilot analysis      :milestone, m4, 2026-11-01, 0d
-  section Final survey
-    Apply pilot changes        :fs, 2026-11-02, 2026-11-13
-    Submit final survey        :milestone, m5, 2026-11-15, 0d
-    Fielding on Prolific       :crit, field2, 2026-11-23, 2026-11-29
-  section Final analysis
-    Clean, model, analyse      :crit, fa, 2026-11-27, 2026-12-04
-    Report                     :crit, frep, 2026-12-02, 2026-12-05
-    Submit final report        :milestone, m6, 2026-12-06, 0d
-  section Presentation
-    Slides and rehearsal       :pres, 2026-12-03, 2026-12-08
-    Present                    :milestone, m7, 2026-12-09, 0d
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
+<section id="only-the-critical-path" class="level2">
+<h2 class="anchored" data-anchor-id="only-the-critical-path">Only the critical path</h2>
+<p>The same Gantt as the <a href="../tracker/schedule.html">schedule</a> page, filtered to the open activities with zero float. Hover for early and late dates; click a row to see what feeds it and what waits on it.</p>
+<div data-tracker="gantt" data-mode="critical" data-window="semester" data-controls="false" data-load="false">
+
 </div>
 </section>
-<section id="float-on-each-critical-activity" class="level2">
-<h2 class="anchored" data-anchor-id="float-on-each-critical-activity">Float on each critical activity</h2>
-<p>Float is the number of days between an activity’s due date and the earliest start of anything that depends on it. Zero or negative float means the next task is waiting on this one the day it is due.</p>
+<section id="float-on-every-open-activity" class="level2">
+<h2 class="anchored" data-anchor-id="float-on-every-open-activity">Float on every open activity</h2>
+<p>Early start and finish come from the forward pass; late start and finish from the backward pass off the official deadlines. Total float is the gap between them. Free float is how far the activity can slip before it delays its immediate successor rather than a deadline.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID </th>
    <th style="text-align:left;"> Phase </th>
    <th style="text-align:left;"> Activity </th>
-   <th style="text-align:left;"> Due </th>
+   <th style="text-align:left;"> Early </th>
+   <th style="text-align:left;"> Late </th>
+   <th style="text-align:left;"> Deadline </th>
+   <th style="text-align:left;"> Total float </th>
+   <th style="text-align:left;"> Free float </th>
    <th style="text-align:left;"> Feeds into </th>
-   <th style="text-align:left;"> Float (days) </th>
    <th style="text-align:center;"> Status </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> A01 </td>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:left;"> Form the team (3 to 4 members) on the team-formation sheet </td>
-   <td style="text-align:left;"> Wed Sep 9 </td>
-   <td style="text-align:left;"> A02, A03, A04, A40 </td>
-   <td style="text-align:left;"> -14 </td>
+   <td style="text-align:left;"> P05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Proposal workshop meeting with the professor (remote, week 4) </td>
+   <td style="text-align:left;"> Sep 16 to Sep 18 </td>
+   <td style="text-align:left;"> Sep 16 to Sep 18 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> P07 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> P06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Revise to v2: remove AI paste artifacts, fix cross-ref and heading levels, add references, benchmark real competitors with prices, quantify the retrofit market, rework price levels, argue the fit </td>
+   <td style="text-align:left;"> Sep 16 to Sep 18 </td>
+   <td style="text-align:left;"> Sep 16 to Sep 18 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> P07 </td>
    <td style="text-align:center;"> <span class="pill pill-active">In progress</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A02 </td>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:left;"> Pick the project topic against the seven selection criteria </td>
-   <td style="text-align:left;"> Wed Sep 9 </td>
-   <td style="text-align:left;"> A05, A06 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A03 </td>
-   <td style="text-align:left;"> Setup </td>
-   <td style="text-align:left;"> Create the shared team GitHub repo and agree the folder layout </td>
-   <td style="text-align:left;"> Fri Sep 11 </td>
+   <td style="text-align:left;"> P07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Move the proposal into the official repo (1-proposal/proposal.qmd, image in images/), apply the workshop feedback, render, spell-check </td>
+   <td style="text-align:left;"> Sep 19 to Sep 19 </td>
+   <td style="text-align:left;"> Sep 19 to Sep 19 </td>
    <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> P08 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> P08 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;"> Final read-through by a second member, commit and push the proposal </td>
+   <td style="text-align:left;"> Sep 20 to Sep 20 </td>
+   <td style="text-align:left;"> Sep 20 to Sep 20 </td>
+   <td style="text-align:left;"> Sep 20 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> SP01, SP02 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Lock the attribute list and levels after the workshop: units, price levels with a base-rent anchor, one-line level definitions </td>
+   <td style="text-align:left;"> Sep 21 to Sep 23 </td>
+   <td style="text-align:left;"> Sep 21 to Sep 23 </td>
    <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> SP03 </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A05 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Market opportunity research: customer, competitors, market size with references </td>
-   <td style="text-align:left;"> Tue Sep 15 </td>
-   <td style="text-align:left;"> A08 </td>
-   <td style="text-align:left;"> -1 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A06 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Draft the attributes and levels table (2 to 4 key attributes, metrics, ranges) </td>
-   <td style="text-align:left;"> Tue Sep 15 </td>
-   <td style="text-align:left;"> A07, A08 </td>
-   <td style="text-align:left;"> -3 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A07 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Write 2 to 3 research questions tied to the attributes </td>
-   <td style="text-align:left;"> Wed Sep 16 </td>
-   <td style="text-align:left;"> A08 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A08 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Write proposal.qmd from the template (Abstract, Introduction with picture, Market Opportunity, Product Attributes, Research Questions, Other Questions, Attribution) </td>
-   <td style="text-align:left;"> Fri Sep 18 </td>
-   <td style="text-align:left;"> A09 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A10 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Proposal workshop meeting with the professor (remote, week 4) </td>
-   <td style="text-align:left;"> Fri Sep 18 </td>
-   <td style="text-align:left;"> A11, A12 </td>
-   <td style="text-align:left;"> 3 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A09 </td>
-   <td style="text-align:left;"> Proposal </td>
-   <td style="text-align:left;"> Submit the proposal (render, commit, push to the team repo) </td>
-   <td style="text-align:left;"> Sun Sep 20 </td>
-   <td style="text-align:left;"> A10 </td>
-   <td style="text-align:left;"> -6 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A11 </td>
-   <td style="text-align:left;"> Survey plan </td>
-   <td style="text-align:left;"> Target population, fallback, and exact eligibility question text </td>
-   <td style="text-align:left;"> Fri Sep 25 </td>
-   <td style="text-align:left;"> A13 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A12 </td>
-   <td style="text-align:left;"> Survey plan </td>
-   <td style="text-align:left;"> Choice question text and the final attributes and levels table with units </td>
-   <td style="text-align:left;"> Sat Sep 26 </td>
-   <td style="text-align:left;"> A13 </td>
-   <td style="text-align:left;"> -3 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A13 </td>
-   <td style="text-align:left;"> Survey plan </td>
-   <td style="text-align:left;"> Survey content: welcome, consent (18+, 'I have read and understand'), education, critical respondent info, other questions </td>
-   <td style="text-align:left;"> Mon Sep 28 </td>
-   <td style="text-align:left;"> A14 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A14 </td>
-   <td style="text-align:left;"> Survey plan </td>
-   <td style="text-align:left;"> Submit the survey plan </td>
-   <td style="text-align:left;"> Tue Sep 29 </td>
-   <td style="text-align:left;"> A15, A16, A20 </td>
-   <td style="text-align:left;"> 1 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A15 </td>
-   <td style="text-align:left;"> Pilot survey </td>
-   <td style="text-align:left;"> Generate the design file with cbc_design (code/1_make_choice_questions.R) </td>
-   <td style="text-align:left;"> Tue Oct 6 </td>
+   <td style="text-align:left;"> SP03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Choice question text and the attributes-and-levels table </td>
+   <td style="text-align:left;"> Sep 24 to Sep 26 </td>
+   <td style="text-align:left;"> Sep 24 to Sep 26 </td>
    <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> SP04, PS02 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Survey content as exact text: welcome, consent (18 plus, 'I have read and understand'), education per attribute, respondent info, other questions </td>
+   <td style="text-align:left;"> Sep 27 to Sep 28 </td>
+   <td style="text-align:left;"> Sep 27 to Sep 28 </td>
    <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> SP05, PS03 </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A16 </td>
-   <td style="text-align:left;"> Pilot survey </td>
-   <td style="text-align:left;"> Build survey.qmd from the surveydown conjoint buttons template; reuse the plan text </td>
-   <td style="text-align:left;"> Fri Oct 9 </td>
-   <td style="text-align:left;"> A17 </td>
-   <td style="text-align:left;"> -3 </td>
+   <td style="text-align:left;"> SP05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Assemble survey_plan.qmd, render, spell-check, commit and push </td>
+   <td style="text-align:left;"> Sep 29 to Sep 29 </td>
+   <td style="text-align:left;"> Sep 29 to Sep 29 </td>
+   <td style="text-align:left;"> Sep 29 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> SP06, PS01 </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A17 </td>
-   <td style="text-align:left;"> Pilot survey </td>
-   <td style="text-align:left;"> Connect Supabase and confirm responses are stored </td>
-   <td style="text-align:left;"> Sat Oct 10 </td>
-   <td style="text-align:left;"> A18 </td>
-   <td style="text-align:left;"> -1 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A18 </td>
-   <td style="text-align:left;"> Pilot survey </td>
-   <td style="text-align:left;"> Deploy to shinyapps.io and test end to end </td>
-   <td style="text-align:left;"> Mon Oct 12 </td>
-   <td style="text-align:left;"> A19 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A19 </td>
-   <td style="text-align:left;"> Pilot survey </td>
-   <td style="text-align:left;"> Submit the pilot survey (push the folder; survey live) </td>
-   <td style="text-align:left;"> Tue Oct 13 </td>
-   <td style="text-align:left;"> A21 </td>
-   <td style="text-align:left;"> 8 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A22 </td>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:left;"> Download pilot data with sd_get_data(); clean-data.R to long format </td>
-   <td style="text-align:left;"> Sun Oct 25 </td>
-   <td style="text-align:left;"> A23 </td>
-   <td style="text-align:left;"> -1 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A21 </td>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:left;"> Take every other team's pilot survey and fill the feedback sheet (part of HW8) </td>
-   <td style="text-align:left;"> Mon Oct 26 </td>
-   <td style="text-align:left;"> A22 </td>
-   <td style="text-align:left;"> -4 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A23 </td>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:left;"> modeling.R: preliminary models; coefficient table and figures with uncertainty </td>
-   <td style="text-align:left;"> Wed Oct 28 </td>
-   <td style="text-align:left;"> A24, A25 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A24 </td>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:left;"> power-analysis.R: standard errors vs sample size; pick the final sample size </td>
-   <td style="text-align:left;"> Thu Oct 29 </td>
-   <td style="text-align:left;"> A25 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A25 </td>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:left;"> report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power, changes to final survey, appendix </td>
-   <td style="text-align:left;"> Sat Oct 31 </td>
-   <td style="text-align:left;"> A26 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A26 </td>
-   <td style="text-align:left;"> Pilot analysis </td>
-   <td style="text-align:left;"> Submit the pilot analysis </td>
-   <td style="text-align:left;"> Sun Nov 1 </td>
-   <td style="text-align:left;"> A27 </td>
-   <td style="text-align:left;"> 1 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A27 </td>
-   <td style="text-align:left;"> Final survey </td>
-   <td style="text-align:left;"> Apply pilot changes (attributes, levels, question text, sample size) </td>
-   <td style="text-align:left;"> Sun Nov 8 </td>
-   <td style="text-align:left;"> A28 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A28 </td>
-   <td style="text-align:left;"> Final survey </td>
-   <td style="text-align:left;"> Redeploy the final survey; all referenced files on the web; end-to-end test </td>
-   <td style="text-align:left;"> Fri Nov 13 </td>
-   <td style="text-align:left;"> A29 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A29 </td>
-   <td style="text-align:left;"> Final survey </td>
-   <td style="text-align:left;"> Write the Prolific eligibility text and submit the final survey </td>
-   <td style="text-align:left;"> Sun Nov 15 </td>
-   <td style="text-align:left;"> A30 </td>
-   <td style="text-align:left;"> 8 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A30 </td>
-   <td style="text-align:left;"> Final survey </td>
-   <td style="text-align:left;"> Fielding on Prolific (arranged through the professor) </td>
-   <td style="text-align:left;"> Sun Nov 29 </td>
-   <td style="text-align:left;"> A31 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A31 </td>
-   <td style="text-align:left;"> Final analysis </td>
-   <td style="text-align:left;"> clean_data.R on the final data; sample description table </td>
-   <td style="text-align:left;"> Tue Dec 1 </td>
-   <td style="text-align:left;"> A32 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A32 </td>
-   <td style="text-align:left;"> Final analysis </td>
-   <td style="text-align:left;"> modeling.R: simple logit, mixed logit with random parameters, at least one sub-group comparison </td>
-   <td style="text-align:left;"> Thu Dec 3 </td>
-   <td style="text-align:left;"> A33 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A33 </td>
-   <td style="text-align:left;"> Final analysis </td>
-   <td style="text-align:left;"> analysis.R: WTP with 95% CIs, market simulation vs competitors, price and attribute sensitivity with a tornado plot </td>
-   <td style="text-align:left;"> Fri Dec 4 </td>
-   <td style="text-align:left;"> A34, A36 </td>
-   <td style="text-align:left;"> -2 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A34 </td>
-   <td style="text-align:left;"> Final analysis </td>
-   <td style="text-align:left;"> report.qmd as narrative paragraphs: results, recommendations, limitations, attribution, appendix </td>
-   <td style="text-align:left;"> Sat Dec 5 </td>
-   <td style="text-align:left;"> A35 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> A35 </td>
-   <td style="text-align:left;"> Final analysis </td>
-   <td style="text-align:left;"> Submit the final analysis report </td>
-   <td style="text-align:left;"> Sun Dec 6 </td>
+   <td style="text-align:left;"> PS01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> Learn the surveydown conjoint-buttons template; run the sample app locally </td>
+   <td style="text-align:left;"> Sep 30 to Oct 3 </td>
+   <td style="text-align:left;"> Sep 30 to Oct 3 </td>
    <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PS02, PS03 </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A36 </td>
-   <td style="text-align:left;"> Presentation </td>
+   <td style="text-align:left;"> PS03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> Build survey.qmd from the plan text: welcome, consent, screening, education, conjoint block, other questions </td>
+   <td style="text-align:left;"> Oct 4 to Oct 8 </td>
+   <td style="text-align:left;"> Oct 4 to Oct 8 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PS04 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PS04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> Connect the Supabase project and confirm responses are stored </td>
+   <td style="text-align:left;"> Oct 9 to Oct 10 </td>
+   <td style="text-align:left;"> Oct 9 to Oct 10 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PS05 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PS05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> Deploy to shinyapps.io; end-to-end test on a phone and a laptop </td>
+   <td style="text-align:left;"> Oct 11 to Oct 12 </td>
+   <td style="text-align:left;"> Oct 11 to Oct 12 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PS07 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PS07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> Push the pilot survey folder and confirm the live link </td>
+   <td style="text-align:left;"> Oct 13 to Oct 13 </td>
+   <td style="text-align:left;"> Oct 13 to Oct 13 </td>
+   <td style="text-align:left;"> Oct 13 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 7 d </td>
+   <td style="text-align:left;"> PA01 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> Classmates take our pilot; we take theirs and fill the feedback sheet (part of HW8) </td>
+   <td style="text-align:left;"> Oct 21 to Oct 24 </td>
+   <td style="text-align:left;"> Oct 21 to Oct 24 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PA02, PA05 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> Download with sd_get_data(); save raw data; clean-data.R to long format </td>
+   <td style="text-align:left;"> Oct 25 to Oct 26 </td>
+   <td style="text-align:left;"> Oct 25 to Oct 26 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PA03 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> modeling.R: preliminary logit, coefficient table with standard errors, coefficient plots, utility model in LaTeX </td>
+   <td style="text-align:left;"> Oct 27 to Oct 28 </td>
+   <td style="text-align:left;"> Oct 27 to Oct 28 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PA04, PA06 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> power-analysis.R: standard errors against sample size; choose the final sample size </td>
+   <td style="text-align:left;"> Oct 29 to Oct 29 </td>
+   <td style="text-align:left;"> Oct 29 to Oct 29 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PA06 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> report.qmd: abstract, intro, survey design, sample, cleaning, modeling, power analysis, changes, appendix </td>
+   <td style="text-align:left;"> Oct 30 to Oct 31 </td>
+   <td style="text-align:left;"> Oct 30 to Oct 31 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PA07 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> Render, spell-check, commit and push the pilot analysis </td>
+   <td style="text-align:left;"> Nov 1 to Nov 1 </td>
+   <td style="text-align:left;"> Nov 1 to Nov 1 </td>
+   <td style="text-align:left;"> Nov 1 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FS01, FA01 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FS04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-survey"></span>Final survey </td>
+   <td style="text-align:left;"> Fielding on Prolific, arranged through the professor; monitor responses daily </td>
+   <td style="text-align:left;"> Nov 17 to Nov 27 </td>
+   <td style="text-align:left;"> Nov 17 to Nov 27 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FA02 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FA02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;"> Clean the final data; sample description table </td>
+   <td style="text-align:left;"> Nov 28 to Nov 29 </td>
+   <td style="text-align:left;"> Nov 28 to Nov 29 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FA03 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FA03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;"> Run the models on the final data: logit, mixed logit, sub-group comparison </td>
+   <td style="text-align:left;"> Nov 30 to Dec 1 </td>
+   <td style="text-align:left;"> Nov 30 to Dec 1 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FA04 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FA04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;"> analysis.R: WTP, market simulation against competitors, price and attribute sensitivity, tornado plot </td>
+   <td style="text-align:left;"> Dec 2 to Dec 3 </td>
+   <td style="text-align:left;"> Dec 2 to Dec 3 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FA05, PR01 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FA05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;"> report.qmd as narrative: results, recommendations, limitations, attribution, appendix; fully reproducible </td>
+   <td style="text-align:left;"> Dec 4 to Dec 5 </td>
+   <td style="text-align:left;"> Dec 4 to Dec 5 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FA06 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PR01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-presentation"></span>Presentation </td>
    <td style="text-align:left;"> Build the slides: product intro, example choice question, sample stats, utility model, WTP, simulation, sensitivity, recommendations </td>
-   <td style="text-align:left;"> Mon Dec 7 </td>
-   <td style="text-align:left;"> A37 </td>
-   <td style="text-align:left;"> -1 </td>
+   <td style="text-align:left;"> Dec 4 to Dec 6 </td>
+   <td style="text-align:left;"> Dec 4 to Dec 6 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PR02 </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A37 </td>
-   <td style="text-align:left;"> Presentation </td>
-   <td style="text-align:left;"> Rehearse to 10 minutes with every member presenting at least one slide </td>
-   <td style="text-align:left;"> Tue Dec 8 </td>
-   <td style="text-align:left;"> A38 </td>
-   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> FA06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;"> Render, spell-check, commit and push the final report </td>
+   <td style="text-align:left;"> Dec 6 to Dec 6 </td>
+   <td style="text-align:left;"> Dec 6 to Dec 6 </td>
+   <td style="text-align:left;"> Dec 6 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> A38 </td>
-   <td style="text-align:left;"> Presentation </td>
-   <td style="text-align:left;"> Submit slides to the repo (due Dec 8) and present live in class Dec 9 or DM a video link </td>
-   <td style="text-align:left;"> Wed Dec 9 </td>
+   <td style="text-align:left;"> PR02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-presentation"></span>Presentation </td>
+   <td style="text-align:left;"> Rehearse to ten minutes with every member presenting at least one slide </td>
+   <td style="text-align:left;"> Dec 7 to Dec 7 </td>
+   <td style="text-align:left;"> Dec 7 to Dec 7 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PR03 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PR03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-presentation"></span>Presentation </td>
+   <td style="text-align:left;"> Push the slides to the official repo </td>
+   <td style="text-align:left;"> Dec 8 to Dec 8 </td>
+   <td style="text-align:left;"> Dec 8 to Dec 8 </td>
+   <td style="text-align:left;"> Dec 8 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> PR04 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PR04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-presentation"></span>Presentation </td>
+   <td style="text-align:left;"> Present in class (or send the video link by Slack DM) </td>
+   <td style="text-align:left;"> Dec 9 to Dec 9 </td>
+   <td style="text-align:left;"> Dec 9 to Dec 9 </td>
+   <td style="text-align:left;"> Dec 9 </td>
+   <td style="text-align:left;"> <span class="pill pill-critical">0 d</span> </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Everyone accepts the official team repo invitation and clones it </td>
+   <td style="text-align:left;"> Sep 10 to Sep 18 </td>
+   <td style="text-align:left;"> Sep 11 to Sep 19 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-near">1 d</span> </td>
+   <td style="text-align:left;"> 1 d </td>
+   <td style="text-align:left;"> P08 </td>
+   <td style="text-align:center;"> <span class="pill pill-active">In progress</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FS01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-survey"></span>Final survey </td>
+   <td style="text-align:left;"> Apply the pilot changes: attributes, levels, question text; regenerate the design for the chosen sample size </td>
+   <td style="text-align:left;"> Nov 2 to Nov 7 </td>
+   <td style="text-align:left;"> Nov 3 to Nov 8 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-near">1 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FS02 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FS02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-survey"></span>Final survey </td>
+   <td style="text-align:left;"> Redeploy the final survey; every referenced file on the web; fresh data table; end-to-end test </td>
+   <td style="text-align:left;"> Nov 8 to Nov 11 </td>
+   <td style="text-align:left;"> Nov 9 to Nov 12 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-near">1 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> FS03 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FS03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-survey"></span>Final survey </td>
+   <td style="text-align:left;"> Write the Prolific eligibility text; push the final survey folder </td>
+   <td style="text-align:left;"> Nov 12 to Nov 14 </td>
+   <td style="text-align:left;"> Nov 13 to Nov 15 </td>
+   <td style="text-align:left;"> Nov 15 </td>
+   <td style="text-align:left;"> <span class="pill pill-near">1 d</span> </td>
+   <td style="text-align:left;"> 2 d </td>
+   <td style="text-align:left;"> FS04 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Ask the professor to add the fifth member to the official repo and confirm the team size </td>
+   <td style="text-align:left;"> Sep 16 to Sep 18 </td>
+   <td style="text-align:left;"> Sep 18 to Sep 20 </td>
+   <td style="text-align:left;"> Sep 20 </td>
+   <td style="text-align:left;"> <span class="pill pill-near">2 d</span> </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SP02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;"> Target population, fallback, and the exact eligibility question text </td>
+   <td style="text-align:left;"> Sep 21 to Sep 24 </td>
+   <td style="text-align:left;"> Sep 23 to Sep 26 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-near">2 d</span> </td>
+   <td style="text-align:left;"> 2 d </td>
+   <td style="text-align:left;"> SP04 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PS02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;"> code/1_make_choice_questions.R: generate data/choice_questions.csv with cbc_design </td>
+   <td style="text-align:left;"> Oct 4 to Oct 7 </td>
+   <td style="text-align:left;"> Oct 7 to Oct 10 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-near">3 d</span> </td>
+   <td style="text-align:left;"> 3 d </td>
+   <td style="text-align:left;"> PS05 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;"> Triage classmate feedback and list the changes for the final survey </td>
+   <td style="text-align:left;"> Oct 25 to Oct 26 </td>
+   <td style="text-align:left;"> Oct 28 to Oct 29 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-near">3 d</span> </td>
+   <td style="text-align:left;"> 3 d </td>
+   <td style="text-align:left;"> PA06 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Fill TEAM.md and the team page: one owner and one backup per deliverable, meeting cadence </td>
+   <td style="text-align:left;"> Sep 16 to Sep 23 </td>
+   <td style="text-align:left;"> Sep 22 to Sep 29 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">6 d</span> </td>
+   <td style="text-align:left;"> 0 d </td>
+   <td style="text-align:left;"> S07 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-setup"></span>Setup </td>
+   <td style="text-align:left;"> Decide who owns the shinyapps.io account and the Supabase project </td>
+   <td style="text-align:left;"> Sep 24 to Oct 2 </td>
+   <td style="text-align:left;"> Sep 30 to Oct 8 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">6 d</span> </td>
+   <td style="text-align:left;"> 6 d </td>
+   <td style="text-align:left;"> PS04 </td>
+   <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FA01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;"> Scaffold clean_data.R, modeling.R, analysis.R and the report skeleton on the pilot data so the final data only needs re-running </td>
+   <td style="text-align:left;"> Nov 9 to Nov 21 </td>
+   <td style="text-align:left;"> Nov 15 to Nov 27 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">6 d</span> </td>
+   <td style="text-align:left;"> 6 d </td>
+   <td style="text-align:left;"> FA02 </td>
    <td style="text-align:center;"> <span class="pill pill-todo">Not started</span> </td>
   </tr>
 </tbody>
@@ -600,12 +694,503 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="where-the-risk-concentrates" class="level2">
 <h2 class="anchored" data-anchor-id="where-the-risk-concentrates">Where the risk concentrates</h2>
-<p>The two links with no give at all are the pilot-to-final-survey handoff (the pilot analysis is due Nov 1 and the final survey Nov 15, with HW9 and HW10 and Quiz 5 in the same fortnight) and the fielding-to-report link (data arrives during Thanksgiving week and the report is due the Sunday after the final exam). The practical defence is to scaffold <code>clean_data.R</code>, <code>modeling.R</code> and <code>analysis.R</code> on the pilot data in early November so that when the final data lands they only need re-running.</p>
+<p>Three places have no give at all. <strong>This week</strong>: the proposal workshop, the revision and the move into the official repo all sit between today and Sunday with zero float, because the meeting and the deadline share the week. <strong>Weeks 9 to 11</strong>: the pilot exchange on Oct 21 feeds a Nov 1 report through a chain of two-day tasks, and the final survey has to be rebuilt and redeployed by Nov 15 with one day of float, while HW8 to HW10 and Quiz 5 land in the same fortnight. <strong>Thanksgiving to Dec 6</strong>: the Prolific data arrives at the end of the assumed fielding window and the final report is due the Sunday after the in-class exam, so cleaning, modelling, analysis and writing each get about two days.</p>
+<p>The defences are already in the plan: start cleaning on partial pilot data (PA02) while the feedback is triaged in parallel (PA05); scaffold every final-analysis script and the report skeleton on the pilot data in the second week of November (FA01, six days of float, so it can absorb a slip without hurting anything); confirm the Prolific launch date at the Nov 11 class so FS04 stops being an assumption. The <a href="../tracker/risks.html">risk register</a> carries the triggers and responses.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+/* tracker.js - client-side schedule views for the EMSE 6035 project tracker.
+   Reads the JSON that R embeds in <script id="schedule-data"> (see R/helpers.R:
+   embed_schedule) and draws: an SVG Gantt with the computed early schedule, the
+   critical path, milestones, a today line and the course-load lane; and the
+   deliverable chain. No dependencies. Inlined into every page by _quarto.yml. */
+(function () {
+  "use strict";
+
+  var DAY = 86400000;
+  function d(s) { var p = s.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
+  function days(a, b) { return Math.round((b - a) / DAY); }
+  function addDays(a, n) { return new Date(a.getTime() + n * DAY); }
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function fmt(dt) { return DOW[dt.getUTCDay()] + " " + MONTHS[dt.getUTCMonth()] + " " + dt.getUTCDate(); }
+  function fmtShort(dt) { return MONTHS[dt.getUTCMonth()] + " " + dt.getUTCDate(); }
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function text(parent, x, y, str, attrs) {
+    var t = el("text", Object.assign({ x: x, y: y }, attrs || {}), parent);
+    t.textContent = str;
+    return t;
+  }
+  function slugify(s) { return String(s).toLowerCase().replace(/\s+/g, "-"); }
+  function statusSlug(s) {
+    s = String(s || "").toLowerCase();
+    if (s === "done" || s === "graded" || s === "submitted") return "done";
+    if (s === "in progress") return "active";
+    if (s === "blocked" || s === "missed") return "blocked";
+    return "todo";
+  }
+
+  var PHASES = ["Setup","Proposal","Survey plan","Pilot survey","Pilot analysis","Final survey","Final analysis","Presentation","Ongoing"];
+
+  function loadData() {
+    var node = document.getElementById("schedule-data");
+    if (!node) return null;
+    var data = JSON.parse(node.textContent);
+    data.todayDate = d(data.today);
+    data.activities.forEach(function (a) {
+      a.startDate = d(a.start); a.dueDate = d(a.due);
+      a.esDate = d(a.es); a.efDate = d(a.ef);
+      a.deadlineDate = a.deadline ? d(a.deadline) : null;
+      a.lsDate = a.ls ? d(a.ls) : null; a.lfDate = a.lf ? d(a.lf) : null;
+      a.slug = statusSlug(a.status);
+      a.preds = a.depends_on ? a.depends_on.split(";").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+      a.succs = a.successors ? a.successors.split(";").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+    });
+    data.events.forEach(function (e) { e.dateObj = d(e.date); });
+    return data;
+  }
+
+  /* ---------- tooltip ---------- */
+  var tip = null;
+  function ensureTip() {
+    if (tip) return tip;
+    tip = document.createElement("div");
+    tip.className = "trk-tip";
+    tip.setAttribute("role", "tooltip");
+    document.body.appendChild(tip);
+    return tip;
+  }
+  function showTip(html, evt) {
+    var t = ensureTip();
+    t.innerHTML = html;
+    t.style.display = "block";
+    moveTip(evt);
+  }
+  function moveTip(evt) {
+    if (!tip) return;
+    var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    var x = evt.clientX + pad, y = evt.clientY + pad;
+    if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
+    if (y + h > window.innerHeight - 8) y = evt.clientY - h - pad;
+    tip.style.left = (x + window.scrollX) + "px";
+    tip.style.top = (y + window.scrollY) + "px";
+  }
+  function hideTip() { if (tip) tip.style.display = "none"; }
+
+  function floatLabel(a) {
+    if (a.slug === "done") return "done";
+    if (a.total_float == null) return "open-ended";
+    if (a.total_float < 0) return Math.abs(a.total_float) + " d late";
+    if (a.total_float === 0) return "0 d float";
+    return a.total_float + " d float";
+  }
+  function activityTip(a) {
+    var rows = [
+      ["Phase", a.phase], ["Owner", a.owner],
+      ["Planned", fmt(a.startDate) + " to " + fmt(a.dueDate) + " (" + a.dur + " d)"],
+      ["Early", fmt(a.esDate) + " to " + fmt(a.efDate)],
+      a.lsDate ? ["Late", fmt(a.lsDate) + " to " + fmt(a.lfDate)] : null,
+      a.deadlineDate ? ["Deadline", fmt(a.deadlineDate)] : null,
+      ["Float", floatLabel(a) + (a.free_float != null ? ", free " + a.free_float + " d" : "")],
+      ["Status", a.status + (a.pct ? " (" + a.pct + "%)" : "")],
+      a.deliverable ? ["Deliverable", a.deliverable] : null,
+      a.preds.length ? ["After", a.preds.join(", ")] : null,
+      a.succs.length ? ["Feeds", a.succs.join(", ")] : null,
+      a.notes ? ["Note", a.notes] : null
+    ].filter(Boolean);
+    var flags = [];
+    if (a.critical) flags.push('<span class="trk-flag trk-flag-crit">critical</span>');
+    else if (a.near_critical) flags.push('<span class="trk-flag trk-flag-near">near-critical</span>');
+    if (a.overdue) flags.push('<span class="trk-flag trk-flag-crit">overdue</span>');
+    if (a.slipped) flags.push('<span class="trk-flag trk-flag-near">start pushed by a predecessor</span>');
+    return '<div class="trk-tip-h"><span class="trk-id">' + esc(a.id) + '</span> ' + esc(a.activity) + '</div>' +
+      (flags.length ? '<div class="trk-tip-flags">' + flags.join(" ") + '</div>' : "") +
+      '<table>' + rows.map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join("") + '</table>';
+  }
+
+  /* ---------- Gantt ---------- */
+  function renderGantt(container, data, opts) {
+    opts = opts || {};
+    container.innerHTML = "";
+    var mode = opts.mode || "all";           // all | critical | open | phase:<name>
+    var window_ = opts.window || "semester"; // semester | next4
+    var today = data.todayDate;
+
+    var t0, t1;
+    if (window_ === "next4") { t0 = addDays(today, -3); t1 = addDays(today, 29); }
+    else { t0 = d(data.semester_start); t1 = addDays(d(data.semester_end), 1); }
+
+    var acts = data.activities.filter(function (a) {
+      if (a.phase === "Ongoing" && !opts.showOngoing) return false;
+      if (mode === "critical") return a.critical && a.slug !== "done";
+      if (mode === "open") return a.slug !== "done";
+      if (mode.indexOf("phase:") === 0) return a.phase === mode.slice(6);
+      return true;
+    }).filter(function (a) {
+      if (window_ !== "next4") return true;
+      return a.efDate >= t0 && a.esDate < t1 || (a.deadlineDate && a.deadlineDate >= t0 && a.deadlineDate < t1);
+    });
+
+    var labelW = opts.labelWidth || 300;
+    var rowH = 24, headH = 58, laneH = opts.showLoad === false ? 0 : 30, phaseH = 26, padR = 24, bottom = 12;
+    var width = Math.max(container.clientWidth || 900, opts.minWidth || 900);
+    var plotW = width - labelW - padR;
+    var totalDays = days(t0, t1);
+    var x = function (dt) { return labelW + Math.max(0, Math.min(totalDays, days(t0, dt))) / totalDays * plotW; };
+    var dayW = plotW / totalDays;
+
+    // group rows by phase in canonical order
+    var groups = [];
+    PHASES.forEach(function (p) {
+      var rows = acts.filter(function (a) { return a.phase === p; });
+      if (rows.length) groups.push({ phase: p, rows: rows });
+    });
+    var nRows = acts.length, nGroups = groups.length;
+    var height = headH + laneH + nGroups * phaseH + nRows * rowH + bottom;
+
+    var wrap = document.createElement("div");
+    wrap.className = "trk-gantt-wrap";
+    container.appendChild(wrap);
+    var svg = el("svg", { width: width, height: height, viewBox: "0 0 " + width + " " + height, class: "trk-gantt", role: "img", "aria-label": "Gantt chart of project activities" }, wrap);
+
+    // defs: hatch for the remaining part of a bar (texture channel)
+    var defs = el("defs", {}, svg);
+    var pat = el("pattern", { id: "trk-hatch", patternUnits: "userSpaceOnUse", width: 6, height: 6, patternTransform: "rotate(45)" }, defs);
+    el("line", { x1: 0, y1: 0, x2: 0, y2: 6, stroke: "currentColor", "stroke-width": 1.2, opacity: 0.35 }, pat);
+
+    // header: months and weeks
+    var gHead = el("g", { class: "trk-head" }, svg);
+    var semStart = d(data.semester_start);
+    // week bands
+    for (var w = 0; w < 17; w++) {
+      var ws = addDays(semStart, w * 7), we = addDays(ws, 7);
+      if (we <= t0 || ws >= t1) continue;
+      var xa = x(ws < t0 ? t0 : ws), xb = x(we > t1 ? t1 : we);
+      if (w % 2 === 1) el("rect", { x: xa, y: headH, width: xb - xa, height: height - headH - bottom, class: "trk-weekband" }, gHead);
+      el("line", { x1: xa, y1: headH - 18, x2: xa, y2: height - bottom, class: "trk-grid" }, gHead);
+      if (w < 16 && xb - xa > 26) text(gHead, (xa + xb) / 2, headH - 5, "W" + (w + 1) + (window_ === "next4" ? " \u00b7 " + fmtShort(ws) : ""), { class: "trk-weeklabel", "text-anchor": "middle" });
+    }
+    // month labels
+    var m = new Date(Date.UTC(t0.getUTCFullYear(), t0.getUTCMonth(), 1));
+    while (m < t1) {
+      var mEnd = new Date(Date.UTC(m.getUTCFullYear(), m.getUTCMonth() + 1, 1));
+      var ma = x(m < t0 ? t0 : m), mb = x(mEnd > t1 ? t1 : mEnd);
+      if (mb - ma > 64) text(gHead, ma + 6, 16, MONTHS[m.getUTCMonth()] + " " + m.getUTCFullYear(), { class: "trk-monthlabel" });
+      else if (mb - ma > 26) text(gHead, ma + 4, 16, MONTHS[m.getUTCMonth()], { class: "trk-monthlabel" });
+      el("line", { x1: ma, y1: 4, x2: ma, y2: headH - 18, class: "trk-grid trk-grid-strong" }, gHead);
+      m = mEnd;
+    }
+
+    // course-load lane
+    var y = headH;
+    if (laneH) {
+      var gLane = el("g", { class: "trk-lane" }, svg);
+      el("rect", { x: labelW, y: y, width: plotW, height: laneH, class: "trk-lane-bg" }, gLane);
+      text(gLane, 10, y + 19, "Course load", { class: "trk-rowlabel trk-rowlabel-muted" });
+      data.events.forEach(function (e) {
+        if (e.dateObj < t0 || e.dateObj >= t1) return;
+        var cx = x(e.dateObj) + dayW / 2, cy = y + laneH / 2;
+        var g = el("g", { class: "trk-event trk-event-" + e.kind + (statusSlug(e.state) === "done" ? " trk-event-done" : "") }, gLane);
+        if (e.kind === "homework") el("rect", { x: cx - 4, y: cy - 4, width: 8, height: 8, rx: 1.5 }, g);
+        else if (e.kind === "quiz") el("path", { d: "M" + cx + " " + (cy - 5.5) + " L" + (cx + 5.5) + " " + (cy + 4.5) + " L" + (cx - 5.5) + " " + (cy + 4.5) + " Z" }, g);
+        else if (e.kind === "exam") el("path", { d: "M" + cx + " " + (cy - 7) + " L" + (cx + 7) + " " + cy + " L" + cx + " " + (cy + 7) + " L" + (cx - 7) + " " + cy + " Z" }, g);
+        else el("circle", { cx: cx, cy: cy, r: 5 }, g);
+        el("rect", { x: cx - 8, y: cy - 12, width: 16, height: 24, fill: "transparent" }, g);
+        g.addEventListener("mousemove", function (ev) { showTip('<div class="trk-tip-h">' + esc(e.item) + '</div><table><tr><th>When</th><td>' + fmt(e.dateObj) + '</td></tr><tr><th>Kind</th><td>' + esc(e.kind) + '</td></tr><tr><th>State</th><td>' + esc(e.state) + '</td></tr></table>', ev); });
+        g.addEventListener("mouseleave", hideTip);
+      });
+      y += laneH;
+    }
+
+    // rows
+    var gRows = el("g", { class: "trk-rows" }, svg);
+    var rowIndex = {};
+    groups.forEach(function (grp) {
+      var slug = slugify(grp.phase);
+      var gp = el("g", { class: "trk-phase-row" }, gRows);
+      el("rect", { x: 0, y: y, width: width, height: phaseH, class: "trk-phase-bg" }, gp);
+      el("rect", { x: 10, y: y + 8, width: 10, height: 10, rx: 2, class: "trk-swatch phase-" + slug }, gp);
+      var open = grp.rows.filter(function (a) { return a.slug !== "done"; }).length;
+      var pmin = grp.rows.reduce(function (acc, a) { return !acc || a.esDate < acc ? a.esDate : acc; }, null);
+      var pmax = grp.rows.reduce(function (acc, a) { return !acc || a.efDate > acc ? a.efDate : acc; }, null);
+      text(gp, 26, y + 17, grp.phase, { class: "trk-phaselabel" });
+      text(gp, labelW - 8, y + 17, grp.rows.length + (open ? " (" + open + " open)" : " (all done)"), { class: "trk-phasemeta", "text-anchor": "end" });
+      // phase span line
+      el("line", { x1: x(pmin), y1: y + phaseH / 2, x2: x(addDays(pmax, 1)), y2: y + phaseH / 2, class: "trk-phasespan phase-" + slug }, gp);
+      y += phaseH;
+
+      grp.rows.forEach(function (a) {
+        rowIndex[a.id] = y;
+        var g = el("g", { class: "trk-row trk-row-" + a.slug + (a.critical ? " trk-crit" : "") + (a.near_critical ? " trk-near" : ""), "data-id": a.id }, gRows);
+        el("rect", { x: 0, y: y, width: width, height: rowH, class: "trk-row-bg" }, g);
+        // label
+        var label = a.activity;
+        var maxChars = Math.floor((labelW - 70) / 6.3);
+        if (label.length > maxChars) label = label.slice(0, maxChars - 1) + "…";
+        var lab = text(g, 12, y + rowH / 2 + 4, a.id, { class: "trk-rowid" });
+        text(g, 52, y + rowH / 2 + 4, label, { class: "trk-rowlabel" });
+        if (a.critical && a.slug !== "done") el("rect", { x: 0, y: y + 3, width: 3, height: rowH - 6, class: "trk-critmark" }, g);
+        else if (a.near_critical) el("rect", { x: 0, y: y + 3, width: 3, height: rowH - 6, class: "trk-nearmark" }, g);
+
+        // late window (LS..LF) as a faint band for open constrained activities
+        if (a.lsDate && a.slug !== "done" && a.lsDate > a.esDate) {
+          el("rect", { x: x(a.esDate), y: y + 9, width: Math.max(0, x(addDays(a.lfDate, 1)) - x(a.esDate)), height: rowH - 18, class: "trk-latewindow" }, g);
+        }
+
+        // bar (early schedule)
+        var bx = x(a.esDate), bw = Math.max(dayW * 0.9, x(addDays(a.efDate, 1)) - bx - Math.min(2, dayW * 0.15));
+        var barH = 14, by = y + (rowH - barH) / 2;
+        el("rect", { x: bx, y: by, width: bw, height: barH, rx: 3, class: "trk-bar trk-bar-rest phase-" + slug }, g);
+        if (a.pct > 0) {
+          el("rect", { x: bx, y: by, width: Math.max(2, bw * Math.min(a.pct, 100) / 100), height: barH, rx: 3, class: "trk-bar trk-bar-done phase-" + slug }, g);
+        }
+        if (a.slug !== "done") {
+          el("rect", { x: bx + (a.pct > 0 ? bw * Math.min(a.pct, 100) / 100 : 0), y: by, width: bw - (a.pct > 0 ? bw * Math.min(a.pct, 100) / 100 : 0), height: barH, fill: "url(#trk-hatch)", class: "trk-bar-hatch", rx: 3 }, g);
+        }
+        // milestone diamond at the deadline
+        if (a.deadlineDate) {
+          var mx = x(a.deadlineDate) + dayW / 2, my = y + rowH / 2;
+          el("path", { d: "M" + mx + " " + (my - 8) + " L" + (mx + 8) + " " + my + " L" + mx + " " + (my + 8) + " L" + (mx - 8) + " " + my + " Z", class: "trk-milestone phase-" + slug }, g);
+        }
+        // float label at the bar end
+        if (a.slug !== "done" && a.total_float != null) {
+          var fl = a.total_float < 0 ? Math.abs(a.total_float) + "d late" : a.total_float + "d";
+          var fx = (a.deadlineDate ? x(a.deadlineDate) + dayW / 2 + 12 : bx + bw + 6);
+          if (fx < width - 30) text(g, fx, y + rowH / 2 + 4, fl, { class: "trk-float" + (a.total_float <= 0 ? " trk-float-crit" : a.total_float <= 3 ? " trk-float-near" : "") });
+        }
+        // hit area + tooltip
+        var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("click", function () { focusRow(a.id); });
+        y += rowH;
+      });
+    });
+
+    // dependency focus
+    var focused = null;
+    function focusRow(id) {
+      var byId = {};
+      data.activities.forEach(function (a) { byId[a.id] = a; });
+      if (focused === id) { focused = null; svg.classList.remove("trk-focused"); svg.querySelectorAll(".trk-row").forEach(function (r) { r.classList.remove("trk-rel", "trk-self", "trk-pred", "trk-succ"); }); return; }
+      focused = id;
+      svg.classList.add("trk-focused");
+      var preds = {}, succs = {};
+      (function walkP(i) { (byId[i] ? byId[i].preds : []).forEach(function (p) { if (!preds[p]) { preds[p] = 1; walkP(p); } }); })(id);
+      (function walkS(i) { (byId[i] ? byId[i].succs : []).forEach(function (s) { if (!succs[s]) { succs[s] = 1; walkS(s); } }); })(id);
+      svg.querySelectorAll(".trk-row").forEach(function (r) {
+        var rid = r.getAttribute("data-id");
+        r.classList.remove("trk-rel", "trk-self", "trk-pred", "trk-succ");
+        if (rid === id) r.classList.add("trk-rel", "trk-self");
+        else if (preds[rid]) r.classList.add("trk-rel", "trk-pred");
+        else if (succs[rid]) r.classList.add("trk-rel", "trk-succ");
+      });
+    }
+
+    // today line
+    if (today >= t0 && today < t1) {
+      var tx = x(today) + dayW / 2;
+      el("line", { x1: tx, y1: headH - 18, x2: tx, y2: height - bottom, class: "trk-today" }, svg);
+      var tl = el("g", { class: "trk-todaylabel" }, svg);
+      el("rect", { x: tx - 22, y: headH - 34, width: 44, height: 16, rx: 8 }, tl);
+      text(tl, tx, headH - 22, "Today", { "text-anchor": "middle" });
+    }
+
+    if (!acts.length) {
+      var empty = document.createElement("p");
+      empty.className = "trk-empty";
+      empty.textContent = "Nothing matches this view.";
+      container.appendChild(empty);
+    }
+    return svg;
+  }
+
+  function ganttControls(container, data, state, rerender) {
+    var bar = document.createElement("div");
+    bar.className = "trk-controls";
+    var phases = PHASES.filter(function (p) { return data.activities.some(function (a) { return a.phase === p; }); });
+    function btn(label, key, value, group) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "trk-btn"; b.textContent = label;
+      b.setAttribute("data-group", group); b.setAttribute("data-value", value);
+      if (state[key] === value) b.classList.add("is-active");
+      b.addEventListener("click", function () {
+        state[key] = value;
+        bar.querySelectorAll('[data-group="' + group + '"]').forEach(function (o) { o.classList.toggle("is-active", o.getAttribute("data-value") === value); });
+        rerender();
+      });
+      return b;
+    }
+    var g1 = document.createElement("div"); g1.className = "trk-btngroup";
+    g1.appendChild(btn("Everything", "mode", "all", "mode"));
+    g1.appendChild(btn("Open only", "mode", "open", "mode"));
+    g1.appendChild(btn("Critical path", "mode", "critical", "mode"));
+    var g2 = document.createElement("div"); g2.className = "trk-btngroup";
+    g2.appendChild(btn("Whole semester", "window", "semester", "window"));
+    g2.appendChild(btn("Next four weeks", "window", "next4", "window"));
+    var sel = document.createElement("select"); sel.className = "trk-select"; sel.setAttribute("aria-label", "Phase");
+    var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "All phases"; sel.appendChild(o0);
+    phases.forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p; sel.appendChild(o); });
+    sel.addEventListener("change", function () {
+      if (sel.value) { state.mode = "phase:" + sel.value; g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); }); }
+      else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
+      rerender();
+    });
+    bar.appendChild(g1); bar.appendChild(g2); bar.appendChild(sel);
+    container.appendChild(bar);
+  }
+
+  function legend(container) {
+    var lg = document.createElement("div");
+    lg.className = "trk-legend";
+    lg.innerHTML =
+      PHASES.slice(0, 8).map(function (p) { return '<span class="trk-lg"><span class="trk-swatch-i phase-' + slugify(p) + '"></span>' + esc(p) + '</span>'; }).join("") +
+      '<span class="trk-lg"><span class="trk-lg-bar"><span class="trk-lg-done"></span><span class="trk-lg-rest"></span></span>done / remaining</span>' +
+      '<span class="trk-lg"><span class="trk-lg-diamond"></span>deadline</span>' +
+      '<span class="trk-lg"><span class="trk-lg-late"></span>late window</span>' +
+      '<span class="trk-lg"><span class="trk-lg-critmark"></span>zero float (critical)</span>' +
+      '<span class="trk-lg"><span class="trk-lg-nearmark"></span>1 to 3 days of float</span>' +
+      '<span class="trk-lg"><span class="trk-lg-today"></span>today</span>' +
+      '<span class="trk-lg trk-lg-load"><span class="trk-ev-hw"></span>homework <span class="trk-ev-quiz"></span>quiz <span class="trk-ev-exam"></span>exam <span class="trk-ev-proj"></span>deliverable</span>';
+    container.appendChild(lg);
+  }
+
+  function mountGantt(container, data) {
+    var state = { mode: container.getAttribute("data-mode") || "all", window: container.getAttribute("data-window") || "semester" };
+    var showControls = container.getAttribute("data-controls") !== "false";
+    var showLoad = container.getAttribute("data-load") !== "false";
+    var chart = document.createElement("div");
+    function rerender() {
+      renderGantt(chart, data, { mode: state.mode, window: state.window, showLoad: showLoad, showOngoing: state.mode.indexOf("phase:") === 0 || state.mode === "all" });
+    }
+    if (showControls) ganttControls(container, data, state, rerender);
+    container.appendChild(chart);
+    rerender();
+    if (container.getAttribute("data-legend") !== "false") legend(container);
+    var t;
+    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(rerender, 150); });
+  }
+
+  /* ---------- deliverable chain ---------- */
+  function renderChain(container, data) {
+    container.innerHTML = "";
+    var today = data.todayDate;
+    var byId = {};
+    data.activities.forEach(function (a) { byId[a.id] = a; });
+    var ms = data.activities.filter(function (a) { return a.deadlineDate && a.phase !== "Setup"; })
+      .sort(function (a, b) { return a.deadlineDate - b.deadlineDate; });
+    // fielding is a milestone in practice even without a deadline
+    var field = byId["FS04"];
+    var nodes = [];
+    var teamDone = data.activities.filter(function (a) { return a.phase === "Setup" && a.slug === "done"; }).length;
+    nodes.push({ label: "Team and topic", date: byId["S02"] ? byId["S02"].dueDate : null, phase: "Setup", status: teamDone >= 2 ? "Done" : "In progress", float: null, id: "S02", sub: "settled" });
+    ms.forEach(function (a) {
+      var chain = {};
+      (function walk(i) { (byId[i] ? byId[i].preds : []).forEach(function (p) { if (!chain[p]) { chain[p] = 1; walk(p); } }); })(a.id);
+      var open = Object.keys(chain).map(function (k) { return byId[k]; }).concat([a]).filter(function (b) { return b && b.slug !== "done" && b.total_float != null && b.phase === a.phase; });
+      var f = open.length ? Math.min.apply(null, open.map(function (b) { return b.total_float; })) : null;
+      var openCount = data.activities.filter(function (b) { return b.phase === a.phase && b.slug !== "done"; }).length;
+      var st = a.slug === "done" ? "Done" : (a.deadlineDate < today ? "Late" : (open.length && data.activities.some(function (b) { return b.phase === a.phase && b.slug === "active"; }) ? "In progress" : "Upcoming"));
+      nodes.push({ label: a.deliverable || a.activity, date: a.deadlineDate, phase: a.phase, status: st, float: f, id: a.id, sub: openCount ? openCount + " open" : "all done" });
+    });
+    if (field) {
+      var idx = nodes.findIndex(function (n) { return n.id === "FA06"; });
+      nodes.splice(idx, 0, { label: "Fielding on Prolific", date: field.efDate, phase: field.phase, status: field.slug === "done" ? "Done" : "Upcoming", float: field.total_float, id: field.id, sub: "assumed window" });
+    }
+    // Presentation: merge PR03 (slides) and PR04 (present) labels
+    nodes = nodes.map(function (n) {
+      if (n.id === "PR03") n.label = "Slides pushed";
+      if (n.id === "PR04") n.label = "Presentation";
+      return n;
+    });
+
+    var width = Math.max(container.clientWidth || 900, 320);
+    var nodeW = 156, nodeH = 66, gapX = 66, gapY = 48, padX = 8;
+    var perRow = Math.max(1, Math.floor((width - padX * 2 + gapX) / (nodeW + gapX)));
+    var rows = Math.ceil(nodes.length / perRow);
+    var height = rows * nodeH + (rows - 1) * gapY + 20;
+    var svg = el("svg", { width: width, height: height, viewBox: "0 0 " + width + " " + height, class: "trk-chain", role: "img", "aria-label": "Deliverable chain with float" }, container);
+    var defs = el("defs", {}, svg);
+    var mk = el("marker", { id: "trk-arrow", viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: "auto-start-reverse" }, defs);
+    el("path", { d: "M0 0 L10 5 L0 10 Z", class: "trk-arrowhead" }, mk);
+
+    var pos = nodes.map(function (n, i) {
+      var r = Math.floor(i / perRow), c = i % perRow;
+      if (r % 2 === 1) c = perRow - 1 - c; // snake layout
+      return { x: padX + c * (nodeW + gapX), y: 10 + r * (nodeH + gapY) };
+    });
+    // connectors
+    for (var i = 0; i < nodes.length - 1; i++) {
+      var p = pos[i], q = pos[i + 1], r0 = Math.floor(i / perRow), r1 = Math.floor((i + 1) / perRow);
+      var crit = nodes[i + 1].float != null && nodes[i + 1].float <= 0 && nodes[i + 1].status !== "Done";
+      var cls = "trk-link" + (crit ? " trk-link-crit" : "");
+      var path;
+      if (r0 === r1) {
+        var goRight = q.x > p.x;
+        var x1 = goRight ? p.x + nodeW : p.x, x2 = goRight ? q.x : q.x + nodeW, yy = p.y + nodeH / 2;
+        path = "M" + x1 + " " + yy + " L" + x2 + " " + yy;
+      } else {
+        path = "M" + (p.x + nodeW / 2) + " " + (p.y + nodeH) + " L" + (q.x + nodeW / 2) + " " + q.y;
+      }
+      el("path", { d: path, class: cls, "marker-end": "url(#trk-arrow)" }, svg);
+      if (nodes[i + 1].float != null && nodes[i + 1].status !== "Done") {
+        var f = nodes[i + 1].float;
+        var lbl = f < 0 ? Math.abs(f) + " d late" : f + " d";
+        if (r0 === r1) {
+          text(svg, (p.x + q.x + nodeW) / 2, p.y + nodeH / 2 - 6, lbl, { class: "trk-linklabel" + (f <= 0 ? " trk-linklabel-crit" : ""), "text-anchor": "middle" });
+        } else {
+          text(svg, p.x + nodeW / 2 + 8, (p.y + nodeH + q.y) / 2 + 4, lbl, { class: "trk-linklabel" + (f <= 0 ? " trk-linklabel-crit" : "") });
+        }
+      }
+    }
+    nodes.forEach(function (n, i) {
+      var p = pos[i], slug = slugify(n.phase), st = statusSlug(n.status);
+      var g = el("g", { class: "trk-node trk-node-" + st + (n.float != null && n.float <= 0 && st !== "done" ? " trk-node-crit" : ""), transform: "translate(" + p.x + "," + p.y + ")" }, svg);
+      el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, rx: 10, class: "trk-node-bg" }, g);
+      el("rect", { x: 0, y: 0, width: 6, height: nodeH, class: "trk-node-stripe phase-" + slug }, g);
+      // clip the stripe corners
+      el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, rx: 10, class: "trk-node-ring" }, g);
+      var lab = n.label.length > 20 ? n.label.slice(0, 19) + "…" : n.label;
+      text(g, 16, 22, lab, { class: "trk-node-title" });
+      text(g, 16, 40, n.date ? fmt(n.date) : "", { class: "trk-node-date" });
+      var s2 = n.status === "Done" ? "done" : n.status.toLowerCase() + (n.sub ? " · " + n.sub : "");
+      text(g, 16, 56, s2, { class: "trk-node-sub" });
+      if (st === "done") text(g, nodeW - 12, 22, "✓", { class: "trk-node-check", "text-anchor": "end" });
+      var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
+      var a = byId[n.id];
+      if (a) {
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+      }
+    });
+  }
+
+  function mountChain(container, data) {
+    renderChain(container, data);
+    var t;
+    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(function () { renderChain(container, data); }, 150); });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    var data = loadData();
+    if (!data) return;
+    document.querySelectorAll("[data-tracker='gantt']").forEach(function (c) { mountGantt(c, data); });
+    document.querySelectorAll("[data-tracker='chain']").forEach(function (c) { mountChain(c, data); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})();
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -657,13 +1242,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1015,7 +1601,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with Quarto and R; data lives in data/*.csv.</p>
+<p>Built with Quarto and R; the schedule is computed from data/*.csv on every render.</p>
 </div>
   </div>
 </footer>

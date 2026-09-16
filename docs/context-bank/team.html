@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Team – EMSE 6035 Project Tracker</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8d68b46d66c3c2185d226d4d244cb7a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,6 +74,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -94,25 +103,26 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tracker" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tracker</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tracker">    
-        <li>
-    <a class="dropdown-item" href="../tracker/activities.html">
- <span class="dropdown-text">Activities</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/schedule.html"> 
+<span class="menu-text">Schedule</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../tracker/critical-path.html">
- <span class="dropdown-text">Critical path</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/critical-path.html"> 
+<span class="menu-text">Critical path</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../tracker/progress.html">
- <span class="dropdown-text">Week by week</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/activities.html"> 
+<span class="menu-text">Activities</span></a>
   </li>  
-    </ul>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/risks.html"> 
+<span class="menu-text">Risks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tracker/progress.html"> 
+<span class="menu-text">Week by week</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
@@ -205,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Team</h1>
-<p class="subtitle lead">Roster, roles, account ownership and the contribution log</p>
+<p class="subtitle lead">Roster, topic, the living attributes table, who owns what, and the contribution log</p>
 </div>
 
 
@@ -222,9 +232,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential. Fill in the blanks as the team forms (deadline: the first two weeks, so by Wed, Sep 9).</p>
+<p>This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential.</p>
 <section id="roster" class="level2">
 <h2 class="anchored" data-anchor-id="roster">Roster</h2>
+<p>Team E, five members. The course guideline says three to four, so the size is being confirmed with the professor (activity S05).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -233,145 +244,202 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Role</th>
 <th>Name</th>
+<th>Role</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Member (tracker maintainer)</td>
-<td>Harshit Chhajed</td>
-<td>Built this site during the week 2 exercise</td>
+<td>Harshit</td>
+<td>Member, tracker maintainer</td>
+<td>Built this site during the week 2 exercise; keeps the schedule and the risk register current</td>
 </tr>
 <tr class="even">
+<td>Michael</td>
 <td>Member</td>
-<td></td>
 <td></td>
 </tr>
 <tr class="odd">
+<td>Vlad</td>
 <td>Member</td>
-<td></td>
-<td></td>
+<td>Joined after the official repo was created, so the professor has to add him to it</td>
 </tr>
 <tr class="even">
-<td>Member (optional)</td>
+<td>Ishita</td>
+<td>Member</td>
 <td></td>
-<td></td>
+</tr>
+<tr class="odd">
+<td>Youssouf</td>
+<td>Member</td>
+<td>Added all five names to the official repo’s README on Sep 16</td>
 </tr>
 </tbody>
 </table>
+<p>Two repos, both private: a brainstorming repo under one member’s account (ideas, decisions, meeting notes, a folder per deliverable) and the official submission repo in the course organization, where every deliverable is pushed from its numbered folder.</p>
 </section>
 <section id="topic" class="level2">
 <h2 class="anchored" data-anchor-id="topic">Topic</h2>
-<p><strong>Status: not chosen.</strong> Candidates are being scouted against the <a href="../context-bank/project-requirements.html#selecting-a-topic-all-seven-must-hold">seven selection criteria</a>. When the decision is made, record it here with a one-line rationale and the date, and open the proposal activities (A05 to A09) on the <a href="../tracker/activities.html">activities</a> page.</p>
+<p><strong>Smart Urban Living</strong> (chosen with the proposal draft of Sep 15): consumer preferences and willingness to pay for smart apartment features. The product is a Smart Urban Apartment Package, a configurable set of smart-home technologies and technology-enabled amenities for modern multifamily rentals, and the study is a choice-based conjoint among U.S. renters.</p>
+<p>Against the <a href="../context-bank/project-requirements.html#selecting-a-topic-all-seven-must-hold">seven selection criteria</a>, the weak spot is “emerging and pre-commercial”: smart locks and thermostats are common in new Class A buildings. The argument the proposal makes is that the design decision is unresolved for mid-market and retrofit stock, and that no public source gives tradeoff-based willingness to pay per feature, only stated-preference percentages.</p>
 </section>
 <section id="attributes-and-levels-living-table" class="level2">
 <h2 class="anchored" data-anchor-id="attributes-and-levels-living-table">Attributes and levels (living table)</h2>
-<p>This table feeds the proposal, the survey plan and every later deliverable. Start with more attributes than you need; cutting back later is easy.</p>
+<p>This table feeds the proposal, the survey plan and every later deliverable. The levels are the proposal draft’s; the survey plan (SP01) locks them after the workshop feedback.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Attribute</th>
-<th>Type (continuous or discrete)</th>
-<th>Levels</th>
+<th>Type</th>
+<th>Levels (draft)</th>
 <th>Unit</th>
-<th>Competitor benchmarks</th>
-<th>Research question it informs</th>
+<th>Open question</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Price</td>
+<td>Monthly smart-package premium</td>
 <td>continuous</td>
-<td></td>
-<td></td>
-<td></td>
+<td>0, 25, 50, 75</td>
+<td>USD per month over a comparable standard apartment</td>
+<td>Zero makes a free smart package a valid profile; reserve it for the standard-apartment reference or shift the range, and show a base rent in every choice task</td>
+</tr>
+<tr class="even">
+<td>Smart access and security</td>
+<td>discrete</td>
+<td>standard key; smart keyless lock; smart lock plus video security</td>
+<td>system type</td>
+<td>Split into lock and video, or keep as one attribute</td>
+</tr>
+<tr class="odd">
+<td>Smart climate control</td>
+<td>discrete</td>
+<td>standard thermostat; smart thermostat; smart thermostat plus automated energy management</td>
+<td>system type</td>
+<td>One-line definition of “automated energy management”</td>
+</tr>
+<tr class="even">
+<td>Smart lighting</td>
+<td>discrete</td>
+<td>standard; app-controlled; automated</td>
+<td>system type</td>
+<td>Likely the first attribute to drop if the pilot says respondents are overloaded</td>
+</tr>
+<tr class="odd">
+<td>Package management</td>
+<td>discrete</td>
+<td>standard delivery area; secure lockers; smart package room with digital access</td>
+<td>system type</td>
 <td></td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>EV charging access</td>
+<td>discrete</td>
+<td>none; shared stations; reserved access</td>
+<td>service level</td>
+<td>Keep as an attribute or use for sub-group analysis only</td>
 </tr>
 </tbody>
 </table>
+<p>Research questions: which features most influence apartment choice; how much extra rent renters will pay for each; which bundle at which premium gives the strongest value proposition (answered by a market simulation of package tiers).</p>
 </section>
 <section id="who-owns-what" class="level2">
 <h2 class="anchored" data-anchor-id="who-owns-what">Who owns what</h2>
+<p>Owners are <strong>TBD</strong> until the team assigns them at the next sync (activity S06). One owner and one backup per deliverable; every member submits at least once.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Thing</th>
 <th>Owner</th>
+<th>Backup</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Team GitHub repo</td>
-<td>TBD</td>
+<td>Brainstorming repo</td>
+<td>Harshit</td>
+<td></td>
+<td>Invitations to all four teammates</td>
+</tr>
+<tr class="even">
+<td>Official submission repo</td>
+<td>shared</td>
+<td></td>
 <td>Every deliverable is pushed here; one submitter per deliverable</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>shinyapps.io account (survey hosting)</td>
 <td>TBD</td>
-<td>One teammate’s account</td>
+<td></td>
+<td>One teammate’s account; decide by Oct 2 (S07)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Supabase project (survey responses)</td>
 <td>TBD</td>
+<td></td>
 <td>Keys live in that person’s <code>.Renviron</code>, never in any repo</td>
 </tr>
+<tr class="odd">
+<td>Proposal (Sep 20)</td>
+<td>TBD</td>
+<td>TBD</td>
+<td></td>
+</tr>
 <tr class="even">
-<td>Submitter, proposal</td>
+<td>Survey plan (Sep 29)</td>
+<td>TBD</td>
 <td>TBD</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Submitter, survey plan</td>
+<td>Pilot survey (Oct 13)</td>
+<td>TBD</td>
 <td>TBD</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Submitter, pilot survey</td>
+<td>Pilot analysis (Nov 1)</td>
+<td>TBD</td>
 <td>TBD</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Submitter, pilot analysis</td>
+<td>Final survey (Nov 15)</td>
+<td>TBD</td>
 <td>TBD</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Submitter, final survey</td>
+<td>Final report (Dec 6)</td>
+<td>TBD</td>
 <td>TBD</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Submitter, final report</td>
+<td>Presentation (Dec 8 and 9)</td>
+<td>TBD</td>
 <td>TBD</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Submitter, presentation</td>
-<td>TBD</td>
+<td>Tracker, decisions log, contribution log</td>
+<td>Harshit</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -398,13 +466,13 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Week of Sep 16</td>
 <td>Proposal workshop (remote, replaces the week 4 lecture)</td>
-<td>Calendar link posted for week 4</td>
-<td></td>
+<td>Scheduling link on the course site</td>
+<td>pending</td>
 </tr>
 <tr class="even">
 <td>Week of Oct 7</td>
 <td>Survey plan meeting</td>
-<td>Slack <code>#project</code></td>
+<td>Course Slack</td>
 <td></td>
 </tr>
 </tbody>
@@ -432,6 +500,21 @@ ul.task-list li input[type="checkbox"] {
 <td>Harshit</td>
 <td>Set up the tracker site, the activity list and the context bank</td>
 </tr>
+<tr class="even">
+<td>2026-09-15</td>
+<td>Teammate</td>
+<td>Drafted and rendered proposal v1 (Smart Urban Living)</td>
+</tr>
+<tr class="odd">
+<td>2026-09-16</td>
+<td>Youssouf</td>
+<td>Listed the team in the official repo’s README</td>
+</tr>
+<tr class="even">
+<td>2026-09-16</td>
+<td>Harshit</td>
+<td>Rubric review of the proposal draft; brainstorming repo created; tracker replanned with a computed critical path and a risk register</td>
+</tr>
 </tbody>
 </table>
 
@@ -439,6 +522,496 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<script>
+/* tracker.js - client-side schedule views for the EMSE 6035 project tracker.
+   Reads the JSON that R embeds in <script id="schedule-data"> (see R/helpers.R:
+   embed_schedule) and draws: an SVG Gantt with the computed early schedule, the
+   critical path, milestones, a today line and the course-load lane; and the
+   deliverable chain. No dependencies. Inlined into every page by _quarto.yml. */
+(function () {
+  "use strict";
+
+  var DAY = 86400000;
+  function d(s) { var p = s.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
+  function days(a, b) { return Math.round((b - a) / DAY); }
+  function addDays(a, n) { return new Date(a.getTime() + n * DAY); }
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function fmt(dt) { return DOW[dt.getUTCDay()] + " " + MONTHS[dt.getUTCMonth()] + " " + dt.getUTCDate(); }
+  function fmtShort(dt) { return MONTHS[dt.getUTCMonth()] + " " + dt.getUTCDate(); }
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function text(parent, x, y, str, attrs) {
+    var t = el("text", Object.assign({ x: x, y: y }, attrs || {}), parent);
+    t.textContent = str;
+    return t;
+  }
+  function slugify(s) { return String(s).toLowerCase().replace(/\s+/g, "-"); }
+  function statusSlug(s) {
+    s = String(s || "").toLowerCase();
+    if (s === "done" || s === "graded" || s === "submitted") return "done";
+    if (s === "in progress") return "active";
+    if (s === "blocked" || s === "missed") return "blocked";
+    return "todo";
+  }
+
+  var PHASES = ["Setup","Proposal","Survey plan","Pilot survey","Pilot analysis","Final survey","Final analysis","Presentation","Ongoing"];
+
+  function loadData() {
+    var node = document.getElementById("schedule-data");
+    if (!node) return null;
+    var data = JSON.parse(node.textContent);
+    data.todayDate = d(data.today);
+    data.activities.forEach(function (a) {
+      a.startDate = d(a.start); a.dueDate = d(a.due);
+      a.esDate = d(a.es); a.efDate = d(a.ef);
+      a.deadlineDate = a.deadline ? d(a.deadline) : null;
+      a.lsDate = a.ls ? d(a.ls) : null; a.lfDate = a.lf ? d(a.lf) : null;
+      a.slug = statusSlug(a.status);
+      a.preds = a.depends_on ? a.depends_on.split(";").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+      a.succs = a.successors ? a.successors.split(";").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+    });
+    data.events.forEach(function (e) { e.dateObj = d(e.date); });
+    return data;
+  }
+
+  /* ---------- tooltip ---------- */
+  var tip = null;
+  function ensureTip() {
+    if (tip) return tip;
+    tip = document.createElement("div");
+    tip.className = "trk-tip";
+    tip.setAttribute("role", "tooltip");
+    document.body.appendChild(tip);
+    return tip;
+  }
+  function showTip(html, evt) {
+    var t = ensureTip();
+    t.innerHTML = html;
+    t.style.display = "block";
+    moveTip(evt);
+  }
+  function moveTip(evt) {
+    if (!tip) return;
+    var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    var x = evt.clientX + pad, y = evt.clientY + pad;
+    if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
+    if (y + h > window.innerHeight - 8) y = evt.clientY - h - pad;
+    tip.style.left = (x + window.scrollX) + "px";
+    tip.style.top = (y + window.scrollY) + "px";
+  }
+  function hideTip() { if (tip) tip.style.display = "none"; }
+
+  function floatLabel(a) {
+    if (a.slug === "done") return "done";
+    if (a.total_float == null) return "open-ended";
+    if (a.total_float < 0) return Math.abs(a.total_float) + " d late";
+    if (a.total_float === 0) return "0 d float";
+    return a.total_float + " d float";
+  }
+  function activityTip(a) {
+    var rows = [
+      ["Phase", a.phase], ["Owner", a.owner],
+      ["Planned", fmt(a.startDate) + " to " + fmt(a.dueDate) + " (" + a.dur + " d)"],
+      ["Early", fmt(a.esDate) + " to " + fmt(a.efDate)],
+      a.lsDate ? ["Late", fmt(a.lsDate) + " to " + fmt(a.lfDate)] : null,
+      a.deadlineDate ? ["Deadline", fmt(a.deadlineDate)] : null,
+      ["Float", floatLabel(a) + (a.free_float != null ? ", free " + a.free_float + " d" : "")],
+      ["Status", a.status + (a.pct ? " (" + a.pct + "%)" : "")],
+      a.deliverable ? ["Deliverable", a.deliverable] : null,
+      a.preds.length ? ["After", a.preds.join(", ")] : null,
+      a.succs.length ? ["Feeds", a.succs.join(", ")] : null,
+      a.notes ? ["Note", a.notes] : null
+    ].filter(Boolean);
+    var flags = [];
+    if (a.critical) flags.push('<span class="trk-flag trk-flag-crit">critical</span>');
+    else if (a.near_critical) flags.push('<span class="trk-flag trk-flag-near">near-critical</span>');
+    if (a.overdue) flags.push('<span class="trk-flag trk-flag-crit">overdue</span>');
+    if (a.slipped) flags.push('<span class="trk-flag trk-flag-near">start pushed by a predecessor</span>');
+    return '<div class="trk-tip-h"><span class="trk-id">' + esc(a.id) + '</span> ' + esc(a.activity) + '</div>' +
+      (flags.length ? '<div class="trk-tip-flags">' + flags.join(" ") + '</div>' : "") +
+      '<table>' + rows.map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join("") + '</table>';
+  }
+
+  /* ---------- Gantt ---------- */
+  function renderGantt(container, data, opts) {
+    opts = opts || {};
+    container.innerHTML = "";
+    var mode = opts.mode || "all";           // all | critical | open | phase:<name>
+    var window_ = opts.window || "semester"; // semester | next4
+    var today = data.todayDate;
+
+    var t0, t1;
+    if (window_ === "next4") { t0 = addDays(today, -3); t1 = addDays(today, 29); }
+    else { t0 = d(data.semester_start); t1 = addDays(d(data.semester_end), 1); }
+
+    var acts = data.activities.filter(function (a) {
+      if (a.phase === "Ongoing" && !opts.showOngoing) return false;
+      if (mode === "critical") return a.critical && a.slug !== "done";
+      if (mode === "open") return a.slug !== "done";
+      if (mode.indexOf("phase:") === 0) return a.phase === mode.slice(6);
+      return true;
+    }).filter(function (a) {
+      if (window_ !== "next4") return true;
+      return a.efDate >= t0 && a.esDate < t1 || (a.deadlineDate && a.deadlineDate >= t0 && a.deadlineDate < t1);
+    });
+
+    var labelW = opts.labelWidth || 300;
+    var rowH = 24, headH = 58, laneH = opts.showLoad === false ? 0 : 30, phaseH = 26, padR = 24, bottom = 12;
+    var width = Math.max(container.clientWidth || 900, opts.minWidth || 900);
+    var plotW = width - labelW - padR;
+    var totalDays = days(t0, t1);
+    var x = function (dt) { return labelW + Math.max(0, Math.min(totalDays, days(t0, dt))) / totalDays * plotW; };
+    var dayW = plotW / totalDays;
+
+    // group rows by phase in canonical order
+    var groups = [];
+    PHASES.forEach(function (p) {
+      var rows = acts.filter(function (a) { return a.phase === p; });
+      if (rows.length) groups.push({ phase: p, rows: rows });
+    });
+    var nRows = acts.length, nGroups = groups.length;
+    var height = headH + laneH + nGroups * phaseH + nRows * rowH + bottom;
+
+    var wrap = document.createElement("div");
+    wrap.className = "trk-gantt-wrap";
+    container.appendChild(wrap);
+    var svg = el("svg", { width: width, height: height, viewBox: "0 0 " + width + " " + height, class: "trk-gantt", role: "img", "aria-label": "Gantt chart of project activities" }, wrap);
+
+    // defs: hatch for the remaining part of a bar (texture channel)
+    var defs = el("defs", {}, svg);
+    var pat = el("pattern", { id: "trk-hatch", patternUnits: "userSpaceOnUse", width: 6, height: 6, patternTransform: "rotate(45)" }, defs);
+    el("line", { x1: 0, y1: 0, x2: 0, y2: 6, stroke: "currentColor", "stroke-width": 1.2, opacity: 0.35 }, pat);
+
+    // header: months and weeks
+    var gHead = el("g", { class: "trk-head" }, svg);
+    var semStart = d(data.semester_start);
+    // week bands
+    for (var w = 0; w < 17; w++) {
+      var ws = addDays(semStart, w * 7), we = addDays(ws, 7);
+      if (we <= t0 || ws >= t1) continue;
+      var xa = x(ws < t0 ? t0 : ws), xb = x(we > t1 ? t1 : we);
+      if (w % 2 === 1) el("rect", { x: xa, y: headH, width: xb - xa, height: height - headH - bottom, class: "trk-weekband" }, gHead);
+      el("line", { x1: xa, y1: headH - 18, x2: xa, y2: height - bottom, class: "trk-grid" }, gHead);
+      if (w < 16 && xb - xa > 26) text(gHead, (xa + xb) / 2, headH - 5, "W" + (w + 1) + (window_ === "next4" ? " \u00b7 " + fmtShort(ws) : ""), { class: "trk-weeklabel", "text-anchor": "middle" });
+    }
+    // month labels
+    var m = new Date(Date.UTC(t0.getUTCFullYear(), t0.getUTCMonth(), 1));
+    while (m < t1) {
+      var mEnd = new Date(Date.UTC(m.getUTCFullYear(), m.getUTCMonth() + 1, 1));
+      var ma = x(m < t0 ? t0 : m), mb = x(mEnd > t1 ? t1 : mEnd);
+      if (mb - ma > 64) text(gHead, ma + 6, 16, MONTHS[m.getUTCMonth()] + " " + m.getUTCFullYear(), { class: "trk-monthlabel" });
+      else if (mb - ma > 26) text(gHead, ma + 4, 16, MONTHS[m.getUTCMonth()], { class: "trk-monthlabel" });
+      el("line", { x1: ma, y1: 4, x2: ma, y2: headH - 18, class: "trk-grid trk-grid-strong" }, gHead);
+      m = mEnd;
+    }
+
+    // course-load lane
+    var y = headH;
+    if (laneH) {
+      var gLane = el("g", { class: "trk-lane" }, svg);
+      el("rect", { x: labelW, y: y, width: plotW, height: laneH, class: "trk-lane-bg" }, gLane);
+      text(gLane, 10, y + 19, "Course load", { class: "trk-rowlabel trk-rowlabel-muted" });
+      data.events.forEach(function (e) {
+        if (e.dateObj < t0 || e.dateObj >= t1) return;
+        var cx = x(e.dateObj) + dayW / 2, cy = y + laneH / 2;
+        var g = el("g", { class: "trk-event trk-event-" + e.kind + (statusSlug(e.state) === "done" ? " trk-event-done" : "") }, gLane);
+        if (e.kind === "homework") el("rect", { x: cx - 4, y: cy - 4, width: 8, height: 8, rx: 1.5 }, g);
+        else if (e.kind === "quiz") el("path", { d: "M" + cx + " " + (cy - 5.5) + " L" + (cx + 5.5) + " " + (cy + 4.5) + " L" + (cx - 5.5) + " " + (cy + 4.5) + " Z" }, g);
+        else if (e.kind === "exam") el("path", { d: "M" + cx + " " + (cy - 7) + " L" + (cx + 7) + " " + cy + " L" + cx + " " + (cy + 7) + " L" + (cx - 7) + " " + cy + " Z" }, g);
+        else el("circle", { cx: cx, cy: cy, r: 5 }, g);
+        el("rect", { x: cx - 8, y: cy - 12, width: 16, height: 24, fill: "transparent" }, g);
+        g.addEventListener("mousemove", function (ev) { showTip('<div class="trk-tip-h">' + esc(e.item) + '</div><table><tr><th>When</th><td>' + fmt(e.dateObj) + '</td></tr><tr><th>Kind</th><td>' + esc(e.kind) + '</td></tr><tr><th>State</th><td>' + esc(e.state) + '</td></tr></table>', ev); });
+        g.addEventListener("mouseleave", hideTip);
+      });
+      y += laneH;
+    }
+
+    // rows
+    var gRows = el("g", { class: "trk-rows" }, svg);
+    var rowIndex = {};
+    groups.forEach(function (grp) {
+      var slug = slugify(grp.phase);
+      var gp = el("g", { class: "trk-phase-row" }, gRows);
+      el("rect", { x: 0, y: y, width: width, height: phaseH, class: "trk-phase-bg" }, gp);
+      el("rect", { x: 10, y: y + 8, width: 10, height: 10, rx: 2, class: "trk-swatch phase-" + slug }, gp);
+      var open = grp.rows.filter(function (a) { return a.slug !== "done"; }).length;
+      var pmin = grp.rows.reduce(function (acc, a) { return !acc || a.esDate < acc ? a.esDate : acc; }, null);
+      var pmax = grp.rows.reduce(function (acc, a) { return !acc || a.efDate > acc ? a.efDate : acc; }, null);
+      text(gp, 26, y + 17, grp.phase, { class: "trk-phaselabel" });
+      text(gp, labelW - 8, y + 17, grp.rows.length + (open ? " (" + open + " open)" : " (all done)"), { class: "trk-phasemeta", "text-anchor": "end" });
+      // phase span line
+      el("line", { x1: x(pmin), y1: y + phaseH / 2, x2: x(addDays(pmax, 1)), y2: y + phaseH / 2, class: "trk-phasespan phase-" + slug }, gp);
+      y += phaseH;
+
+      grp.rows.forEach(function (a) {
+        rowIndex[a.id] = y;
+        var g = el("g", { class: "trk-row trk-row-" + a.slug + (a.critical ? " trk-crit" : "") + (a.near_critical ? " trk-near" : ""), "data-id": a.id }, gRows);
+        el("rect", { x: 0, y: y, width: width, height: rowH, class: "trk-row-bg" }, g);
+        // label
+        var label = a.activity;
+        var maxChars = Math.floor((labelW - 70) / 6.3);
+        if (label.length > maxChars) label = label.slice(0, maxChars - 1) + "…";
+        var lab = text(g, 12, y + rowH / 2 + 4, a.id, { class: "trk-rowid" });
+        text(g, 52, y + rowH / 2 + 4, label, { class: "trk-rowlabel" });
+        if (a.critical && a.slug !== "done") el("rect", { x: 0, y: y + 3, width: 3, height: rowH - 6, class: "trk-critmark" }, g);
+        else if (a.near_critical) el("rect", { x: 0, y: y + 3, width: 3, height: rowH - 6, class: "trk-nearmark" }, g);
+
+        // late window (LS..LF) as a faint band for open constrained activities
+        if (a.lsDate && a.slug !== "done" && a.lsDate > a.esDate) {
+          el("rect", { x: x(a.esDate), y: y + 9, width: Math.max(0, x(addDays(a.lfDate, 1)) - x(a.esDate)), height: rowH - 18, class: "trk-latewindow" }, g);
+        }
+
+        // bar (early schedule)
+        var bx = x(a.esDate), bw = Math.max(dayW * 0.9, x(addDays(a.efDate, 1)) - bx - Math.min(2, dayW * 0.15));
+        var barH = 14, by = y + (rowH - barH) / 2;
+        el("rect", { x: bx, y: by, width: bw, height: barH, rx: 3, class: "trk-bar trk-bar-rest phase-" + slug }, g);
+        if (a.pct > 0) {
+          el("rect", { x: bx, y: by, width: Math.max(2, bw * Math.min(a.pct, 100) / 100), height: barH, rx: 3, class: "trk-bar trk-bar-done phase-" + slug }, g);
+        }
+        if (a.slug !== "done") {
+          el("rect", { x: bx + (a.pct > 0 ? bw * Math.min(a.pct, 100) / 100 : 0), y: by, width: bw - (a.pct > 0 ? bw * Math.min(a.pct, 100) / 100 : 0), height: barH, fill: "url(#trk-hatch)", class: "trk-bar-hatch", rx: 3 }, g);
+        }
+        // milestone diamond at the deadline
+        if (a.deadlineDate) {
+          var mx = x(a.deadlineDate) + dayW / 2, my = y + rowH / 2;
+          el("path", { d: "M" + mx + " " + (my - 8) + " L" + (mx + 8) + " " + my + " L" + mx + " " + (my + 8) + " L" + (mx - 8) + " " + my + " Z", class: "trk-milestone phase-" + slug }, g);
+        }
+        // float label at the bar end
+        if (a.slug !== "done" && a.total_float != null) {
+          var fl = a.total_float < 0 ? Math.abs(a.total_float) + "d late" : a.total_float + "d";
+          var fx = (a.deadlineDate ? x(a.deadlineDate) + dayW / 2 + 12 : bx + bw + 6);
+          if (fx < width - 30) text(g, fx, y + rowH / 2 + 4, fl, { class: "trk-float" + (a.total_float <= 0 ? " trk-float-crit" : a.total_float <= 3 ? " trk-float-near" : "") });
+        }
+        // hit area + tooltip
+        var hit = el("rect", { x: 0, y: y, width: width, height: rowH, fill: "transparent", class: "trk-hit" }, g);
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+        hit.addEventListener("click", function () { focusRow(a.id); });
+        y += rowH;
+      });
+    });
+
+    // dependency focus
+    var focused = null;
+    function focusRow(id) {
+      var byId = {};
+      data.activities.forEach(function (a) { byId[a.id] = a; });
+      if (focused === id) { focused = null; svg.classList.remove("trk-focused"); svg.querySelectorAll(".trk-row").forEach(function (r) { r.classList.remove("trk-rel", "trk-self", "trk-pred", "trk-succ"); }); return; }
+      focused = id;
+      svg.classList.add("trk-focused");
+      var preds = {}, succs = {};
+      (function walkP(i) { (byId[i] ? byId[i].preds : []).forEach(function (p) { if (!preds[p]) { preds[p] = 1; walkP(p); } }); })(id);
+      (function walkS(i) { (byId[i] ? byId[i].succs : []).forEach(function (s) { if (!succs[s]) { succs[s] = 1; walkS(s); } }); })(id);
+      svg.querySelectorAll(".trk-row").forEach(function (r) {
+        var rid = r.getAttribute("data-id");
+        r.classList.remove("trk-rel", "trk-self", "trk-pred", "trk-succ");
+        if (rid === id) r.classList.add("trk-rel", "trk-self");
+        else if (preds[rid]) r.classList.add("trk-rel", "trk-pred");
+        else if (succs[rid]) r.classList.add("trk-rel", "trk-succ");
+      });
+    }
+
+    // today line
+    if (today >= t0 && today < t1) {
+      var tx = x(today) + dayW / 2;
+      el("line", { x1: tx, y1: headH - 18, x2: tx, y2: height - bottom, class: "trk-today" }, svg);
+      var tl = el("g", { class: "trk-todaylabel" }, svg);
+      el("rect", { x: tx - 22, y: headH - 34, width: 44, height: 16, rx: 8 }, tl);
+      text(tl, tx, headH - 22, "Today", { "text-anchor": "middle" });
+    }
+
+    if (!acts.length) {
+      var empty = document.createElement("p");
+      empty.className = "trk-empty";
+      empty.textContent = "Nothing matches this view.";
+      container.appendChild(empty);
+    }
+    return svg;
+  }
+
+  function ganttControls(container, data, state, rerender) {
+    var bar = document.createElement("div");
+    bar.className = "trk-controls";
+    var phases = PHASES.filter(function (p) { return data.activities.some(function (a) { return a.phase === p; }); });
+    function btn(label, key, value, group) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "trk-btn"; b.textContent = label;
+      b.setAttribute("data-group", group); b.setAttribute("data-value", value);
+      if (state[key] === value) b.classList.add("is-active");
+      b.addEventListener("click", function () {
+        state[key] = value;
+        bar.querySelectorAll('[data-group="' + group + '"]').forEach(function (o) { o.classList.toggle("is-active", o.getAttribute("data-value") === value); });
+        rerender();
+      });
+      return b;
+    }
+    var g1 = document.createElement("div"); g1.className = "trk-btngroup";
+    g1.appendChild(btn("Everything", "mode", "all", "mode"));
+    g1.appendChild(btn("Open only", "mode", "open", "mode"));
+    g1.appendChild(btn("Critical path", "mode", "critical", "mode"));
+    var g2 = document.createElement("div"); g2.className = "trk-btngroup";
+    g2.appendChild(btn("Whole semester", "window", "semester", "window"));
+    g2.appendChild(btn("Next four weeks", "window", "next4", "window"));
+    var sel = document.createElement("select"); sel.className = "trk-select"; sel.setAttribute("aria-label", "Phase");
+    var o0 = document.createElement("option"); o0.value = ""; o0.textContent = "All phases"; sel.appendChild(o0);
+    phases.forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p; sel.appendChild(o); });
+    sel.addEventListener("change", function () {
+      if (sel.value) { state.mode = "phase:" + sel.value; g1.querySelectorAll(".trk-btn").forEach(function (b) { b.classList.remove("is-active"); }); }
+      else { state.mode = "all"; g1.querySelector('[data-value="all"]').classList.add("is-active"); }
+      rerender();
+    });
+    bar.appendChild(g1); bar.appendChild(g2); bar.appendChild(sel);
+    container.appendChild(bar);
+  }
+
+  function legend(container) {
+    var lg = document.createElement("div");
+    lg.className = "trk-legend";
+    lg.innerHTML =
+      PHASES.slice(0, 8).map(function (p) { return '<span class="trk-lg"><span class="trk-swatch-i phase-' + slugify(p) + '"></span>' + esc(p) + '</span>'; }).join("") +
+      '<span class="trk-lg"><span class="trk-lg-bar"><span class="trk-lg-done"></span><span class="trk-lg-rest"></span></span>done / remaining</span>' +
+      '<span class="trk-lg"><span class="trk-lg-diamond"></span>deadline</span>' +
+      '<span class="trk-lg"><span class="trk-lg-late"></span>late window</span>' +
+      '<span class="trk-lg"><span class="trk-lg-critmark"></span>zero float (critical)</span>' +
+      '<span class="trk-lg"><span class="trk-lg-nearmark"></span>1 to 3 days of float</span>' +
+      '<span class="trk-lg"><span class="trk-lg-today"></span>today</span>' +
+      '<span class="trk-lg trk-lg-load"><span class="trk-ev-hw"></span>homework <span class="trk-ev-quiz"></span>quiz <span class="trk-ev-exam"></span>exam <span class="trk-ev-proj"></span>deliverable</span>';
+    container.appendChild(lg);
+  }
+
+  function mountGantt(container, data) {
+    var state = { mode: container.getAttribute("data-mode") || "all", window: container.getAttribute("data-window") || "semester" };
+    var showControls = container.getAttribute("data-controls") !== "false";
+    var showLoad = container.getAttribute("data-load") !== "false";
+    var chart = document.createElement("div");
+    function rerender() {
+      renderGantt(chart, data, { mode: state.mode, window: state.window, showLoad: showLoad, showOngoing: state.mode.indexOf("phase:") === 0 || state.mode === "all" });
+    }
+    if (showControls) ganttControls(container, data, state, rerender);
+    container.appendChild(chart);
+    rerender();
+    if (container.getAttribute("data-legend") !== "false") legend(container);
+    var t;
+    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(rerender, 150); });
+  }
+
+  /* ---------- deliverable chain ---------- */
+  function renderChain(container, data) {
+    container.innerHTML = "";
+    var today = data.todayDate;
+    var byId = {};
+    data.activities.forEach(function (a) { byId[a.id] = a; });
+    var ms = data.activities.filter(function (a) { return a.deadlineDate && a.phase !== "Setup"; })
+      .sort(function (a, b) { return a.deadlineDate - b.deadlineDate; });
+    // fielding is a milestone in practice even without a deadline
+    var field = byId["FS04"];
+    var nodes = [];
+    var teamDone = data.activities.filter(function (a) { return a.phase === "Setup" && a.slug === "done"; }).length;
+    nodes.push({ label: "Team and topic", date: byId["S02"] ? byId["S02"].dueDate : null, phase: "Setup", status: teamDone >= 2 ? "Done" : "In progress", float: null, id: "S02", sub: "settled" });
+    ms.forEach(function (a) {
+      var chain = {};
+      (function walk(i) { (byId[i] ? byId[i].preds : []).forEach(function (p) { if (!chain[p]) { chain[p] = 1; walk(p); } }); })(a.id);
+      var open = Object.keys(chain).map(function (k) { return byId[k]; }).concat([a]).filter(function (b) { return b && b.slug !== "done" && b.total_float != null && b.phase === a.phase; });
+      var f = open.length ? Math.min.apply(null, open.map(function (b) { return b.total_float; })) : null;
+      var openCount = data.activities.filter(function (b) { return b.phase === a.phase && b.slug !== "done"; }).length;
+      var st = a.slug === "done" ? "Done" : (a.deadlineDate < today ? "Late" : (open.length && data.activities.some(function (b) { return b.phase === a.phase && b.slug === "active"; }) ? "In progress" : "Upcoming"));
+      nodes.push({ label: a.deliverable || a.activity, date: a.deadlineDate, phase: a.phase, status: st, float: f, id: a.id, sub: openCount ? openCount + " open" : "all done" });
+    });
+    if (field) {
+      var idx = nodes.findIndex(function (n) { return n.id === "FA06"; });
+      nodes.splice(idx, 0, { label: "Fielding on Prolific", date: field.efDate, phase: field.phase, status: field.slug === "done" ? "Done" : "Upcoming", float: field.total_float, id: field.id, sub: "assumed window" });
+    }
+    // Presentation: merge PR03 (slides) and PR04 (present) labels
+    nodes = nodes.map(function (n) {
+      if (n.id === "PR03") n.label = "Slides pushed";
+      if (n.id === "PR04") n.label = "Presentation";
+      return n;
+    });
+
+    var width = Math.max(container.clientWidth || 900, 320);
+    var nodeW = 156, nodeH = 66, gapX = 66, gapY = 48, padX = 8;
+    var perRow = Math.max(1, Math.floor((width - padX * 2 + gapX) / (nodeW + gapX)));
+    var rows = Math.ceil(nodes.length / perRow);
+    var height = rows * nodeH + (rows - 1) * gapY + 20;
+    var svg = el("svg", { width: width, height: height, viewBox: "0 0 " + width + " " + height, class: "trk-chain", role: "img", "aria-label": "Deliverable chain with float" }, container);
+    var defs = el("defs", {}, svg);
+    var mk = el("marker", { id: "trk-arrow", viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: "auto-start-reverse" }, defs);
+    el("path", { d: "M0 0 L10 5 L0 10 Z", class: "trk-arrowhead" }, mk);
+
+    var pos = nodes.map(function (n, i) {
+      var r = Math.floor(i / perRow), c = i % perRow;
+      if (r % 2 === 1) c = perRow - 1 - c; // snake layout
+      return { x: padX + c * (nodeW + gapX), y: 10 + r * (nodeH + gapY) };
+    });
+    // connectors
+    for (var i = 0; i < nodes.length - 1; i++) {
+      var p = pos[i], q = pos[i + 1], r0 = Math.floor(i / perRow), r1 = Math.floor((i + 1) / perRow);
+      var crit = nodes[i + 1].float != null && nodes[i + 1].float <= 0 && nodes[i + 1].status !== "Done";
+      var cls = "trk-link" + (crit ? " trk-link-crit" : "");
+      var path;
+      if (r0 === r1) {
+        var goRight = q.x > p.x;
+        var x1 = goRight ? p.x + nodeW : p.x, x2 = goRight ? q.x : q.x + nodeW, yy = p.y + nodeH / 2;
+        path = "M" + x1 + " " + yy + " L" + x2 + " " + yy;
+      } else {
+        path = "M" + (p.x + nodeW / 2) + " " + (p.y + nodeH) + " L" + (q.x + nodeW / 2) + " " + q.y;
+      }
+      el("path", { d: path, class: cls, "marker-end": "url(#trk-arrow)" }, svg);
+      if (nodes[i + 1].float != null && nodes[i + 1].status !== "Done") {
+        var f = nodes[i + 1].float;
+        var lbl = f < 0 ? Math.abs(f) + " d late" : f + " d";
+        if (r0 === r1) {
+          text(svg, (p.x + q.x + nodeW) / 2, p.y + nodeH / 2 - 6, lbl, { class: "trk-linklabel" + (f <= 0 ? " trk-linklabel-crit" : ""), "text-anchor": "middle" });
+        } else {
+          text(svg, p.x + nodeW / 2 + 8, (p.y + nodeH + q.y) / 2 + 4, lbl, { class: "trk-linklabel" + (f <= 0 ? " trk-linklabel-crit" : "") });
+        }
+      }
+    }
+    nodes.forEach(function (n, i) {
+      var p = pos[i], slug = slugify(n.phase), st = statusSlug(n.status);
+      var g = el("g", { class: "trk-node trk-node-" + st + (n.float != null && n.float <= 0 && st !== "done" ? " trk-node-crit" : ""), transform: "translate(" + p.x + "," + p.y + ")" }, svg);
+      el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, rx: 10, class: "trk-node-bg" }, g);
+      el("rect", { x: 0, y: 0, width: 6, height: nodeH, class: "trk-node-stripe phase-" + slug }, g);
+      // clip the stripe corners
+      el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, rx: 10, class: "trk-node-ring" }, g);
+      var lab = n.label.length > 20 ? n.label.slice(0, 19) + "…" : n.label;
+      text(g, 16, 22, lab, { class: "trk-node-title" });
+      text(g, 16, 40, n.date ? fmt(n.date) : "", { class: "trk-node-date" });
+      var s2 = n.status === "Done" ? "done" : n.status.toLowerCase() + (n.sub ? " · " + n.sub : "");
+      text(g, 16, 56, s2, { class: "trk-node-sub" });
+      if (st === "done") text(g, nodeW - 12, 22, "✓", { class: "trk-node-check", "text-anchor": "end" });
+      var hit = el("rect", { x: 0, y: 0, width: nodeW, height: nodeH, fill: "transparent" }, g);
+      var a = byId[n.id];
+      if (a) {
+        hit.addEventListener("mousemove", function (ev) { showTip(activityTip(a), ev); });
+        hit.addEventListener("mouseleave", hideTip);
+      }
+    });
+  }
+
+  function mountChain(container, data) {
+    renderChain(container, data);
+    var t;
+    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(function () { renderChain(container, data); }, 150); });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    var data = loadData();
+    if (!data) return;
+    document.querySelectorAll("[data-tracker='gantt']").forEach(function (c) { mountGantt(c, data); });
+    document.querySelectorAll("[data-tracker='chain']").forEach(function (c) { mountChain(c, data); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})();
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -490,13 +1063,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -848,7 +1422,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with Quarto and R; data lives in data/*.csv.</p>
+<p>Built with Quarto and R; the schedule is computed from data/*.csv on every render.</p>
 </div>
   </div>
 </footer>

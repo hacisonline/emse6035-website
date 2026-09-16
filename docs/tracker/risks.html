@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dev log – EMSE 6035 Project Tracker</title>
+<title>Risk register – EMSE 6035 Project Tracker</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,8 +37,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,68 +74,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -176,7 +118,7 @@ window.Quarto = {
 <span class="menu-text">Activities</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/risks.html"> 
+    <a class="nav-link active" href="../tracker/risks.html" aria-current="page"> 
 <span class="menu-text">Risks</span></a>
   </li>  
   <li class="nav-item">
@@ -184,7 +126,7 @@ window.Quarto = {
 <span class="menu-text">Week by week</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../devlog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
@@ -202,20 +144,19 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="YWdlbnRpYy13b3JrZmxvdw==">agentic-workflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxhbm5pbmc=">planning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvcG9zYWw=">proposal <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2V0dXA=">setup <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dev log</h1>
-<p class="subtitle lead">One entry per work session: what was done, what was checked, what is next</p>
+<h1 class="title">Risk register</h1>
+<p class="subtitle lead">What could move a deadline, how we would know, and what we do about it</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -227,72 +168,221 @@ window.Quarto = {
 </header>
 
 
-<p>The dev log is the team’s memory. Every time someone works on the project, they add a short post here (a folder under <code>devlog/posts/</code> with an <code>index.qmd</code>), following the loop the course teaches: what was asked, what the agent or the person produced, how it was verified, and what changed as a result. Entries are dated and tagged by phase so the <a href="../tracker/activities.html">activities</a> page and the log can be read side by side.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c2V0dXAlMkNwcm9wb3NhbCUyQ3BsYW5uaW5n" data-listing-date-sort="1789531200000" data-listing-file-modified-sort="1789579971931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="558">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">Replan: team formed, topic chosen, schedule computed</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvcG9zYWw='); return false;">proposal</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGxhbm5pbmc='); return false;">planning</div>
+<p>Ten risks, scored likelihood times impact on a three-point scale. Each one names the trigger that tells us it is happening and the response that is already in the activity list. The register lives in <code>data/risks.csv</code>; close a risk by setting its status, and add one when a sync surfaces a new way to lose a deadline.</p>
+<section id="the-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="the-matrix">The matrix</h2>
+<div class="risk-matrix">
+<div>
 
 </div>
-<div class="delink listing-description"><a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">
-<p>The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.</p>
-</a></div>
+<div class="rm-head">
+Low impact
 </div>
-<div class="metadata">
-<a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2026
+<div class="rm-head">
+Medium impact
 </div>
-<div class="listing-author">
-Harshit (with Claude)
+<div class="rm-head">
+High impact
 </div>
-</a>
+<div class="rm-side">
+High likelihood
+</div>
+<div class="rm-cell rm-2">
+<b>0</b>
+</div>
+<div class="rm-cell rm-4">
+<b>2</b>R02, R07
+</div>
+<div class="rm-cell rm-4">
+<b>1</b>R01
+</div>
+<div class="rm-side">
+Medium likelihood
+</div>
+<div class="rm-cell rm-2">
+<b>1</b>R10
+</div>
+<div class="rm-cell rm-3">
+<b>2</b>R05, R09
+</div>
+<div class="rm-cell rm-4">
+<b>4</b>R03, R04, R06, R08
+</div>
+<div class="rm-side">
+Low likelihood
+</div>
+<div class="rm-cell rm-1">
+<b>0</b>
+</div>
+<div class="rm-cell rm-2">
+<b>0</b>
+</div>
+<div class="rm-cell rm-2">
+<b>0</b>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="c2V0dXAlMkNhZ2VudGljLXdvcmtmbG93" data-listing-date-sort="1788321600000" data-listing-file-modified-sort="1788380744343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">Kickoff: the tracker site exists</a>
-</h3>
-<div class="listing-categories">
+</section>
+<section id="the-register" class="level2">
+<h2 class="anchored" data-anchor-id="the-register">The register</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-hover table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> ID </th>
+   <th style="text-align:left;"> Phase </th>
+   <th style="text-align:left;"> Risk </th>
+   <th style="text-align:left;"> Likelihood </th>
+   <th style="text-align:left;"> Impact </th>
+   <th style="text-align:center;"> Score </th>
+   <th style="text-align:left;"> Trigger </th>
+   <th style="text-align:left;"> Response </th>
+   <th style="text-align:left;"> Owner </th>
+   <th style="text-align:left;"> Activities </th>
+   <th style="text-align:left;"> Status </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> R01 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;width: 22em; "> Fifth member is not on the official repo and the course guideline says teams of three to four; a five-name proposal submitted from a repo he cannot access raises questions </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">9</span> </td>
+   <td style="text-align:left;width: 14em; "> Still missing from the official repo on Sep 18 </td>
+   <td style="text-align:left;width: 20em; "> Ask the professor at the workshop meeting to add him and to confirm the team size </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> S05 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R02 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;width: 22em; "> Draft carries AI paste artifacts and no references; the professor spots them at once and the Organization and Writing points go </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">6</span> </td>
+   <td style="text-align:left;width: 14em; "> Artifact string or chatgpt link still in the .qmd at render </td>
+   <td style="text-align:left;width: 20em; "> Blocking-fix list in the Sep 16 review; a second reader checks the rendered HTML before the push </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> P06, P07 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R03 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-proposal"></span>Proposal </td>
+   <td style="text-align:left;width: 22em; "> The professor challenges the topic on the emerging and pre-commercial criteria (smart locks and thermostats are common in new Class A buildings) and asks the team to narrow scope </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">6</span> </td>
+   <td style="text-align:left;width: 14em; "> Pushback at the workshop meeting </td>
+   <td style="text-align:left;width: 20em; "> Lead with the design-decision argument: which features to bundle at what premium for mid-market and retrofit stock; no public tradeoff-based WTP exists; be ready to drop lighting or EV charging </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> P05, P06 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R04 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-survey-plan"></span>Survey plan </td>
+   <td style="text-align:left;width: 22em; "> Price attribute mis-specified: a zero-dollar premium makes a free smart package a valid profile and there is no base-rent anchor, so the WTP estimates are biased </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">6</span> </td>
+   <td style="text-align:left;width: 14em; "> Design file generated with the draft levels </td>
+   <td style="text-align:left;width: 20em; "> Fix in SP01: reserve zero for the standard-apartment reference or shift the range; show a base rent in every choice task </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> SP01, SP03 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R06 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-survey"></span>Pilot survey </td>
+   <td style="text-align:left;width: 22em; "> Survey hosting breaks: Supabase not connected, shinyapps deploy fails, or a key leaks into the repo </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">6</span> </td>
+   <td style="text-align:left;width: 14em; "> Responses not stored in a test run; a key in a diff </td>
+   <td style="text-align:left;width: 20em; "> Assign the account owner by Oct 2 (S07); keys in .Renviron only; end-to-end test on Oct 12 at the latest </td>
+   <td style="text-align:left;"> Account owner </td>
+   <td style="text-align:left;"> S07, PS04, PS05 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R07 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-survey"></span>Final survey </td>
+   <td style="text-align:left;width: 22em; "> Weeks 9 to 13 stack HW8 to HW12, three quizzes and three deliverables; the pilot-to-final handoff has one day of float </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">6</span> </td>
+   <td style="text-align:left;width: 14em; "> Any pilot-analysis activity slips past its planned finish </td>
+   <td style="text-align:left;width: 20em; "> Start cleaning on partial pilot data (PA02); triage feedback in parallel (PA05); owners agree a weekly time budget before Oct 21 </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> PA02, PA05, FS01 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R08 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-final-analysis"></span>Final analysis </td>
+   <td style="text-align:left;width: 22em; "> Prolific fielding starts late or runs long over Thanksgiving, leaving days rather than weeks between the final data and the Dec 6 report, with the Dec 2 exam in between </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> High </td>
+   <td style="text-align:center;"> <span class="pill pill-critical">6</span> </td>
+   <td style="text-align:left;width: 14em; "> Launch not confirmed by Nov 11; fewer than the target responses by Nov 25 </td>
+   <td style="text-align:left;width: 20em; "> Confirm the launch date at the Nov 11 class; scaffold every script on the pilot data (FA01) so the final run is a re-run </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> FS04, FA01, FA02 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R05 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-pilot-analysis"></span>Pilot analysis </td>
+   <td style="text-align:left;width: 22em; "> Six attributes at three to four levels each overloads respondents and the pilot standard errors are too wide to size the final sample </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:center;"> <span class="pill pill-near">4</span> </td>
+   <td style="text-align:left;width: 14em; "> Pilot coefficient standard errors dwarf the estimates </td>
+   <td style="text-align:left;width: 20em; "> Pilot with the full set; drop or merge the weakest attribute (lighting is the likely candidate) in FS01 </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> PA03, PA04, FS01 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R09 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-ongoing"></span>Ongoing </td>
+   <td style="text-align:left;width: 22em; "> Uneven contribution; the professor grades non-contributors differently and the Attribution section has to be honest </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:center;"> <span class="pill pill-near">4</span> </td>
+   <td style="text-align:left;width: 14em; "> CONTRIBUTIONS.md shows one or two names for a deliverable </td>
+   <td style="text-align:left;width: 20em; "> Owner and backup per deliverable (S06); contributions logged weekly (O03); raise it at the sync, not at submission </td>
+   <td style="text-align:left;"> Team </td>
+   <td style="text-align:left;"> S06, O03 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R10 </td>
+   <td style="text-align:left;"> <span class="phase-dot phase-ongoing"></span>Ongoing </td>
+   <td style="text-align:left;width: 22em; "> Decisions made on WhatsApp never reach the repo and the team re-argues them </td>
+   <td style="text-align:left;"> Medium </td>
+   <td style="text-align:left;"> Low </td>
+   <td style="text-align:center;"> <span class="pill pill-near">2</span> </td>
+   <td style="text-align:left;width: 14em; "> A decision cannot be found in decisions/DECISIONS.md </td>
+   <td style="text-align:left;width: 20em; "> Same-day copy rule (O01); the tracker maintainer checks the log at each sync </td>
+   <td style="text-align:left;"> Harshit </td>
+   <td style="text-align:left;"> O01 </td>
+   <td style="text-align:left;"> <span class="pill pill-todo">Open</span> </td>
+  </tr>
+</tbody>
+</table>
 
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
+</div>
+</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('YWdlbnRpYy13b3JrZmxvdw=='); return false;">agentic-workflow</div>
 
-</div>
-<div class="delink listing-description"><a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">
-<p>Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">
-<div class="listing-date">
-Sep 2, 2026
-</div>
-<div class="listing-author">
-Harshit (with Claude)
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script>
 /* tracker.js - client-side schedule views for the EMSE 6035 project tracker.
    Reads the JSON that R embeds in <script id="schedule-data"> (see R/helpers.R:

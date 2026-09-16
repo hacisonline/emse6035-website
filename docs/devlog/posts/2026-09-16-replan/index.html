@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Harshit (with Claude)">
+<meta name="dcterms.date" content="2026-09-16">
+<meta name="description" content="The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.">
 
-<title>Dev log – EMSE 6035 Project Tracker</title>
+<title>Replan: team formed, topic chosen, schedule computed – EMSE 6035 Project Tracker</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,26 +32,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e10a933937a56c34ff02c5e20990361e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,70 +77,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -149,7 +92,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">EMSE 6035 Project Tracker</span>
     </a>
   </div>
@@ -160,35 +103,35 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/schedule.html"> 
+    <a class="nav-link" href="../../../tracker/schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/critical-path.html"> 
+    <a class="nav-link" href="../../../tracker/critical-path.html"> 
 <span class="menu-text">Critical path</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/activities.html"> 
+    <a class="nav-link" href="../../../tracker/activities.html"> 
 <span class="menu-text">Activities</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/risks.html"> 
+    <a class="nav-link" href="../../../tracker/risks.html"> 
 <span class="menu-text">Risks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tracker/progress.html"> 
+    <a class="nav-link" href="../../../tracker/progress.html"> 
 <span class="menu-text">Week by week</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../devlog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../devlog/index.html"> 
 <span class="menu-text">Dev log</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../context-bank/index.html"> 
+    <a class="nav-link" href="../../../context-bank/index.html"> 
 <span class="menu-text">Context bank</span></a>
   </li>  
 </ul>
@@ -202,22 +145,42 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="YWdlbnRpYy13b3JrZmxvdw==">agentic-workflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxhbm5pbmc=">planning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvcG9zYWw=">proposal <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2V0dXA=">setup <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dev log</h1>
-<p class="subtitle lead">One entry per work session: what was done, what was checked, what is next</p>
+<h1 class="title">Replan: team formed, topic chosen, schedule computed</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">setup</div>
+    <div class="quarto-category">proposal</div>
+    <div class="quarto-category">planning</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta column-page">
 
-<div class="quarto-title-meta column-page-left">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harshit (with Claude) </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 16, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -227,72 +190,29 @@ window.Quarto = {
 </header>
 
 
-<p>The dev log is the team’s memory. Every time someone works on the project, they add a short post here (a folder under <code>devlog/posts/</code> with an <code>index.qmd</code>), following the loop the course teaches: what was asked, what the agent or the person produced, how it was verified, and what changed as a result. Entries are dated and tagged by phase so the <a href="../tracker/activities.html">activities</a> page and the log can be read side by side.</p>
+<section id="what-was-asked" class="level2">
+<h2 class="anchored" data-anchor-id="what-was-asked">What was asked</h2>
+<p>Two weeks after the kickoff the facts had changed: a team of five, a topic, a proposal draft rendered by a teammate, an official submission repo from the professor, and a workshop meeting this week. The ask was to bring the tracker up to date and, from an engineering-management point of view, make the timeline honest: a real critical path rather than a hand-drawn one, a Gantt chart, float, and a cleaner site.</p>
+</section>
+<section id="what-was-built" class="level2">
+<h2 class="anchored" data-anchor-id="what-was-built">What was built</h2>
+<p><strong>Data.</strong> <code>data/activities.csv</code> was rewritten as a 52-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. <code>deadlines.csv</code> and <code>weeks.csv</code> were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. <code>data/risks.csv</code> is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.</p>
+<p><strong>Engine.</strong> <code>R/helpers.R</code> gained <code>cpm()</code>: a forward pass from today as the status date (planned starts as start-no-earlier-than constraints), a backward pass from the official deadlines, total and free float, critical and near-critical flags, and an overdue flag. <code>schedule_health()</code> compares duration-weighted earned progress with what the plan says should be done by today. <code>embed_schedule()</code> writes the computed schedule into the page as JSON.</p>
+<p><strong>Views.</strong> <code>assets/tracker.html</code> is a dependency-free script, inlined into every page, that draws the Gantt (early-schedule bars with progress, late windows, deadline diamonds, a today line, the course-load lane, filters, hover details, click-to-trace dependencies) and the deliverable chain with the float on each handoff. New pages: <a href="../../../tracker/schedule.html">Schedule</a> and <a href="../../../tracker/risks.html">Risks</a>. The home page leads with the next deadline, schedule health and the zero-float count. The critical-path page is now computed, not typed. The team page carries the roster, the topic, the attributes table and the ownership grid (owners TBD until the next sync).</p>
+<p><strong>Proposal review.</strong> The Sep 15 draft was read against the 55-point rubric. Blocking fixes: an AI citation artifact and a chat-tool tracking parameter left in the text, a doubled “Figure Figure 1” cross-reference, heading levels that break the template’s structure, and no references at all. Improvements: separate the buyer (developer or operator) from the respondent (renter); name the Prolific pipeline; replace the archetype competitor table with real products and prices; quantify the retrofit market; fix the zero-dollar price level and anchor the premium to a base rent; define bundled levels in one line each; say how research question three is answered. Fit risk: the emerging and pre-commercial criteria, to be argued at the workshop. Both statistics in the draft were verified against their sources.</p>
+</section>
+<section id="how-it-was-verified" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-was-verified">How it was verified</h2>
+<p>The site was rendered end to end with Quarto and R and every page was opened in a browser. The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.</p>
+</section>
+<section id="what-is-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-next">What is next</h2>
+<p>Book the workshop slot, revise the proposal to v2, move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c2V0dXAlMkNwcm9wb3NhbCUyQ3BsYW5uaW5n" data-listing-date-sort="1789531200000" data-listing-file-modified-sort="1789579971931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="558">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">Replan: team formed, topic chosen, schedule computed</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvcG9zYWw='); return false;">proposal</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGxhbm5pbmc='); return false;">planning</div>
-
-</div>
-<div class="delink listing-description"><a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">
-<p>The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../devlog/posts/2026-09-16-replan/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2026
-</div>
-<div class="listing-author">
-Harshit (with Claude)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="c2V0dXAlMkNhZ2VudGljLXdvcmtmbG93" data-listing-date-sort="1788321600000" data-listing-file-modified-sort="1788380744343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">Kickoff: the tracker site exists</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YWdlbnRpYy13b3JrZmxvdw=='); return false;">agentic-workflow</div>
-
-</div>
-<div class="delink listing-description"><a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">
-<p>Built during the week 2 in-class agentic workflows exercise: a Quarto website, data-driven from three CSVs, published with GitHub Pages.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../devlog/posts/2026-09-02-kickoff/index.html" class="no-external">
-<div class="listing-date">
-Sep 2, 2026
-</div>
-<div class="listing-author">
-Harshit (with Claude)
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script>
 /* tracker.js - client-side schedule views for the EMSE 6035 project tracker.
    Reads the JSON that R embeds in <script id="schedule-data"> (see R/helpers.R:

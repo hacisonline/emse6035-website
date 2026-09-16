@@ -1,109 +1,65 @@
 ---
 title: "Critical path"
-subtitle: "The chain of activities that cannot slip without moving a deliverable"
+subtitle: "The chain of activities that cannot slip without moving a deliverable, computed on every render"
+toc: false
 ---
 
 ```{r}
 source(file.path("R", "helpers.R"))
-activities <- read_data("activities.csv")
+deadlines <- read_data("deadlines.csv")
+weeks     <- read_data("weeks.csv")
+sched     <- cpm(read_activities())
+
+open <- sched |> filter(status_slug(status) != "done", phase != "Ongoing")
+crit <- open |> filter(critical) |> arrange(es, id)
+near <- open |> filter(near_critical) |> arrange(es, id)
+slack <- open |> filter(!critical, !near_critical, !is.na(total_float)) |> arrange(es, id)
 ```
 
-The project is a strict pipeline: each deliverable is the input to the next, and the final survey has to be in the field over Thanksgiving week before any final analysis can happen. That makes almost every project activity critical. The diagram shows the chain by deliverable; the table underneath is computed from `data/activities.csv` and shows, for each critical activity, how many days of float sit between its due date and the start of whatever depends on it.
+The project is a strict pipeline: each deliverable is the input to the next, and the final survey has to be in the field over Thanksgiving before any final analysis can happen. Because every submission date is a hard constraint, the critical path is not one long chain but a series of zero-float segments, one per deliverable, joined by the handoffs between them. Today `r nrow(crit)` open activities carry zero float, `r nrow(near)` carry one to three days, and `r nrow(slack)` have more room than that.
 
 ## The chain
 
-```{mermaid}
-%%| fig-width: 10
-flowchart TD
-  T[Team formed<br/>by Sep 9] --> TP[Topic chosen<br/>by Sep 9]
-  TP --> P[Proposal<br/>Sep 20]
-  P --> W[Proposal workshop<br/>week of Sep 16]
-  W --> SP[Survey plan<br/>Sep 29]
-  SP --> PS[Pilot survey live<br/>Oct 13]
-  PS --> CL[Classmates take pilots<br/>week of Oct 21]
-  CL --> PA[Pilot analysis<br/>Nov 1]
-  PA --> FS[Final survey live<br/>Nov 15]
-  FS --> FD[Fielding on Prolific<br/>Nov 23 to 29]
-  FD --> FA[Final analysis report<br/>Dec 6]
-  FA --> PR[Presentation<br/>Dec 8 and 9]
-  classDef done fill:#d4edda,stroke:#155724,color:#155724;
-  classDef active fill:#fff3cd,stroke:#7a5a00,color:#7a5a00;
-  class T active;
+```{r}
+#| results: asis
+embed_schedule(sched, deadlines, weeks)
+cat('<div data-tracker="chain"></div>')
 ```
 
-## Timeline
+## Only the critical path
 
-```{mermaid}
-%%| fig-width: 10
-gantt
-  title Project deliverables and the work behind them
-  dateFormat YYYY-MM-DD
-  axisFormat %b %d
-  section Setup
-    Team and topic            :active, setup, 2026-08-26, 2026-09-09
-    Team repo                 :repo, after setup, 2d
-  section Proposal
-    Research and drafting     :prop, 2026-09-09, 2026-09-18
-    Submit proposal           :milestone, m1, 2026-09-20, 0d
-    Workshop with professor   :ws, 2026-09-14, 2026-09-18
-  section Survey plan
-    Population, questions, content :splan, 2026-09-21, 2026-09-28
-    Submit survey plan        :milestone, m2, 2026-09-29, 0d
-  section Pilot survey
-    Design file and survey.qmd :pilot, 2026-10-01, 2026-10-09
-    Supabase and shinyapps     :deploy, 2026-10-06, 2026-10-12
-    Submit pilot survey        :milestone, m3, 2026-10-13, 0d
-    Classmates take pilots     :field1, 2026-10-21, 2026-10-26
-  section Pilot analysis
-    Clean, model, power        :pan, 2026-10-22, 2026-10-29
-    Report                     :prep, 2026-10-27, 2026-10-31
-    Submit pilot analysis      :milestone, m4, 2026-11-01, 0d
-  section Final survey
-    Apply pilot changes        :fs, 2026-11-02, 2026-11-13
-    Submit final survey        :milestone, m5, 2026-11-15, 0d
-    Fielding on Prolific       :crit, field2, 2026-11-23, 2026-11-29
-  section Final analysis
-    Clean, model, analyse      :crit, fa, 2026-11-27, 2026-12-04
-    Report                     :crit, frep, 2026-12-02, 2026-12-05
-    Submit final report        :milestone, m6, 2026-12-06, 0d
-  section Presentation
-    Slides and rehearsal       :pres, 2026-12-03, 2026-12-08
-    Present                    :milestone, m7, 2026-12-09, 0d
-```
-
-## Float on each critical activity
-
-Float is the number of days between an activity's due date and the earliest start of anything that depends on it. Zero or negative float means the next task is waiting on this one the day it is due.
+The same Gantt as the [schedule](schedule.qmd) page, filtered to the open activities with zero float. Hover for early and late dates; click a row to see what feeds it and what waits on it.
 
 ```{r}
-crit <- activities |> filter(critical)
+#| results: asis
+cat('<div data-tracker="gantt" data-mode="critical" data-window="semester" data-controls="false" data-load="false"></div>')
+```
 
-succ_start <- function(this_id) {
-  dep <- activities |>
-    filter(!is.na(depends_on), str_detect(depends_on, fixed(this_id)))
-  if (nrow(dep) == 0) return(as.Date(NA))
-  min(as.Date(dep$start))
-}
+## Float on every open activity
 
-crit |>
-  mutate(next_start = map(id, succ_start) |> reduce(c),
-         float = as.integer(next_start - as.Date(due))) |>
-  arrange(due) |>
+Early start and finish come from the forward pass; late start and finish from the backward pass off the official deadlines. Total float is the gap between them. Free float is how far the activity can slip before it delays its immediate successor rather than a deadline.
+
+```{r}
+open |>
+  filter(!is.na(total_float)) |>
+  arrange(total_float, es, id) |>
   transmute(
     ID = id,
-    Phase = phase,
+    Phase = phase_dot(phase),
     Activity = activity,
-    Due = fmt_date(due),
-    `Feeds into` = map_chr(id, function(i) {
-      d <- activities |> filter(!is.na(depends_on), str_detect(depends_on, fixed(i)))
-      if (nrow(d) == 0) "" else paste(d$id, collapse = ", ")
-    }),
-    `Float (days)` = ifelse(is.na(float), "", as.character(float)),
+    `Early` = paste0(fmt_date(es, "%b %e"), " to ", fmt_date(ef, "%b %e")),
+    `Late`  = paste0(fmt_date(ls, "%b %e"), " to ", fmt_date(lf, "%b %e")),
+    `Deadline` = fmt_date(deadline, "%b %e"),
+    `Total float` = float_pill(total_float, status),
+    `Free float` = ifelse(is.na(free_float), "", paste0(free_float, " d")),
+    `Feeds into` = str_replace_all(successors, ";", ", "),
     Status = pill(status)
   ) |>
-  nice_table(align = "llllllc")
+  nice_table(align = "lllllllllc")
 ```
 
 ## Where the risk concentrates
 
-The two links with no give at all are the pilot-to-final-survey handoff (the pilot analysis is due Nov 1 and the final survey Nov 15, with HW9 and HW10 and Quiz 5 in the same fortnight) and the fielding-to-report link (data arrives during Thanksgiving week and the report is due the Sunday after the final exam). The practical defence is to scaffold `clean_data.R`, `modeling.R` and `analysis.R` on the pilot data in early November so that when the final data lands they only need re-running.
+Three places have no give at all. **This week**: the proposal workshop, the revision and the move into the official repo all sit between today and Sunday with zero float, because the meeting and the deadline share the week. **Weeks 9 to 11**: the pilot exchange on Oct 21 feeds a Nov 1 report through a chain of two-day tasks, and the final survey has to be rebuilt and redeployed by Nov 15 with one day of float, while HW8 to HW10 and Quiz 5 land in the same fortnight. **Thanksgiving to Dec 6**: the Prolific data arrives at the end of the assumed fielding window and the final report is due the Sunday after the in-class exam, so cleaning, modelling, analysis and writing each get about two days.
+
+The defences are already in the plan: start cleaning on partial pilot data (PA02) while the feedback is triaged in parallel (PA05); scaffold every final-analysis script and the report skeleton on the pilot data in the second week of November (FA01, six days of float, so it can absorb a slip without hurting anything); confirm the Prolific launch date at the Nov 11 class so FS04 stops being an assumption. The [risk register](risks.qmd) carries the triggers and responses.

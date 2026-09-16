@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 0.97rem;
+$headings-font-weight: 700;
+$primary: #1c5cab;
+$body-bg: #f6f6f3;
+$body-color: #0b0b0b;
+$link-color: #1c5cab;
+$navbar-bg: #0f172a;
+$navbar-fg: #e6e9ef;
+$navbar-hl: #ffffff;
+$sidebar-bg: #f6f6f3;
+$footer-bg: #f6f6f3;
+$border-radius: 0.6rem;
+
+/*-- scss:rules --*/
+.navbar .navbar-nav .nav-link { font-weight: 500; }
+.sidebar-navigation .sidebar-item { font-size: 0.92rem; }

@@ -1,0 +1,29 @@
+---
+title: "Replan: team formed, topic chosen, schedule computed"
+description: "The tracker now runs a critical path method on every render. Team E, Smart Urban Living, two repos, a rubric review of the proposal draft, and a risk register."
+author: "Harshit (with Claude)"
+date: 2026-09-16
+categories: [setup, proposal, planning]
+---
+
+## What was asked
+
+Two weeks after the kickoff the facts had changed: a team of five, a topic, a proposal draft rendered by a teammate, an official submission repo from the professor, and a workshop meeting this week. The ask was to bring the tracker up to date and, from an engineering-management point of view, make the timeline honest: a real critical path rather than a hand-drawn one, a Gantt chart, float, and a cleaner site.
+
+## What was built
+
+**Data.** `data/activities.csv` was rewritten as a 52-row work breakdown with planned dates, finish-to-start dependencies, hard deadlines on the submission activities, status and percent complete. `deadlines.csv` and `weeks.csv` were corrected against the schedule page (HW2 Sep 8, HW3 Sep 18) and marked up to today. `data/risks.csv` is new: ten risks with likelihood, impact, trigger, response and the activities that carry the response.
+
+**Engine.** `R/helpers.R` gained `cpm()`: a forward pass from today as the status date (planned starts as start-no-earlier-than constraints), a backward pass from the official deadlines, total and free float, critical and near-critical flags, and an overdue flag. `schedule_health()` compares duration-weighted earned progress with what the plan says should be done by today. `embed_schedule()` writes the computed schedule into the page as JSON.
+
+**Views.** `assets/tracker.html` is a dependency-free script, inlined into every page, that draws the Gantt (early-schedule bars with progress, late windows, deadline diamonds, a today line, the course-load lane, filters, hover details, click-to-trace dependencies) and the deliverable chain with the float on each handoff. New pages: [Schedule](../../../tracker/schedule.qmd) and [Risks](../../../tracker/risks.qmd). The home page leads with the next deadline, schedule health and the zero-float count. The critical-path page is now computed, not typed. The team page carries the roster, the topic, the attributes table and the ownership grid (owners TBD until the next sync).
+
+**Proposal review.** The Sep 15 draft was read against the 55-point rubric. Blocking fixes: an AI citation artifact and a chat-tool tracking parameter left in the text, a doubled "Figure Figure 1" cross-reference, heading levels that break the template's structure, and no references at all. Improvements: separate the buyer (developer or operator) from the respondent (renter); name the Prolific pipeline; replace the archetype competitor table with real products and prices; quantify the retrofit market; fix the zero-dollar price level and anchor the premium to a base rent; define bundled levels in one line each; say how research question three is answered. Fit risk: the emerging and pre-commercial criteria, to be argued at the workshop. Both statistics in the draft were verified against their sources.
+
+## How it was verified
+
+The site was rendered end to end with Quarto and R and every page was opened in a browser. The CPM was prototyped independently in Python on the same CSV and the floats matched the R output row for row. The proposal chain shows zero float this week (workshop and deadline in the same week), the final-survey chain one day by design, and the fielding-to-report link zero. The public-site rule was checked: first names only, no handles, no credentials, no grades.
+
+## What is next
+
+Book the workshop slot, revise the proposal to v2, move it into the official repo and push by Sunday (P05 to P08). Get the fifth member added to the official repo and confirm the team size (S05). Assign owners at the next sync (S06) and decide who hosts the survey (S07). From Sep 21 the survey plan chain starts with zero float.

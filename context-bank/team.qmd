@@ -1,53 +1,70 @@
 ---
 title: "Team"
-subtitle: "Roster, roles, account ownership and the contribution log"
+subtitle: "Roster, topic, the living attributes table, who owns what, and the contribution log"
 ---
 
-This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential. Fill in the blanks as the team forms (deadline: the first two weeks, so by Wed, Sep 9).
+This page is public, so it carries first names and roles at most: no email addresses, no GitHub usernames, no netIDs, no phone numbers, and never a credential.
 
 ## Roster
 
-| Role | Name | Notes |
+Team E, five members. The course guideline says three to four, so the size is being confirmed with the professor (activity S05).
+
+| Name | Role | Notes |
 |---|---|---|
-| Member (tracker maintainer) | Harshit Chhajed | Built this site during the week 2 exercise |
-| Member | | |
-| Member | | |
-| Member (optional) | | |
+| Harshit | Member, tracker maintainer | Built this site during the week 2 exercise; keeps the schedule and the risk register current |
+| Michael | Member | |
+| Vlad | Member | Joined after the official repo was created, so the professor has to add him to it |
+| Ishita | Member | |
+| Youssouf | Member | Added all five names to the official repo's README on Sep 16 |
+
+Two repos, both private: a brainstorming repo under one member's account (ideas, decisions, meeting notes, a folder per deliverable) and the official submission repo in the course organization, where every deliverable is pushed from its numbered folder.
 
 ## Topic
 
-**Status: not chosen.** Candidates are being scouted against the [seven selection criteria](project-requirements.qmd#selecting-a-topic-all-seven-must-hold). When the decision is made, record it here with a one-line rationale and the date, and open the proposal activities (A05 to A09) on the [activities](../tracker/activities.qmd) page.
+**Smart Urban Living** (chosen with the proposal draft of Sep 15): consumer preferences and willingness to pay for smart apartment features. The product is a Smart Urban Apartment Package, a configurable set of smart-home technologies and technology-enabled amenities for modern multifamily rentals, and the study is a choice-based conjoint among U.S. renters.
+
+Against the [seven selection criteria](project-requirements.qmd#selecting-a-topic-all-seven-must-hold), the weak spot is "emerging and pre-commercial": smart locks and thermostats are common in new Class A buildings. The argument the proposal makes is that the design decision is unresolved for mid-market and retrofit stock, and that no public source gives tradeoff-based willingness to pay per feature, only stated-preference percentages.
 
 ## Attributes and levels (living table)
 
-This table feeds the proposal, the survey plan and every later deliverable. Start with more attributes than you need; cutting back later is easy.
+This table feeds the proposal, the survey plan and every later deliverable. The levels are the proposal draft's; the survey plan (SP01) locks them after the workshop feedback.
 
-| Attribute | Type (continuous or discrete) | Levels | Unit | Competitor benchmarks | Research question it informs |
-|---|---|---|---|---|---|
-| Price | continuous | | | | |
-| | | | | | |
+| Attribute | Type | Levels (draft) | Unit | Open question |
+|---|---|---|---|---|
+| Monthly smart-package premium | continuous | 0, 25, 50, 75 | USD per month over a comparable standard apartment | Zero makes a free smart package a valid profile; reserve it for the standard-apartment reference or shift the range, and show a base rent in every choice task |
+| Smart access and security | discrete | standard key; smart keyless lock; smart lock plus video security | system type | Split into lock and video, or keep as one attribute |
+| Smart climate control | discrete | standard thermostat; smart thermostat; smart thermostat plus automated energy management | system type | One-line definition of "automated energy management" |
+| Smart lighting | discrete | standard; app-controlled; automated | system type | Likely the first attribute to drop if the pilot says respondents are overloaded |
+| Package management | discrete | standard delivery area; secure lockers; smart package room with digital access | system type | |
+| EV charging access | discrete | none; shared stations; reserved access | service level | Keep as an attribute or use for sub-group analysis only |
+
+Research questions: which features most influence apartment choice; how much extra rent renters will pay for each; which bundle at which premium gives the strongest value proposition (answered by a market simulation of package tiers).
 
 ## Who owns what
 
-| Thing | Owner | Notes |
-|---|---|---|
-| Team GitHub repo | TBD | Every deliverable is pushed here; one submitter per deliverable |
-| shinyapps.io account (survey hosting) | TBD | One teammate's account |
-| Supabase project (survey responses) | TBD | Keys live in that person's `.Renviron`, never in any repo |
-| Submitter, proposal | TBD | |
-| Submitter, survey plan | TBD | |
-| Submitter, pilot survey | TBD | |
-| Submitter, pilot analysis | TBD | |
-| Submitter, final survey | TBD | |
-| Submitter, final report | TBD | |
-| Submitter, presentation | TBD | |
+Owners are **TBD** until the team assigns them at the next sync (activity S06). One owner and one backup per deliverable; every member submits at least once.
+
+| Thing | Owner | Backup | Notes |
+|---|---|---|---|
+| Brainstorming repo | Harshit | | Invitations to all four teammates |
+| Official submission repo | shared | | Every deliverable is pushed here; one submitter per deliverable |
+| shinyapps.io account (survey hosting) | TBD | | One teammate's account; decide by Oct 2 (S07) |
+| Supabase project (survey responses) | TBD | | Keys live in that person's `.Renviron`, never in any repo |
+| Proposal (Sep 20) | TBD | TBD | |
+| Survey plan (Sep 29) | TBD | TBD | |
+| Pilot survey (Oct 13) | TBD | TBD | |
+| Pilot analysis (Nov 1) | TBD | TBD | |
+| Final survey (Nov 15) | TBD | TBD | |
+| Final report (Dec 6) | TBD | TBD | |
+| Presentation (Dec 8 and 9) | TBD | TBD | |
+| Tracker, decisions log, contribution log | Harshit | | |
 
 ## Meetings with the professor
 
 | When | Purpose | How to sign up | Outcome |
 |---|---|---|---|
-| Week of Sep 16 | Proposal workshop (remote, replaces the week 4 lecture) | Calendar link posted for week 4 | |
-| Week of Oct 7 | Survey plan meeting | Slack `#project` | |
+| Week of Sep 16 | Proposal workshop (remote, replaces the week 4 lecture) | Scheduling link on the course site | pending |
+| Week of Oct 7 | Survey plan meeting | Course Slack | |
 
 ## Contribution log
 
@@ -56,3 +73,6 @@ Feeds the Attribution section of every deliverable. One line per meaningful cont
 | Date | Member | Contribution |
 |---|---|---|
 | 2026-09-02 | Harshit | Set up the tracker site, the activity list and the context bank |
+| 2026-09-15 | Teammate | Drafted and rendered proposal v1 (Smart Urban Living) |
+| 2026-09-16 | Youssouf | Listed the team in the official repo's README |
+| 2026-09-16 | Harshit | Rubric review of the proposal draft; brainstorming repo created; tracker replanned with a computed critical path and a risk register |
